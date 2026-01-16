@@ -1,0 +1,437 @@
+/* ===================================
+   GenAI Book - Custom Styles
+   =================================== */
+
+/* Pretendard 폰트 로드 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* 기본 폰트 설정 */
+:root {
+  --md-text-font: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --md-code-font: "JetBrains Mono", "Fira Code", monospace;
+}
+
+body {
+  font-family: var(--md-text-font);
+}
+
+/* ===================================
+   라이트 모드 컬러
+   =================================== */
+[data-md-color-scheme="default"] {
+  /* 메인 배경색 */
+  --md-default-bg-color: #F5F7FA;
+  --md-default-bg-color--light: #FFFFFF;
+  --md-default-bg-color--lighter: #FAFBFC;
+  --md-default-bg-color--lightest: #FFFFFF;
+
+  /* 프라이머리 컬러 (파란색 계열) */
+  --md-primary-fg-color: #1565C0;
+  --md-primary-fg-color--light: #1976D2;
+  --md-primary-fg-color--dark: #0D47A1;
+  --md-primary-bg-color: #FFFFFF;
+  --md-primary-bg-color--light: #E3F2FD;
+
+  /* 악센트 컬러 */
+  --md-accent-fg-color: #2196F3;
+  --md-accent-fg-color--transparent: rgba(33, 150, 243, 0.1);
+  --md-accent-bg-color: #2196F3;
+  --md-accent-bg-color--light: #E3F2FD;
+
+  /* 텍스트 컬러 */
+  --md-typeset-color: #1A1A1A;
+  --md-default-fg-color: #1A1A1A;
+  --md-default-fg-color--light: #4A4A4A;
+  --md-default-fg-color--lighter: #6A6A6A;
+  --md-default-fg-color--lightest: #9A9A9A;
+
+  /* 코드 배경 */
+  --md-code-bg-color: #F5F5F5;
+  --md-code-fg-color: #1A1A1A;
+
+  /* 푸터 */
+  --md-footer-bg-color: #1565C0;
+  --md-footer-bg-color--dark: #0D47A1;
+  --md-footer-fg-color: #FFFFFF;
+  --md-footer-fg-color--light: #E3F2FD;
+  --md-footer-fg-color--lighter: #90CAF9;
+}
+
+/* ===================================
+   다크 모드 컬러
+   =================================== */
+[data-md-color-scheme="slate"] {
+  /* 메인 배경색 */
+  --md-default-bg-color: #1E1E1E;
+  --md-default-bg-color--light: #252525;
+  --md-default-bg-color--lighter: #2D2D2D;
+  --md-default-bg-color--lightest: #353535;
+
+  /* 프라이머리 컬러 (파란색 계열) */
+  --md-primary-fg-color: #64B5F6;
+  --md-primary-fg-color--light: #90CAF9;
+  --md-primary-fg-color--dark: #42A5F5;
+  --md-primary-bg-color: #1E1E1E;
+  --md-primary-bg-color--light: #1E3A5F;
+
+  /* 악센트 컬러 */
+  --md-accent-fg-color: #64B5F6;
+  --md-accent-fg-color--transparent: rgba(100, 181, 246, 0.1);
+
+  /* 텍스트 컬러 */
+  --md-typeset-color: #E0E0E0;
+  --md-default-fg-color: #E0E0E0;
+  --md-default-fg-color--light: #B0B0B0;
+  --md-default-fg-color--lighter: #808080;
+  --md-default-fg-color--lightest: #606060;
+
+  /* 코드 배경 */
+  --md-code-bg-color: #2D2D2D;
+  --md-code-fg-color: #E0E0E0;
+}
+
+/* ===================================
+   헤더 & 네비게이션
+   =================================== */
+.md-header {
+  background-color: var(--md-primary-fg-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.md-tabs {
+  background-color: var(--md-primary-fg-color--dark);
+}
+
+.md-tabs__link {
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  opacity: 1;
+}
+
+/* ===================================
+   사이드바
+   =================================== */
+.md-sidebar {
+  background-color: var(--md-default-bg-color--light);
+}
+
+.md-nav__link {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.md-nav__link:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+.md-nav__link--active {
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+}
+
+/* ===================================
+   콘텐츠 영역
+   =================================== */
+.md-content {
+  background-color: var(--md-default-bg-color--light);
+  border-radius: 8px;
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 제목 스타일 */
+.md-typeset h1 {
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+  border-bottom: 2px solid var(--md-primary-fg-color--light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+  margin-top: 2rem;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+/* ===================================
+   Admonition (알림 박스) 커스텀
+   =================================== */
+/* 학습 목표 */
+.md-typeset .admonition.abstract,
+.md-typeset details.abstract {
+  border-color: #2196F3;
+}
+.md-typeset .abstract > .admonition-title,
+.md-typeset .abstract > summary {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+.md-typeset .abstract > .admonition-title::before,
+.md-typeset .abstract > summary::before {
+  background-color: #2196F3;
+}
+
+/* 사례 */
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  border-color: #5C6BC0;
+}
+.md-typeset .example > .admonition-title,
+.md-typeset .example > summary {
+  background-color: rgba(92, 107, 192, 0.1);
+}
+
+/* 주의사항 */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: #FF7043;
+}
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  background-color: rgba(255, 112, 67, 0.1);
+}
+
+/* 팁 */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #42A5F5;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(66, 165, 245, 0.1);
+}
+
+/* ===================================
+   코드 블록
+   =================================== */
+.md-typeset pre {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.md-typeset code {
+  font-size: 0.85em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* ===================================
+   테이블
+   =================================== */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: var(--md-default-bg-color);
+}
+
+/* ===================================
+   태그
+   =================================== */
+.md-tag {
+  background-color: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color);
+  border-radius: 16px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.md-tag:hover {
+  background-color: var(--md-accent-fg-color);
+  color: white;
+}
+
+/* ===================================
+   검색
+   =================================== */
+.md-search__input {
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===================================
+   푸터
+   =================================== */
+.md-footer {
+  margin-top: 2rem;
+}
+
+/* ===================================
+   반응형 조정
+   =================================== */
+@media screen and (max-width: 76.25em) {
+  .md-content {
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+/* ===================================
+   인쇄용 스타일
+   =================================== */
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer {
+    display: none;
+  }
+  
+  .md-content {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+/* ===================================
+   체크박스 리스트 (Task List)
+   =================================== */
+.md-typeset .task-list-item {
+  list-style: none;
+  position: relative;
+  margin-left: -1.2em;
+}
+
+.md-typeset .task-list-control {
+  position: relative;
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+/* 체크박스 기본 스타일 (체크되지 않은 상태) */
+.md-typeset .task-list-control .task-list-indicator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid var(--md-default-fg-color--lighter);
+  border-radius: 4px;
+  background-color: var(--md-default-bg-color--light);
+  transition: all 0.2s ease;
+}
+
+/* 체크된 상태 */
+.md-typeset .task-list-control [checked] + .task-list-indicator::before {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+/* 체크마크 아이콘 */
+.md-typeset .task-list-control [checked] + .task-list-indicator::after {
+  content: "";
+  position: absolute;
+  top: 0.2em;
+  left: 0.45em;
+  width: 0.35em;
+  height: 0.65em;
+  border: solid white;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+/* 다크 모드 체크박스 */
+[data-md-color-scheme="slate"] .md-typeset .task-list-control .task-list-indicator::before {
+  background-color: var(--md-default-bg-color--lighter);
+  border-color: var(--md-default-fg-color--lighter);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .task-list-control [checked] + .task-list-indicator::before {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+/* 체크리스트 아이템 호버 효과 */
+.md-typeset .task-list-item:hover .task-list-indicator::before {
+  border-color: #2196F3;
+}
+
+/* ===================================
+   커스텀 클래스
+   =================================== */
+/* 핵심 개념 하이라이트 */
+.key-concept {
+  background: linear-gradient(120deg, var(--md-accent-fg-color--transparent) 0%, var(--md-accent-fg-color--transparent) 100%);
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--md-accent-fg-color);
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+}
+
+/* 사례 박스 */
+.case-study {
+  background-color: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.case-study::before {
+  content: "📌 사례";
+  display: block;
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Before/After 비교 */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.comparison-before,
+.comparison-after {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.comparison-before {
+  background-color: rgba(255, 112, 67, 0.1);
+  border: 1px solid #FF7043;
+}
+
+.comparison-after {
+  background-color: rgba(38, 166, 154, 0.1);
+  border: 1px solid #1976D2;
+}
+
+@media screen and (max-width: 600px) {
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+}

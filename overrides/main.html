@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <!-- 챗봇 CSS -->
+  <link rel="stylesheet" href="{{ 'assets/chatbot.css' | url }}">
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <!-- 챗봇 JS -->
+  <script src="{{ 'assets/chatbot.js' | url }}"></script>
+{% endblock %}

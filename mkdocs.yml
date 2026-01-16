@@ -1,0 +1,175 @@
+site_name: 생성형 AI 완전 정복
+site_description: 대학생과 성인을 위한 생성형 AI 활용 가이드
+site_author: GenAI Education Project
+site_url: http://127.0.0.1:8000
+
+# 테마 설정
+theme:
+  name: material
+  language: ko
+  custom_dir: overrides
+  
+  # 기능 설정
+  features:
+    - navigation.tabs           # 상단 Part별 탭
+    - navigation.tabs.sticky    # 스크롤해도 탭 고정
+    - navigation.sections       # 섹션 구분
+    - navigation.expand         # 사이드바 자동 확장
+    - navigation.top            # 맨 위로 버튼
+    - navigation.indexes        # 섹션 인덱스 페이지
+    - search.suggest            # 검색 제안
+    - search.highlight          # 검색 하이라이트
+    - content.code.copy         # 코드 복사 버튼
+    - content.tabs.link         # 탭 연결
+    - toc.follow                # 목차 따라가기
+  
+  # 컬러 팔레트 (라이트/다크 모드)
+  palette:
+    # 라이트 모드
+    - scheme: default
+      primary: custom
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    # 다크 모드  
+    - scheme: slate
+      primary: custom
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+  
+  # 폰트 설정 (Pretendard는 CSS에서 로드)
+  font: false
+  
+  # 아이콘
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+
+# 플러그인
+plugins:
+  - search:
+      lang: 
+        - ko
+        - en
+      separator: '[\s\-\.]+'
+  - tags
+
+# Markdown 확장
+markdown_extensions:
+  - admonition                   # 알림 박스
+  - pymdownx.details             # 접기/펼치기
+  - pymdownx.superfences          # 코드 블록 고급 기능
+  - pymdownx.tabbed:             # 탭 콘텐츠
+      alternate_style: true
+  - pymdownx.highlight:          # 코드 하이라이트
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite        # 인라인 코드 하이라이트
+  - pymdownx.snippets            # 스니펫
+  - pymdownx.critic              # 마크업
+  - pymdownx.caret               # 밑줄
+  - pymdownx.keys                # 키보드 키
+  - pymdownx.mark                # 형광펜
+  - pymdownx.tilde               # 취소선
+  - pymdownx.tasklist:           # 체크박스 리스트
+      custom_checkbox: true
+      clickable_checkbox: false
+  - footnotes                    # 각주
+  - attr_list                    # 속성 리스트
+  - md_in_html                   # HTML 내 Markdown
+  - def_list                     # 정의 리스트
+  - tables                       # 테이블
+  - pymdownx.emoji:              # 이모지
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:                         # 목차
+      permalink: true
+      permalink_title: 이 섹션 링크
+      toc_depth: 3
+
+# 추가 CSS
+extra_css:
+  - stylesheets/extra.css
+
+# 추가 JavaScript
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+
+# 네비게이션 구조
+nav:
+  - 홈: index.md
+  
+  - Part 0 서론:
+    - part0/index.md
+    - 0.1 이 책의 구성과 학습 로드맵: part0/ch00-how-to-use.md
+    - 0.2 왜 지금 배워야 하는가: part0/ch00-why-now.md
+  
+  - Part 1 이해:
+    - part1/index.md
+    - Chapter 1 생성형 AI란: part1/ch01-what-is-genai.md
+    - Chapter 2 주요 도구와 생태계: part2/ch02-tools-ecosystem.md
+  
+  - Part 2 원리:
+    - part2/index.md
+    - Chapter 3 프롬프트의 구조: part2/ch03-prompt-structure.md
+    - Chapter 4 고급 프롬프팅 기법: part2/ch04-advanced-prompting.md
+    - Chapter 5 반복 개선의 방법론: part2/ch05-iteration.md
+  
+  - Part 3 활용:
+    - part3/index.md
+    - Chapter 6 학습과 연구: part3/ch06-learning-research.md
+    - Chapter 7 업무와 비즈니스: part3/ch07-business.md
+    - Chapter 8 창작과 콘텐츠: part3/ch08-creative.md
+  
+  - Part 4 위험관리:
+    - part4/index.md
+    - Chapter 9 환각의 이해와 대응: part4/ch09-hallucination.md
+    - Chapter 10 윤리적 사용과 책임: part4/ch10-ethics.md
+    - Chapter 11 책임 있는 AI 사용: part4/ch11-responsible-use.md
+  
+  - Part 5 미래:
+    - part5/index.md
+    - Chapter 12 AI 시대의 핵심 역량: part5/ch12-core-competencies.md
+    - Chapter 13 기술 트렌드와 전망: part5/ch13-future-trends.md
+  
+  - 부록:
+    - appendix/index.md
+    - A. 프롬프트 템플릿: appendix/prompt-templates.md
+    - B. 도구 비교표: appendix/tools-comparison.md
+    - C. 용어 사전: appendix/glossary.md
+    - D. 참고문헌: appendix/references.md
+    - E. 자가 진단: appendix/self-assessment.md
+  
+  - 위키:
+    - wiki/index.md
+    - 개념:
+      - wiki/concepts/index.md
+      - 프롬프트: wiki/concepts/prompt.md
+      - 환각: wiki/concepts/hallucination.md
+      - Few-shot Learning: wiki/concepts/few-shot-learning.md
+      - Chain of Thought: wiki/concepts/chain-of-thought.md
+    - 도구:
+      - wiki/tools/index.md
+      - ChatGPT: wiki/tools/chatgpt.md
+      - Claude: wiki/tools/claude.md
+      - Gemini: wiki/tools/gemini.md
+    - 사례연구:
+      - wiki/cases/index.md
+      - 법률 환각 사례: wiki/cases/legal-hallucination.md
+      - 학술 윤리 사례: wiki/cases/academic-integrity.md
+  
+  - 태그 인덱스: tags.md
+
+# 추가 설정
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/
+  generator: false
+  
+# 저작권
+copyright: Copyright &copy; 2025 GenAI Education Project
