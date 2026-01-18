@@ -593,3 +593,9 @@ AI는 문헌 검토의 방향을 잡는 데 도움을 줄 수 있다.
 ---
 
 - AI 튜터링의 효과는 학습자의 적극적 참여도에 크게 의존한다. 수동적으로 정보를 받아들이기만 해서는 효과가 제한적이다.
+---
+
+<div class="nav-buttons">
+<a href="../part2/ch05-iteration/" class="nav-button nav-prev">&larr; 이전: Chapter 5: 반복 개선의 방법론</a>
+<a href="ch07-business/" class="nav-button nav-next">다음: Chapter 7: 업무와 비즈니스 &rarr;</a>
+</div>

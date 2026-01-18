@@ -283,15 +283,92 @@ Claude의 특징적 기능으로, 코드, 문서, 다이어그램 등을 별도 
 
 ## 8. 기타 주목할 도구들
 
+### Perplexity AI - AI 검색의 새로운 패러다임
+
+!!! info "출시: 2022년 12월"
+
+| 항목 | 내용 |
+|------|------|
+| **개발사** | Perplexity AI |
+| **핵심 기능** | 실시간 웹 검색 + AI 요약 + 출처 명시 |
+| **무료 버전** | 일일 검색 제한, 기본 모델 |
+| **Pro 버전** | $20/월, GPT-4/Claude 선택 가능 |
+
+**강점:**
+
+| 강점 | 설명 |
+|------|------|
+| **실시간 정보** | 최신 뉴스, 이벤트 정보 즉시 검색 |
+| **출처 명시** | 모든 답변에 참조 URL 자동 표시 |
+| **팩트 중심** | 환각 위험 감소, 검증 가능한 정보 제공 |
+| **Focus 기능** | 학술, 뉴스, YouTube 등 검색 범위 지정 |
+
+**사용 추천 상황:**
+
+```
+✅ 추천하는 경우:
+- 최신 뉴스나 이벤트 정보가 필요할 때
+- 출처 확인이 중요한 리서치 작업
+- 팩트체킹이 필요한 정보 검색
+- 여러 출처를 종합한 요약이 필요할 때
+
+❌ 다른 도구가 나은 경우:
+- 창작 글쓰기, 코딩 (ChatGPT, Claude 권장)
+- 긴 문서 분석 (Claude, Gemini 권장)
+- 이미지 생성 (ChatGPT DALL-E, Midjourney 권장)
+```
+
+---
+
+### Microsoft Copilot - Office 업무의 AI 비서
+
+!!! info "출시: 2023년 2월 (Bing Chat → Copilot 리브랜딩)"
+
+| 항목 | 내용 |
+|------|------|
+| **개발사** | Microsoft (OpenAI 기술 기반) |
+| **핵심 기능** | Microsoft 365 생태계 통합 AI |
+| **무료 버전** | 기본 대화, 웹 검색, 이미지 생성 |
+| **Pro 버전** | $20/월, Office 앱 내 AI 기능 |
+
+**Office 통합 기능:**
+
+| 앱 | AI 기능 |
+|-----|---------|
+| **Word** | 문서 초안 생성, 내용 요약, 톤 변경 |
+| **Excel** | 데이터 분석, 수식 제안, 인사이트 추출 |
+| **PowerPoint** | 슬라이드 자동 생성, 디자인 제안 |
+| **Outlook** | 이메일 요약, 답장 초안, 일정 관리 |
+| **Teams** | 회의 요약, 액션 아이템 추출 |
+
+**사용 추천 상황:**
+
+```
+✅ 추천하는 경우:
+- Microsoft 365를 주력으로 사용하는 경우
+- Office 문서 내에서 바로 AI 활용이 필요할 때
+- 이메일, 문서, 프레젠테이션 업무가 많을 때
+- Windows 환경에서 통합 AI 경험을 원할 때
+
+❌ 다른 도구가 나은 경우:
+- Google Workspace 사용자 (Gemini 권장)
+- 깊은 분석이나 긴 문서 처리 (Claude 권장)
+- 코딩 작업 중심 (GitHub Copilot 권장)
+```
+
+---
+
 ### 특화 도구들
 
-| 도구 | 용도 | 특징 |
-|------|------|------|
-| **Perplexity** | AI 검색 | 실시간 검색 + 출처 표시 |
-| **Notion AI** | 문서 작업 | Notion 내 AI 통합 |
-| **GitHub Copilot** | 코딩 | IDE 내 코드 자동완성 |
-| **Grammarly** | 글쓰기 | 문법 교정 + AI 작문 지원 |
-| **Otter.ai** | 회의록 | 음성 → 텍스트 변환 |
+| 도구 | 용도 | 특징 | 가격 |
+|------|------|------|------|
+| **Perplexity** | AI 검색 | 실시간 검색 + 출처 표시 | 무료~$20/월 |
+| **Microsoft Copilot** | Office 통합 | Word, Excel, PPT 내 AI | 무료~$20/월 |
+| **Notion AI** | 문서 작업 | Notion 내 AI 통합 | $10/월 추가 |
+| **GitHub Copilot** | 코딩 | IDE 내 코드 자동완성 | $10/월 |
+| **Cursor** | 코딩 | AI 네이티브 에디터 | 무료~$20/월 |
+| **Grammarly** | 글쓰기 | 문법 교정 + AI 작문 | 무료~$30/월 |
+| **Otter.ai** | 회의록 | 음성 → 텍스트 변환 | 무료~$20/월 |
 
 ### 오픈소스 모델
 
@@ -369,4 +446,9 @@ Claude의 특징적 기능으로, 코드, 문서, 다이어그램 등을 별도 
 [^1]: OpenAI. (2024). *ChatGPT Documentation*. https://platform.openai.com/docs
 [^2]: Anthropic. (2024). *Claude Documentation*. https://docs.anthropic.com
 [^3]: Google. (2024). *Gemini Documentation*. https://ai.google.dev/docs
+---
 
+<div class="nav-buttons">
+<a href="../part1/ch01-what-is-genai/" class="nav-button nav-prev">&larr; 이전: Chapter 1: 생성형 AI란</a>
+<a href="ch03-prompt-structure/" class="nav-button nav-next">다음: Chapter 3: 프롬프트의 구조 &rarr;</a>
+</div>

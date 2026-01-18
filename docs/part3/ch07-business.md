@@ -736,3 +736,9 @@ C. 편의성 중시 고객
 ---
 
 - AI 활용으로 인한 생산성 향상 효과는 업무 특성, 사용자 숙련도, 조직 환경에 따라 크게 달라질 수 있다.
+---
+
+<div class="nav-buttons">
+<a href="ch06-learning-research/" class="nav-button nav-prev">&larr; 이전: Chapter 6: 학습과 연구</a>
+<a href="ch08-creative/" class="nav-button nav-next">다음: Chapter 8: 창작과 콘텐츠 &rarr;</a>
+</div>

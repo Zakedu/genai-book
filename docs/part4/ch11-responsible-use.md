@@ -371,3 +371,9 @@
 ---
 
 - AI 기술과 활용 방식은 빠르게 변화하고 있다. 여기 제시된 가이드라인은 일반적 원칙이며, 구체적 상황과 최신 기술에 맞게 조정이 필요하다.
+---
+
+<div class="nav-buttons">
+<a href="ch10-ethics/" class="nav-button nav-prev">&larr; 이전: Chapter 10: 윤리적 사용과 책임</a>
+<a href="../part5/ch12-core-competencies/" class="nav-button nav-next">다음: Chapter 12: AI 시대의 핵심 역량 &rarr;</a>
+</div>

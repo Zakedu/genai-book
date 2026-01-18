@@ -160,3 +160,9 @@ Part 2 (Ch.4-5) → Part 3 (전체) → Part 4 (전체) → Part 5
     1. 자신은 어떤 유형의 학습자에 해당하는가?
     2. 생성형 AI 학습에서 가장 기대하는 것은 무엇인가?
     3. 이론 학습과 실습 중 어느 것이 더 중요하다고 생각하는가?
+---
+
+<div class="nav-buttons">
+
+<a href="ch00-why-now/" class="nav-button nav-next">다음: 0.2 왜 지금 배워야 하는가 &rarr;</a>
+</div>

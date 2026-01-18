@@ -567,4 +567,9 @@ Temperature 1.2 (5회 실행 결과):
 - Wei, J. et al. (2022). *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. NeurIPS 2022.
 - Brown, T. et al. (2020). *Language Models are Few-Shot Learners*. NeurIPS 2020.
 - OpenAI. (2024). *API Reference: Temperature and Top-P*. https://platform.openai.com/docs/api-reference
+---
 
+<div class="nav-buttons">
+<a href="ch03-prompt-structure/" class="nav-button nav-prev">&larr; 이전: Chapter 3: 프롬프트의 구조</a>
+<a href="ch05-iteration/" class="nav-button nav-next">다음: Chapter 5: 반복 개선의 방법론 &rarr;</a>
+</div>

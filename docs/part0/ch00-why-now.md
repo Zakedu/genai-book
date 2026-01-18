@@ -188,3 +188,9 @@
 [^1]: McKinsey & Company. (2024). *The State of AI in 2024*.
 [^2]: EDUCAUSE. (2025). *Students and AI: 2025 Study Results*.
 [^3]: World Economic Forum. (2025). *Future of Jobs Report 2025*.
+---
+
+<div class="nav-buttons">
+<a href="ch00-how-to-use/" class="nav-button nav-prev">&larr; 이전: 0.1 이 책의 구성과 학습 로드맵</a>
+<a href="../part1/ch01-what-is-genai/" class="nav-button nav-next">다음: Chapter 1: 생성형 AI란 &rarr;</a>
+</div>

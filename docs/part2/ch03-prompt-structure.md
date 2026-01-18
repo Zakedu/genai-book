@@ -401,3 +401,9 @@ B2B 기업 고객 (담당자급)
 ## 참고 자료
 
 [^1]: OpenAI. (2024). *Prompt Engineering Guide*. https://platform.openai.com/docs/guides/prompt-engineering
+---
+
+<div class="nav-buttons">
+<a href="ch02-tools-ecosystem/" class="nav-button nav-prev">&larr; 이전: Chapter 2: 주요 도구와 생태계</a>
+<a href="ch04-advanced-prompting/" class="nav-button nav-next">다음: Chapter 4: 고급 프롬프팅 기법 &rarr;</a>
+</div>

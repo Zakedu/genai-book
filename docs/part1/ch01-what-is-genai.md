@@ -288,4 +288,9 @@ LLM은 **인터넷의 방대한 텍스트**를 학습합니다.
 [^2]: Anthropic. (2024). *Claude 3 Model Card*. https://www.anthropic.com/claude
 [^3]: Google. (2024). *Gemini: A Family of Highly Capable Multimodal Models*. https://deepmind.google/technologies/gemini/
 [^4]: Thomson Reuters. (2023). *Mata v. Avianca: Lawyers sanctioned for using ChatGPT*.
+---
 
+<div class="nav-buttons">
+<a href="../part0/ch00-why-now/" class="nav-button nav-prev">&larr; 이전: 0.2 왜 지금 배워야 하는가</a>
+<a href="../part2/ch02-tools-ecosystem/" class="nav-button nav-next">다음: Chapter 2: 주요 도구와 생태계 &rarr;</a>
+</div>

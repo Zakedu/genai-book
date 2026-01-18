@@ -432,3 +432,9 @@ AI가 초안을 작성해도, 효과적인 소통은 인간의 역량입니다.
       2. AI가 주도하고 인간이 검토
       3. 인간이 주도하고 AI가 보조
     - 각 방식의 결과물 품질, 소요 시간, 만족도를 비교하세요
+---
+
+<div class="nav-buttons">
+<a href="../part4/ch11-responsible-use/" class="nav-button nav-prev">&larr; 이전: Chapter 11: 책임 있는 AI 사용</a>
+<a href="ch13-future-trends/" class="nav-button nav-next">다음: Chapter 13: 기술 트렌드와 전망 &rarr;</a>
+</div>

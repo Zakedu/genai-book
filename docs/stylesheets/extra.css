@@ -435,3 +435,71 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===================================
+   이전/다음 네비게이션 버튼
+   =================================== */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.nav-buttons .nav-button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  max-width: 45%;
+  line-height: 1.4;
+}
+
+.nav-buttons .nav-prev {
+  border: 1px solid var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
+  background-color: transparent;
+  text-align: left;
+}
+
+.nav-buttons .nav-prev:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+  transform: translateX(-4px);
+}
+
+.nav-buttons .nav-next {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  border: 1px solid var(--md-primary-fg-color);
+  text-align: right;
+  margin-left: auto;
+}
+
+.nav-buttons .nav-next:hover {
+  background-color: var(--md-primary-fg-color--dark);
+  border-color: var(--md-primary-fg-color--dark);
+  transform: translateX(4px);
+}
+
+@media screen and (max-width: 600px) {
+  .nav-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nav-buttons .nav-button {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .nav-buttons .nav-prev:hover,
+  .nav-buttons .nav-next:hover {
+    transform: none;
+  }
+}
