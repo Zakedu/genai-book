@@ -196,24 +196,51 @@ body {
   box-shadow: var(--glass-shadow);
 }
 
+/* ===================================
+   타이포그래피 최적화
+   =================================== */
+.md-typeset {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  word-spacing: -0.02em;
+}
+
+.md-typeset p {
+  margin-bottom: 1em;
+}
+
+.md-typeset li {
+  margin-bottom: 0.3em;
+}
+
 /* 제목 스타일 */
 .md-typeset h1 {
+  font-size: 1.8rem;
   font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--md-primary-fg-color);
   border-bottom: 2px solid var(--md-primary-fg-color--light);
   padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .md-typeset h2 {
+  font-size: 1.4rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--md-primary-fg-color);
-  margin-top: 2rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .md-typeset h3 {
+  font-size: 1.15rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--md-default-fg-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
 }
 
 /* ===================================
