@@ -374,6 +374,6 @@
 ---
 
 <div class="nav-buttons">
-<a href="ch10-ethics/" class="nav-button nav-prev">&larr; 이전: Chapter 10: 윤리적 사용과 책임</a>
-<a href="../part5/ch12-core-competencies/" class="nav-button nav-next">다음: Chapter 12: AI 시대의 핵심 역량 &rarr;</a>
+<a href="/part4/ch10-ethics/" class="nav-button nav-prev">&larr; 이전: Chapter 10: 윤리적 사용과 책임</a>
+<a href="/part5/ch12-core-competencies/" class="nav-button nav-next">다음: Chapter 12: AI 시대의 핵심 역량 &rarr;</a>
 </div>

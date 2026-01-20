@@ -435,6 +435,6 @@ AI가 초안을 작성해도, 효과적인 소통은 인간의 역량입니다.
 ---
 
 <div class="nav-buttons">
-<a href="../part4/ch11-responsible-use/" class="nav-button nav-prev">&larr; 이전: Chapter 11: 책임 있는 AI 사용</a>
-<a href="ch13-future-trends/" class="nav-button nav-next">다음: Chapter 13: 기술 트렌드와 전망 &rarr;</a>
+<a href="/part4/ch11-responsible-use/" class="nav-button nav-prev">&larr; 이전: Chapter 11: 책임 있는 AI 사용</a>
+<a href="/part5/ch13-future-trends/" class="nav-button nav-next">다음: Chapter 13: 기술 트렌드와 전망 &rarr;</a>
 </div>

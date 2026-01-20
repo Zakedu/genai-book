@@ -291,6 +291,6 @@ LLM은 **인터넷의 방대한 텍스트**를 학습합니다.
 ---
 
 <div class="nav-buttons">
-<a href="../part0/ch00-why-now/" class="nav-button nav-prev">&larr; 이전: 0.2 왜 지금 배워야 하는가</a>
-<a href="../part2/ch02-tools-ecosystem/" class="nav-button nav-next">다음: Chapter 2: 주요 도구와 생태계 &rarr;</a>
+<a href="/part0/ch00-why-now/" class="nav-button nav-prev">&larr; 이전: 0.2 왜 지금 배워야 하는가</a>
+<a href="/part2/ch02-tools-ecosystem/" class="nav-button nav-next">다음: Chapter 2: 주요 도구와 생태계 &rarr;</a>
 </div>

@@ -558,6 +558,6 @@ AI 환각은 실제로 심각한 결과를 초래한 사례들이 있습니다. 
 ---
 
 <div class="nav-buttons">
-<a href="../part3/ch08-creative/" class="nav-button nav-prev">&larr; 이전: Chapter 8: 창작과 콘텐츠</a>
-<a href="ch10-ethics/" class="nav-button nav-next">다음: Chapter 10: 윤리적 사용과 책임 &rarr;</a>
+<a href="/part3/ch08-creative/" class="nav-button nav-prev">&larr; 이전: Chapter 8: 창작과 콘텐츠</a>
+<a href="/part4/ch10-ethics/" class="nav-button nav-next">다음: Chapter 10: 윤리적 사용과 책임 &rarr;</a>
 </div>
