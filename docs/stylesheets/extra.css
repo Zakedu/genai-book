@@ -151,35 +151,56 @@ body {
 }
 
 /* ===================================
+   레이아웃 너비 확장
+   =================================== */
+.md-grid {
+  max-width: 1440px;
+}
+
+.md-main__inner {
+  max-width: 100%;
+}
+
+/* ===================================
    사이드바 (Glassmorphism)
    =================================== */
 .md-sidebar {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
+  width: 11rem;
 }
 
 .md-sidebar__scrollwrap {
-  padding: 0.5rem;
+  padding: 0.3rem;
 }
 
 .md-nav__link {
-  font-size: 0.85rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
   transition: var(--transition-smooth);
-  margin: 2px 0;
+  margin: 1px 0;
 }
 
 .md-nav__link:hover {
   background: var(--md-accent-fg-color--transparent);
-  transform: translateX(4px);
+  transform: translateX(2px);
 }
 
 .md-nav__link--active {
   font-weight: 600;
   color: var(--md-accent-fg-color);
   background: var(--md-accent-fg-color--transparent);
+}
+
+.md-nav__item--nested > .md-nav__link {
+  font-size: 0.8rem;
+}
+
+/* TOC (우측 목차) */
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.7rem;
 }
 
 /* ===================================
@@ -189,11 +210,16 @@ body {
   background: var(--glass-bg-solid);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  border-radius: 16px;
-  margin: 1.5rem;
-  padding: 2rem;
+  border-radius: 12px;
+  margin: 0.5rem;
+  padding: 1.5rem;
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
+}
+
+.md-content__inner {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* ===================================
