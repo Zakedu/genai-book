@@ -99,6 +99,7 @@ extra_css:
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/nav-fix.js
+  - javascripts/progress.js
 
 # 네비게이션 구조
 nav:

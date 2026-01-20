@@ -1,14 +1,25 @@
 /* ===================================
    GenAI Book - Custom Styles
+   2026 Glassmorphism Edition
    =================================== */
 
 /* Pretendard 폰트 로드 */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
-/* 기본 폰트 설정 */
+/* 기본 폰트 설정 + CSS 변수 */
 :root {
   --md-text-font: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --md-code-font: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Glassmorphism 변수 */
+  --glass-blur: 20px;
+  --glass-saturation: 180%;
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  /* 트랜지션 */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 body {
@@ -16,134 +27,173 @@ body {
 }
 
 /* ===================================
-   라이트 모드 컬러
+   라이트 모드 컬러 (현대화된 Blue)
    =================================== */
 [data-md-color-scheme="default"] {
-  /* 메인 배경색 */
-  --md-default-bg-color: #F5F7FA;
+  /* 메인 배경색 - 더 밝고 따뜻하게 */
+  --md-default-bg-color: #F8FAFC;
   --md-default-bg-color--light: #FFFFFF;
   --md-default-bg-color--lighter: #FAFBFC;
   --md-default-bg-color--lightest: #FFFFFF;
 
-  /* 프라이머리 컬러 (파란색 계열) */
-  --md-primary-fg-color: #1565C0;
-  --md-primary-fg-color--light: #1976D2;
-  --md-primary-fg-color--dark: #0D47A1;
+  /* 프라이머리 컬러 (현대화된 파란색) */
+  --md-primary-fg-color: #2563EB;
+  --md-primary-fg-color--light: #3B82F6;
+  --md-primary-fg-color--dark: #1D4ED8;
   --md-primary-bg-color: #FFFFFF;
-  --md-primary-bg-color--light: #E3F2FD;
+  --md-primary-bg-color--light: #EFF6FF;
 
   /* 악센트 컬러 */
-  --md-accent-fg-color: #2196F3;
-  --md-accent-fg-color--transparent: rgba(33, 150, 243, 0.1);
-  --md-accent-bg-color: #2196F3;
-  --md-accent-bg-color--light: #E3F2FD;
+  --md-accent-fg-color: #3B82F6;
+  --md-accent-fg-color--transparent: rgba(59, 130, 246, 0.1);
+  --md-accent-bg-color: #3B82F6;
+  --md-accent-bg-color--light: #DBEAFE;
 
-  /* 텍스트 컬러 */
-  --md-typeset-color: #1A1A1A;
-  --md-default-fg-color: #1A1A1A;
-  --md-default-fg-color--light: #4A4A4A;
-  --md-default-fg-color--lighter: #6A6A6A;
-  --md-default-fg-color--lightest: #9A9A9A;
+  /* 텍스트 컬러 - 더 부드럽게 */
+  --md-typeset-color: #1E293B;
+  --md-default-fg-color: #1E293B;
+  --md-default-fg-color--light: #475569;
+  --md-default-fg-color--lighter: #64748B;
+  --md-default-fg-color--lightest: #94A3B8;
 
   /* 코드 배경 */
-  --md-code-bg-color: #F5F5F5;
-  --md-code-fg-color: #1A1A1A;
+  --md-code-bg-color: #F1F5F9;
+  --md-code-fg-color: #1E293B;
 
   /* 푸터 */
-  --md-footer-bg-color: #1565C0;
-  --md-footer-bg-color--dark: #0D47A1;
+  --md-footer-bg-color: #1E40AF;
+  --md-footer-bg-color--dark: #1E3A8A;
   --md-footer-fg-color: #FFFFFF;
-  --md-footer-fg-color--light: #E3F2FD;
-  --md-footer-fg-color--lighter: #90CAF9;
+  --md-footer-fg-color--light: #DBEAFE;
+  --md-footer-fg-color--lighter: #93C5FD;
+
+  /* Glassmorphism 라이트 */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-solid: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.5);
 }
 
 /* ===================================
    다크 모드 컬러
    =================================== */
 [data-md-color-scheme="slate"] {
-  /* 메인 배경색 */
-  --md-default-bg-color: #1E1E1E;
-  --md-default-bg-color--light: #252525;
-  --md-default-bg-color--lighter: #2D2D2D;
-  --md-default-bg-color--lightest: #353535;
+  /* 메인 배경색 - 더 깊은 slate */
+  --md-default-bg-color: #0F172A;
+  --md-default-bg-color--light: #1E293B;
+  --md-default-bg-color--lighter: #334155;
+  --md-default-bg-color--lightest: #475569;
 
-  /* 프라이머리 컬러 (파란색 계열) */
-  --md-primary-fg-color: #64B5F6;
-  --md-primary-fg-color--light: #90CAF9;
-  --md-primary-fg-color--dark: #42A5F5;
-  --md-primary-bg-color: #1E1E1E;
+  /* 프라이머리 컬러 (밝은 파란색) */
+  --md-primary-fg-color: #60A5FA;
+  --md-primary-fg-color--light: #93C5FD;
+  --md-primary-fg-color--dark: #3B82F6;
+  --md-primary-bg-color: #0F172A;
   --md-primary-bg-color--light: #1E3A5F;
 
   /* 악센트 컬러 */
-  --md-accent-fg-color: #64B5F6;
-  --md-accent-fg-color--transparent: rgba(100, 181, 246, 0.1);
+  --md-accent-fg-color: #60A5FA;
+  --md-accent-fg-color--transparent: rgba(96, 165, 250, 0.15);
 
   /* 텍스트 컬러 */
-  --md-typeset-color: #E0E0E0;
-  --md-default-fg-color: #E0E0E0;
-  --md-default-fg-color--light: #B0B0B0;
-  --md-default-fg-color--lighter: #808080;
-  --md-default-fg-color--lightest: #606060;
+  --md-typeset-color: #E2E8F0;
+  --md-default-fg-color: #E2E8F0;
+  --md-default-fg-color--light: #CBD5E1;
+  --md-default-fg-color--lighter: #94A3B8;
+  --md-default-fg-color--lightest: #64748B;
 
   /* 코드 배경 */
-  --md-code-bg-color: #2D2D2D;
-  --md-code-fg-color: #E0E0E0;
+  --md-code-bg-color: #1E293B;
+  --md-code-fg-color: #E2E8F0;
+
+  /* Glassmorphism 다크 */
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-bg-solid: rgba(30, 41, 59, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* ===================================
-   헤더 & 네비게이션
+   헤더 & 네비게이션 (Glassmorphism)
    =================================== */
 .md-header {
-  background-color: var(--md-primary-fg-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--glass-bg-solid);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+[data-md-color-scheme="default"] .md-header {
+  background: rgba(37, 99, 235, 0.95);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background: rgba(15, 23, 42, 0.9);
 }
 
 .md-tabs {
-  background-color: var(--md-primary-fg-color--dark);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .md-tabs__link {
   font-weight: 500;
   opacity: 0.85;
+  transition: var(--transition-smooth);
+  border-radius: 8px;
+  margin: 4px;
 }
 
 .md-tabs__link--active,
 .md-tabs__link:hover {
   opacity: 1;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* ===================================
-   사이드바
+   사이드바 (Glassmorphism)
    =================================== */
 .md-sidebar {
-  background-color: var(--md-default-bg-color--light);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.md-sidebar__scrollwrap {
+  padding: 0.5rem;
 }
 
 .md-nav__link {
   font-size: 0.85rem;
-  padding: 0.4rem 0.6rem;
-  border-radius: 4px;
-  transition: all 0.2s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+  margin: 2px 0;
 }
 
 .md-nav__link:hover {
-  background-color: var(--md-accent-fg-color--transparent);
+  background: var(--md-accent-fg-color--transparent);
+  transform: translateX(4px);
 }
 
 .md-nav__link--active {
   font-weight: 600;
   color: var(--md-accent-fg-color);
+  background: var(--md-accent-fg-color--transparent);
 }
 
 /* ===================================
-   콘텐츠 영역
+   콘텐츠 영역 (Glassmorphism Card)
    =================================== */
 .md-content {
-  background-color: var(--md-default-bg-color--light);
-  border-radius: 8px;
-  margin: 1rem;
-  padding: 1rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  background: var(--glass-bg-solid);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: 16px;
+  margin: 1.5rem;
+  padding: 2rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 /* 제목 스타일 */
@@ -167,50 +217,104 @@ body {
 }
 
 /* ===================================
-   Admonition (알림 박스) 커스텀
+   Admonition (알림 박스) - Glassmorphism
    =================================== */
-/* 학습 목표 */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 12px;
+  border: none;
+  border-left: 4px solid;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  border-radius: 8px 8px 0 0;
+  font-weight: 600;
+}
+
+/* 학습 목표 (abstract) */
 .md-typeset .admonition.abstract,
 .md-typeset details.abstract {
-  border-color: #2196F3;
+  border-left-color: #3B82F6;
 }
 .md-typeset .abstract > .admonition-title,
 .md-typeset .abstract > summary {
-  background-color: rgba(33, 150, 243, 0.1);
-}
-.md-typeset .abstract > .admonition-title::before,
-.md-typeset .abstract > summary::before {
-  background-color: #2196F3;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
 }
 
-/* 사례 */
+/* 사례 (example) */
 .md-typeset .admonition.example,
 .md-typeset details.example {
-  border-color: #5C6BC0;
+  border-left-color: #8B5CF6;
 }
 .md-typeset .example > .admonition-title,
 .md-typeset .example > summary {
-  background-color: rgba(92, 107, 192, 0.1);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%);
 }
 
-/* 주의사항 */
+/* 주의사항 (warning) */
 .md-typeset .admonition.warning,
 .md-typeset details.warning {
-  border-color: #FF7043;
+  border-left-color: #F59E0B;
 }
 .md-typeset .warning > .admonition-title,
 .md-typeset .warning > summary {
-  background-color: rgba(255, 112, 67, 0.1);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
 }
 
-/* 팁 */
+/* 위험 (danger) */
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-left-color: #EF4444;
+}
+.md-typeset .danger > .admonition-title,
+.md-typeset .danger > summary {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.05) 100%);
+}
+
+/* 팁 (tip) */
 .md-typeset .admonition.tip,
 .md-typeset details.tip {
-  border-color: #42A5F5;
+  border-left-color: #10B981;
 }
 .md-typeset .tip > .admonition-title,
 .md-typeset .tip > summary {
-  background-color: rgba(66, 165, 245, 0.1);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%);
+}
+
+/* 정보 (info) */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-left-color: #06B6D4;
+}
+.md-typeset .info > .admonition-title,
+.md-typeset .info > summary {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0.05) 100%);
+}
+
+/* 질문 (question) */
+.md-typeset .admonition.question,
+.md-typeset details.question {
+  border-left-color: #EC4899;
+}
+.md-typeset .question > .admonition-title,
+.md-typeset .question > summary {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(236, 72, 153, 0.05) 100%);
+}
+
+/* 인용 (quote) */
+.md-typeset .admonition.quote,
+.md-typeset details.quote {
+  border-left-color: #6B7280;
+}
+.md-typeset .quote > .admonition-title,
+.md-typeset .quote > summary {
+  background: linear-gradient(135deg, rgba(107, 114, 128, 0.15) 0%, rgba(107, 114, 128, 0.05) 100%);
 }
 
 /* ===================================
@@ -437,69 +541,91 @@ body {
 }
 
 /* ===================================
-   이전/다음 네비게이션 버튼
+   이전/다음 네비게이션 버튼 (Glassmorphism)
    =================================== */
 .nav-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glass-border);
 }
 
 .nav-buttons .nav-button {
-  display: inline-block;
-  padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: var(--transition-bounce);
   max-width: 45%;
   line-height: 1.4;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-buttons .nav-prev {
-  border: 1px solid var(--md-primary-fg-color);
+  border: 1px solid var(--glass-border);
   color: var(--md-primary-fg-color);
-  background-color: transparent;
+  background: var(--glass-bg);
   text-align: left;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 .nav-buttons .nav-prev:hover {
-  background-color: var(--md-accent-fg-color--transparent);
-  transform: translateX(-4px);
+  background: var(--md-accent-fg-color--transparent);
+  transform: translateX(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  border-color: var(--md-primary-fg-color);
 }
 
 .nav-buttons .nav-next {
-  background-color: var(--md-primary-fg-color);
+  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 100%);
   color: white;
-  border: 1px solid var(--md-primary-fg-color);
+  border: none;
   text-align: right;
   margin-left: auto;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
 }
 
 .nav-buttons .nav-next:hover {
-  background-color: var(--md-primary-fg-color--dark);
-  border-color: var(--md-primary-fg-color--dark);
-  transform: translateX(4px);
+  transform: translateX(6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
 }
 
 @media screen and (max-width: 600px) {
   .nav-buttons {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .nav-buttons .nav-button {
     width: 100%;
     max-width: 100%;
-    text-align: center;
+    justify-content: center;
   }
 
   .nav-buttons .nav-prev:hover,
   .nav-buttons .nav-next:hover {
-    transform: none;
+    transform: scale(1.02);
   }
+}
+
+/* ===================================
+   Reading Progress Bar
+   =================================== */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  z-index: 9999;
+  transition: width 0.1s ease;
 }
