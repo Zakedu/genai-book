@@ -20,7 +20,7 @@
 | 업무에 정기적 활용 비율 | 22% | McKinsey (2024)[^1] |
 | 대학생 학업 활용률 | 90% | EDUCAUSE (2025)[^2] |
 
-<div class="key-concept">
+<div class="key-concept" markdown>
 
 **핵심 통찰**: 생성형 AI는 이미 대중화되었습니다. 문제는 **"사용 여부"**가 아니라 **"얼마나 잘 사용하는가"**입니다.
 
@@ -77,7 +77,7 @@
 
 ### 시사점
 
-<div class="case-study">
+<div class="case-study" markdown>
 
 이러한 격차는 새로운 형태의 **디지털 불평등**을 야기합니다. AI 활용 능력이 직업 경쟁력과 직결되는 시대에, 숙련도 격차는 곧 **기회의 격차**로 이어집니다.
 
@@ -139,7 +139,7 @@
 
 ## 6. 이 책이 제공하는 해결책
 
-<div class="key-concept">
+<div class="key-concept" markdown>
 
 **단순 사용자 → 숙련 활용자로의 전환**
 
@@ -157,7 +157,7 @@
 
 ## 핵심 정리
 
-<div class="key-concept">
+<div class="key-concept" markdown>
 
 **이 챕터의 핵심 포인트**
 
@@ -191,6 +191,6 @@
 ---
 
 <div class="nav-buttons">
-<a href="/part0/ch00-how-to-use/" class="nav-button nav-prev">&larr; 이전: 0.1 이 책의 구성과 학습 로드맵</a>
-<a href="/part1/ch01-what-is-genai/" class="nav-button nav-next">다음: Chapter 1: 생성형 AI란 &rarr;</a>
+<a href="../part0/ch00-how-to-use/" class="nav-button nav-prev">&larr; 이전: 0.1 이 책의 구성과 학습 로드맵</a>
+<a href="../part1/ch01-what-is-genai/" class="nav-button nav-next">다음: Chapter 1: 생성형 AI란 &rarr;</a>
 </div>

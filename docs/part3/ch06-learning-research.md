@@ -596,6 +596,6 @@ AI는 문헌 검토의 방향을 잡는 데 도움을 줄 수 있다.
 ---
 
 <div class="nav-buttons">
-<a href="/part2/ch05-iteration/" class="nav-button nav-prev">&larr; 이전: Chapter 5: 반복 개선의 방법론</a>
-<a href="/part3/ch07-business/" class="nav-button nav-next">다음: Chapter 7: 업무와 비즈니스 &rarr;</a>
+<a href="../part2/ch05-iteration/" class="nav-button nav-prev">&larr; 이전: Chapter 5: 반복 개선의 방법론</a>
+<a href="../part3/ch07-business/" class="nav-button nav-next">다음: Chapter 7: 업무와 비즈니스 &rarr;</a>
 </div>

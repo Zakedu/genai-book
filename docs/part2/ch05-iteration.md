@@ -577,6 +577,6 @@ C안: 행동 유도 접근 (긴급성 강조)
 ---
 
 <div class="nav-buttons">
-<a href="/part2/ch04-advanced-prompting/" class="nav-button nav-prev">&larr; 이전: Chapter 4: 고급 프롬프팅 기법</a>
-<a href="/part3/ch06-learning-research/" class="nav-button nav-next">다음: Chapter 6: 학습과 연구 &rarr;</a>
+<a href="../part2/ch04-advanced-prompting/" class="nav-button nav-prev">&larr; 이전: Chapter 4: 고급 프롬프팅 기법</a>
+<a href="../part3/ch06-learning-research/" class="nav-button nav-next">다음: Chapter 6: 학습과 연구 &rarr;</a>
 </div>

@@ -140,7 +140,7 @@ Part 2 (Ch.4-5) → Part 3 (전체) → Part 4 (전체) → Part 5
 
 ## 핵심 정리
 
-<div class="key-concept">
+<div class="key-concept" markdown>
 
 **이 챕터의 핵심 포인트**
 
@@ -164,5 +164,5 @@ Part 2 (Ch.4-5) → Part 3 (전체) → Part 4 (전체) → Part 5
 
 <div class="nav-buttons">
 
-<a href="/part0/ch00-why-now/" class="nav-button nav-next">다음: 0.2 왜 지금 배워야 하는가 &rarr;</a>
+<a href="../part0/ch00-why-now/" class="nav-button nav-next">다음: 0.2 왜 지금 배워야 하는가 &rarr;</a>
 </div>

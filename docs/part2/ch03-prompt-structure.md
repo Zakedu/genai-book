@@ -219,15 +219,15 @@ AI는 모호한 요청에 대해 **가정(assumption)**을 합니다. 이 가정
 
 ### 사례 1: 논문 요약
 
-<div class="comparison">
-<div class="comparison-before">
+<div class="comparison" markdown>
+<div class="comparison-before" markdown>
 **❌ Before**
 ```
 이 논문 요약해줘
 ```
 *문제: 요약의 깊이, 형식, 대상이 불명확*
 </div>
-<div class="comparison-after">
+<div class="comparison-after" markdown>
 **✅ After**
 ```
 첨부한 논문에 대해:
@@ -244,15 +244,15 @@ AI는 모호한 요청에 대해 **가정(assumption)**을 합니다. 이 가정
 
 ### 사례 2: 코드 디버깅
 
-<div class="comparison">
-<div class="comparison-before">
+<div class="comparison" markdown>
+<div class="comparison-before" markdown>
 **❌ Before**
 ```
 이 코드 고쳐줘
 ```
 *문제: 어떤 문제인지, 원하는 동작이 무엇인지 불명확*
 </div>
-<div class="comparison-after">
+<div class="comparison-after" markdown>
 **✅ After**
 ```
 [Context]
@@ -275,15 +275,15 @@ Python으로 CSV 파일을 읽어
 
 ### 사례 3: 비즈니스 이메일
 
-<div class="comparison">
-<div class="comparison-before">
+<div class="comparison" markdown>
+<div class="comparison-before" markdown>
 **❌ Before**
 ```
 사과 이메일 써줘
 ```
 *문제: 상황, 대상, 톤이 모두 불명확*
 </div>
-<div class="comparison-after">
+<div class="comparison-after" markdown>
 **✅ After**
 ```
 [상황]
@@ -310,15 +310,15 @@ B2B 기업 고객 (담당자급)
 
 ### 사례 4: 아이디어 브레인스토밍
 
-<div class="comparison">
-<div class="comparison-before">
+<div class="comparison" markdown>
+<div class="comparison-before" markdown>
 **❌ Before**
 ```
 마케팅 아이디어 알려줘
 ```
 *문제: 대상, 예산, 목표가 없음*
 </div>
-<div class="comparison-after">
+<div class="comparison-after" markdown>
 **✅ After**
 ```
 [Context]
@@ -404,6 +404,6 @@ B2B 기업 고객 (담당자급)
 ---
 
 <div class="nav-buttons">
-<a href="/part2/ch02-tools-ecosystem/" class="nav-button nav-prev">&larr; 이전: Chapter 2: 주요 도구와 생태계</a>
-<a href="/part2/ch04-advanced-prompting/" class="nav-button nav-next">다음: Chapter 4: 고급 프롬프팅 기법 &rarr;</a>
+<a href="../part2/ch02-tools-ecosystem/" class="nav-button nav-prev">&larr; 이전: Chapter 2: 주요 도구와 생태계</a>
+<a href="../part2/ch04-advanced-prompting/" class="nav-button nav-next">다음: Chapter 4: 고급 프롬프팅 기법 &rarr;</a>
 </div>
