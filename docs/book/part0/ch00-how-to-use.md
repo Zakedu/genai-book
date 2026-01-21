@@ -140,7 +140,7 @@ Part 2 (Ch.4-5) → Part 3 (전체) → Part 4 (전체) → Part 5
 
 ## 핵심 정리
 
-<div class="key-concept">
+<div class="key-concept" markdown>
 
 **이 챕터의 핵심 포인트**
 
