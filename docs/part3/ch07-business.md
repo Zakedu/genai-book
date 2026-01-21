@@ -739,6 +739,6 @@ C. 편의성 중시 고객
 ---
 
 <div class="nav-buttons">
-<a href="/part3/ch06-learning-research/" class="nav-button nav-prev">&larr; 이전: Chapter 6: 학습과 연구</a>
-<a href="/part3/ch08-creative/" class="nav-button nav-next">다음: Chapter 8: 창작과 콘텐츠 &rarr;</a>
+<a href="../part3/ch06-learning-research/" class="nav-button nav-prev">&larr; 이전: Chapter 6: 학습과 연구</a>
+<a href="../part3/ch08-creative/" class="nav-button nav-next">다음: Chapter 8: 창작과 콘텐츠 &rarr;</a>
 </div>

@@ -727,6 +727,6 @@
 ---
 
 <div class="nav-buttons">
-<a href="/part3/ch07-business/" class="nav-button nav-prev">&larr; 이전: Chapter 7: 업무와 비즈니스</a>
-<a href="/part4/ch09-hallucination/" class="nav-button nav-next">다음: Chapter 9: 환각의 이해와 대응 &rarr;</a>
+<a href="../part3/ch07-business/" class="nav-button nav-prev">&larr; 이전: Chapter 7: 업무와 비즈니스</a>
+<a href="../part4/ch09-hallucination/" class="nav-button nav-next">다음: Chapter 9: 환각의 이해와 대응 &rarr;</a>
 </div>

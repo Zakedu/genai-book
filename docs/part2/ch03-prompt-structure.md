@@ -404,6 +404,6 @@ B2B 기업 고객 (담당자급)
 ---
 
 <div class="nav-buttons">
-<a href="/part2/ch02-tools-ecosystem/" class="nav-button nav-prev">&larr; 이전: Chapter 2: 주요 도구와 생태계</a>
-<a href="/part2/ch04-advanced-prompting/" class="nav-button nav-next">다음: Chapter 4: 고급 프롬프팅 기법 &rarr;</a>
+<a href="../part2/ch02-tools-ecosystem/" class="nav-button nav-prev">&larr; 이전: Chapter 2: 주요 도구와 생태계</a>
+<a href="../part2/ch04-advanced-prompting/" class="nav-button nav-next">다음: Chapter 4: 고급 프롬프팅 기법 &rarr;</a>
 </div>
