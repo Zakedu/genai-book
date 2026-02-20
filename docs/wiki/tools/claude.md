@@ -12,7 +12,7 @@ Anthropic이 개발한 AI 어시스턴트입니다. Constitutional AI 원칙에 
 |------|------|
 | 개발사 | Anthropic |
 | 출시일 | 2023년 3월 |
-| 최신 모델 | Claude 4.6 Sonnet, Claude 4.5 Opus, Claude 4.5 Haiku |
+| 최신 모델 | Claude Opus 4.6, Claude Sonnet 4.6, Claude Haiku 4.5 |
 | 웹사이트 | [claude.ai](https://claude.ai) |
 | API | [console.anthropic.com](https://console.anthropic.com) |
 | 데스크톱 앱 | Claude Desktop (MCP 지원) |
@@ -305,10 +305,10 @@ Anthropic의 AI 안전성 철학인 Constitutional AI에 기반한 응답을 생
 
 | 작업 유형 | 추천 모델 | 이유 |
 |----------|----------|------|
-| 일상 대화·간단한 질문 | Claude 3.5 Haiku | 빠르고 효율적 |
-| 글쓰기·분석·코딩 | Claude 3.5 Sonnet | 속도와 품질의 최적 균형 |
-| 복잡한 추론·연구 | Claude 3 Opus | 최고 수준의 사고력 |
-| 대량 처리·자동화 | Claude 3.5 Haiku | 빠른 처리, 낮은 비용 |
+| 일상 대화·간단한 질문 | Claude Haiku 4.5 | 빠르고 효율적 |
+| 글쓰기·분석·코딩 | Claude Sonnet 4.6 | 속도와 품질의 최적 균형 |
+| 복잡한 추론·연구 | Claude Opus 4.6 | 최고 수준의 사고력 |
+| 대량 처리·자동화 | Claude Haiku 4.5 | 빠른 처리, 낮은 비용 |
 
 ### Claude의 강점 활용
 

@@ -51,67 +51,66 @@
 
 !!! info "사례 기록 시점: 2026년 2월"
 
-**사례 1: Getty Images vs Stability AI (2023년 1월 ~ 2025년 11월)**
+**사례 1: Getty Images vs Stability AI (2023년 1월~2025년 11월 판결)**
 
 | 항목 | 내용 |
 |------|------|
 | **원고** | Getty Images (세계 최대 이미지 라이선스 기업) |
 | **피고** | Stability AI (Stable Diffusion 개발사) |
-| **판결** | 2025년 11월 4일 영국 고등법원 판결 (AI 학습 저작권 침해 아님) |
-| **핵심 판시** | AI 모델 가중치는 저작물의 "복사본"이 아니므로 저작권 침해 아님 |
+| **쟁점** | 1200만 개 이상의 이미지를 동의 없이 AI 학습에 사용 |
+| **판결** | 2025년 11월 4일, 영국 고등법원(UK High Court) 판결 |
 
 ```
-판결 요약:
-1. ✅ 저작권 침해 청구 → 기각 (AI 모델 가중치는 저작물이 아님)
-2. ⚠️ 상표 침해 청구 → 부분 인정 (역사적이고 극히 제한적 사례만 발견)
-3. 파급효과: AI 학습 데이터 사용 시 저작권 침해 기준 확립
+핵심 판결 내용 (2025년 11월):
+1. 저작권 침해 주장 → 기각: AI 모델 가중치는 저작권법상 '복제물'이 아님
+2. 상표권 침해 → 일부 인정: Getty 워터마크가 생성 이미지에 나타난 사례 (극히 제한적)
+3. 의의: AI 학습용 데이터 사용이 저작권 침해가 아니라는 최초의 영국 판례
 ```
 
-**사례 2: The New York Times vs OpenAI (2023년 12월 ~ 2026년 진행 중)**
+!!! tip "산업적 영향"
+    이 판결은 AI 기업들의 학습 데이터 사용에 대한 법적 불확실성을 크게 줄였습니다. 다만 미국에서의 별도 소송은 계속 진행 중이며, 관할권에 따라 결과가 달라질 수 있습니다.
+
+**사례 2: The New York Times vs OpenAI (2023년 12월~진행 중)**
 
 | 항목 | 내용 |
 |------|------|
 | **원고** | The New York Times |
 | **피고** | OpenAI, Microsoft |
 | **쟁점** | NYT 기사를 AI 학습에 무단 사용, 기사 내용 거의 그대로 출력 |
-| **진행 상황** | 2026년 1월 5일 20개월 분량 ChatGPT 로그 공개 명령 (중요 진행) |
+| **요구** | 수십억 달러 손해배상, 해당 데이터로 학습된 모델 삭제 |
+| **최신 현황** | 2026년 1월 5일, 법원이 OpenAI에 2,000만 건의 ChatGPT 대화 로그 공개 명령 |
 
 ```
-2025-2026 주요 진행:
-- 2025년 3월: 법원이 OpenAI의 소송 기각 신청 거부 (본소송 진행)
-- 2025년 11월: NYT 측 전문가 증거 제출 완료
-- 2026년 1월: 법원이 OpenAI에 20M 익명화 ChatGPT 로그 공개 명령
-- 2026년 4월: 약식판결 신청(Summary Judgment) 예정
-
-저널리즘에 대한 경제적 위협과 저작권 침해의 범위가 주요 쟁점
+주요 경과 (2025~2026):
+- 2025년 3월: 법원, OpenAI의 소송 기각 신청 기각 → 본안 재판 진행
+- 2025년 5~11월: 양측 증거 개시(Discovery) 절차
+- 2026년 1월 5일: 판사, 2,000만 건 ChatGPT 대화 로그 공개 명령
+  → OpenAI가 선별 제출하려던 것을 법원이 전체 데이터셋 제출로 변경
+- 예정: 2026년 4월 2일 약식판결(Summary Judgment)
 ```
 
-!!! warning "진행 상황"
-    이 소송은 여전히 진행 중이며, 배심원 재판(Trial)이 이루어질 가능성이 높습니다. 향후 판결은 AI 산업의 학습 데이터 사용에 중대한 영향을 미칠 것으로 예상됩니다.
+!!! warning "시사점"
+    이 소송은 AI 학습의 '공정 이용(Fair Use)' 여부를 판가름할 가장 중요한 사건입니다. 2,000만 건의 대화 로그 공개 명령은 AI 기업의 데이터 투명성에 대한 중대한 선례가 될 수 있습니다.
 
-**사례 3: Sarah Andersen 등 vs Stability AI, Midjourney (2023년 1월 ~ 2025년 진행)**
+**사례 3: Sarah Andersen 등 vs Stability AI, Midjourney (2023년 1월~)**
 
 | 항목 | 내용 |
 |------|------|
 | **원고** | Sarah Andersen, Kelly McKernan, Karla Ortiz (일러스트레이터) |
 | **피고** | Stability AI, Midjourney, DeviantArt |
 | **쟁점** | 예술가들의 작품을 동의 없이 학습하여 스타일 모방 |
-| **현황** | Getty 판결(2025년 11월)의 영향으로 인해 재평가 중 |
 
 ```
 예술가 측 주장:
 - 자신의 이름을 프롬프트에 넣으면 유사한 스타일 생성
 - 수년간 쌓아온 예술적 스타일이 무단 복제됨
 - 생계와 창작 의욕에 위협
-
-주의: Getty 판결에서 "AI 모델 가중치는 저작물이 아님"이라는 판시가
-      이 소송에 어떻게 적용될지는 아직 불명확
 ```
 
 **출처:**
 - Reuters. (2023). *Getty Images lawsuit against Stability AI to go ahead in London*.
-- National Law Review. (2026). *OpenAI must turn over millions of chat logs*.
-- The Verge. (2023-2025). *Class-action lawsuit against Stability AI, Midjourney* (진행 중).
+- The New York Times. (2023). *The Times Sues OpenAI and Microsoft Over A.I. Use of Copyrighted Work*.
+- The Verge. (2023). *Artists file class-action lawsuit against Stability AI, Midjourney*.
 
 ---
 
@@ -213,29 +212,31 @@
 
 !!! info "사례 기록 시점: 2025년 1월"
 
-**사례 1: Google Gemini 이미지 생성 논란 (2024년 2월, 2025년 재조정)**
+**사례 1: Google Gemini 이미지 생성 논란 (2024년 2월)**
 
 | 항목 | 내용 |
 |------|------|
-| **시기** | 2024년 2월 (문제 발생) / 2025년 재조정 |
+| **시기** | 2024년 2월 |
 | **서비스** | Google Gemini (이미지 생성 기능) |
 | **문제** | 역사적 인물 이미지 생성 시 부정확한 묘사 |
-| **상태** | 2025년 이후 역사적 정확성 중심으로 개선 |
 
 ```
-발생한 문제 (2024):
+발생한 문제:
 - "1943년 독일 군인" 요청 시 다양한 인종의 군인 이미지 생성
 - 미국 건국의 아버지 이미지에서 역사적으로 부정확한 묘사
 - 편향 교정 시스템이 과도하게 적용됨
-
-Google의 대응 (2025):
-- 역사적 맥락 우선 고려
-- 편향과 정확성의 균형 재설정
-- 사용자 피드백 기반 지속적 개선
 ```
 
+**Google의 대응:**
+
+| 조치 | 내용 |
+|------|------|
+| 서비스 일시 중단 | 인물 이미지 생성 기능 일시 중단 |
+| 공식 사과 | "편향 교정이 목표를 벗어났다" |
+| 시스템 재조정 | 역사적 맥락 고려하도록 수정 |
+
 !!! tip "시사점"
-    편향 교정과 역사적 정확성 사이의 균형이 2025년 이후의 주요 과제가 되었습니다.
+    편향 교정 자체도 새로운 형태의 부정확성을 만들 수 있습니다. **균형 잡힌 접근**이 중요합니다.
 
 **사례 2: Amazon 채용 AI 편향 (2018년, 지속적 교훈)**
 
@@ -508,6 +509,6 @@ Google의 대응 (2025):
 ---
 
 <div class="nav-buttons">
-<a href="ch09-hallucination/" class="nav-button nav-prev">&larr; 이전: Chapter 9: 환각의 이해와 대응</a>
-<a href="ch11-responsible-use/" class="nav-button nav-next">다음: Chapter 11: 책임 있는 AI 사용 &rarr;</a>
+<a href="../part4/ch09-hallucination/" class="nav-button nav-prev">&larr; 이전: Chapter 9: 환각의 이해와 대응</a>
+<a href="../part4/ch11-responsible-use/" class="nav-button nav-next">다음: Chapter 11: 책임 있는 AI 사용 &rarr;</a>
 </div>

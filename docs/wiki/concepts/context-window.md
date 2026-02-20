@@ -53,16 +53,15 @@
 
 ## 주요 모델별 컨텍스트 윈도우
 
-### 2025년 1월 기준 현황
+### 2026년 2월 기준 현황
 
 | 모델 | 컨텍스트 윈도우 | 대략적 분량 | 특징 |
 |------|----------------|-------------|------|
-| **GPT-4 Turbo** | 128K 토큰 | 영어 약 96,000단어 | OpenAI 주력 모델 |
-| **GPT-4o** | 128K 토큰 | 영어 약 96,000단어 | 멀티모달 지원 |
-| **Claude 3.5 Sonnet** | 200K 토큰 | 영어 약 150,000단어 | 긴 문서 처리에 강점 |
-| **Claude 3 Opus** | 200K 토큰 | 영어 약 150,000단어 | 최고 성능 모델 |
-| **Gemini 1.5 Pro** | 1M~2M 토큰 | 영어 약 750,000~1,500,000단어 | 최대 컨텍스트 |
-| **Llama 3** | 8K~128K 토큰 | 버전에 따라 상이 | 오픈소스 |
+| **GPT-5** | 128K 토큰 | 영어 약 96,000단어 | OpenAI 주력 모델 |
+| **Claude Opus 4.6** | 200K 토큰 | 영어 약 150,000단어 | Anthropic 프리미엄 모델 |
+| **Claude Sonnet 4.6** | 200K 토큰 | 영어 약 150,000단어 | 코딩·에이전트 강점 |
+| **Gemini 2.5 Pro** | 1M 토큰 | 영어 약 750,000단어 | 최대 컨텍스트 |
+| **Llama 4** | 128K~ 토큰 | 버전에 따라 상이 | 오픈소스 |
 
 ### 분량 환산 가이드
 
@@ -190,11 +189,11 @@ def manage_context(conversation_history, max_tokens=100000):
 
 | 작업 | 권장 컨텍스트 | 추천 모델 |
 |------|-------------|----------|
-| 일상적 대화 | 8K~32K | GPT-4o mini, Claude 3 Haiku |
-| 문서 분석 | 64K~128K | GPT-4 Turbo, Claude 3.5 Sonnet |
-| 책/논문 전체 분석 | 128K~200K | Claude 3 Opus, GPT-4 Turbo |
-| 대규모 코드베이스 | 200K+ | Gemini 1.5 Pro, Claude 3 |
-| 영상 스크립트 분석 | 1M+ | Gemini 1.5 Pro |
+| 일상적 대화 | 8K~32K | GPT-5.2, Claude Haiku 4.5 |
+| 문서 분석 | 64K~128K | GPT-5, Claude Sonnet 4.6 |
+| 책/논문 전체 분석 | 128K~200K | Claude Opus 4.6, GPT-5 |
+| 대규모 코드베이스 | 200K+ | Gemini 2.5 Pro, Claude Opus 4.6 |
+| 영상 스크립트 분석 | 1M+ | Gemini 2.5 Pro |
 
 ### 비용 최적화
 
@@ -218,8 +217,8 @@ def manage_context(conversation_history, max_tokens=100000):
 |------|----------|--------------|
 | 2022 | GPT-3.5 | 4K 토큰 |
 | 2023 | GPT-4 | 32K 토큰 |
-| 2024 | Claude 3, Gemini 1.5 | 200K~2M 토큰 |
-| 2025+ | 차세대 모델 | 10M+ 토큰 예상 |
+| 2024-25 | Claude 4.6, Gemini 2.5 | 200K~1M 토큰 |
+| 2025-26 | GPT-5, Claude 4.6, Gemini 2.5 | 128K~1M (안정화) |
 
 !!! tip "트렌드"
     컨텍스트 윈도우는 매년 급격히 확장되고 있으며, 이는 AI가 처리할 수 있는 정보의 범위가 계속 넓어지고 있음을 의미합니다. 궁극적으로는 "무한 컨텍스트"를 향해 발전 중입니다.
@@ -239,7 +238,7 @@ def manage_context(conversation_history, max_tokens=100000):
 
 [^1]: Liu, N., et al. (2023). "Lost in the Middle: How Language Models Use Long Contexts." *arXiv preprint arXiv:2307.03172*.
 
-1. Anthropic. (2024). "Claude's Context Window." https://docs.anthropic.com/
-2. OpenAI. (2024). "GPT-4 Turbo with 128K Context." https://platform.openai.com/docs/
-3. Google. (2024). "Gemini 1.5 Pro: A Million Token Context Window." https://blog.google/technology/ai/google-gemini-next-generation-model/
+1. Anthropic. (2026). "Claude's Context Window." https://docs.anthropic.com/
+2. OpenAI. (2026). "GPT-5 with 128K Context." https://platform.openai.com/docs/
+3. Google. (2026). "Gemini 2.5 Pro: A Million Token Context Window." https://blog.google/technology/ai/google-gemini-next-generation-model/
 

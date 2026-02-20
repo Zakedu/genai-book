@@ -30,7 +30,7 @@
 ## ㄷ
 
 **대규모 언어 모델 (LLM, Large Language Model)**
-: 방대한 텍스트 데이터로 학습된 AI 모델 (예: GPT-4, Claude, Gemini)
+: 방대한 텍스트 데이터로 학습된 AI 모델 (예: GPT-5, Claude 4.6, Gemini 2.5 Pro)
 
 **데이터 증강 (Data Augmentation)**
 : 기존 데이터를 변형하여 학습 데이터를 늘리는 기법

@@ -194,7 +194,7 @@ AI와의 대화는 맥락이 누적된다. 이전 대화 내용을 기반으로 
 
 === "수정 후 (성공)"
 
-    **피드백**: "범위를 좁혀줘. 2023년 이후 생성형 AI의 발전에 집중해서, 일반인이 체감할 수 있는 변화 3가지만 설명해줘."
+    **피드백**: "범위를 좁혀줘. 2024년 이후 생성형 AI의 발전에 집중해서, 일반인이 체감할 수 있는 변화 3가지만 설명해줘."
 
     **응답**: [ChatGPT, 이미지 생성, 코딩 보조 세 분야의 구체적 변화 설명]
 
@@ -577,6 +577,6 @@ C안: 행동 유도 접근 (긴급성 강조)
 ---
 
 <div class="nav-buttons">
-<a href="ch04-advanced-prompting/" class="nav-button nav-prev">&larr; 이전: Chapter 4: 고급 프롬프팅 기법</a>
+<a href="../part2/ch04-advanced-prompting/" class="nav-button nav-prev">&larr; 이전: Chapter 4: 고급 프롬프팅 기법</a>
 <a href="../part3/ch06-learning-research/" class="nav-button nav-next">다음: Chapter 6: 학습과 연구 &rarr;</a>
 </div>

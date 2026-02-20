@@ -41,8 +41,8 @@
 
 === "코딩/개발"
 
-    **1순위**: ChatGPT (GPT-4), Claude
-    
+    **1순위**: Claude (Claude Code), ChatGPT (GPT-5)
+
     - 코드 생성 및 디버깅
     - 다양한 언어 지원
 

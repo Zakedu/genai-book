@@ -535,9 +535,7 @@ C. 편의성 중시 고객
 | 2단계 | 초안 작성 (3시간) | AI 초안 생성 (30분) |
 | 3단계 | 검토/수정 (1시간) | 사람 검토/수정 (1시간) |
 | 4단계 | 최종 완성 (30분) | 최종 완성 (30분) |
-| **합계** | **총 6.5시간** | **총 2.5시간 (62% 절감)*** |
-
-*단, 입력 데이터가 정리되어 있고 결과를 사람이 검토·승인하는 절차가 있을 때
+| **합계** | **총 6.5시간** | **총 2.5시간 (62% 절감)** |
 
 ---
 
@@ -741,6 +739,6 @@ C. 편의성 중시 고객
 ---
 
 <div class="nav-buttons">
-<a href="ch06-learning-research/" class="nav-button nav-prev">&larr; 이전: Chapter 6: 학습과 연구</a>
-<a href="ch08-creative/" class="nav-button nav-next">다음: Chapter 8: 창작과 콘텐츠 &rarr;</a>
+<a href="../part3/ch06-learning-research/" class="nav-button nav-prev">&larr; 이전: Chapter 6: 학습과 연구</a>
+<a href="../part3/ch08-creative/" class="nav-button nav-next">다음: Chapter 8: 창작과 콘텐츠 &rarr;</a>
 </div>
