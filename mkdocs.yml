@@ -163,7 +163,83 @@ nav:
       - wiki/cases/index.md
       - 법률 환각 사례: wiki/cases/legal-hallucination.md
       - 학술 윤리 사례: wiki/cases/academic-integrity.md
-  
+    - 프롬프트 엔지니어링:
+      - wiki/prompt-engineering/index.md
+      - 기초:
+        - wiki/prompt-engineering/foundations/index.md
+        - 프롬프팅 기초: wiki/prompt-engineering/foundations/basics.md
+        - 프롬프트의 요소: wiki/prompt-engineering/foundations/elements.md
+        - 프롬프트 예시: wiki/prompt-engineering/foundations/examples.md
+        - LLM 설정: wiki/prompt-engineering/foundations/settings.md
+        - 프롬프트 설계 팁: wiki/prompt-engineering/foundations/general-tips.md
+        - 효과적인 프롬프트: wiki/prompt-engineering/foundations/optimizing-prompts.md
+        - 주요 LLM 모델 개요: wiki/prompt-engineering/foundations/models-overview.md
+      - 기법:
+        - wiki/prompt-engineering/techniques/index.md
+        - Zero-shot 프롬프팅: wiki/prompt-engineering/techniques/zero-shot.md
+        - Few-shot 프롬프팅: wiki/prompt-engineering/techniques/few-shot.md
+        - Chain-of-Thought: wiki/prompt-engineering/techniques/chain-of-thought.md
+        - 자기 일관성: wiki/prompt-engineering/techniques/self-consistency.md
+        - ReAct: wiki/prompt-engineering/techniques/react.md
+        - 프롬프트 체이닝: wiki/prompt-engineering/techniques/prompt-chaining.md
+      - 추론:
+        - wiki/prompt-engineering/reasoning/index.md
+        - 추론 모델 가이드: wiki/prompt-engineering/reasoning/reasoning-llms-guide.md
+        - LLM 추론 테스트: wiki/prompt-engineering/reasoning/reasoning-with-llms.md
+        - 간접 추론: wiki/prompt-engineering/reasoning/indirect-reasoning.md
+        - 물리적 추론: wiki/prompt-engineering/reasoning/physical-reasoning.md
+        - Guided CoT: wiki/prompt-engineering/reasoning/guided-cot.md
+        - 추론 연구 종합: wiki/prompt-engineering/reasoning/llm-reasoning.md
+      - RAG:
+        - wiki/prompt-engineering/rag/index.md
+        - RAG 개요: wiki/prompt-engineering/rag/overview.md
+        - RAG 파이프라인: wiki/prompt-engineering/rag/rag-for-llms.md
+        - RAG 신뢰성: wiki/prompt-engineering/rag/rag-faithfulness.md
+        - RAG 환각 방지: wiki/prompt-engineering/rag/rag-hallucinations.md
+      - 에이전트:
+        - wiki/prompt-engineering/agents/index.md
+        - AI 에이전트 소개: wiki/prompt-engineering/agents/introduction.md
+        - 워크플로우 vs 에이전트: wiki/prompt-engineering/agents/workflows-vs-agents.md
+        - 에이전트 구성요소: wiki/prompt-engineering/agents/components.md
+        - 함수 호출: wiki/prompt-engineering/agents/function-calling.md
+        - 컨텍스트 엔지니어링: wiki/prompt-engineering/agents/context-engineering.md
+        - 심화 에이전트: wiki/prompt-engineering/agents/deep-agents.md
+      - 응용:
+        - wiki/prompt-engineering/applications/index.md
+        - 코드 생성: wiki/prompt-engineering/applications/coding.md
+        - 텍스트 요약: wiki/prompt-engineering/applications/text-summarization.md
+        - 분류: wiki/prompt-engineering/applications/classification.md
+        - 질의응답: wiki/prompt-engineering/applications/question-answering.md
+        - 데이터 생성: wiki/prompt-engineering/applications/generating.md
+        - 창의성: wiki/prompt-engineering/applications/creativity.md
+        - 이미지 생성: wiki/prompt-engineering/applications/image-generation.md
+        - 정보 추출: wiki/prompt-engineering/applications/information-extraction.md
+        - 수학: wiki/prompt-engineering/applications/mathematics.md
+        - 프롬프트 함수: wiki/prompt-engineering/applications/pf.md
+        - 파인튜닝: wiki/prompt-engineering/applications/finetuning-gpt4o.md
+        - 컨텍스트 캐싱: wiki/prompt-engineering/applications/context-caching.md
+        - 합성 RAG: wiki/prompt-engineering/applications/synthetic-rag.md
+        - 직무 분류 사례: wiki/prompt-engineering/applications/workplace-casestudy.md
+      - 평가 & 안전:
+        - wiki/prompt-engineering/evaluation/index.md
+        - 적대적 프롬프팅: wiki/prompt-engineering/evaluation/adversarial-prompting.md
+        - 탈옥 공격: wiki/prompt-engineering/evaluation/adversarial-prompting-jailbreaking-llms.md
+        - 프롬프트 주입: wiki/prompt-engineering/evaluation/adversarial-prompting-prompt-injection.md
+        - 프롬프트 유출: wiki/prompt-engineering/evaluation/adversarial-prompting-prompt-leaking.md
+        - 적대적 공격: wiki/prompt-engineering/evaluation/adversarial.md
+        - 편향: wiki/prompt-engineering/evaluation/biases.md
+        - 사실성: wiki/prompt-engineering/evaluation/factuality.md
+        - 진실성: wiki/prompt-engineering/evaluation/truthfulness.md
+        - 환각 식별: wiki/prompt-engineering/evaluation/truthfulness-identify-hallucination.md
+      - 연구:
+        - wiki/prompt-engineering/research/index.md
+        - Groq LPU: wiki/prompt-engineering/research/groq.md
+        - Infini-Attention: wiki/prompt-engineering/research/infini-attention.md
+        - LLM 토큰화: wiki/prompt-engineering/research/llm-tokenization.md
+        - LLM 리콜: wiki/prompt-engineering/research/llm-recall.md
+        - 합성 데이터: wiki/prompt-engineering/research/synthetic-data.md
+        - LLM 신뢰성: wiki/prompt-engineering/research/trustworthiness-in-llms.md
+
   - 태그 인덱스: tags.md
 
 # 추가 설정
@@ -174,4 +250,4 @@ extra:
   generator: false
   
 # 저작권
-copyright: Copyright &copy; 2025 GenAI Education Project
+copyright: Copyright &copy; 2026 GenAI Education Project
