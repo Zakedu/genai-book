@@ -1,50 +1,525 @@
-# LLM의 토큰화
+# LLM 토크나이제이션
 
-# LLM Tokenization
+## 개요
 
-Andrej Karpathy recently published a new [lecture (opens in a new tab)](https://youtu.be/zduSFxRajkE?si=Hq_93DBE72SQt73V) on large language model (LLM) tokenization. Tokenization is a key part of training LLMs but it's a process that involves training tokenizers using their own datasets and algorithms (e.g., [Byte Pair Encoding (opens in a new tab)](https://en.wikipedia.org/wiki/Byte_pair_encoding)).
+토크나이제이션(Tokenization)은 텍스트를 LLM이 처리할 수 있는 작은 단위인 **토큰(token)**으로 나누는 과정입니다. 이 과정은 매우 기초적이지만, 모델의 성능, 비용, 그리고 언어별 편차에 막대한 영향을 미칩니다.
 
-In the lecture, Karpathy teaches how to implement a GPT tokenizer from scratch. He also discusses weird behaviors that trace back to tokenization.
+2024년 Andrej Karpathy의 연구에서 밝혀진 바와 같이, 많은 LLM의 이상한 행동들이 사실은 **토크나이제이션의 한계**에서 비롯됩니다.
 
-<!-- 이미지: "LLM Tokenization" -->
+## 토크나이제이션이란?
 
-*Figure Source: [https://youtu.be/zduSFxRajkE?t=6711 (opens in a new tab)](https://youtu.be/zduSFxRajkE?t=6711)*
+### 기본 개념
 
-Here is the text version of the list above:
+```
+텍스트 입력:
+"안녕하세요, 오늘 날씨가 어떻습니까?"
 
-* Why can't LLM spell words? Tokenization.
-* Why can't LLM do super simple string processing tasks like reversing a string? Tokenization.
-* Why is LLM worse at non-English languages (e.g. Japanese)? Tokenization.
-* Why is LLM bad at simple arithmetic? Tokenization.
-* Why did GPT-2 have more than necessary trouble coding in Python? Tokenization.
-* Why did my LLM abruptly halt when it sees the string "<endoftext>"? Tokenization.
-* What is this weird warning I get about a "trailing whitespace"? Tokenization.
-* Why the LLM break if I ask it about "SolidGoldMagikarp"? Tokenization.
-* Why should I prefer to use YAML over JSON with LLMs? Tokenization.
-* Why is LLM not actually end-to-end language modeling? Tokenization.
-* What is the real root of suffering? Tokenization.
+↓ 토크나이제이션
 
-To improve the reliability of LLMs, it's important to understand how to prompt these models which will also involve understanding their limitations. While there isn't too much emphasis on tokenizers (beyond the `max_tokens` configuration) at inference time, good prompt engineering involves understanding the constraints and limitations inherent in tokenization similar to how to structure or format your prompt. You could have a scenario where your prompt is underperforming because it's failing to, for instance, understand an acronym or concept that's not properly processed or tokenized. That's a very common problem that a lot of LLM developers and researchers overlook.
+토큰 시퀀스:
+[101, 5650, 11883, 54, 117, 119, ...]
 
-A good tool for tokenization is the [Tiktokenizer (opens in a new tab)](https://tiktokenizer.vercel.app/) and this is what's actually used in the lecture for demonstration purposes.
+↓ LLM 처리
+
+↓ 디토크나이제이션 (역과정)
+
+텍스트 출력:
+"안녕하세요, 오늘은 맑고 날씨가..."
+```
+
+### 토큰의 정의
+
+토큰은:
+- **한 글자보다 큼**: "안" "녕" (글자) → "안녕" (토큰)
+- **한 단어보다 작을 수 있음**: 복잡한 단어는 여러 토큰으로 분해
+- **의미 단위는 아님**: "안녕하세요"가 3-4개 토큰으로 분해 가능
+
+## 주요 토크나이제이션 알고리즘
+
+### 1. 바이트 쌍 인코딩 (BPE - Byte Pair Encoding)
+
+#### 원리
+
+```
+Step 1: 각 문자를 독립적 토큰으로 시작
+"hello" = ['h', 'e', 'l', 'l', 'o']
+
+Step 2: 가장 자주 나타나는 연속 쌍 병합
+('l', 'l')이 자주 나타남
+→ 'l' + 'l' = 'll'
+"hello" = ['h', 'e', 'll', 'o']
+
+Step 3: 반복
+('e', 'll')이 자주 나타남
+→ 'e' + 'll' = 'ell'
+"hello" = ['h', 'ell', 'o']
+
+Step 4: 충분히 반복 (수천 번)
+최종 결과: 상위 단어들은 단일 토큰
+```
+
+#### 특징
+- **빠름**: O(n) 복잡도
+- **효율적**: 자주 나타나는 시퀀스는 하나의 토큰
+- **단순함**: 구현이 간단
+
+#### 사용 사례
+- GPT-2, GPT-3, Claude 초기 버전
+
+### 2. WordPiece (구글)
+
+#### 원리
+
+```
+BPE와 유사하지만:
+- 확률 기반: 단순 빈도가 아닌 가능도(likelihood) 최대화
+- 더 정교한 통계 모델
+
+예: "##ing", "##ed" 같은 서브워드 접미사 명시
+```
+
+#### 특징
+- **정확도**: BPE보다 의미 있는 단위 생성
+- **속도**: BPE보다 약간 느림
+- **멀티언어**: 영어 외 언어 처리 개선
+
+#### 사용 사례
+- BERT, 구글 LLM, Gemini
+
+### 3. SentencePiece
+
+#### 원리
+
+```
+가장 현대적인 방식:
+1. 공백을 특수 토큰(_)으로 인코딩
+2. BPE와 유사하게 병합
+3. 언어 의존성 최소화
+
+예:
+"hello world" → "▁hello▁world" (▁ = 공백)
+→ 토큰화 → ['▁he', 'llo', '▁wo', 'rld']
+```
+
+#### 특징
+- **언어 중립적**: 한국어, 중국어, 일본어에 우수
+- **일관성**: 같은 문자 시퀀스는 항상 같은 토큰
+- **복원**: 토큰 시퀀스 → 정확한 원문 복원 가능
+
+#### 사용 사례
+- T5, PaLM, Llama, Claude 3+
+
+## 토크나이제이션이 LLM 성능에 미치는 영향
+
+### 1. 스펠링과 철자
+
+#### 문제
+```
+LLM이 단어를 철자를 거꾸로 하지 못함
+
+예: "olleh" (hello를 거꾸로)
+→ 독립적인 문자 수준 토큰으로 처리됨
+→ 모델이 이해하기 어려움
+
+이유:
+"hello" = ['hel', 'lo']  (고수준 토큰)
+"olleh" = ['o', 'l', 'l', 'e', 'h']  (저수준 토큰, 학습 희소)
+```
+
+#### 해결책
+```
+프롬프트: "단어를 거꾸로 쓴 후 최종 답변: "
+대신
+프롬프트: "각 글자를 하나씩 처리: O, L, L, E, H"
+```
+
+### 2. 문자열 처리 (Reversing)
+
+#### 실패 예시
+```
+프롬프트: "문자열 '12345'를 역순으로 정렬하세요"
+기대: "54321"
+실제 결과: "12354" (틀림)
+
+이유:
+- 숫자는 각각 독립 토큰: [1, 2, 3, 4, 5]
+- 모델이 단순 역순 처리를 학습하지 못함
+- 단어 수준에서 학습된 "역순" 개념 부재
+```
+
+### 3. 비영어권 언어 처리 악화
+
+```
+영어 vs 한국어 토크나이제이션 비교:
+
+영어:
+문장: "Hello, world"
+토큰: ['Hello', ',', 'world']
+토큰 수: 3개
+
+한국어:
+문장: "안녕하세요, 세계"
+토큰: ['안', '녕', '하', '세', '요', ',', '세', '계']
+또는: ['안녕', '하세', '요', ',', '세', '계']
+토큰 수: 5-8개 (언어마다 다름!)
+
+결과: 같은 의미의 한국어가 2-3배 더 많은 토큰 필요
+→ 비용 2-3배 증가
+```
+
+### 4. 산술 능력 감소
+
+#### 예시
+```
+프롬프트: "17 + 28 = ?"
+정답: 45
+
+문제:
+- "17"은 하나의 토큰 (자주 나타남)
+- "28"은 하나의 토큰 (자주 나타남)
+- 하지만 모든 두 자리 조합을 토큰으로 가질 수 없음
+- 세 자리 수: "123" → ['1', '2', '3'] (분해됨)
+- 모델이 자리수 개념 재학습 필요
+```
+
+#### 결과
+```
+GPT-4 성능:
+- 간단한 산술: 99% 정확도
+- 복잡한 산술 (여러 자리): 70-80% 정확도
+
+이유: 토크나이제이션의 불일치
+```
+
+### 5. Python 코딩 문제
+
+#### 예시
+```
+Python 코드의 특수 문자는 비효율적으로 토크나이제이션:
+
+코드:
+def hello():
+    print("world")
+
+토큰화:
+['def', ' ', 'hello', '(', ')', ':', '\n',
+ '    ', 'print', '(', '"', 'world', '"', ')']
+
+문제:
+- 공백과 특수 문자가 개별 토큰
+- 들여쓰기가 명시적 토큰
+- 토큰 수 증가 (약 1.5-2배)
+
+결과: 모델이 Python보다 영어 더 잘함
+```
+
+## 한국어 토크나이제이션의 특수성
+
+### 한국어의 고유 특징
+
+#### 1. 공백 부재
+
+```
+영어: "I love you" (공백 명확)
+한국어: "나는당신을사랑해" (공백 없음)
+
+결과:
+영어: ['I', 'love', 'you'] (3 토큰)
+한국어: ['나', '는', '당', '신', '을', '사', '랑', '해']
+        또는
+        ['나는', '당신을', '사랑해'] (모델과 토크나이저 의존)
+```
+
+#### 2. 문법 구조 (조사, 어미)
+
+```
+한국어 문장 분석:
+"서울에서 밥을 먹었어요"
+
+단어: ['서울', '에서', '밥', '을', '먹', '었어요']
+토큰화 경우 1: ['서', '울', '에', '서', '밥', '을', '먹', '었', '어', '요'] (10 토큰)
+토큰화 경우 2: ['서울', '에서', '밥', '을', '먹었어요'] (5 토큰)
+
+최적 경우 vs 최악의 경우: 2배 차이
+```
+
+#### 3. 복합어
+
+```
+한국어는 복합어 분해가 애매:
+
+"노트북" = 하나의 단어 vs 복합어?
+- 영어: "notebook" (1 토큰)
+- 한국어: ['노', '트', '북'] vs ['노트북'] (1-3 토큰)
+```
+
+### 한국어 토크나이제이션 비교
+
+| 토크나이저 | 모델 | 토큰 수 (한국어) | 효율성 | 비용 |
+|-----------|------|-----------------|--------|------|
+| BPE | GPT-2 | 약 1.5-2배 | 낮음 | 높음 |
+| WordPiece | BERT | 약 1.2-1.5배 | 중간 | 중간 |
+| SentencePiece | Llama, Claude | 약 1.0-1.3배 | 높음 | 낮음 |
+
+### 한국어 예제 비교
+
+!!! example "한국어 문장 토크나이제이션 비교"
+
+    ```
+    원본 문장:
+    "한국은행이 금리를 인상했다"
+
+    SentencePiece (Claude, Llama):
+    ['▁한국', '은행', '이', '▁금', '리', '를', '▁인상', '했다']
+    토큰 수: 8
+
+    WordPiece (BERT, Gemini 초기):
+    ['한국', '##은행', '##이', '금', '##리', '##를', '인상', '##했다']
+    토큰 수: 8
+
+    BPE (GPT-2 수준):
+    ['한', '국', '은', '행', '이', '금', '리', '를', '인', '상', '했', '다']
+    토큰 수: 12
+
+    비용 비교 (₩0.1 / 1K 토큰 기준):
+    - SentencePiece: ₩0.08 (가장 저렴)
+    - WordPiece: ₩0.08 (동일)
+    - BPE: ₩0.12 (50% 비쌈)
+    ```
+
+## 실무에서의 토크나이제이션 활용
+
+### 1. 토큰 수 추정
+
+!!! tip "💡 실전 팁: 정확한 비용 계산"
+
+    ```python
+    from transformers import AutoTokenizer
+
+    # 한국어 최적 토크나이저 로드
+    tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b")
+
+    # 한국 문서 토크나이제이션
+    text = "한국은행이 기준금리를 인상하기로 결정했다."
+    tokens = tokenizer.tokenize(text)
+    token_count = len(tokens)
+
+    # 비용 계산
+    api_cost_per_1k_tokens = 0.10  # USD
+    total_cost = (token_count / 1000) * api_cost_per_1k_tokens
+
+    print(f"텍스트: {text}")
+    print(f"토큰 수: {token_count}")
+    print(f"예상 비용: ${total_cost:.4f}")
+    ```
+
+### 2. 토커나이저 선택 기준
+
+```
+한국어 프로젝트에서:
+
+✅ SentencePiece 사용:
+- Claude 3+, Llama 2+
+- 가장 효율적
+- 한국어 처리 최적화
+
+✅ WordPiece 사용:
+- BERT 기반 분류 모델
+- 한국어 성능 양호
+
+❌ BPE 피하기:
+- 한국어에 비효율적
+- 비용 30-50% 증가
+- GPT-2 수준의 구형 토크나이저
+```
+
+### 3. 프롬프트 최적화 (토크나이제이션 고려)
+
+#### 비효율적 프롬프트
+
+```python
+# 나쁜 예: 토큰 낭비
+prompt = """
+안녕하세요, 저는 여러분께 한국 경제에 대해 물어보고 싶습니다.
+특히, 한국의 반도체 산업이 앞으로 어떻게 될지 궁금합니다.
+도와주세요.
+"""
+
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b")
+token_count = len(tokenizer.tokenize(prompt))
+print(f"토큰 수: {token_count}")  # ~50-60 토큰 (낭비 많음)
+```
+
+#### 효율적인 프롬프트
+
+```python
+# 좋은 예: 토큰 효율화
+prompt = """한국 반도체 산업의 미래 전망을 분석하세요."""
+
+token_count = len(tokenizer.tokenize(prompt))
+print(f"토큰 수: {token_count}")  # ~15-20 토큰 (효율적)
+
+# 같은 작업, 토큰 50% 절감 → 비용 50% 절감
+```
+
+## Karpathy가 지적한 토크나이제이션 문제들
+
+### LLM이 못하는 것들과 원인
+
+!!! warning "⚠️ 토크나이제이션이 원인인 LLM 한계"
+
+    | 문제 | 원인 | 해결책 |
+    |------|------|--------|
+    | 단어 철자 완전 역순 불가 | 철자는 저수준 토큰으로 처리 | 문제 재구성 필요 |
+    | 간단한 문자 처리 실패 | 문자열 조작은 언어 모델 범위 밖 | 코드 실행 활용 |
+    | 비영어 성능 저하 | 언어별 토크나이제이션 비효율 | 더 나은 모델 선택 |
+    | 산술 약함 | 숫자는 일관되지 않게 토크나이제이션 | Groq + 수학 도구 사용 |
+    | Python 코딩 약함 | 공백, 특수문자 비효율 | 전문 코딩 모델 사용 |
+
+## 토크나이제이션 관련 신기한 발견들
+
+### 1. SolidGoldMagikarp 사건
+
+```
+프롬프트: "SolidGoldMagikarp"
+
+예상: 일반 텍스트처럼 처리
+실제: 모델이 이상하게 작동, 때로 무한 루프
+
+원인:
+"SolidGoldMagikarp"이 특수한 토큰으로 인코딩됨
+→ 이 토큰은 학습 데이터에서 매우 드물거나 특수한 용도
+→ 모델이 혼동
+
+해결: 토크나이저 버전 업데이트
+```
+
+### 2. 공백 문제 (Trailing Whitespace)
+
+```
+프롬프트: "hello " (끝에 공백)
+vs
+프롬프트: "hello" (공백 없음)
+
+토큰화:
+"hello " → ['hello', '▁'] (2 토큰)
+"hello" → ['hello'] (1 토큰)
+
+영향:
+같은 단어인데 공백 유무로 모델 동작 달라짐
+```
+
+### 3. YAML vs JSON 선호
+
+```
+JSON:
+{"name": "홍길동", "age": 30}
+→ 특수 문자 많음 → 더 많은 토큰
+
+YAML:
+name: 홍길동
+age: 30
+→ 더 적은 특수 문자 → 적은 토큰
+
+결과: YAML이 10-20% 효율적
+→ Groq 같은 비용 기반 API에서는 ₩ 절감 가능
+```
+
+## 토크나이제이션 도구
+
+### 온라인 도구
+
+!!! info "토크나이제이션 확인 도구"
+
+    1. **Tiktokenizer** (OpenAI)
+       - URL: https://tiktokenizer.vercel.app/
+       - 특징: Claude, GPT 모델 토크나이제이션 시각화
+       - 추천: 가장 직관적
+
+    2. **Hugging Face Tokenizers**
+       - 다양한 모델의 토크나이저 비교
+       - 토큰 수 추정 가능
+
+### 프로그래밍
+
+```python
+# 토크나이제이션 실습
+
+from transformers import AutoTokenizer
+
+# 여러 토크나이저로 비교
+models = [
+    "meta-llama/Llama-2-7b",        # SentencePiece
+    "gpt2",                         # BPE
+    "bert-base-korean-cased",       # WordPiece
+]
+
+text = "한국은행의 기준금리 인상이 경제에 미치는 영향"
+
+for model in models:
+    tokenizer = AutoTokenizer.from_pretrained(model)
+    tokens = tokenizer.tokenize(text)
+    print(f"{model}: {len(tokens)} 토큰")
+    print(f"  상세: {tokens}\n")
+```
+
+## 성능 최적화 체크리스트
+
+### 비용 최적화
+
+!!! question "토크나이제이션으로 비용을 줄이려면?"
+
+    **선택 단계:**
+    1. ☑️ SentencePiece 토크나이저 사용 (한국어)
+    2. ☑️ 불필요한 공백 제거
+    3. ☑️ 중복 설명 제거 (프롬프트 길이 단축)
+    4. ☑️ JSON 대신 YAML 사용 고려
+    5. ☑️ 토큰 수를 정기적으로 검증
+
+    **예상 절감:**
+    - 언어 최적화: 15-30%
+    - 프롬프트 정리: 10-20%
+    - 포맷 최적화: 5-10%
+    - **총 합계: 20-50% 비용 절감 가능**
+
 ---
 
-## 핵심 개념
+## 📝 핵심 정리
 
-- LLM의 토큰화의 정의 및 기본 원리
-- LLM 프롬프팅에서의 실무 활용 방식
-- 성공적인 구현을 위한 핵심 요소
-- 일반적인 실패 사례 및 해결 방법
-- 성능 평가 및 최적화 전략
+### 핵심 개념
+- **토크나이제이션**: 텍스트를 LLM이 처리 가능한 토큰으로 분해
+- **BPE**: 빠르지만 비효율적 (특히 한국어)
+- **SentencePiece**: 현대적, 언어 중립적, 가장 효율적
+- **토큰 비용**: 입출력 비용 계산의 기초
 
-## 왜 중요한가
+### 한국어 특수성
+- 공백 부재로 토크나이제이션 복잡
+- 조사/어미의 분해 (토크나이저 의존)
+- 영어 대비 10-30% 더 많은 토큰
+- SentencePiece 사용 시 최적화 가능
 
-현대의 대규모 언어 모델(LLM)을 효과적으로 활용하기 위해서는 프롬프팅 기법에 대한 깊이 있는 이해가 필수적입니다. 이 섹션에서 다루는 내용들은 실무에서 마주치는 다양한 문제들을 해결하고, LLM의 능력을 최대한 활용하는 방법을 제시합니다.
+### 실무 영향
+- **비용**: 토크나이저 선택으로 20-50% 절감
+- **성능**: 토크나이제이션 이해로 프롬프트 개선
+- **언어**: 각 언어별 특성에 맞는 모델 선택
 
-## 시험 포인트
+### Karpathy의 핵심 통찰
+- LLM의 많은 "이상한 행동"은 토크나이제이션 때문
+- 철자, 문자 처리, 비영어 언어, 산술, Python 코딩이 약한 이유 모두 토크나이제이션과 연관
+- 토크나이제이션 이해 = LLM 한계 이해
 
-- 개념 간 관계 및 차이점 파악
-- 실제 구현 과정에서의 주의사항
-- 예상 가능한 오류 모드 (failure modes)
-- 프로덕션 환경에서의 제약사항
-- 성능 최적화 및 비용 고려사항
+### 선택 기준
+**SentencePiece (Claude, Llama):** 한국어 + 다국어 프로젝트
+**WordPiece (BERT):** 분류/요약 작업
+**BPE 피하기:** 비효율적
+
+### 최적화 전략
+1. 올바른 토크나이저 선택
+2. 프롬프트 길이 최소화
+3. 불필요한 특수문자 제거
+4. 정기적인 토큰 수 모니터링
+5. 포맷 최적화 (YAML > JSON)
+
+---
+
+**Last Updated**: 2026년 2월 | **Reference**: Andrej Karpathy LLM Tokenization Lecture (2024)

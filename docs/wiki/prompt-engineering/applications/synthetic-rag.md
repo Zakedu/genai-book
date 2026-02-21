@@ -1,33 +1,244 @@
-# RAG를 위한 합성 데이터셋 생성
+# RAG 시스템을 위한 합성 데이터 생성
 
-# Generating Synthetic Dataset for RAG
-
-
-
-## Synthetic Data for RAG Setup
-
-Unfortunately, in the life of a Machine Learning Engineer, there's often a lack of labeled data or very little of it. Typically, upon realizing this, projects embark on a lengthy process of data collection and labeling. Only after a couple of months can one start developing a solution.
-
-However, with the advent of LLM, the paradigm shifted in some products: now one can rely on LLM’s generalization ability and test an idea or develop an AI-powered feature almost immediately. If it turns out to work (almost) as intended, then the traditional development process can begin.
-
-<!-- 이미지: Paradigm shift in AI-powered products. -->
-
-Image Source: [The Rise of the AI Engineer, by S. Wang (opens in a new tab)](https://www.latent.space/p/ai-engineer)
-
-One of the emerging approaches is [Retrieval Augmented Generation (RAG) (opens in a new tab)](https://www.promptingguide.ai/techniques/rag). It's used for knowledge-intensive tasks where you can't solely rely on the model's knowledge. RAG combines an information retrieval component with a text generator model. To learn more about this approach, refer to [the relevant section in the guide (opens in a new tab)](https://www.promptingguide.ai/techniques/rag).
-
-The key component of RAG is a Retrieval model that identifies relevant documents and passes them to LLM for further processing. The better the performance of the Retrieval model, the better the product or feature outcome. Ideally, Retrieval works well right out of the box. However, its performance often drops in different languages or specific domains.
----
+Retrieval-Augmented Generation (RAG) 시스템의 성능을 평가하고 개선하려면 질문-답변 쌍으로 이루어진 평가 데이터셋이 필수입니다. LLM을 이용하여 이러한 데이터를 자동 생성할 수 있습니다.
 
 ## 핵심 개념
 
-- RAG를 위한 합성 데이터셋 생성의 정의 및 기본 원리
-- LLM 프롬프팅에서의 실무 활용 방식
-- 성공적인 구현을 위한 핵심 요소
-- 일반적인 실패 사례 및 해결 방법
-- 성능 평가 및 최적화 전략
+### 1. RAG와 합성 데이터의 관계
 
-## 왜 중요한가
+**RAG의 구조**:
+```
+질문 입력
+  ↓
+문서 검색 (Retrieval)
+  ↓
+관련 문서 추출
+  ↓
+LLM에게 문서 + 질문 전달
+  ↓
+최종 답변 생성
+```
+
+**합성 데이터의 역할**:
+- 검색 모델 평가
+- 생성 모델 평가
+- 시스템 전체 성능 평가
+- 도메인 특화 데이터 부재 시 프로토타입 개발
+
+### 2. 합성 QA 데이터의 구조
+
+```json
+{
+  "question": "한국의 수도는?",
+  "expected_answer": "서울",
+  "context": "한국은 동아시아에 위치한 국가이며, 수도인 서울은 한강의 양쪽에 위치하고 있다.",
+  "difficulty": "easy"
+}
+```
+
+## 실무 활용 예제
+
+### 예제 1: 기술 문서 기반 QA 생성
+
+#### 상황
+사내 기술 문서를 기반으로 RAG 시스템을 구축해야 합니다.
+평가 데이터셋이 부족하므로 자동 생성합니다.
+
+#### 프롬프트
+
+```
+당신은 기술 문서 전문가입니다.
+
+다음 기술 문서를 기반으로 질문-답변 쌍 50개를 생성해주세요.
+
+【기술 문서】
+---
+[API 문서, 제품 가이드 등을 여기에 붙여넣기]
+---
+
+【생성 요구사항】
+
+1. 질문 다양성:
+   - 개념 질문 (20%): "이게 뭔가요?"
+   - 사용 방법 (40%): "어떻게 사용하나요?"
+   - 문제 해결 (30%): "에러가 나요"
+   - 고급 활용 (10%): "더 효율적인 방법은?"
+
+2. 난이도:
+   - 초급: 문서에 명확히 나온 내용
+   - 중급: 여러 섹션을 조합해야 이해 가능
+   - 고급: 암시적 지식 필요
+
+3. 형식:
+   ```json
+   [
+     {
+       "question": "질문",
+       "expected_answer": "예상 답변",
+       "source_section": "문서의 어느 섹션에서 나온 정보인지",
+       "difficulty": "easy/medium/hard"
+     }
+   ]
+   ```
+
+생성해주세요.
+```
+
+#### 예상 결과 (부분)
+
+```json
+[
+  {
+    "question": "API 인증 토큰은 어떻게 발급받나요?",
+    "expected_answer": "관리자 대시보드에서 ‘설정’ → ‘API’ → ‘새 토큰 생성’을 클릭하면 됩니다. 토큰은 프로필과 연결되며, 보안을 위해 정기적으로 재발급하는 것이 좋습니다.",
+    "source_section": "Section 3: API Authentication",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Rate limiting을 피하려면?",
+    "expected_answer": "API 문서의 ‘요청 제한’과 ‘배치 처리’ 섹션을 참고하면, 초당 요청 수를 100으로 제한하고, 배치 API를 사용하여 여러 요청을 한 번에 처리할 수 있습니다. 또한 Exponential backoff를 구현하여 오류 발생 시 재시도 시간을 점진적으로 증가시키는 것이 좋습니다.",
+    "source_section": "Section 5: Rate Limiting & Section 6: Batch Processing",
+    "difficulty": "hard"
+  }
+]
+```
+
+### 예제 2: 다중 언어 QA 생성
+
+#### 프롬프트
+
+```
+당신은 다국어 콘텐츠 전문가입니다.
+
+다음 한글 문서를 기반으로 질문-답변을 생성한 후,
+영어와 중국어로도 번역해주세요.
+
+【요구사항】
+- 한국어 QA 30개
+- 각각을 영어로 번역
+- 각각을 중국어(간체)로 번역
+
+형식:
+```json
+{
+  "id": "qa_001",
+  "languages": {
+    "ko": {
+      "question": "...",
+      "answer": "..."
+    },
+    "en": {
+      "question": "...",
+      "answer": "..."
+    },
+    "zh": {
+      "question": "...",
+      "answer": "..."
+    }
+  },
+  "difficulty": "easy"
+}
+```
+
+생성해주세요.
+```
+
+### 예제 3: 평가 데이터셋 생성
+
+#### 프롬프트
+
+```
+당신은 RAG 시스템 평가 전문가입니다.
+
+주어진 문서 컬렉션에 대한 평가 데이터셋을 생성해주세요.
+
+【문서 컬렉션】
+- 100개의 기술 문서 (총 50,000 토큰)
+- 주제: SaaS 제품 설명서
+
+【평가 데이터셋 구성】
+
+1. 쉬운 질문 (30개): 한 문서에서 직접 답 가능
+2. 중간 난이도 (40개): 2-3개 문서 조합 필요
+3. 어려운 질문 (20개): 암시적 이해 필요
+4. Negative 샘플 (10개): 문서에 답이 없는 질문
+
+【각 샘플 구성】
+```json
+{
+  "question": "...",
+  "gold_documents": [문서 ID 목록],
+  "expected_answer": "...",
+  "type": "single_doc/multi_doc/implicit/negative",
+  "difficulty": "easy/medium/hard"
+}
+```
+
+총 100개 생성해주세요.
+```
+
+## 💡 합성 데이터 생성 팁
+
+!!! tip "고품질 합성 데이터 생성"
+
+    1. **문서 이해**
+       - 문서의 모든 섹션 읽기
+       - 주요 개념, 엣지 케이스 파악
+       - 도메인 용어 학습
+
+    2. **다양성 보장**
+       - 질문 유형 분산
+       - 난이도 균형
+       - 주제별 균형
+
+    3. **정확도 검증**
+       - 생성된 Q&A를 원본 문서와 비교
+       - 답변이 문서 내용과 일치하는지 확인
+       - 거짓 정보 제거
+
+    4. **평가 데이터 구성**
+       - 쉬운 질문: RAG 기본 성능 측정
+       - 어려운 질문: 고급 기능 평가
+       - Negative: 거짓 긍정 탐지
+
+!!! tip "비용 최적화"
+
+    ```
+    100개 Q&A 생성 비용:
+    - Claude 3.5 Sonnet: $0.30-$0.50
+    - GPT-4: $0.50-$1.00
+
+    = 매우 저렴! (주로 출력 비용)
+    ```
+
+## RAG 평가 지표
+
+```
+Retrieval 평가:
+- Hit Rate: 관련 문서가 상위 K개에 포함될 비율
+- MRR (Mean Reciprocal Rank): 첫 관련 문서의 평균 순위
+
+Generation 평가:
+- BLEU Score: 문 생성 유사도
+- ROUGE Score: 요약 품질
+- Semantic Similarity: 의미적 유사도
+
+전체 시스템:
+- Exact Match: 정답과 정확히 일치
+- F1 Score: 정밀도와 재현율의 조화평균
+```
+
+## 📝 핵심 정리
+
+| 항목 | 내용 |
+|------|------|
+| **목적** | RAG 시스템 평가 데이터셋 자동 생성 |
+| **데이터셋 규모** | 최소 50개, 권장 500개 이상 |
+| **생성 비용** | 매우 저렴 ($0.30-$1.00/100개) |
+| **시간** | 매우 빠름 (분 단위) |
+| **구성** | 쉬움 40%, 중간 40%, 어려움 20% |
+| **검증** | 원본 문서 기반 수동 확인 필수 |
+| **활용** | 검색 모델 평가, 생성 모델 평가, 시스템 최적화 |
 
 현대의 대규모 언어 모델(LLM)을 효과적으로 활용하기 위해서는 프롬프팅 기법에 대한 깊이 있는 이해가 필수적입니다. 이 섹션에서 다루는 내용들은 실무에서 마주치는 다양한 문제들을 해결하고, LLM의 능력을 최대한 활용하는 방법을 제시합니다.
 

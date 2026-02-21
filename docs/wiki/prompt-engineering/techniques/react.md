@@ -1,122 +1,304 @@
-# ReAct 프롬프팅(ReAct Prompting)
+# ReAct Framework
 
-## 개요
+## 개념
 
-ReAct는 "추론(Reasoning) + 행동(Action)"의 약자로, LLM이 복잡한 작업을 단계별로 해결하도록 장려하는 기법입니다. 이는 추론(생각 과정)과 행동(도구 사용, 검색, 계산 등)을 번갈아 가면서 진행합니다.
+ReAct(Reasoning + Acting)는 Yao et al. (2022)가 제안한 프레임워크로, **추론(Reasoning)과 행동(Acting)을 번갈아 가며 수행하여 외부 도구와 정보를 활용하면서 복잡한 문제를 해결**하는 방식입니다.
 
-## 핵심 개념
+## 기본 아이디어
 
-ReAct는 다음과 같은 단계를 반복합니다:
+### 전통적인 접근의 한계
 
-1. **생각(Think)**: 현재 상황을 분석하고 다음 단계를 계획
-2. **행동(Act)**: 실제 작업(도구 호출, 검색 등) 수행
-3. **관찰(Observe)**: 행동의 결과 확인
-4. **반복**: 목표에 도달할 때까지 반복
+Chain-of-Thought는 **사고만 하고 행동하지 않습니다**:
+- 내부 지식에만 의존
+- 실시간 정보 활용 불가
+- 계산 오류 발생 가능
+- 최신 정보 부재
 
-## ReAct 프롬프팅의 예시
+### ReAct의 혁신
 
-### 웹 검색이 필요한 질문
-
-**프롬프트:**
 ```
-Question: What is the latest news about artificial intelligence?
-
-Thought: I need to search for the latest news about artificial intelligence.
-Action: Search "latest news artificial intelligence 2024"
-Observation: [Search results about recent AI developments]
-
-Thought: Based on the search results, I can now provide a comprehensive answer.
-Action: Compile and summarize the findings
-Observation: [Summary of recent AI news]
-
-Answer: Based on the latest information, the key developments in AI include...
+전통적 CoT:     생각 → 생각 → 생각 → 답변
+ReAct 방식:     생각 → 행동 → 관찰 → 생각 → 행동 → ...
 ```
 
-### 계산이 필요한 문제
+## Yao et al. (2022) 프레임워크
 
-**프롬프트:**
+### 핵심 루프
+
 ```
-Question: If I buy 5 items at $15 each and get a 20% discount, how much will I spend?
+1. Thought (생각)
+   현재 상태 분석, 다음 행동 결정
 
-Thought: I need to calculate the total cost with discount.
-Action: Calculate total before discount = 5 × $15
-Observation: $75
+2. Action (행동)
+   외부 도구나 정보 소스에 접근
+   - 웹 검색
+   - 계산기 사용
+   - 데이터베이스 조회
+   - API 호출
 
-Thought: Now I need to apply the 20% discount.
-Action: Calculate discount = $75 × 0.20
-Observation: $15
+3. Observation (관찰)
+   행동의 결과 수집
 
-Thought: Now calculate the final amount.
-Action: Final amount = $75 - $15
-Observation: $60
-
-Answer: You will spend $60.
+4. 다시 반복
+   새로운 정보를 바탕으로 다음 행동 결정
 ```
 
-## ReAct의 장점
+### 루프 다이어그램
 
-1. **투명성**: 모델의 추론 과정이 명확함
-2. **정확성**: 각 단계에서 외부 도구를 사용할 수 있어 정확도 향상
-3. **복잡성 처리**: 다단계 작업을 체계적으로 해결
-4. **오류 수정**: 각 단계에서 오류를 감지하고 수정 가능
-5. **확장성**: 새로운 도구를 쉽게 추가할 수 있음
+```
+┌─────────────────────────────────┐
+│   Thought: 현재 상태 분석        │
+└────────────┬────────────────────┘
+             ↓
+┌─────────────────────────────────┐
+│   Action: 도구 사용/정보 검색    │
+└────────────┬────────────────────┘
+             ↓
+┌─────────────────────────────────┐
+│   Observation: 결과 수집         │
+└────────────┬────────────────────┘
+             ↓
+       (조건 확인)
+        ↙       ↘
+    완료됨      아직 불완전
+       ↓         ↓
+    답변    Thought로 돌아가기
+```
 
-## ReAct의 실무 활용
+## 지식 집약적 작업 vs 의사결정 작업
 
-### 에이전트 시스템에서의 활용
+### 지식 집약적 작업 (Knowledge-Intensive Tasks)
 
-ReAct는 AI 에이전트 시스템에서 매우 효과적입니다:
+외부 정보가 필수적인 작업:
 
-- **질의응답**: 웹에서 정보를 검색하며 답변 생성
-- **작업 계획**: 목표를 달성하기 위한 단계별 계획 수립
-- **문제 해결**: 복잡한 문제를 체계적으로 분석
-- **데이터 분석**: 데이터베이스 쿼리 및 분석 수행
+**예제 1: 최신 뉴스 요약**
 
-### 도구와의 통합
+```
+Thought: 2026년 2월의 최신 기술 뉴스를 찾아야 한다.
+Action: search("2026년 2월 기술 뉴스")
+Observation: [검색 결과 10개 반환]
+Thought: 가장 관련성 있는 3개 기사를 자세히 본다.
+Action: fetch_article("기사1 URL")
+Observation: [기사 내용]
+Action: fetch_article("기사2 URL")
+Observation: [기사 내용]
+...
+Thought: 수집한 정보를 종합하여 요약한다.
+```
 
-ReAct는 다양한 외부 도구와 통합될 수 있습니다:
+**예제 2: 제품 가격 비교**
 
-- 검색 엔진 (Google, Bing 등)
-- 계산 도구
-- 데이터베이스
-- API 호출
-- 프로그래밍 실행 환경
+```
+Thought: 노트북 가격을 비교해야 한다.
+Action: search_price("삼성 노트북 2026")
+Observation: A쇼핑몰 150만원, B쇼핑몰 145만원...
+Thought: 배송료와 AS를 포함한 전체 비용을 계산해야 한다.
+Action: get_details("B쇼핑몰 배송료")
+Observation: 배송료 5000원 무료 배송 조건 100만원 이상
+...
+```
 
-## ReAct와 다른 기법의 비교
+### 의사결정 작업 (Decision-Making Tasks)
 
-| 기법 | 특징 | 적합한 작업 |
-|-----|------|----------|
-| CoT | 추론 단계만 | 순수 추론 문제 |
-| ReAct | 추론 + 행동 | 도구 필요한 작업 |
-| 퓨샷 | 예시 기반 | 패턴 학습 |
-| 에이전트 | 자율적 의사결정 | 복잡한 다단계 작업 |
+올바른 판단과 분석이 필수적인 작업:
 
-## 구현 시 주의사항
+**예제: 투자 의사결정**
 
-1. **도구 가용성**: 필요한 도구가 실제로 사용 가능해야 함
-2. **오류 처리**: 도구 호출 실패 시 대체 방안 필요
-3. **비용**: 여러 단계의 처리로 인한 비용 증가
-4. **속도**: 각 단계마다 모델 호출이 필요해 속도 저하 가능
+```
+Thought: 회사 A에 투자할지 판단해야 한다.
+Action: analyze_financials("Company A 2025 earnings")
+Observation: 수익 증가율 15%, 부채 비율 45%
+Thought: 경쟁사와 비교 분석이 필요하다.
+Action: analyze_competitors("동일 업종 회사들 2025")
+Observation: 산업 평균 수익 증가율 10%
+Thought: 위험 요소를 평가한다.
+Action: assess_risks("Company A 시장 위험")
+Observation: 시장 변동성, 규제 위험 등...
+Thought: 종합 분석 결과를 토대로 판단한다.
+```
 
----
+## 실전 예제
 
-## 핵심 개념
+### 1. 한국 정보 검색 + 추론
 
-- 추론과 행동의 결합: 생각하고 행동하는 반복 프로세스
-- 도구 사용: 외부 도구를 통한 능력 확장
-- 단계별 실행: 복잡한 작업을 작은 단계로 분해
-- 피드백 루프: 각 단계의 결과를 다음 단계에 반영
-- 투명성: 모든 추론 과정이 명시적으로 표현됨
+```
+프롬프트:
+당신은 한국 관광 정보 시스템입니다.
+다음 질문을 ReAct 방식으로 해결하세요.
 
-## 왜 중요한가
+질문: 서울에서 볼 수 있는 벚꽃 명소는 어디이고, 
+2026년 예상 만개 시기는 언제입니까?
 
-ReAct는 LLM의 능력을 외부 도구와 결합하여, 순수 언어 모델만으로는 불가능한 작업을 수행 가능하게 합니다. 이는 실제 응용에서 매우 중요한 패러다임이며, 현대적 AI 에이전트 시스템의 기초가 됩니다.
+Thought: 서울의 벚꽃 명소와 2026년 개화 예측을 찾아야 한다.
 
-## 시험 포인트
+Action: search_korean_database("서울 벚꽃 명소")
+Observation: 여의도 공원, 남산, 덕수궁, 한강공원 등이 주요 명소
 
-- ReAct의 기본 사이클 이해
-- 도구 호출의 적절한 시기
-- 사고의 연쇄와의 차이점
-- 에이전트 시스템에서의 역할
-- 오류 처리 전략
-- 실제 구현의 복잡성
+Action: search("2026년 서울 벚꽃 개화 예측")
+Observation: 기상청 예측에 따르면 2026년 서울 벚꽃 개화는 
+3월 28일~4월 5일 예상
+
+Thought: 각 명소의 특징과 함께 정보를 정리한다.
+
+최종 답변:
+1. 여의도 공원: 도시 공원 중 가장 많은 벚꽃
+2. 남산: 서울 시내를 배경으로 한 벚꽃
+3. 덕수궁: 전통 궁궐 배경의 벚꽃
+예상 개화: 2026년 3월 28일~4월 5일
+```
+
+### 2. 다단계 문제 해결
+
+```
+프롬프트:
+당신은 수학 튜터입니다.
+다음 문제를 ReAct 방식으로 풀어주세요.
+
+문제: 서울에서 대구까지 기차 요금은 어떻게 되고,
+편도 요금으로 왕복할 경우 총 비용은?
+
+Thought: 현재 서울-대구 기차 요금을 찾아야 한다.
+
+Action: search("KTX 서울 대구 요금 2026년")
+Observation: KTX 일반석 58,000원
+
+Thought: 이제 왕복 비용을 계산한다.
+
+Action: calculate(58000 * 2)
+Observation: 116,000원
+
+Thought: 혹시 할인 정보가 있는지 확인해보자.
+
+Action: search("KTX 왕복 할인 2026년")
+Observation: 왕복 구매 시 5% 할인 가능
+
+Thought: 할인을 적용한 최종 가격을 계산한다.
+
+Action: calculate(58000 * 2 * 0.95)
+Observation: 110,200원
+
+최종 답변: 왕복 기차 요금은 일반 가격 116,000원이며,
+5% 할인 적용 시 110,200원입니다.
+```
+
+### 3. 한국 음식 관련 정보 검색
+
+```
+프롬프트:
+당신은 한국 음식 전문가입니다.
+다음을 ReAct 방식으로 해결하세요.
+
+질문: 전주 비빔밥의 특징은 무엇이고, 
+정통 레시피의 주요 재료는 무엇입니까?
+
+Thought: 전주 비빔밥의 특징과 레시피를 찾아야 한다.
+
+Action: search_korean_food("전주 비빔밥 특징")
+Observation: 전주 비빔밥은 산채를 많이 사용하고 
+고추장양념이 특징
+
+Action: search_recipe("전주 비빔밥 정통 레시피")
+Observation: 주요 재료는 소고기, 계란, 고추장, 
+도라지, 숙주, 고구마, 버섯 등
+
+최종 답변:
+특징: 산채의 신선함과 맛, 진한 고추장 양념
+주요 재료: 소고기, 달걀, 도라지, 숙주, 고구마, 
+표고버섯, 고추장, 참기름
+```
+
+## 외부 도구와의 통합
+
+### 활용 가능한 도구
+
+```
+도구 종류                 예제
+─────────────────────────────────
+검색 엔진              Google Search
+정보 시스템            Wikipedia API
+계산기                 Calculator
+데이터베이스           SQL Database
+웹 스크래핑            BeautifulSoup
+API 호출               Weather API, Stock API
+코드 실행              Python REPL
+```
+
+### 도구 통합 예제
+
+```python
+def react_agent(question):
+    thought = analyze_question(question)
+    
+    while not is_complete(thought):
+        action = decide_action(thought)
+        
+        if action['type'] == 'search':
+            observation = search(action['query'])
+        elif action['type'] == 'calculate':
+            observation = calculate(action['expression'])
+        elif action['type'] == 'fetch':
+            observation = fetch_url(action['url'])
+        else:
+            observation = execute_tool(action)
+        
+        thought = update_thought(thought, observation)
+    
+    return generate_answer(thought)
+```
+
+## CoT와 ReAct 비교
+
+| 특성 | Chain-of-Thought | ReAct |
+|------|-----------------|-------|
+| 추론만 사용 | 예 | 아니오 |
+| 외부 도구 | 불가 | 가능 |
+| 최신 정보 | 제한적 | 가능 |
+| 복잡한 작업 | 약함 | 우수 |
+| 계산 정확도 | 낮음 | 높음 |
+| 구현 복잡도 | 낮음 | 높음 |
+| 반복 가능성 | 제한적 | 높음 |
+
+## 💡 실전 팁
+
+!!! tip "효과적인 ReAct 프롬프트"
+    1. **명확한 루프 구조**: Thought → Action → Observation 반복 명시
+    2. **도구 명시**: 사용 가능한 도구 목록 제공
+    3. **종료 조건**: "충분한 정보를 수집했을 때 답변하세요" 명시
+    4. **형식 일관성**: 매번 같은 형식 사용
+    5. **관찰 통합**: 각 관찰을 다음 생각에 명시적으로 반영
+
+!!! example "ReAct 프롬프트 템플릿"
+    ```
+    당신은 [역할]입니다.
+    다음 도구를 사용할 수 있습니다:
+    - search(query): 정보 검색
+    - calculate(expr): 계산
+    - fetch(url): 웹 페이지 조회
+    
+    질문: [질문]
+    
+    Thought: [현재 상태 분석]
+    Action: [도구 선택]
+    Observation: [결과]
+    Thought: [다음 단계 결정]
+    ... (반복)
+    
+    최종 답변: [결론]
+    ```
+
+!!! warning "주의사항"
+    - 무한 루프 방지: 최대 반복 횟수 정하기
+    - 도구 오류: 검색 실패 등 예외 처리
+    - 정보 신뢰성: 여러 소스에서 검증
+    - 토큰 소비: ReAct는 많은 토큰 사용
+
+## 📝 핵심 정리
+
+- ReAct는 추론과 행동을 번갈아 수행하는 프레임워크
+- Yao et al. (2022)가 제안하여 복잡한 작업에서 성능 향상 입증
+- Thought → Action → Observation의 반복 루프
+- 외부 도구와 정보를 활용하여 더 정확하고 신뢰할 수 있는 답변 제공
+- 지식 집약적 작업과 의사결정 작업 모두에 효과적
+- 웹 검색, 계산, 데이터베이스 조회 등 다양한 도구 통합 가능
+- CoT보다 복잡하지만 더 강력한 결과 제공
+- 대규모 프로젝트와 실전 응용 프로그램에 적극 권장

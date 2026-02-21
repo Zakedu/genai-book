@@ -1,13 +1,120 @@
-# 평가 및 위험 (Evaluation & Risk)
+# 평가 및 보안
 
-LLM의 성능 평가, 약점 분석, 보안 및 신뢰성 관련 주제를 다룹니다. 이 섹션은 LLM을 프로덕션 환경에 배포하기 전에 반드시 고려해야 할 평가 기준과 위험 요소들을 설명합니다.
+생성형 AI 모델의 품질, 신뢰성, 보안을 평가하고 개선하는 방법을 다룹니다. 이 섹션에서는 2026년 최신 기술과 한국 실무 사례를 중심으로 학습합니다.
 
-- [Adversarial Prompting in LLMs](adversarial-prompting.md)
-- [Jailbreaking LLMs](adversarial-prompting-jailbreaking-llms.md)
-- [Prompt Injection in LLMs](adversarial-prompting-prompt-injection.md)
-- [Prompt Leaking in LLMs](adversarial-prompting-prompt-leaking.md)
-- [Truthfulness in LLMs](truthfulness.md)
-- [Identify Hallucination in LLM Responses](truthfulness-identify-hallucination.md)
-- [Adversarial Prompting in LLMs](adversarial.md)
-- [Biases](biases.md)
-- [Factuality](factuality.md)
+## 섹션 개요
+
+### 주요 학습 영역
+
+#### 1. 적대적 프롬프팅 (Adversarial Prompting)
+- **프롬프트 주입 (Prompt Injection)**: 악의적인 입력으로 모델 동작 변조
+- **Jailbreaking**: 안전 가이드라인 우회 시도
+- **프롬프트 유출 (Prompt Leaking)**: 숨겨진 시스템 프롬프트 추출
+- **적대적 공격**: 모델의 취약점을 노리는 다양한 공격 기법
+
+#### 2. 편향 및 신뢰성 (Bias & Reliability)
+- **성별, 인종, 문화적 편향**: LLM의 내재된 편향 분석
+- **한국어 고유 편향**: 한국 문화와 언어 특성의 편향
+- **편향 완화 전략**: 공정하고 균형잡힌 응답 유도
+
+#### 3. 사실성 및 진실성 (Factuality & Truthfulness)
+- **환각 탐지 (Hallucination Detection)**: 거짓 정보 생성 감지
+- **사실 검증**: LLM 응답의 정확성 확인 방법
+- **진실성 향상**: 프롬프트 기술로 신뢰도 높이기
+
+## 2026년 주요 모델
+
+```
+GPT-5        → OpenAI의 최신 모델, 멀티모달 강화, 추론 능력 개선
+Claude 4.6   → Anthropic의 최신 모델, 안전성 강화, 긴 문맥 처리
+Gemini 2.5 Pro → Google의 멀티모달 모델, 실시간 데이터 연동
+```
+
+## 학습 로드맵
+
+```
+1단계: 적대적 프롬프팅 이해
+   ├─ 프롬프트 주입 기초
+   ├─ Jailbreaking 유형
+   ├─ 프롬프트 유출 방지
+   └─ 적대적 공격 전략
+
+2단계: 신뢰성 평가
+   ├─ 편향 인식 및 탐지
+   ├─ 사실성 검증
+   ├─ 환각 식별
+   └─ 진실성 측정
+
+3단계: 보안 강화
+   ├─ 방어 메커니즘 구현
+   ├─ Red Teaming 실전
+   ├─ 한국 산업별 보안 고려사항
+   └─ 모니터링 및 로깅
+```
+
+## 한국 비즈니스 맥락
+
+### 규제 환경
+- **개인정보보호법**: 사용자 정보 보호 필수
+- **정보통신망법**: 불법 콘텐츠 차단 의무
+- **AI 윤리 기준**: 국내 기업의 AI 윤리 가이드라인 준수
+
+### 산업별 고려사항
+- **금융**: 정확한 정보, 규정 준수
+- **의료**: 신뢰도 높은 정보, 책임성
+- **교육**: 학습자 보호, 편향 최소화
+- **미디어**: 사실성 확인, 가짜뉴스 방지
+
+## 핵심 개념
+
+!!! info "적대적 프롬프팅"
+    의도적으로 LLM의 안전장치를 우회하거나 취약점을 공략하는 프롬프트 기법
+
+!!! info "환각 (Hallucination)"
+    모델이 거짓이거나 근거 없는 정보를 마치 사실인 것처럼 생성하는 현상
+
+!!! info "편향 (Bias)"
+    특정 집단이나 관점에 대한 부정적인 고정관념이나 차별을 반영하는 모델의 특성
+
+!!! info "진실성 (Truthfulness)"
+    모델의 응답이 실제 사실과 일치하는 정도를 나타내는 지표
+
+## 실습 환경 준비
+
+### 필요한 도구
+- **Claude 4.6** 또는 **GPT-5** API 접근권
+- Python 3.10 이상
+- LangChain, LLamaIndex 등의 프레임워크
+- 평가 메트릭 라이브러리
+
+### 학습 방식
+1. 이론 학습: 각 개념의 배경과 중요성 이해
+2. 실전 예제: 한국어 사례를 통한 실습
+3. 반복 평가: 모델 응답 검증 및 개선
+4. Red Teaming: 보안 취약점 발견
+
+## 리소스 및 참고자료
+
+- [적대적 프롬프팅 개요](adversarial-prompting.md)
+- [Jailbreaking 공격과 방어](adversarial-prompting-jailbreaking-llms.md)
+- [프롬프트 주입 공격](adversarial-prompting-prompt-injection.md)
+- [프롬프트 유출 방지](adversarial-prompting-prompt-leaking.md)
+- [적대적 공격 심화](adversarial.md)
+- [LLM의 편향](biases.md)
+- [사실성 검증](factuality.md)
+- [진실성과 신뢰도](truthfulness.md)
+- [환각 탐지 기법](truthfulness-identify-hallucination.md)
+
+---
+
+## 다음 단계
+
+이 섹션을 통해 다음을 습득할 수 있습니다:
+
+- ✅ 적대적 프롬프팅 공격 방법과 방어 기술
+- ✅ LLM의 편향 이해 및 완화 전략
+- ✅ 사실성 및 진실성 평가 방법
+- ✅ 한국 비즈니스 환경의 보안 고려사항
+- ✅ Red Teaming을 통한 모델 보안 강화
+
+**마지막 업데이트**: 2026년 2월
