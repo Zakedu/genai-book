@@ -54,9 +54,9 @@
 
 | 모델 | 개발사 | 파라미터 수 | 비고 |
 |------|--------|-----------|------|
-| GPT-5 | OpenAI | 비공개[^1] | 2025.02 출시, GPT-4o 후속 |
-| Claude 4.6 | Anthropic | 비공개[^2] | 2026.02 출시, 코딩·에이전트 최강 |
-| Gemini 2.5 Pro | Google | 비공개[^3] | 2025.06 출시, 1M 토큰 컨텍스트 |
+| GPT-5.4 | OpenAI | 비공개[^1] | 2026.03 출시, Thinking/Pro/mini/nano 변형 |
+| Claude 4.6 | Anthropic | 비공개[^2] | 2026.02 출시, 1M 토큰 GA, 코딩·에이전트 최강 |
+| Gemini 3.1 Pro | Google | 비공개[^3] | 2026.03 Preview, 차세대 멀티모달 |
 | Llama 4 | Meta | 비공개 | 2025.04 출시, Scout/Maverick 변형 |
 | DeepSeek-V3.2 | DeepSeek | 비공개 | 오픈소스, 추론 특화 |
 
@@ -231,7 +231,7 @@ LLM은 **인터넷의 방대한 텍스트**를 학습합니다.
 | **음성 생성** | 텍스트 | 음성 | ElevenLabs, VALL-E |
 | **영상 생성** | 텍스트 | 영상 | Sora, Runway |
 | **음악 생성** | 텍스트 | 음악 | Suno, Udio |
-| **멀티모달** | 텍스트+이미지 | 텍스트+이미지 | GPT-5, Claude 4.6, Gemini 2.5 Pro |
+| **멀티모달** | 텍스트+이미지 | 텍스트+이미지 | GPT-5.4, Claude 4.6, Gemini 3.1 Pro |
 
 ### 멀티모달 AI의 등장
 
@@ -285,9 +285,9 @@ LLM은 **인터넷의 방대한 텍스트**를 학습합니다.
 
 ## 참고 자료
 
-[^1]: OpenAI. (2026). *GPT-5 Model Documentation*. https://platform.openai.com/docs/models
+[^1]: OpenAI. (2026). *GPT-5.4 Model Documentation*. https://platform.openai.com/docs/models
 [^2]: Anthropic. (2026). *Claude 4.6 Model Overview*. https://docs.anthropic.com/en/docs/about-claude/models
-[^3]: Google. (2026). *Gemini 2.5 Pro Documentation*. https://ai.google.dev/docs
+[^3]: Google. (2026). *Gemini 3.1 Pro Documentation*. https://ai.google.dev/docs
 [^4]: Thomson Reuters. (2023). *Mata v. Avianca: Lawyers sanctioned for using ChatGPT*.
 ---
 

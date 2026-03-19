@@ -1,6 +1,6 @@
 # 컨텍스트 윈도우 (Context Window)
 
-!!! info "최종 수정일: 2025-01-16"
+!!! info "최종 수정일: 2026-03-19"
 
 **컨텍스트 윈도우(Context Window)**는 AI가 한 번에 처리할 수 있는 토큰의 최대 개수로, AI 활용의 한계와 가능성을 결정짓는 핵심 개념입니다.
 
@@ -53,13 +53,13 @@
 
 ## 주요 모델별 컨텍스트 윈도우
 
-### 2026년 2월 기준 현황
+### 2026년 3월 기준 현황
 
 | 모델 | 컨텍스트 윈도우 | 대략적 분량 | 특징 |
 |------|----------------|-------------|------|
-| **GPT-5** | 128K 토큰 | 영어 약 96,000단어 | OpenAI 주력 모델 |
-| **Claude Opus 4.6** | 200K 토큰 | 영어 약 150,000단어 | Anthropic 프리미엄 모델 |
-| **Claude Sonnet 4.6** | 200K 토큰 | 영어 약 150,000단어 | 코딩·에이전트 강점 |
+| **GPT-5.4** | 128K 토큰 | 영어 약 96,000단어 | OpenAI 주력 모델 |
+| **Claude Opus 4.6** | 1M 토큰 | 영어 약 750,000단어 | Anthropic 프리미엄 모델 (GA) |
+| **Claude Sonnet 4.6** | 1M 토큰 | 영어 약 750,000단어 | 코딩·에이전트 강점 (GA) |
 | **Gemini 2.5 Pro** | 1M 토큰 | 영어 약 750,000단어 | 최대 컨텍스트 |
 | **Llama 4** | 128K~ 토큰 | 버전에 따라 상이 | 오픈소스 |
 
@@ -190,9 +190,9 @@ def manage_context(conversation_history, max_tokens=100000):
 | 작업 | 권장 컨텍스트 | 추천 모델 |
 |------|-------------|----------|
 | 일상적 대화 | 8K~32K | GPT-5.2, Claude Haiku 4.5 |
-| 문서 분석 | 64K~128K | GPT-5, Claude Sonnet 4.6 |
-| 책/논문 전체 분석 | 128K~200K | Claude Opus 4.6, GPT-5 |
-| 대규모 코드베이스 | 200K+ | Gemini 2.5 Pro, Claude Opus 4.6 |
+| 문서 분석 | 64K~128K | GPT-5.4, Claude Sonnet 4.6 |
+| 책/논문 전체 분석 | 128K~1M | Claude Opus 4.6, Claude Sonnet 4.6 |
+| 대규모 코드베이스 | 200K+ | Claude Opus 4.6, Gemini 2.5 Pro |
 | 영상 스크립트 분석 | 1M+ | Gemini 2.5 Pro |
 
 ### 비용 최적화
@@ -218,7 +218,7 @@ def manage_context(conversation_history, max_tokens=100000):
 | 2022 | GPT-3.5 | 4K 토큰 |
 | 2023 | GPT-4 | 32K 토큰 |
 | 2024-25 | Claude 4.6, Gemini 2.5 | 200K~1M 토큰 |
-| 2025-26 | GPT-5, Claude 4.6, Gemini 2.5 | 128K~1M (안정화) |
+| 2025-26 | GPT-5.4, Claude 4.6 (1M GA), Gemini 3.1 | 128K~1M+ (안정화) |
 
 !!! tip "트렌드"
     컨텍스트 윈도우는 매년 급격히 확장되고 있으며, 이는 AI가 처리할 수 있는 정보의 범위가 계속 넓어지고 있음을 의미합니다. 궁극적으로는 "무한 컨텍스트"를 향해 발전 중입니다.
@@ -238,7 +238,7 @@ def manage_context(conversation_history, max_tokens=100000):
 
 [^1]: Liu, N., et al. (2023). "Lost in the Middle: How Language Models Use Long Contexts." *arXiv preprint arXiv:2307.03172*.
 
-1. Anthropic. (2026). "Claude's Context Window." https://docs.anthropic.com/
-2. OpenAI. (2026). "GPT-5 with 128K Context." https://platform.openai.com/docs/
-3. Google. (2026). "Gemini 2.5 Pro: A Million Token Context Window." https://blog.google/technology/ai/google-gemini-next-generation-model/
+1. Anthropic. (2026). "Claude's 1M Token Context Window (GA)." https://docs.anthropic.com/
+2. OpenAI. (2026). "GPT-5.4 with 128K Context." https://platform.openai.com/docs/
+3. Google. (2026). "Gemini 3.1 Pro: Next-Generation Context." https://blog.google/technology/ai/google-gemini-next-generation-model/
 

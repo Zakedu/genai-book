@@ -30,7 +30,7 @@
 ## ㄷ
 
 **대규모 언어 모델 (LLM, Large Language Model)**
-: 방대한 텍스트 데이터로 학습된 AI 모델 (예: GPT-5, Claude 4.6, Gemini 2.5 Pro)
+: 방대한 텍스트 데이터로 학습된 AI 모델 (예: GPT-5.4, Claude 4.6, Gemini 3.1 Pro)
 
 **데이터 증강 (Data Augmentation)**
 : 기존 데이터를 변형하여 학습 데이터를 늘리는 기법
@@ -81,6 +81,9 @@
 **에이전트 (Agent)**
 : 자율적으로 작업을 수행하고 결정을 내리는 AI 시스템
 
+**인라인 시각화 (Inline Visualization)**
+: 대화 내에서 직접 차트, 다이어그램 등을 생성하는 기능 (예: Claude의 인라인 차트/다이어그램)
+
 **에폭 (Epoch)**
 : 전체 학습 데이터를 한 번 완전히 학습하는 주기
 
@@ -110,6 +113,9 @@
 ---
 
 ## ㅋ
+
+**코워크 (Cowork)**
+: Anthropic Claude의 지속적 에이전트 스레드(persistent agent thread) 기능. 여러 세션에 걸쳐 프로젝트 맥락을 유지하며 작업을 관리
 
 **컨텍스트 윈도우 (Context Window)**
 : AI가 한 번에 처리할 수 있는 텍스트의 최대 길이 (토큰 수로 측정)

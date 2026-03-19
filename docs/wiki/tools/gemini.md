@@ -1,8 +1,8 @@
 # Gemini
 
-!!! info "최종 수정일: 2025-02-20"
+!!! info "최종 수정일: 2026-03-19"
 
-Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스트 윈도우(2M 토큰), Google 생태계와의 깊은 통합, 멀티모달 입출력 처리 능력, Deep Research와 에이전트 기능이 특징입니다. Gemini 2.5 Pro (2025년 6월 출시)가 최신 플래그십 모델입니다.
+Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스트 윈도우(2M 토큰), Google 생태계와의 깊은 통합, 멀티모달 입출력 처리 능력, Deep Research와 에이전트 기능이 특징입니다. Gemini 3.1 Pro Preview (2026년 3월)가 최신 모델이며, Gemini 2.5 Pro가 안정 버전으로 사용됩니다.
 
 ---
 
@@ -12,7 +12,7 @@ Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스�
 |------|------|
 | 개발사 | Google DeepMind |
 | 출시일 | 2023년 12월 (Bard에서 리브랜딩) |
-| 최신 모델 | Gemini 2.5 Pro (2025.06), Gemini 3.1 Pro (개발 중), Gemini 2.0 Flash |
+| 최신 모델 | Gemini 3.1 Pro (Preview), Gemini 2.5 Pro, Gemini 3.1 Flash-Lite (Preview), Gemini 2.0 Flash |
 | 웹사이트 | [gemini.google.com](https://gemini.google.com) |
 | API | [ai.google.dev](https://ai.google.dev) |
 | AI Studio | [aistudio.google.com](https://aistudio.google.com) |
@@ -28,9 +28,11 @@ Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스�
 |------|------|----------|
 | **Free** | 무료 | Gemini 2.0 Flash, 기본 멀티모달, Google 검색 연동 |
 | **Advanced** | $19.99/월 | 최신 모델, Deep Research, Gems, NotebookLM Plus, 2TB Drive |
+| **AI Pro** | $49.99/월 | Advanced보다 높은 사용량, 3.1 Pro Preview 접근 |
+| **AI Ultra** | $249.99/월 | 최고 성능 모델 무제한, 최대 컨텍스트, 모든 프리미엄 기능 |
 
-!!! tip "Google One AI Premium"
-    Gemini Advanced는 Google One AI Premium 플랜에 포함됩니다. 2TB Google Drive 저장공간, Google Workspace 앱에서의 Gemini 기능, NotebookLM Plus 이용권이 모두 포함된 통합 구독입니다.
+!!! tip "Google One AI Premium / AI Pro / AI Ultra"
+    Gemini Advanced는 Google One AI Premium 플랜에 포함됩니다. 2TB Google Drive 저장공간, Google Workspace 앱에서의 Gemini 기능, NotebookLM Plus 이용권이 모두 포함된 통합 구독입니다. AI Pro($49.99/월)와 AI Ultra($249.99/월)는 더 높은 사용량과 최신 3.1 Pro Preview 모델 접근을 제공하는 상위 티어입니다.
 
 ### 비즈니스
 
@@ -59,17 +61,29 @@ Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스�
 !!! tip "Thinking 모델"
     Gemini 2.5 Pro는 응답 전에 내부 추론 과정을 거칩니다. 복잡한 코딩 문제, 수학, 다단계 분석 작업에서 특히 뛰어난 성능을 보여줍니다. Deep Research도 내부적으로 Gemini 2.5 Pro 추론 기능을 활용합니다.
 
-### Gemini 3.1 Pro (개발 중)
+### Gemini 3.1 Pro (Preview)
 
-차세대 모델로 개발 중이며, 2025-2026년 중 출시될 예정입니다.
+2026년 3월 초 Preview로 출시된 차세대 플래그십 모델입니다.
 
-**예상 특징**:
+**특징**:
 
-- Gemini 2.5 Pro 대비 향상된 추론 및 성능
-- 더 큰 컨텍스트 윈도우 (확정 미정)
+- Gemini 2.5 Pro 대비 향상된 추론 및 코딩 성능
+- 확장된 컨텍스트 윈도우
 - 개선된 멀티모달 처리
 - 에이전트 기능 강화
-- 현재 개발 단계이므로 세부사항 미확정
+- AI Ultra 및 AI Pro 구독에서 접근 가능
+- Preview 단계로 성능이 계속 개선 중
+
+### Gemini 3.1 Flash-Lite (Preview)
+
+2026년 3월 출시된 경량 고효율 모델입니다.
+
+**특징**:
+
+- API 가격: $0.25 입력 / $1.50 출력 (1M 토큰당)
+- 빠른 응답 속도
+- 대량 처리 및 경량 작업에 최적
+- Preview 단계
 
 ### Gemini 2.0 Flash
 
@@ -95,6 +109,11 @@ Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스�
 - 매우 낮은 API 비용 ($0.075 입력 / $0.30 출력)
 - 대량 처리 및 경량 작업에 최적
 - 무료 API 티어에서도 사용 가능 (분당 30회)
+
+!!! warning "모델 퇴역 안내"
+    - **Gemini 3 Pro**: 2026년 3월 9일부로 퇴역
+    - **Gemini 2.5 Flash-Lite**: 2026년 3월 31일 종료 예정
+    퇴역된 모델은 더 이상 API에서 사용할 수 없습니다. 후속 모델로 마이그레이션하세요.
 
 ### Gemini 1.5 Pro
 
@@ -185,10 +204,11 @@ Gmail, Docs, Sheets, Slides, Meet 등 Google Workspace 전반에 Gemini가 통�
 | Workspace 앱 | Gemini 기능 |
 |-------------|------------|
 | **Gmail** | 이메일 요약, 답장 초안 작성, 톤 조정 |
-| **Google Docs** | 문서 작성·요약·편집 지원 (Help me write) |
-| **Google Sheets** | 데이터 분석, 수식 생성, 차트 추천 |
-| **Google Slides** | 프레젠테이션 생성, 이미지 생성, 레이아웃 제안 |
+| **Google Docs** | AI 기반 문서 자동 생성, 구조 제안, 번역 통합 |
+| **Google Sheets** | AI 피벗 분석, 자연어 수식 생성, 예측 차트 |
+| **Google Slides** | AI 기반 전체 프레젠테이션 자동 생성, 이미지 검색 통합 |
 | **Google Meet** | 실시간 자막, 회의 요약, 노트 자동 작성 |
+| **Google Drive** | AI 기반 파일 검색, 요약, 정리 |
 
 **사용 방법**:
 
@@ -267,7 +287,7 @@ Google 검색과 네이티브 연동하여 최신 정보를 제공합니다.
 |------|------|
 | 주소 | [aistudio.google.com](https://aistudio.google.com) |
 | 가격 | 무료 (API 사용량별 과금) |
-| 지원 모델 | Gemini 2.5 Pro, 2.0 Flash, 2.0 Flash-Lite, 1.5 Pro 등 |
+| 지원 모델 | Gemini 3.1 Pro (Preview), Gemini 3.1 Flash-Lite (Preview), Gemini 2.5 Pro, 2.0 Flash, 2.0 Flash-Lite, 1.5 Pro 등 |
 
 **주요 기능**:
 
@@ -276,13 +296,16 @@ Google 검색과 네이티브 연동하여 최신 정보를 제공합니다.
 - 프롬프트 테스트 후 코드 자동 생성 (Python, JavaScript, cURL 등)
 - 파일 업로드를 통한 멀티모달 테스트
 - 모델 파인튜닝 지원
+- **gemini-embedding-2-preview**: 텍스트뿐 아니라 이미지까지 임베딩할 수 있는 멀티모달 임베딩 모델이 Preview로 제공됩니다.
 
 **API 가격 (주요 모델, 유료 티어)**:
 
 | 모델 | 입력 (1M 토큰당) | 출력 (1M 토큰당) | 무료 티어 |
 |------|------------------|------------------|----------|
+| **Gemini 3.1 Pro** (Preview) | TBD | TBD | - |
+| **Gemini 3.1 Flash-Lite** (Preview) | $0.25 | $1.50 | - |
 | **Gemini 2.0 Flash** | $0.10 | $0.40 | 분당 15회 |
-| **Gemini 2.0 Flash-Lite** | $0.075 | $0.30 | 분당 30회 |
+| **Gemini 2.0 Flash-Lite** | $0.075 | $0.30 | 분당 30회 (3/31 종료 예정) |
 | **Gemini 1.5 Pro** (≤128K) | $1.25 | $5.00 | 분당 2회 |
 | **Gemini 1.5 Pro** (>128K) | $2.50 | $10.00 | 분당 2회 |
 
@@ -387,7 +410,7 @@ Google 검색과 네이티브 연동하여 최신 정보를 제공합니다.
 
 | 항목 | Gemini | ChatGPT | Claude |
 |------|--------|---------|--------|
-| 최대 컨텍스트 | 2M 토큰 | 128K 토큰 | 200K 토큰 |
+| 최대 컨텍스트 | 2M 토큰 | 128K 토큰 | 1M 토큰 |
 | 웹 검색 | Google 검색 통합 | Bing 검색 | 제한적 |
 | 생태계 연동 | Google Workspace | Microsoft 365 | - |
 | 이미지 생성 | Imagen 3 | DALL-E 3 / GPT-4o | - |

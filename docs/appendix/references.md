@@ -8,17 +8,17 @@
 
 ### AI 서비스 공식 문서
 
-1. OpenAI. (2024). *Prompt Engineering Guide*. https://platform.openai.com/docs/guides/prompt-engineering
+1. OpenAI. (2026). *Prompt Engineering Guide*. https://platform.openai.com/docs/guides/prompt-engineering
 
-2. OpenAI. (2024). *GPT-4 Technical Report*. https://openai.com/research/gpt-4
+2. OpenAI. (2026). *GPT-5.4 Model Documentation*. https://openai.com/research/gpt-5
 
-3. Anthropic. (2024). *Claude Documentation*. https://docs.anthropic.com/
+3. Anthropic. (2026). *Claude Documentation*. https://docs.anthropic.com/
 
-4. Anthropic. (2024). *Claude's Constitution*. https://www.anthropic.com/index/claudes-constitution
+4. Anthropic. (2026). *Claude's Constitution*. https://www.anthropic.com/index/claudes-constitution
 
-5. Google. (2024). *Gemini API Documentation*. https://ai.google.dev/docs
+5. Google. (2026). *Gemini API Documentation*. https://ai.google.dev/docs
 
-6. Google DeepMind. (2024). *Gemini: A Family of Highly Capable Multimodal Models*. https://deepmind.google/technologies/gemini/
+6. Google DeepMind. (2026). *Gemini 3.1 Pro: Next-Generation Multimodal Model*. https://deepmind.google/technologies/gemini/
 
 ---
 
@@ -56,13 +56,13 @@
 
 ### AI 시장 및 트렌드
 
-1. McKinsey & Company. (2024). *The State of AI in 2024: Generative AI's Breakout Year*.
+1. McKinsey & Company. (2025). *The State of AI in 2025: Generative AI's Enterprise Adoption*.
 
 2. World Economic Forum. (2025). *Future of Jobs Report 2025*.
 
-3. Gartner. (2024). *Hype Cycle for Artificial Intelligence, 2024*.
+3. Gartner. (2025). *Hype Cycle for Artificial Intelligence, 2025*.
 
-4. Stanford HAI. (2024). *Artificial Intelligence Index Report 2024*.
+4. Stanford HAI. (2025). *Artificial Intelligence Index Report 2025*.
 
 ### 교육 및 윤리
 

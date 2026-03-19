@@ -8,9 +8,9 @@
 
 | 도구 | 개발사 | 강점 | 약점 |
 |------|--------|------|------|
-| [ChatGPT](chatgpt.md) | OpenAI | 범용성, 플러그인 생태계 | 최신 정보 한계 |
-| [Claude](claude.md) | Anthropic | 긴 문맥, 안전성 | 이미지 생성 불가 |
-| [Gemini](gemini.md) | Google | 검색 연동, 멀티모달 | 언어별 품질 차이 |
+| [ChatGPT](chatgpt.md) | OpenAI | 범용성, GPT-5.4 생태계 | 최신 정보 한계 |
+| [Claude](claude.md) | Anthropic | 1M 토큰 컨텍스트, 안전성, 인라인 시각화 | 이미지 생성 제한적 |
+| [Gemini](gemini.md) | Google | 검색 연동, Gemini 3.1 Pro, 멀티모달 | 3.1 Pro는 Preview 단계 |
 
 ---
 
@@ -28,9 +28,9 @@
 === "긴 문서 분석"
 
     **1순위**: Claude
-    
-    - 20만 토큰 이상 처리 가능
-    - 문서 전체 맥락 유지
+
+    - 100만 토큰(1M) 처리 가능
+    - 문서 전체 맥락 유지, 여러 권의 책 동시 분석
 
 === "최신 정보 검색"
 
