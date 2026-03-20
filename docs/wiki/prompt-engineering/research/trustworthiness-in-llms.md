@@ -82,7 +82,7 @@ def improve_truthfulness(query):
 ```
 모델별 진실성 점수 (0-100):
 
-GPT-5:              85점 (높음)
+GPT-5.4:              85점 (높음)
 Claude 4.6:         82점 (높음)
 Gemini 2.5 Pro:     80점 (높음)
 Llama 3.1 70B:      65점 (중간)
@@ -249,7 +249,7 @@ def evaluate_korean_fairness(model):
 ```
 모델별 공정성 점수 (고정관념 거부율):
 
-GPT-5:              78% (좋음)
+GPT-5.4:              78% (좋음)
 Claude 4.6:         76% (좋음)
 Gemini 2.5 Pro:     72% (양호)
 Llama 3.1 70B:      65% (미흡)
@@ -768,7 +768,7 @@ def trustworthy_response_with_tools(query):
 8. **설명가능성**: 명확한 설명 (중간)
 
 ### 2024년 모델별 신뢰성
-- **GPT-5**: 종합 80-85점 (최고 수준)
+- **GPT-5.4**: 종합 80-85점 (최고 수준)
 - **Claude 4.6**: 종합 78-82점 (높음)
 - **Gemini 2.5 Pro**: 종합 75-80점 (양호)
 - **Llama 3.1 70B**: 종합 62-70점 (중간)

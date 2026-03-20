@@ -25,7 +25,7 @@
 ## 2026년 주요 모델
 
 ```
-GPT-5        → OpenAI의 최신 모델, 멀티모달 강화, 추론 능력 개선
+GPT-5.4      → OpenAI의 최신 모델, 멀티모달 강화, 추론 능력 개선
 Claude 4.6   → Anthropic의 최신 모델, 안전성 강화, 긴 문맥 처리
 Gemini 2.5 Pro → Google의 멀티모달 모델, 실시간 데이터 연동
 ```
@@ -82,7 +82,7 @@ Gemini 2.5 Pro → Google의 멀티모달 모델, 실시간 데이터 연동
 ## 실습 환경 준비
 
 ### 필요한 도구
-- **Claude 4.6** 또는 **GPT-5** API 접근권
+- **Claude 4.6** 또는 **GPT-5.4** API 접근권
 - Python 3.10 이상
 - LangChain, LLamaIndex 등의 프레임워크
 - 평가 메트릭 라이브러리

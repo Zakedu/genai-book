@@ -580,6 +580,6 @@ AI 활용 성실성 선언 (Diligence Statement)
 ---
 
 <div class="nav-buttons">
-<a href="../part4/ch09-hallucination/" class="nav-button nav-prev">&larr; 이전: Chapter 9: 환각의 이해와 대응</a>
-<a href="../part4/ch11-responsible-use/" class="nav-button nav-next">다음: Chapter 11: 책임 있는 AI 사용 &rarr;</a>
+<a href="../ch09-hallucination/" class="nav-button nav-prev">&larr; 이전: Chapter 9: 환각의 이해와 대응</a>
+<a href="../ch11-responsible-use/" class="nav-button nav-next">다음: Chapter 11: 책임 있는 AI 사용 &rarr;</a>
 </div>

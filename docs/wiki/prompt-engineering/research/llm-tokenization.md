@@ -107,7 +107,7 @@ BPE와 유사하지만:
 - **복원**: 토큰 시퀀스 → 정확한 원문 복원 가능
 
 #### 사용 사례
-- T5, PaLM, Llama, Claude 3+
+- T5, PaLM, Llama, Claude 4.6+
 
 ## 토크나이제이션이 LLM 성능에 미치는 영향
 
@@ -319,7 +319,7 @@ def hello():
 한국어 프로젝트에서:
 
 ✅ SentencePiece 사용:
-- Claude 3+, Llama 2+
+- Claude 4.6+, Llama 2+
 - 가장 효율적
 - 한국어 처리 최적화
 

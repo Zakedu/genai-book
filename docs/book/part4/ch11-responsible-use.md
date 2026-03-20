@@ -103,10 +103,14 @@
 
 ## 11.3 비판적 AI 활용 습관
 
+### 자동화 편향을 인식하라
+
+비판적 활용 습관의 출발점은 **자동화 편향(Automation Bias)**을 인식하는 것이다. AI가 매끄럽고 자신감 있는 결과를 제시할수록, 사용자는 비판적 검증 없이 수용하는 경향이 강해진다. Anthropic의 9,830건 AI 대화 분석에서 AI가 완성된 산출물을 생성하면 사용자의 논리 검토 빈도가 **3.1%p**, 맥락 누락 발견 빈도가 **5.2%p** 감소했다. 이 편향을 극복하는 구체적 훈련으로 [Chapter 9의 "의심한 부분 3가지"](ch09-hallucination.md#95-의심한-부분-3가지-훈련) 기법을 함께 참고한다.
+
 ### 비판적 사고의 필수 요소
 
 !!! tip "비판적 AI 활용의 3원칙"
-    1. **의심하라**: 모든 AI 출력은 오류 가능성이 있다
+    1. **의심하라**: 모든 AI 출력은 오류 가능성이 있다 (자동화 편향 경계)
     2. **검증하라**: 중요한 정보는 독립적으로 확인한다
     3. **판단하라**: 최종 결정은 인간이 내린다
 
@@ -366,6 +370,7 @@
 | **비판적 활용** | AI 출력을 검증하고 평가하며 사용하는 방식 |
 | **인간-AI 협업** | 인간과 AI가 각자의 강점을 활용해 함께 작업 |
 | **메타인지** | 자신의 사고 과정을 인식하고 조절하는 능력 |
+| **자동화 편향(Automation Bias)** | AI 출력이 그럴듯할수록 비판적 검증 없이 수용하는 인지적 경향 |
 | **핵심 역량** | AI로 대체되기 어려운 인간 고유의 능력 |
 
 ---
@@ -374,6 +379,6 @@
 ---
 
 <div class="nav-buttons">
-<a href="../part4/ch10-ethics/" class="nav-button nav-prev">&larr; 이전: Chapter 10: 윤리적 사용과 책임</a>
-<a href="../part5/ch12-core-competencies/" class="nav-button nav-next">다음: Chapter 12: AI 시대의 핵심 역량 &rarr;</a>
+<a href="../ch10-ethics/" class="nav-button nav-prev">&larr; 이전: Chapter 10: 윤리적 사용과 책임</a>
+<a href="../../part5/ch12-core-competencies/" class="nav-button nav-next">다음: Chapter 12: AI 시대의 핵심 역량 &rarr;</a>
 </div>

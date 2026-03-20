@@ -332,10 +332,10 @@ DevOps 엔지니어를 찾습니다. 5년 이상 경력, CI/CD
 
 | 상황 | 권장 방법 | 모델 |
 |------|----------|------|
-| 간단한 분류 | Zero-shot | Claude 3.5 Sonnet |
-| 도메인 특화 | Few-shot (3-5개) | GPT-5 |
+| 간단한 분류 | Zero-shot | Claude 4.6 Sonnet |
+| 도메인 특화 | Few-shot (3-5개) | GPT-5.4 |
 | 매우 정확한 분류 | Fine-tuning | 해당 모델의 Fine-tune API |
-| 신뢰도 중요 | Ensemble (여러 모델) | Claude + GPT-5 |
+| 신뢰도 중요 | Ensemble (여러 모델) | Claude + GPT-5.4 |
 | 실시간 대량 처리 | Batch API | Gemini 2.5 Pro |
 
 ## 📝 핵심 정리

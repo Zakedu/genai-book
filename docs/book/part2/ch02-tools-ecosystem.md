@@ -311,7 +311,7 @@ Claude의 특징적 기능으로, 코드, 문서, 다이어그램 등을 별도 
 | **개발사** | Perplexity AI |
 | **핵심 기능** | 실시간 웹 검색 + AI 요약 + 출처 명시 |
 | **무료 버전** | 일일 검색 제한, 기본 모델 |
-| **Pro 버전** | $20/월, GPT-4/Claude 선택 가능 |
+| **Pro 버전** | $20/월, GPT-5.4/Claude 4.6 선택 가능 |
 
 **강점:**
 
@@ -472,6 +472,6 @@ Claude의 특징적 기능으로, 코드, 문서, 다이어그램 등을 별도 
 ---
 
 <div class="nav-buttons">
-<a href="../part1/ch01-what-is-genai/" class="nav-button nav-prev">&larr; 이전: Chapter 1: 생성형 AI란</a>
-<a href="../part2/ch03-prompt-structure/" class="nav-button nav-next">다음: Chapter 3: 프롬프트의 구조 &rarr;</a>
+<a href="../../part1/ch01-what-is-genai/" class="nav-button nav-prev">&larr; 이전: Chapter 1: 생성형 AI란</a>
+<a href="../ch03-prompt-structure/" class="nav-button nav-next">다음: Chapter 3: 프롬프트의 구조 &rarr;</a>
 </div>

@@ -28,14 +28,14 @@ theme:
     # 라이트 모드
     - scheme: default
       primary: custom
-      accent: teal
+      accent: amber
       toggle:
         icon: material/brightness-7
         name: 다크 모드로 전환
     # 다크 모드  
     - scheme: slate
       primary: custom
-      accent: teal
+      accent: amber
       toggle:
         icon: material/brightness-4
         name: 라이트 모드로 전환

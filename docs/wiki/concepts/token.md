@@ -81,7 +81,7 @@
 
 AI API 서비스는 토큰 수를 기준으로 요금을 부과합니다.
 
-**GPT-5 기준 예시 (2026년 2월 기준):**
+**GPT-5.4 기준 예시 (2026년 2월 기준):**
 
 | 토큰 유형 | 가격 (1M 토큰) | 한국어 1,000자 비용 |
 |----------|---------------|-------------------|
@@ -102,8 +102,8 @@ AI API 서비스는 토큰 수를 기준으로 요금을 부과합니다.
 
 | 모델 | 컨텍스트 윈도우 | 대략적 분량 |
 |------|----------------|-------------|
-| GPT-5 | 128K 토큰 | 영어 책 약 300페이지 |
-| Claude Sonnet 4.6 | 200K 토큰 | 영어 책 약 500페이지 |
+| GPT-5.4 | 128K 토큰 | 영어 책 약 300페이지 |
+| Claude Sonnet 4.6 | 1M 토큰 (GA) | 영어 책 약 5,000페이지 |
 | Gemini 2.5 Pro | 1M 토큰 | 영어 책 약 5,000페이지 |
 
 !!! info "컨텍스트 윈도우란?"
@@ -142,8 +142,8 @@ response = openai.ChatCompletion.create(
 # tiktoken 라이브러리 사용 (OpenAI 모델용)
 import tiktoken
 
-# GPT-4o용 인코더
-encoder = tiktoken.encoding_for_model("gpt-4o")
+# GPT-5.4 호환 인코더
+encoder = tiktoken.encoding_for_model("gpt-4o")  # GPT-5.4 호환
 
 text = "안녕하세요, 생성형 AI에 대해 알려주세요."
 tokens = encoder.encode(text)

@@ -15,7 +15,7 @@
 
 ### 개요
 
-OpenAI의 최신 모델로, GPT-5의 후속으로 Thinking/Pro/mini/nano 변형을 제공합니다. 강력한 추론 능력과 다재다능한 성능을 갖추고 있습니다.
+OpenAI의 최신 모델로, GPT-5.4는 Thinking/Pro/mini/nano 변형을 제공합니다. 강력한 추론 능력과 다재다능한 성능을 갖추고 있습니다.
 
 ### 주요 특징
 

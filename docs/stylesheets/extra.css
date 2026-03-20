@@ -3,8 +3,9 @@
    2026 Glassmorphism Edition
    =================================== */
 
-/* Pretendard 폰트 로드 */
+/* 폰트 로드 */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap');
 
 /* 기본 폰트 설정 + CSS 변수 */
 :root {
@@ -36,18 +37,18 @@ body {
   --md-default-bg-color--lighter: #FAFBFC;
   --md-default-bg-color--lightest: #FFFFFF;
 
-  /* 프라이머리 컬러 (현대화된 파란색) */
-  --md-primary-fg-color: #2563EB;
-  --md-primary-fg-color--light: #3B82F6;
-  --md-primary-fg-color--dark: #1D4ED8;
+  /* 프라이머리 컬러 (APEX Navy) */
+  --md-primary-fg-color: #1B2A4A;
+  --md-primary-fg-color--light: #2D4A6F;
+  --md-primary-fg-color--dark: #0F1D2F;
   --md-primary-bg-color: #FFFFFF;
-  --md-primary-bg-color--light: #EFF6FF;
+  --md-primary-bg-color--light: #F0F3F7;
 
-  /* 악센트 컬러 */
-  --md-accent-fg-color: #3B82F6;
-  --md-accent-fg-color--transparent: rgba(59, 130, 246, 0.1);
-  --md-accent-bg-color: #3B82F6;
-  --md-accent-bg-color--light: #DBEAFE;
+  /* 악센트 컬러 (APEX Gold) */
+  --md-accent-fg-color: #B8960C;
+  --md-accent-fg-color--transparent: rgba(200, 162, 74, 0.12);
+  --md-accent-bg-color: #C8A24A;
+  --md-accent-bg-color--light: #F5EFD7;
 
   /* 텍스트 컬러 - 더 부드럽게 */
   --md-typeset-color: #1E293B;
@@ -60,12 +61,12 @@ body {
   --md-code-bg-color: #F1F5F9;
   --md-code-fg-color: #1E293B;
 
-  /* 푸터 */
-  --md-footer-bg-color: #1E40AF;
-  --md-footer-bg-color--dark: #1E3A8A;
+  /* 푸터 (APEX Navy) */
+  --md-footer-bg-color: #0F1D2F;
+  --md-footer-bg-color--dark: #0A1420;
   --md-footer-fg-color: #FFFFFF;
-  --md-footer-fg-color--light: #DBEAFE;
-  --md-footer-fg-color--lighter: #93C5FD;
+  --md-footer-fg-color--light: #C8D6E5;
+  --md-footer-fg-color--lighter: #8FAFD4;
 
   /* Glassmorphism 라이트 */
   --glass-bg: rgba(255, 255, 255, 0.7);
@@ -83,16 +84,16 @@ body {
   --md-default-bg-color--lighter: #334155;
   --md-default-bg-color--lightest: #475569;
 
-  /* 프라이머리 컬러 (밝은 파란색) */
-  --md-primary-fg-color: #60A5FA;
-  --md-primary-fg-color--light: #93C5FD;
-  --md-primary-fg-color--dark: #3B82F6;
+  /* 프라이머리 컬러 (APEX Navy — 다크모드) */
+  --md-primary-fg-color: #8FAFD4;
+  --md-primary-fg-color--light: #A8C4E0;
+  --md-primary-fg-color--dark: #6B9FD4;
   --md-primary-bg-color: #0F172A;
-  --md-primary-bg-color--light: #1E3A5F;
+  --md-primary-bg-color--light: #1A2A42;
 
-  /* 악센트 컬러 */
-  --md-accent-fg-color: #60A5FA;
-  --md-accent-fg-color--transparent: rgba(96, 165, 250, 0.15);
+  /* 악센트 컬러 (APEX Gold — 다크모드) */
+  --md-accent-fg-color: #D4AF37;
+  --md-accent-fg-color--transparent: rgba(212, 175, 55, 0.15);
 
   /* 텍스트 컬러 */
   --md-typeset-color: #E2E8F0;
@@ -124,7 +125,7 @@ body {
 }
 
 [data-md-color-scheme="default"] .md-header {
-  background: rgba(37, 99, 235, 0.95);
+  background: rgba(27, 42, 74, 0.95);
 }
 
 [data-md-color-scheme="slate"] .md-header {
@@ -240,18 +241,20 @@ body {
   margin-bottom: 0.3em;
 }
 
-/* 제목 스타일 */
+/* 제목 스타일 (Syne — APEX 디스플레이 폰트) */
 .md-typeset h1 {
+  font-family: "Syne", var(--md-text-font);
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--md-primary-fg-color);
-  border-bottom: 2px solid var(--md-primary-fg-color--light);
+  border-bottom: 2px solid var(--md-accent-fg-color);
   padding-bottom: 0.5rem;
   margin-bottom: 1.2rem;
 }
 
 .md-typeset h2 {
+  font-family: "Syne", var(--md-text-font);
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -290,14 +293,14 @@ body {
   font-weight: 600;
 }
 
-/* 학습 목표 (abstract) */
+/* 학습 목표 (abstract) — APEX Navy */
 .md-typeset .admonition.abstract,
 .md-typeset details.abstract {
-  border-left-color: #3B82F6;
+  border-left-color: #1B2A4A;
 }
 .md-typeset .abstract > .admonition-title,
 .md-typeset .abstract > summary {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(27, 42, 74, 0.15) 0%, rgba(27, 42, 74, 0.05) 100%);
 }
 
 /* 사례 (example) */
@@ -501,8 +504,8 @@ body {
 
 /* 체크된 상태 */
 .md-typeset .task-list-control [checked] + .task-list-indicator::before {
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #1B2A4A;
+  border-color: #1B2A4A;
 }
 
 /* 체크마크 아이콘 */
@@ -525,13 +528,13 @@ body {
 }
 
 [data-md-color-scheme="slate"] .md-typeset .task-list-control [checked] + .task-list-indicator::before {
-  background-color: #2196F3;
-  border-color: #2196F3;
+  background-color: #1B2A4A;
+  border-color: #1B2A4A;
 }
 
 /* 체크리스트 아이템 호버 효과 */
 .md-typeset .task-list-item:hover .task-list-indicator::before {
-  border-color: #2196F3;
+  border-color: #1B2A4A;
 }
 
 /* ===================================
@@ -633,7 +636,7 @@ body {
 .nav-buttons .nav-prev:hover {
   background: var(--md-accent-fg-color--transparent);
   transform: translateX(-6px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 8px 24px rgba(27, 42, 74, 0.15);
   border-color: var(--md-primary-fg-color);
 }
 
@@ -643,12 +646,12 @@ body {
   border: none;
   text-align: right;
   margin-left: auto;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 16px rgba(27, 42, 74, 0.3);
 }
 
 .nav-buttons .nav-next:hover {
   transform: translateX(6px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 8px 24px rgba(27, 42, 74, 0.4);
 }
 
 @media screen and (max-width: 600px) {

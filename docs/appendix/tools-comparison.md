@@ -11,7 +11,7 @@
 | 항목 | ChatGPT | Claude | Gemini | Perplexity | Microsoft Copilot |
 |------|---------|--------|--------|------------|-------------------|
 | 개발사 | OpenAI | Anthropic | Google DeepMind | Perplexity AI | Microsoft |
-| 최신 모델 | GPT-5.4, o3 | Claude 4.6 Sonnet | Gemini 3.1 Pro (Preview) | 자체 + GPT-5/Claude | Phi-3 기반 |
+| 최신 모델 | GPT-5.4, o3 | Claude 4.6 Sonnet | Gemini 3.1 Pro (Preview) | 자체 + GPT-5.4/Claude | Phi-3 기반 |
 | 출시일 | 2022년 11월 | 2023년 3월 | 2023년 12월 | 2022년 12월 | 2023년 2월 |
 | 무료 버전 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | API 제공 | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -64,9 +64,9 @@
 
 | 모델 | 컨텍스트 윈도우 | 대략적인 분량 |
 |------|-----------------|---------------|
-| GPT-5 | 128K 토큰 | 약 300페이지 |
+| GPT-5.4 | 128K 토큰 | 약 300페이지 |
 | Claude 4.6 Sonnet | 1M 토큰 | 약 2,500페이지 |
-| Claude 4.5 Opus | 1M 토큰 | 약 2,500페이지 |
+| Claude 4.6 Opus | 1M 토큰 | 약 2,500페이지 |
 | Gemini 2.5 Pro | 1M 토큰 | 약 2,500페이지 |
 | Gemini 1.5 Pro | 2M 토큰 | 약 5,000페이지 |
 
@@ -120,7 +120,7 @@
 | 논문 요약 | Claude, Gemini | 긴 문서 처리 능력 우수 |
 | 개념 설명 | ChatGPT | 친절하고 상세한 설명 |
 | 문헌 조사 | Gemini | Google 검색 연동, Deep Research |
-| 수학/과학 | ChatGPT (o1) | 단계별 추론 능력 |
+| 수학/과학 | ChatGPT (o3) | 단계별 추론 능력 |
 
 ### 업무 및 비즈니스
 
@@ -207,7 +207,7 @@
 | **강점** | 실시간 정보 검색, 출처 명시, 팩트 중심 |
 | **약점** | 창작/코딩에는 다른 도구 대비 약함 |
 | **무료 버전** | 일일 검색 제한, 기본 모델 사용 |
-| **Pro 버전** | $20/월, GPT-4/Claude 선택 가능 |
+| **Pro 버전** | $20/월, GPT-5.4/Claude 4.6 선택 가능 |
 | **추천 용도** | 리서치, 최신 정보 검색, 팩트체킹 |
 
 ```

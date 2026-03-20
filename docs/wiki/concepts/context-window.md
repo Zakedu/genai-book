@@ -189,10 +189,10 @@ def manage_context(conversation_history, max_tokens=100000):
 
 | 작업 | 권장 컨텍스트 | 추천 모델 |
 |------|-------------|----------|
-| 일상적 대화 | 8K~32K | GPT-5.2, Claude Haiku 4.5 |
+| 일상적 대화 | 8K~32K | GPT-5.4 nano, Claude Haiku 4.5 |
 | 문서 분석 | 64K~128K | GPT-5.4, Claude Sonnet 4.6 |
 | 책/논문 전체 분석 | 128K~1M | Claude Opus 4.6, Claude Sonnet 4.6 |
-| 대규모 코드베이스 | 200K+ | Claude Opus 4.6, Gemini 2.5 Pro |
+| 대규모 코드베이스 | 1M+ | Claude Opus 4.6, Gemini 2.5 Pro |
 | 영상 스크립트 분석 | 1M+ | Gemini 2.5 Pro |
 
 ### 비용 최적화
@@ -217,8 +217,8 @@ def manage_context(conversation_history, max_tokens=100000):
 |------|----------|--------------|
 | 2022 | GPT-3.5 | 4K 토큰 |
 | 2023 | GPT-4 | 32K 토큰 |
-| 2024-25 | Claude 4.6, Gemini 2.5 | 200K~1M 토큰 |
-| 2025-26 | GPT-5.4, Claude 4.6 (1M GA), Gemini 3.1 | 128K~1M+ (안정화) |
+| 2024 | Claude 3.5, Gemini 1.5 Pro | 200K~2M 토큰 |
+| 2025-26 | Claude 4.6, Gemini 2.5 Pro, GPT-5.4 | 1M 토큰 (GA) |
 
 !!! tip "트렌드"
     컨텍스트 윈도우는 매년 급격히 확장되고 있으며, 이는 AI가 처리할 수 있는 정보의 범위가 계속 넓어지고 있음을 의미합니다. 궁극적으로는 "무한 컨텍스트"를 향해 발전 중입니다.

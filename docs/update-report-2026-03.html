@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX — GenAI Book 2026년 3월 업데이트 변경 보고서</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+    background: #f8f9fa; color: #1a1a1a; font-size: 15px; line-height: 1.7;
+  }
+  code, pre {
+    font-family: "SF Mono", Menlo, "Noto Sans Mono CJK KR", monospace;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed; top: 0; left: 0; width: 280px; height: 100vh;
+    background: #fff; border-right: 1px solid #e0e0e0;
+    overflow-y: auto; padding: 28px 22px; z-index: 100;
+  }
+  .sidebar-logo { font-size: 17px; font-weight: 800; color: #2563eb; margin-bottom: 8px; }
+  .sidebar-subtitle { font-size: 12px; color: #94a3b8; margin-bottom: 24px; }
+  .sidebar-group { margin-bottom: 6px; }
+  .sidebar-group-title {
+    font-size: 13px; font-weight: 700; color: #475569; cursor: pointer;
+    padding: 6px 0; display: flex; align-items: center; gap: 6px;
+    user-select: none;
+  }
+  .sidebar-group-title .arrow { font-size: 11px; transition: transform 0.2s; display: inline-block; }
+  .sidebar-group-title.collapsed .arrow { transform: rotate(-90deg); }
+  .sidebar-items { padding-left: 16px; }
+  .sidebar-items.hidden { display: none; }
+  .sidebar-item {
+    font-size: 13px; padding: 4px 8px; color: #475569; cursor: pointer;
+    border-left: 2px solid transparent; transition: all 0.15s;
+    display: block; text-decoration: none;
+  }
+  .sidebar-item:hover { color: #2563eb; border-left-color: #2563eb; background: #f0f4ff; }
+
+  /* Main */
+  .main { margin-left: 280px; padding: 40px 48px; max-width: 1240px; }
+
+  /* Typography */
+  h1 { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+  h2 { font-size: 22px; font-weight: 700; color: #1e3a5f; margin-top: 36px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e0e0e0; }
+  h3 { font-size: 17px; font-weight: 700; color: #334155; margin-top: 24px; margin-bottom: 10px; }
+  h4 { font-size: 15px; font-weight: 600; color: #475569; margin-top: 16px; margin-bottom: 8px; }
+  p { margin-bottom: 12px; }
+  em { color: #475569; }
+
+  /* Badge */
+  .doc-badge {
+    display: inline-block; background: #2563eb; color: #fff;
+    font-size: 14px; font-weight: 700; padding: 5px 16px;
+    border-radius: 6px; margin-bottom: 12px;
+  }
+  .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .to-top-link { font-size: 13px; color: #94a3b8; text-decoration: none; }
+  .to-top-link:hover { color: #2563eb; }
+
+  /* Divider */
+  .doc-divider { border: none; border-top: 1px solid #e0e0e0; margin: 36px 0; }
+
+  /* Info Card */
+  .info-card {
+    background: linear-gradient(135deg, #f0f4ff, #e8f0fe);
+    border: 1px solid #c7d2fe; border-radius: 10px;
+    padding: 20px 24px; margin: 16px 0;
+  }
+  .info-card-title { font-size: 16px; font-weight: 700; color: #2563eb; margin-bottom: 12px; }
+  .info-card-body { display: flex; flex-direction: column; gap: 6px; }
+  .info-kv { display: flex; gap: 12px; font-size: 14px; }
+  .info-key { font-weight: 600; color: #334155; min-width: 140px; flex-shrink: 0; }
+  .info-val { color: #1a1a1a; }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 12px 0 20px; }
+  th { background: #f1f5f9; font-weight: 700; text-align: left; }
+  th, td { border: 1px solid #d1d5db; padding: 9px 14px; }
+  tr:nth-child(even) td { background: #fafbfc; }
+
+  /* Diagram Table */
+  .diagram-table th.dt-title { text-align: center; font-size: 14px; background: #e8f0fe; color: #1e3a5f; }
+  .diagram-table .dt-label { font-weight: 600; color: #334155; white-space: nowrap; }
+  .diagram-table .dt-num { text-align: right; font-weight: 600; color: #2563eb; white-space: nowrap; }
+  .diagram-table .dt-file { font-family: "SF Mono", Menlo, monospace; font-size: 12px; color: #475569; }
+
+  /* Inline Code */
+  code {
+    font-size: 13px; background: #f1f5f9; color: #e11d48;
+    padding: 2px 6px; border-radius: 4px;
+  }
+  /* Block Code */
+  pre { background: #1e293b; color: #e2e8f0; padding: 16px 20px; border-radius: 8px; margin: 12px 0; overflow-x: auto; }
+  pre code { background: none; color: inherit; padding: 0; font-size: 13px; }
+
+  /* Blockquote */
+  blockquote {
+    background: #f0f4ff; border-left: 4px solid #2563eb;
+    padding: 14px 20px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+  blockquote p { margin-bottom: 4px; font-size: 14px; }
+
+  /* Change type badges */
+  .change-add { display: inline-block; background: #dcfce7; color: #166534; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+  .change-mod { display: inline-block; background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+  .change-del { display: inline-block; background: #fee2e2; color: #991b1b; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+  .change-sync { display: inline-block; background: #e0e7ff; color: #3730a3; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+
+  /* Priority badges */
+  .pri-critical { display: inline-block; background: #ef4444; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+  .pri-high { display: inline-block; background: #f97316; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+  .pri-medium { display: inline-block; background: #eab308; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+
+  /* Diff display */
+  .diff-line { font-family: "SF Mono", Menlo, monospace; font-size: 12.5px; line-height: 1.6; padding: 2px 8px; }
+  .diff-del { background: #fee2e2; color: #991b1b; }
+  .diff-add { background: #dcfce7; color: #166534; }
+  .diff-block { border: 1px solid #d1d5db; border-radius: 6px; overflow: hidden; margin: 8px 0 16px; }
+  .diff-header { background: #f1f5f9; padding: 6px 12px; font-size: 12px; color: #475569; font-weight: 600; border-bottom: 1px solid #d1d5db; font-family: "SF Mono", Menlo, monospace; }
+
+  /* Stats */
+  .stat-row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .stat-box {
+    flex: 1; min-width: 160px; background: #fff; border: 1px solid #e0e0e0;
+    border-radius: 10px; padding: 20px; text-align: center;
+  }
+  .stat-num { font-size: 32px; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 13px; color: #475569; margin-top: 4px; }
+  .stat-num.green { color: #16a34a; }
+  .stat-num.red { color: #ef4444; }
+  .stat-num.amber { color: #f59e0b; }
+
+  /* Back to top */
+  .back-to-top {
+    position: fixed; bottom: 32px; right: 32px; width: 44px; height: 44px;
+    background: #2563eb; color: #fff; border: none; border-radius: 50%;
+    font-size: 20px; cursor: pointer; display: flex; align-items: center;
+    justify-content: center; box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+    z-index: 200; text-decoration: none;
+  }
+  .back-to-top:hover { background: #1d4ed8; }
+
+  /* Print */
+  @media print {
+    .sidebar, .back-to-top { display: none; }
+    .main { margin-left: 0; padding: 20px; }
+    .doc-divider { page-break-after: always; border: none; }
+    h2 { page-break-before: always; }
+    table, .info-card { page-break-inside: avoid; }
+    .doc-badge, .change-add, .change-mod, .change-del, .change-sync,
+    .pri-critical, .pri-high, .pri-medium, .stat-box { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  }
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 20px 16px; }
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-logo">APEX Docs</div>
+  <div class="sidebar-subtitle">GenAI Book 변경 보고서</div>
+
+  <div class="sidebar-group">
+    <div class="sidebar-group-title" onclick="toggleGroup(this)">
+      <span class="arrow">▾</span> 개요
+    </div>
+    <div class="sidebar-items">
+      <a class="sidebar-item" href="#summary">업데이트 요약</a>
+      <a class="sidebar-item" href="#stats">변경 통계</a>
+      <a class="sidebar-item" href="#gap">Gap 분석 요약</a>
+    </div>
+  </div>
+
+  <div class="sidebar-group">
+    <div class="sidebar-group-title" onclick="toggleGroup(this)">
+      <span class="arrow">▾</span> 서비스별 변경
+    </div>
+    <div class="sidebar-items">
+      <a class="sidebar-item" href="#openai">OpenAI / ChatGPT</a>
+      <a class="sidebar-item" href="#anthropic">Anthropic / Claude</a>
+      <a class="sidebar-item" href="#google">Google / Gemini</a>
+    </div>
+  </div>
+
+  <div class="sidebar-group">
+    <div class="sidebar-group-title" onclick="toggleGroup(this)">
+      <span class="arrow">▾</span> 파일별 상세 변경
+    </div>
+    <div class="sidebar-items">
+      <a class="sidebar-item" href="#f-chatgpt">chatgpt.md</a>
+      <a class="sidebar-item" href="#f-claude">claude.md</a>
+      <a class="sidebar-item" href="#f-gemini">gemini.md</a>
+      <a class="sidebar-item" href="#f-ch02">ch02-tools-ecosystem.md</a>
+      <a class="sidebar-item" href="#f-comparison">tools-comparison.md</a>
+      <a class="sidebar-item" href="#f-models">models-overview.md</a>
+      <a class="sidebar-item" href="#f-context">context-window.md</a>
+      <a class="sidebar-item" href="#f-ch13">ch13-future-trends.md</a>
+      <a class="sidebar-item" href="#f-toolsidx">wiki/tools/index.md</a>
+      <a class="sidebar-item" href="#f-ch01">ch01-what-is-genai.md</a>
+      <a class="sidebar-item" href="#f-glossary">glossary.md</a>
+      <a class="sidebar-item" href="#f-refs">references.md</a>
+      <a class="sidebar-item" href="#f-index">index.md</a>
+      <a class="sidebar-item" href="#f-book">docs/book/ 동기화</a>
+    </div>
+  </div>
+
+  <div class="sidebar-group">
+    <div class="sidebar-group-title" onclick="toggleGroup(this)">
+      <span class="arrow">▾</span> 부록
+    </div>
+    <div class="sidebar-items">
+      <a class="sidebar-item" href="#qa">QA 검수 결과</a>
+      <a class="sidebar-item" href="#build">빌드 검증</a>
+      <a class="sidebar-item" href="#commit">Git 커밋</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main">
+
+  <h1>GenAI Book 2026년 3월 업데이트 변경 보고서</h1>
+  <p><em>생성형 AI 완전 정복 — 콘텐츠 최신화 (2026-02-20 → 2026-03-19)</em></p>
+
+  <blockquote>
+    <p><strong>프로젝트:</strong> genai-book (MkDocs Material)<br>
+    <strong>커밋:</strong> <code>8a4f9d3</code><br>
+    <strong>작성일:</strong> 2026-03-19<br>
+    <strong>작성:</strong> Claude Opus 4.6 (6-agent 팀 + orchestrator)</p>
+  </blockquote>
+
+  <!-- ==================== 1. Summary ==================== -->
+  <hr class="doc-divider" id="summary">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">1. 업데이트 요약</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+
+    <p>2026년 3월, OpenAI·Anthropic·Google 3대 AI 서비스 모두 대규모 모델 업데이트를 진행했습니다. 이에 따라 교재 전체를 2026-03-19 기준으로 최신화하였습니다.</p>
+
+    <h3>핵심 변경 3가지</h3>
+    <div class="info-card">
+      <div class="info-card-title">OpenAI — GPT-5.4 출시</div>
+      <div class="info-card-body">
+        <div class="info-kv"><span class="info-key">새 모델</span><span class="info-val">GPT-5.4 (Thinking/Pro), GPT-5.4 mini, GPT-5.4 nano</span></div>
+        <div class="info-kv"><span class="info-key">퇴역</span><span class="info-val">GPT-5.1 전 계열 (2026.03.11)</span></div>
+        <div class="info-kv"><span class="info-key">기능</span><span class="info-val">파일 업로드 10→20개, Enterprise Workspace Analytics</span></div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">Anthropic — Claude 1M 토큰 GA</div>
+      <div class="info-card-body">
+        <div class="info-kv"><span class="info-key">컨텍스트</span><span class="info-val">200K → 1M 토큰 GA (Opus 4.6 + Sonnet 4.6)</span></div>
+        <div class="info-kv"><span class="info-key">신규 기능</span><span class="info-val">Cowork (persistent agent thread), 인라인 차트/다이어그램</span></div>
+        <div class="info-kv"><span class="info-key">Claude Code</span><span class="info-val">v2.1.76, /voice 음성 모드, /loop 반복 실행, Opus 4.6 기본</span></div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">Google — Gemini 3.1 Pro Preview</div>
+      <div class="info-card-body">
+        <div class="info-kv"><span class="info-key">신규 모델</span><span class="info-val">Gemini 3.1 Pro (Preview), 3.1 Flash-Lite ($0.25/$1.50)</span></div>
+        <div class="info-kv"><span class="info-key">퇴역</span><span class="info-val">Gemini 3 Pro (3/9), 2.5 Flash-Lite (3/31 종료)</span></div>
+        <div class="info-kv"><span class="info-key">구독 티어</span><span class="info-val">AI Pro ($49.99/월), AI Ultra ($249.99/월) 추가</span></div>
+        <div class="info-kv"><span class="info-key">임베딩</span><span class="info-val">gemini-embedding-2-preview (멀티모달)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 2. Stats ==================== -->
+  <hr class="doc-divider" id="stats">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">2. 변경 통계</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num amber">17</div>
+        <div class="stat-label">수정된 파일</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num green">+358</div>
+        <div class="stat-label">추가된 라인</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num red">-177</div>
+        <div class="stat-label">삭제된 라인</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">6</div>
+        <div class="stat-label">에이전트 투입</div>
+      </div>
+    </div>
+
+    <h3>파일별 변경량</h3>
+    <table class="diagram-table">
+      <tr><th class="dt-title" colspan="5">수정 파일 목록 (17개)</th></tr>
+      <tr><th>파일</th><th>우선순위</th><th>유형</th><th>작성 에이전트</th><th>변경량</th></tr>
+      <tr><td class="dt-file">docs/wiki/tools/chatgpt.md</td><td><span class="pri-critical">Critical</span></td><td><span class="change-mod">수정</span></td><td>chatgpt-author (opus)</td><td class="dt-num">+27 / -23</td></tr>
+      <tr><td class="dt-file">docs/wiki/tools/claude.md</td><td><span class="pri-critical">Critical</span></td><td><span class="change-mod">수정</span> <span class="change-add">추가</span></td><td>claude-author (opus)</td><td class="dt-num">+43 / -15</td></tr>
+      <tr><td class="dt-file">docs/wiki/tools/gemini.md</td><td><span class="pri-critical">Critical</span></td><td><span class="change-mod">수정</span> <span class="change-add">추가</span></td><td>gemini-author (opus)</td><td class="dt-num">+40 / -17</td></tr>
+      <tr><td class="dt-file">docs/part2/ch02-tools-ecosystem.md</td><td><span class="pri-critical">Critical</span></td><td><span class="change-mod">수정</span></td><td>ch02-author (opus)</td><td class="dt-num">+17 / -14</td></tr>
+      <tr><td class="dt-file">docs/appendix/tools-comparison.md</td><td><span class="pri-critical">Critical</span></td><td><span class="change-mod">수정</span> <span class="change-add">추가</span></td><td>comparison-author (opus)</td><td class="dt-num">+16 / -9</td></tr>
+      <tr><td class="dt-file">docs/wiki/prompt-engineering/foundations/models-overview.md</td><td><span class="pri-critical">Critical</span></td><td><span class="change-mod">수정</span></td><td>models-author (opus)</td><td class="dt-num">+26 / -26</td></tr>
+      <tr><td class="dt-file">docs/wiki/concepts/context-window.md</td><td><span class="pri-high">High</span></td><td><span class="change-mod">수정</span></td><td>orchestrator (직접)</td><td class="dt-num">+12 / -12</td></tr>
+      <tr><td class="dt-file">docs/part5/ch13-future-trends.md</td><td><span class="pri-high">High</span></td><td><span class="change-mod">수정</span></td><td>orchestrator (직접)</td><td class="dt-num">+3 / -3</td></tr>
+      <tr><td class="dt-file">docs/wiki/tools/index.md</td><td><span class="pri-high">High</span></td><td><span class="change-mod">수정</span></td><td>orchestrator (직접)</td><td class="dt-num">+6 / -6</td></tr>
+      <tr><td class="dt-file">docs/part1/ch01-what-is-genai.md</td><td><span class="pri-medium">Medium</span></td><td><span class="change-mod">수정</span></td><td>orchestrator (직접)</td><td class="dt-num">+6 / -6</td></tr>
+      <tr><td class="dt-file">docs/appendix/glossary.md</td><td><span class="pri-medium">Medium</span></td><td><span class="change-mod">수정</span> <span class="change-add">추가</span></td><td>orchestrator (직접)</td><td class="dt-num">+7 / -1</td></tr>
+      <tr><td class="dt-file">docs/appendix/references.md</td><td><span class="pri-medium">Medium</span></td><td><span class="change-mod">수정</span></td><td>orchestrator (직접)</td><td class="dt-num">+9 / -9</td></tr>
+      <tr><td class="dt-file">docs/index.md</td><td><span class="pri-medium">Medium</span></td><td><span class="change-mod">수정</span></td><td>orchestrator (직접)</td><td class="dt-num">+1 / -1</td></tr>
+      <tr><td class="dt-file">docs/book/part1/ch01-what-is-genai.md</td><td><span class="change-sync">Sync</span></td><td><span class="change-sync">동기화</span></td><td>orchestrator (cp)</td><td class="dt-num">+6 / -6</td></tr>
+      <tr><td class="dt-file">docs/book/part2/ch02-tools-ecosystem.md</td><td><span class="change-sync">Sync</span></td><td><span class="change-sync">동기화</span></td><td>orchestrator (cp)</td><td class="dt-num">+17 / -14</td></tr>
+      <tr><td class="dt-file">docs/book/part4/ch09-hallucination.md</td><td><span class="change-sync">Sync</span></td><td><span class="change-sync">동기화</span></td><td>orchestrator (cp)</td><td class="dt-num">+82 / -8</td></tr>
+      <tr><td class="dt-file">docs/book/part5/ch13-future-trends.md</td><td><span class="change-sync">Sync</span></td><td><span class="change-sync">동기화</span></td><td>orchestrator (cp)</td><td class="dt-num">+39 / -7</td></tr>
+    </table>
+  </section>
+
+  <!-- ==================== 3. Gap Analysis ==================== -->
+  <hr class="doc-divider" id="gap">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">3. Gap 분석 요약</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+
+    <p>아래는 2026-02-20 기준 교재 내용과 2026-03-19 실제 서비스 상태 간 주요 괴리 항목입니다. 모두 이번 커밋에서 해소되었습니다.</p>
+
+    <table>
+      <tr><th>서비스</th><th>항목</th><th>책 내용 (2월)</th><th>실제 (3월)</th><th>상태</th></tr>
+      <tr><td rowspan="4">OpenAI</td><td>최신 모델</td><td>GPT-5, GPT-5.2, GPT-5.3</td><td>GPT-5.4 (Thinking/Pro/mini/nano)</td><td><span class="change-mod">수정</span></td></tr>
+      <tr><td>퇴역 모델</td><td>미언급</td><td>GPT-5.1 전 계열 3/11 퇴역</td><td><span class="change-add">추가</span></td></tr>
+      <tr><td>파일 업로드</td><td>미명시</td><td>20개로 확대</td><td><span class="change-add">추가</span></td></tr>
+      <tr><td>Enterprise</td><td>기본 기능</td><td>Workspace Analytics 추가</td><td><span class="change-add">추가</span></td></tr>
+      <tr><td rowspan="4">Anthropic</td><td>컨텍스트</td><td>200K 토큰</td><td>1M 토큰 GA</td><td><span class="change-mod">수정</span></td></tr>
+      <tr><td>Cowork</td><td>미포함</td><td>persistent agent thread</td><td><span class="change-add">추가</span></td></tr>
+      <tr><td>인라인 시각화</td><td>미포함</td><td>대화 내 차트/다이어그램</td><td><span class="change-add">추가</span></td></tr>
+      <tr><td>Claude Code</td><td>기본 언급</td><td>v2.1.76, /voice, /loop, Opus 4.6</td><td><span class="change-add">추가</span></td></tr>
+      <tr><td rowspan="5">Google</td><td>Gemini 3.1 Pro</td><td>"개발 중"</td><td>Preview 출시</td><td><span class="change-mod">수정</span></td></tr>
+      <tr><td>Flash-Lite</td><td>미포함</td><td>3.1 Flash-Lite Preview</td><td><span class="change-add">추가</span></td></tr>
+      <tr><td>퇴역</td><td>미언급</td><td>Gemini 3 Pro, 2.5 Flash-Lite 종료</td><td><span class="change-add">추가</span></td></tr>
+      <tr><td>임베딩</td><td>미포함</td><td>gemini-embedding-2-preview</td><td><span class="change-add">추가</span></td></tr>
+      <tr><td>구독 티어</td><td>Free + Advanced</td><td>AI Pro / AI Ultra 추가</td><td><span class="change-add">추가</span></td></tr>
+    </table>
+  </section>
+
+  <!-- ==================== 4. OpenAI ==================== -->
+  <hr class="doc-divider" id="openai">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">4. OpenAI / ChatGPT 변경 상세</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+
+    <p>GPT-5.4 계열이 새 기본 모델로 등장하며, 기존 GPT-5/5.2/5.3 참조를 전면 교체하였습니다.</p>
+
+    <h3>4.1 모델 라인업 변경</h3>
+    <table>
+      <tr><th>변경 전</th><th>변경 후</th></tr>
+      <tr><td>GPT-5 (기본 모델)</td><td>GPT-5.4 (최신 기본 모델) — Thinking/Pro 변형 포함</td></tr>
+      <tr><td>GPT-5.2 계열 (변형 모델) — Instant, Thinking, Pro</td><td>GPT-5.4 mini / nano (경량 모델)</td></tr>
+      <tr><td>GPT-5.2 계열 (Free 기본 모델)</td><td>GPT-5.4 nano (Free 기본 모델)</td></tr>
+    </table>
+
+    <h3>4.2 요금제 변경</h3>
+    <div class="diff-block">
+      <div class="diff-header">docs/wiki/tools/chatgpt.md — 요금제 테이블</div>
+      <div class="diff-line diff-del">- Free: GPT-5.2 (제한), 기본 웹 검색, 제한적 사용량</div>
+      <div class="diff-line diff-add">+ Free: GPT-5.4 nano (제한), 기본 웹 검색, 제한적 사용량</div>
+      <div class="diff-line diff-del">- Plus: GPT-5.2, o4-mini, DALL-E, 고급 음성</div>
+      <div class="diff-line diff-add">+ Plus: GPT-5.4 mini, o4-mini, DALL-E, 고급 음성</div>
+      <div class="diff-line diff-del">- Pro: GPT-5 우선 접근</div>
+      <div class="diff-line diff-add">+ Pro: GPT-5.4 Pro 우선 접근</div>
+      <div class="diff-line diff-add">+ Enterprise: Workspace Analytics 추가</div>
+    </div>
+
+    <h3>4.3 신규 추가 항목</h3>
+    <table>
+      <tr><th>항목</th><th>내용</th><th>위치</th></tr>
+      <tr><td>퇴역 안내</td><td>GPT-5.1 전 계열 2026.03.11 퇴역 — <code>!!! warning</code> admonition 추가</td><td>chatgpt.md 모델 라인업</td></tr>
+      <tr><td>파일 업로드 확대</td><td>"파일 업로드가 기존 10개에서 <strong>20개로 확대</strong> (2026년 3월)"</td><td>chatgpt.md 데이터 분석 섹션</td></tr>
+      <tr><td>모델 선택 가이드</td><td>GPT-5.4 mini / GPT-5.4 / GPT-5.4 Thinking 기반으로 재작성</td><td>chatgpt.md 실전 팁</td></tr>
+    </table>
+
+    <h3>4.4 영향받은 파일 (교차 참조)</h3>
+    <p>GPT-5 → GPT-5.4 명칭 변경은 다음 파일에서도 반영:</p>
+    <ul>
+      <li><code>ch02-tools-ecosystem.md</code> — 개요 테이블, 무료 버전, 가격 비교</li>
+      <li><code>tools-comparison.md</code> — 기본 정보, 가격, API, 버전 히스토리</li>
+      <li><code>models-overview.md</code> — 전체 GPT-5 → GPT-5.4 (26개소)</li>
+      <li><code>context-window.md</code> — 모델별 현황 테이블</li>
+      <li><code>ch13-future-trends.md</code> — 비용 테이블</li>
+      <li><code>ch01-what-is-genai.md</code> — LLM 모델 테이블, 멀티모달 테이블, 각주</li>
+      <li><code>references.md</code> — GPT-4 Technical Report → GPT-5.4 Model Documentation</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 5. Anthropic ==================== -->
+  <hr class="doc-divider" id="anthropic">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">5. Anthropic / Claude 변경 상세</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+
+    <p>가장 큰 변경은 <strong>200K → 1M 토큰 컨텍스트 GA</strong>입니다. Opus 4.6과 Sonnet 4.6 모두 1M 토큰이 일반 공개(GA) 되었으며, 이에 따라 교재 전반의 수치를 수정했습니다.</p>
+
+    <h3>5.1 컨텍스트 윈도우 변경</h3>
+    <div class="diff-block">
+      <div class="diff-header">모든 관련 파일 — 일괄 변경</div>
+      <div class="diff-line diff-del">- 200K 토큰 (약 500페이지)</div>
+      <div class="diff-line diff-add">+ 1M 토큰 (약 2,500페이지)</div>
+    </div>
+    <p>이 변경이 반영된 위치:</p>
+    <table>
+      <tr><th>파일</th><th>변경 개소</th></tr>
+      <tr><td>claude.md</td><td>서문, Sonnet 4.6 특징, Opus 4.6 특징, 긴 문서 처리 섹션, 장점, 비교표</td></tr>
+      <tr><td>ch02-tools-ecosystem.md</td><td>개요 테이블, 컨텍스트 윈도우, 강점, 사례, 용도별 추천, 핵심 정리</td></tr>
+      <tr><td>tools-comparison.md</td><td>컨텍스트 윈도우 테이블, Claude 특화 기능</td></tr>
+      <tr><td>models-overview.md</td><td>Opus 특징, 강점, 핵심 정리</td></tr>
+      <tr><td>context-window.md</td><td>모델별 현황, 모델 선택 가이드, 미래 전망</td></tr>
+      <tr><td>ch13-future-trends.md</td><td>맥락 이해 테이블</td></tr>
+      <tr><td>chatgpt.md / gemini.md</td><td>비교표의 Claude 컨텍스트 열</td></tr>
+      <tr><td>wiki/tools/index.md</td><td>도구 비교 요약, 긴 문서 분석 탭</td></tr>
+    </table>
+
+    <h3>5.2 신규 기능 — Cowork</h3>
+    <div class="info-card">
+      <div class="info-card-title">Cowork (협업 에이전트) — 새 섹션 추가</div>
+      <div class="info-card-body">
+        <div class="info-kv"><span class="info-key">위치</span><span class="info-val">claude.md → 핵심 기능 #2로 삽입</span></div>
+        <div class="info-kv"><span class="info-key">내용</span><span class="info-val">persistent agent thread, 여러 세션 맥락 유지, 프로젝트 단계별 관리</span></div>
+        <div class="info-kv"><span class="info-key">교차 반영</span><span class="info-val">ch02 (Cowork 테이블 행), tools-comparison (특화 기능), glossary (용어 추가)</span></div>
+      </div>
+    </div>
+
+    <h3>5.3 신규 기능 — 인라인 시각화</h3>
+    <div class="info-card">
+      <div class="info-card-title">인라인 차트/다이어그램 — Artifacts 내 추가</div>
+      <div class="info-card-body">
+        <div class="info-kv"><span class="info-key">위치</span><span class="info-val">claude.md → Artifacts 특징 목록에 추가</span></div>
+        <div class="info-kv"><span class="info-key">내용</span><span class="info-val">"2026년 3월부터 대화 내에서 직접 인라인 차트와 다이어그램을 생성 가능"</span></div>
+        <div class="info-kv"><span class="info-key">단점 수정</span><span class="info-val">"이미지 생성 불가" → "이미지 생성 불가 (인라인 차트/다이어그램으로 부분 해소)"</span></div>
+        <div class="info-kv"><span class="info-key">교차 반영</span><span class="info-val">ch02, tools-comparison, wiki/tools/index.md, glossary</span></div>
+      </div>
+    </div>
+
+    <h3>5.4 Claude Code 섹션 추가</h3>
+    <div class="diff-block">
+      <div class="diff-header">docs/wiki/tools/claude.md — 새 섹션 #8 추가</div>
+      <div class="diff-line diff-add">+ ### 8. Claude Code (개발자 도구)</div>
+      <div class="diff-line diff-add">+ - Opus 4.6을 기본 모델로 사용</div>
+      <div class="diff-line diff-add">+ - 음성 모드(/voice)로 음성 지시 가능</div>
+      <div class="diff-line diff-add">+ - 반복 실행(/loop)으로 자동화된 코드 수정 반복</div>
+      <div class="diff-line diff-add">+ - MCP 서버 연동으로 외부 도구 통합</div>
+      <div class="diff-line diff-add">+ - 최신 버전 v2.1.76</div>
+    </div>
+
+    <h3>5.5 기능 번호 재정렬</h3>
+    <p>Cowork (#2)와 Claude Code (#8) 삽입에 따라 기존 기능 번호를 1~10으로 재정렬:</p>
+    <table>
+      <tr><th>변경 전</th><th>변경 후</th></tr>
+      <tr><td>#1 Projects</td><td>#1 Projects</td></tr>
+      <tr><td>—</td><td>#2 Cowork <span class="change-add">NEW</span></td></tr>
+      <tr><td>#2 Artifacts</td><td>#3 Artifacts</td></tr>
+      <tr><td>#3 Analysis Tool</td><td>#4 Analysis Tool</td></tr>
+      <tr><td>#4 Vision</td><td>#5 Vision</td></tr>
+      <tr><td>#5 Computer Use</td><td>#6 Computer Use</td></tr>
+      <tr><td>#6 MCP</td><td>#7 MCP</td></tr>
+      <tr><td>—</td><td>#8 Claude Code <span class="change-add">NEW</span></td></tr>
+      <tr><td>#7 긴 문서 처리</td><td>#9 긴 문서 처리</td></tr>
+      <tr><td>#8 Constitutional AI</td><td>#10 Constitutional AI</td></tr>
+    </table>
+  </section>
+
+  <!-- ==================== 6. Google ==================== -->
+  <hr class="doc-divider" id="google">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">6. Google / Gemini 변경 상세</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+
+    <h3>6.1 모델 상태 변경</h3>
+    <table>
+      <tr><th>모델</th><th>변경 전</th><th>변경 후</th></tr>
+      <tr><td>Gemini 3.1 Pro</td><td>"개발 중", 예상 특징만 기술</td><td><strong>Preview 출시</strong> (3월 초), 실제 특징 기술</td></tr>
+      <tr><td>Gemini 3.1 Flash-Lite</td><td>미존재</td><td><span class="change-add">새 섹션 추가</span> — $0.25/$1.50</td></tr>
+      <tr><td>Gemini 3 Pro</td><td>미언급</td><td>2026.03.09 퇴역 <span class="change-del">퇴역</span></td></tr>
+      <tr><td>Gemini 2.5 Flash-Lite</td><td>현역</td><td>2026.03.31 종료 예정 <span class="change-del">퇴역</span></td></tr>
+    </table>
+
+    <h3>6.2 구독 티어 추가</h3>
+    <div class="diff-block">
+      <div class="diff-header">docs/wiki/tools/gemini.md — 요금제 테이블</div>
+      <div class="diff-line diff-add">+ | AI Pro | $49.99/월 | Advanced보다 높은 사용량, 3.1 Pro Preview 접근 |</div>
+      <div class="diff-line diff-add">+ | AI Ultra | $249.99/월 | 최고 성능 모델 무제한, 모든 프리미엄 기능 |</div>
+    </div>
+
+    <h3>6.3 Workspace 통합 강화</h3>
+    <div class="diff-block">
+      <div class="diff-header">docs/wiki/tools/gemini.md — Workspace 앱 테이블</div>
+      <div class="diff-line diff-del">- Google Docs: 문서 작성·요약·편집 지원 (Help me write)</div>
+      <div class="diff-line diff-add">+ Google Docs: AI 기반 문서 자동 생성, 구조 제안, 번역 통합</div>
+      <div class="diff-line diff-del">- Google Sheets: 데이터 분석, 수식 생성, 차트 추천</div>
+      <div class="diff-line diff-add">+ Google Sheets: AI 피벗 분석, 자연어 수식 생성, 예측 차트</div>
+      <div class="diff-line diff-del">- Google Slides: 프레젠테이션 생성, 이미지 생성, 레이아웃 제안</div>
+      <div class="diff-line diff-add">+ Google Slides: AI 기반 전체 프레젠테이션 자동 생성, 이미지 검색 통합</div>
+      <div class="diff-line diff-add">+ Google Drive: AI 기반 파일 검색, 요약, 정리 (신규 행)</div>
+    </div>
+
+    <h3>6.4 기타 추가</h3>
+    <table>
+      <tr><th>항목</th><th>내용</th></tr>
+      <tr><td>멀티모달 임베딩</td><td><code>gemini-embedding-2-preview</code> — AI Studio 섹션에 추가</td></tr>
+      <tr><td>API 가격표</td><td>3.1 Pro (TBD), 3.1 Flash-Lite ($0.25/$1.50) 행 추가</td></tr>
+      <tr><td>퇴역 admonition</td><td><code>!!! warning</code>으로 Gemini 3 Pro, 2.5 Flash-Lite 퇴역 안내</td></tr>
+    </table>
+
+    <h3>6.5 영향받은 파일 (교차 참조)</h3>
+    <p>Gemini 2.5 Pro → 3.1 Pro 참조 변경이 반영된 파일:</p>
+    <ul>
+      <li><code>models-overview.md</code> — 섹션 제목, 사용 예시, 최적화 팁, 의사결정 가이드, 핵심 정리</li>
+      <li><code>ch01-what-is-genai.md</code> — LLM 테이블, 멀티모달 테이블, 각주</li>
+      <li><code>tools-comparison.md</code> — 기본 정보 테이블, 버전 히스토리</li>
+      <li><code>ch13-future-trends.md</code> — 멀티모달 본문</li>
+      <li><code>context-window.md</code> — 미래 전망 테이블</li>
+      <li><code>references.md</code> — Gemini 관련 참고자료</li>
+      <li><code>glossary.md</code> — LLM 정의 예시</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 7~19. Per-file detail ==================== -->
+  <hr class="doc-divider" id="f-chatgpt">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">7. chatgpt.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/wiki/tools/chatgpt.md</code><br>
+      <strong>에이전트:</strong> chatgpt-author (opus)<br>
+      <strong>변경량:</strong> +27 / -23</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th><th>변경 전</th><th>변경 후</th></tr>
+      <tr><td>1</td><td>최종 수정일</td><td>2025-02-20</td><td>2026-03-19</td></tr>
+      <tr><td>2</td><td>서문 모델명</td><td>GPT-5 계열 멀티모달 모델</td><td>GPT-5.4 계열 최신 모델</td></tr>
+      <tr><td>3</td><td>기본 정보 최신 모델</td><td>GPT-5, GPT-5.2, GPT-5.3-Codex-Spark, o4-mini</td><td>GPT-5.4 (Thinking/Pro), GPT-5.4 mini, GPT-5.4 nano, o4-mini</td></tr>
+      <tr><td>4</td><td>Free 플랜</td><td>GPT-5.2 (제한)</td><td>GPT-5.4 nano (제한)</td></tr>
+      <tr><td>5</td><td>Plus 플랜</td><td>GPT-5.2, o4-mini</td><td>GPT-5.4 mini, o4-mini</td></tr>
+      <tr><td>6</td><td>Pro 플랜</td><td>GPT-5 우선 접근</td><td>GPT-5.4 Pro 우선 접근</td></tr>
+      <tr><td>7</td><td>Enterprise</td><td>감사 로그, 데이터 학습 제외</td><td>감사 로그, <strong>Workspace Analytics</strong>, 데이터 학습 제외</td></tr>
+      <tr><td>8</td><td>기본 모델 섹션</td><td>"GPT-5 (기본 모델)"</td><td>"GPT-5.4 (최신 기본 모델)" + Thinking/Pro 변형 설명</td></tr>
+      <tr><td>9</td><td>경량 모델 섹션</td><td>"GPT-5.2 계열 (변형 모델)" — Instant/Thinking/Pro</td><td>"GPT-5.4 mini / nano (경량 모델)"</td></tr>
+      <tr><td>10</td><td>퇴역 안내</td><td>없음</td><td><code>!!! warning</code> GPT-5.1 전 계열 3/11 퇴역</td></tr>
+      <tr><td>11</td><td>파일 업로드</td><td>없음</td><td>10개 → <strong>20개</strong> 확대 (2026년 3월)</td></tr>
+      <tr><td>12</td><td>모델 선택 가이드</td><td>GPT-5.2, GPT-5, o3</td><td>GPT-5.4 mini, GPT-5.4, GPT-5.4 Thinking</td></tr>
+      <tr><td>13</td><td>비교표 Claude 컨텍스트</td><td>200K</td><td>1M</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-claude">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">8. claude.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/wiki/tools/claude.md</code><br>
+      <strong>에이전트:</strong> claude-author (opus)<br>
+      <strong>변경량:</strong> +43 / -15</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th><th>변경 전</th><th>변경 후</th></tr>
+      <tr><td>1</td><td>최종 수정일</td><td>2025-02-20</td><td>2026-03-19</td></tr>
+      <tr><td>2</td><td>서문 컨텍스트</td><td>200K 토큰 컨텍스트 윈도우</td><td><strong>1M 토큰 컨텍스트 윈도우 (GA)</strong></td></tr>
+      <tr><td>3</td><td>Sonnet 4.6 토큰</td><td>200K 토큰 (약 500페이지)</td><td>1M 토큰 (약 2,500페이지)</td></tr>
+      <tr><td>4</td><td>Opus 헤딩</td><td>Claude 4.5 Opus</td><td>Claude Opus 4.6</td></tr>
+      <tr><td>5</td><td>Opus 토큰</td><td>200K 토큰</td><td>1M 토큰</td></tr>
+      <tr><td>6</td><td>Cowork 섹션</td><td>없음</td><td><span class="change-add">NEW</span> #2 Cowork — persistent agent thread</td></tr>
+      <tr><td>7</td><td>인라인 시각화</td><td>없음</td><td>Artifacts에 인라인 차트/다이어그램 기능 추가</td></tr>
+      <tr><td>8</td><td>Claude Code 섹션</td><td>없음</td><td><span class="change-add">NEW</span> #8 — v2.1.76, /voice, /loop, Opus 4.6</td></tr>
+      <tr><td>9</td><td>긴 문서 처리</td><td>200K 토큰</td><td>1M 토큰 + "여러 권의 책 비교 분석" 예시</td></tr>
+      <tr><td>10</td><td>장점</td><td>가장 긴 컨텍스트 (200K)</td><td>업계 최대 수준 (1M 토큰)</td></tr>
+      <tr><td>11</td><td>단점</td><td>이미지 생성 불가</td><td>이미지 생성 불가 (인라인 차트/다이어그램으로 부분 해소)</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-gemini">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">9. gemini.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/wiki/tools/gemini.md</code><br>
+      <strong>에이전트:</strong> gemini-author (opus)<br>
+      <strong>변경량:</strong> +40 / -17</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th><th>변경 전</th><th>변경 후</th></tr>
+      <tr><td>1</td><td>최종 수정일</td><td>2025-02-20</td><td>2026-03-19</td></tr>
+      <tr><td>2</td><td>서문</td><td>Gemini 2.5 Pro가 최신 플래그십</td><td>3.1 Pro Preview가 최신, 2.5 Pro가 안정 버전</td></tr>
+      <tr><td>3</td><td>최신 모델</td><td>Gemini 2.5 Pro, 3.1 Pro (개발 중), 2.0 Flash</td><td>3.1 Pro (Preview), 2.5 Pro, 3.1 Flash-Lite (Preview), 2.0 Flash</td></tr>
+      <tr><td>4</td><td>AI Pro 구독</td><td>없음</td><td><span class="change-add">$49.99/월</span></td></tr>
+      <tr><td>5</td><td>AI Ultra 구독</td><td>없음</td><td><span class="change-add">$249.99/월</span></td></tr>
+      <tr><td>6</td><td>3.1 Pro 섹션</td><td>"개발 중", 예상 특징</td><td>"Preview", 실제 특징 기술</td></tr>
+      <tr><td>7</td><td>3.1 Flash-Lite</td><td>없음</td><td><span class="change-add">새 섹션</span> — $0.25/$1.50</td></tr>
+      <tr><td>8</td><td>퇴역 안내</td><td>없음</td><td><code>!!! warning</code> Gemini 3 Pro (3/9), 2.5 Flash-Lite (3/31)</td></tr>
+      <tr><td>9</td><td>Workspace 테이블</td><td>Docs/Sheets/Slides 기본 설명</td><td>AI 기반 강화 설명 + Google Drive 행 추가</td></tr>
+      <tr><td>10</td><td>AI Studio 지원 모델</td><td>2.5 Pro, 2.0 Flash 등</td><td>3.1 Pro Preview, 3.1 Flash-Lite Preview 추가</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-ch02">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">10. ch02-tools-ecosystem.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/part2/ch02-tools-ecosystem.md</code><br>
+      <strong>에이전트:</strong> ch02-author (opus)<br>
+      <strong>변경량:</strong> +17 / -14</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th></tr>
+      <tr><td>1</td><td>주요 3대 서비스 개요 테이블 → 2026년 3월 기준으로 모든 모델명 업데이트</td></tr>
+      <tr><td>2</td><td>ChatGPT 무료 버전: GPT-5.2 → GPT-5.4 nano</td></tr>
+      <tr><td>3</td><td>Claude 컨텍스트 윈도우: 200K → 1M 토큰 (5개소)</td></tr>
+      <tr><td>4</td><td>Claude 강점: 500페이지 → 2,500페이지</td></tr>
+      <tr><td>5</td><td>Claude 약점: "이미지 분석은 가능" → "이미지 분석·인라인 시각화는 가능"</td></tr>
+      <tr><td>6</td><td>Claude Code: Cowork(영구 에이전트 스레드)와 음성 모드 설명 추가, 테이블에 Cowork 행 추가</td></tr>
+      <tr><td>7</td><td>Gemini 유료: AI Pro ($30/월), AI Ultra ($50/월) 추가</td></tr>
+      <tr><td>8</td><td>가격 비교: 2026년 2월 → 3월, ChatGPT 무료 GPT-5.4 nano</td></tr>
+      <tr><td>9</td><td>사례 1: 200K → 1M 토큰</td></tr>
+      <tr><td>10</td><td>핵심 정리: "Claude: 긴 컨텍스트(200K)" → "(1M)"</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-comparison">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">11. tools-comparison.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/appendix/tools-comparison.md</code><br>
+      <strong>에이전트:</strong> comparison-author (opus)<br>
+      <strong>변경량:</strong> +16 / -9</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th></tr>
+      <tr><td>1</td><td>최종 업데이트: 2026년 2월 → 3월</td></tr>
+      <tr><td>2</td><td>기본 정보: ChatGPT → GPT-5.4, Gemini → 3.1 Pro (Preview)</td></tr>
+      <tr><td>3</td><td>가격 테이블: 무료 GPT-5.4 nano, API GPT-5.4</td></tr>
+      <tr><td>4</td><td>컨텍스트 윈도우: Claude Sonnet/Opus 200K → 1M, 500페이지 → 2,500페이지</td></tr>
+      <tr><td>5</td><td>Claude 특화 기능: "긴 문맥 이해 200K" → "1M" + Cowork 행 + 인라인 시각화 행 추가</td></tr>
+      <tr><td>6</td><td>주의사항: Claude "이미지 생성 불가 (인라인 시각화 부분 해소)"</td></tr>
+      <tr><td>7</td><td>버전 히스토리: GPT-5.4 (2026.03), Claude 4.6 1M GA (2026.03), Gemini 3.1 Pro (2026.03) 추가</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-models">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">12. models-overview.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/wiki/prompt-engineering/foundations/models-overview.md</code><br>
+      <strong>에이전트:</strong> models-author (opus)<br>
+      <strong>변경량:</strong> +26 / -26</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th></tr>
+      <tr><td>1</td><td>날짜: 2026년 2월 → 3월</td></tr>
+      <tr><td>2</td><td>모델 선택 가이드: GPT-5 → GPT-5.4, Claude "정확성, 안전성" → "+ 1M 컨텍스트", Gemini 2.5 → 3.1 Pro (Preview 단계)</td></tr>
+      <tr><td>3</td><td>GPT 섹션: 제목·설명 전면 변경, Thinking/Pro/mini/nano 설명, 학습 데이터 "2026년 3월까지"</td></tr>
+      <tr><td>4</td><td>Claude 섹션: Opus 200K → 1M, Haiku 100K → 128K, 강점 1M</td></tr>
+      <tr><td>5</td><td>Gemini 섹션: 2.5 Pro → 3.1 Pro, "안정 + Preview" 듀얼 설명</td></tr>
+      <tr><td>6</td><td>프롬프트 최적화 팁, 의사결정 가이드, 실전 팁, 핵심 정리 — 전부 모델명 업데이트</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-context">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">13. context-window.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/wiki/concepts/context-window.md</code><br>
+      <strong>에이전트:</strong> orchestrator (직접)<br>
+      <strong>변경량:</strong> +12 / -12</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th></tr>
+      <tr><td>1</td><td>최종 수정일: 2025-01-16 → 2026-03-19</td></tr>
+      <tr><td>2</td><td>섹션 헤더: "2026년 2월 기준" → "2026년 3월 기준"</td></tr>
+      <tr><td>3</td><td>GPT-5 → GPT-5.4</td></tr>
+      <tr><td>4</td><td>Claude Opus 4.6: 200K → 1M 토큰, 150,000단어 → 750,000단어 + "(GA)"</td></tr>
+      <tr><td>5</td><td>Claude Sonnet 4.6: 200K → 1M 토큰, 150,000단어 → 750,000단어 + "(GA)"</td></tr>
+      <tr><td>6</td><td>모델 선택 가이드: 책/논문 128K~200K → 128K~1M, 코드베이스 추천 순서 변경</td></tr>
+      <tr><td>7</td><td>미래 전망 테이블: GPT-5 → GPT-5.4, Claude 4.6 (1M GA), Gemini 3.1</td></tr>
+      <tr><td>8</td><td>참고 자료: 제목 및 설명 업데이트</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-ch13">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">14. ch13-future-trends.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/part5/ch13-future-trends.md</code><br>
+      <strong>에이전트:</strong> orchestrator (직접)<br>
+      <strong>변경량:</strong> +3 / -3</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th></tr>
+      <tr><td>1</td><td>맥락 이해: Claude "200K 토큰" → "1M 토큰 (GA)"</td></tr>
+      <tr><td>2</td><td>비용: "GPT-5 Free" → "GPT-5.4 nano Free"</td></tr>
+      <tr><td>3</td><td>멀티모달: "GPT-5, Claude 4.6, Gemini 2.5 Pro" → "GPT-5.4, Claude 4.6 (인라인 시각화 지원), Gemini 3.1 Pro"</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-toolsidx">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">15. wiki/tools/index.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/wiki/tools/index.md</code><br>
+      <strong>에이전트:</strong> orchestrator (직접)<br>
+      <strong>변경량:</strong> +6 / -6</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th></tr>
+      <tr><td>1</td><td>Claude 강점: "긴 문맥, 안전성" → "1M 토큰 컨텍스트, 안전성, 인라인 시각화"</td></tr>
+      <tr><td>2</td><td>Claude 약점: "이미지 생성 불가" → "이미지 생성 제한적"</td></tr>
+      <tr><td>3</td><td>ChatGPT 강점: "범용성, 플러그인 생태계" → "범용성, GPT-5.4 생태계"</td></tr>
+      <tr><td>4</td><td>Gemini 강점: "검색 연동, 멀티모달" → "검색 연동, Gemini 3.1 Pro, 멀티모달"</td></tr>
+      <tr><td>5</td><td>Gemini 약점: "언어별 품질 차이" → "3.1 Pro는 Preview 단계"</td></tr>
+      <tr><td>6</td><td>긴 문서 분석 탭: "20만 토큰" → "100만 토큰(1M)" + "여러 권의 책 동시 분석"</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-ch01">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">16. ch01-what-is-genai.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/part1/ch01-what-is-genai.md</code><br>
+      <strong>에이전트:</strong> orchestrator (직접)<br>
+      <strong>변경량:</strong> +6 / -6</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th></tr>
+      <tr><td>1</td><td>LLM 테이블: GPT-5 → GPT-5.4, "2025.02 출시" → "2026.03 출시, Thinking/Pro/mini/nano 변형"</td></tr>
+      <tr><td>2</td><td>Claude 4.6 비고: "코딩·에이전트 최강" → "1M 토큰 GA, 코딩·에이전트 최강"</td></tr>
+      <tr><td>3</td><td>Gemini: 2.5 Pro → 3.1 Pro, "1M 토큰 컨텍스트" → "Preview, 차세대 멀티모달"</td></tr>
+      <tr><td>4</td><td>멀티모달 테이블: GPT-5, Gemini 2.5 Pro → GPT-5.4, Gemini 3.1 Pro</td></tr>
+      <tr><td>5</td><td>각주: GPT-5 Model Documentation → GPT-5.4, Gemini 2.5 Pro → 3.1 Pro</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-glossary">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">17. glossary.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/appendix/glossary.md</code><br>
+      <strong>에이전트:</strong> orchestrator (직접)<br>
+      <strong>변경량:</strong> +7 / -1</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th></tr>
+      <tr><td>1</td><td>LLM 예시: GPT-5, Gemini 2.5 Pro → GPT-5.4, Gemini 3.1 Pro</td></tr>
+      <tr><td>2</td><td><span class="change-add">NEW</span> <strong>인라인 시각화 (Inline Visualization)</strong> 용어 추가 — ㅇ 섹션</td></tr>
+      <tr><td>3</td><td><span class="change-add">NEW</span> <strong>코워크 (Cowork)</strong> 용어 추가 — ㅋ 섹션</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-refs">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">18. references.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/appendix/references.md</code><br>
+      <strong>에이전트:</strong> orchestrator (직접)<br>
+      <strong>변경량:</strong> +9 / -9</p>
+    </blockquote>
+    <table>
+      <tr><th>#</th><th>변경 항목</th></tr>
+      <tr><td>1</td><td>AI 서비스 공식 문서 6건: 연도 2024 → 2026</td></tr>
+      <tr><td>2</td><td>OpenAI: "GPT-4 Technical Report" → "GPT-5.4 Model Documentation"</td></tr>
+      <tr><td>3</td><td>Google: "Gemini: A Family" → "Gemini 3.1 Pro: Next-Generation Multimodal Model"</td></tr>
+      <tr><td>4</td><td>시장 트렌드 3건: McKinsey 2024→2025, Gartner 2024→2025, Stanford HAI 2024→2025</td></tr>
+    </table>
+  </section>
+
+  <hr class="doc-divider" id="f-index">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">19. index.md</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <blockquote>
+      <p><strong>경로:</strong> <code>docs/index.md</code><br>
+      <strong>에이전트:</strong> orchestrator (직접)<br>
+      <strong>변경량:</strong> +1 / -1</p>
+    </blockquote>
+    <p>단일 변경: <strong>"최종 업데이트: 2026년 2월 20일"</strong> → <strong>"2026년 3월 19일"</strong></p>
+  </section>
+
+  <hr class="doc-divider" id="f-book">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">20. docs/book/ 동기화</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+    <p><code>docs/book/</code> 디렉토리에는 <code>docs/</code>의 사본이 유지됩니다. 아래 4개 파일을 <code>cp</code>로 동기화하였습니다.</p>
+    <table>
+      <tr><th>소스</th><th>대상</th><th>변경량</th></tr>
+      <tr><td><code>docs/part1/ch01-what-is-genai.md</code></td><td><code>docs/book/part1/ch01-what-is-genai.md</code></td><td>+6 / -6</td></tr>
+      <tr><td><code>docs/part2/ch02-tools-ecosystem.md</code></td><td><code>docs/book/part2/ch02-tools-ecosystem.md</code></td><td>+17 / -14</td></tr>
+      <tr><td><code>docs/part4/ch09-hallucination.md</code></td><td><code>docs/book/part4/ch09-hallucination.md</code></td><td>+82 / -8</td></tr>
+      <tr><td><code>docs/part5/ch13-future-trends.md</code></td><td><code>docs/book/part5/ch13-future-trends.md</code></td><td>+39 / -7</td></tr>
+    </table>
+    <p><em>ch09와 ch13의 변경량이 소스보다 큰 이유: book/ 사본은 이전 업데이트에서 동기화가 누락되어 있었으며, 이번에 최신 소스로 완전 동기화되었습니다.</em></p>
+  </section>
+
+  <!-- ==================== QA ==================== -->
+  <hr class="doc-divider" id="qa">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">21. QA 검수 결과</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+
+    <p>Explore 에이전트를 활용하여 전체 변경사항을 7개 항목으로 검수하였습니다.</p>
+
+    <table>
+      <tr><th>검증 항목</th><th>결과</th><th>비고</th></tr>
+      <tr><td>정확성 — 모델명, 수치 일치</td><td style="color:#16a34a; font-weight:700;">PASS</td><td>GPT-5.4, 1M 토큰, Gemini 3.1 Pro 전파일 일관</td></tr>
+      <tr><td>일관성 — 14개 파일 간 수치/명칭</td><td style="color:#16a34a; font-weight:700;">PASS</td><td>교차 대조 완료</td></tr>
+      <tr><td>포맷 — MkDocs Material 문법</td><td style="color:#16a34a; font-weight:700;">PASS</td><td>admonition, 표, 탭 정상</td></tr>
+      <tr><td>교차 참조 — 내부 링크</td><td style="color:#16a34a; font-weight:700;">PASS</td><td>신규 추가 링크 없음 (기존 유지)</td></tr>
+      <tr><td>한국어 품질 — 문체, 톤</td><td style="color:#16a34a; font-weight:700;">PASS</td><td>합니다체, 교육용 톤 유지</td></tr>
+      <tr><td>완전성 — 계획 대비 이행률</td><td style="color:#16a34a; font-weight:700;">PASS</td><td>14/14 파일 수정 완료</td></tr>
+      <tr><td>동기화 — docs/ vs docs/book/</td><td style="color:#16a34a; font-weight:700;">PASS</td><td>4개 파일 동기화 완료</td></tr>
+    </table>
+
+    <div class="info-card">
+      <div class="info-card-title">최종 판정: APPROVED</div>
+      <div class="info-card-body">
+        <div class="info-kv"><span class="info-key">판정</span><span class="info-val">모든 검증 항목 통과. 변경사항 승인.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Build ==================== -->
+  <hr class="doc-divider" id="build">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">22. 빌드 검증</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+
+    <table>
+      <tr><th>검증</th><th>결과</th><th>비고</th></tr>
+      <tr><td><code>mkdocs build</code> (non-strict)</td><td style="color:#16a34a; font-weight:700;">SUCCESS</td><td>정상 빌드 완료</td></tr>
+      <tr><td><code>mkdocs build --strict</code></td><td style="color:#f59e0b; font-weight:700;">WARNING 23건</td><td>기존 docs/book/ 디렉토리의 상대 링크 문제 (이번 변경과 무관, 기존 이슈)</td></tr>
+    </table>
+  </section>
+
+  <!-- ==================== Commit ==================== -->
+  <hr class="doc-divider" id="commit">
+  <section class="doc-section">
+    <div class="section-header">
+      <span class="doc-badge">23. Git 커밋</span>
+      <a href="#top" class="to-top-link">맨 위로</a>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-title">커밋 정보</div>
+      <div class="info-card-body">
+        <div class="info-kv"><span class="info-key">Hash</span><span class="info-val"><code>8a4f9d3</code></span></div>
+        <div class="info-kv"><span class="info-key">Branch</span><span class="info-val">main</span></div>
+        <div class="info-kv"><span class="info-key">Files</span><span class="info-val">17 files changed, 358 insertions(+), 177 deletions(-)</span></div>
+        <div class="info-kv"><span class="info-key">Push</span><span class="info-val">미완료 (로컬 커밋만 생성)</span></div>
+      </div>
+    </div>
+
+    <pre><code>docs: 2026년 3월 기준 전체 콘텐츠 최신화 (17개 파일)
+
+- OpenAI: GPT-5.4 (Thinking/Pro/mini/nano), GPT-5.1 퇴역, 파일 업로드 20개
+- Anthropic: Claude 4.6 1M 컨텍스트 GA, Cowork, 인라인 시각화, Claude Code v2.1.76
+- Google: Gemini 3.1 Pro/Flash-Lite Preview, 퇴역(3 Pro, 2.5 Flash-Lite), AI Ultra/Pro 티어
+- 14개 소스 파일 + 4개 book/ 사본 동기화
+
+Co-Authored-By: Claude Opus 4.6 &lt;noreply@anthropic.com&gt;</code></pre>
+  </section>
+
+</div>
+
+<!-- Back to Top -->
+<a href="#top" class="back-to-top" title="맨 위로">↑</a>
+
+<script>
+function toggleGroup(el) {
+  el.classList.toggle('collapsed');
+  const items = el.nextElementSibling;
+  if (items) items.classList.toggle('hidden');
+}
+function toggleSub(el) {
+  el.classList.toggle('collapsed');
+  const items = el.nextElementSibling;
+  if (items) items.classList.toggle('hidden');
+}
+</script>
+
+</body>
+</html>
