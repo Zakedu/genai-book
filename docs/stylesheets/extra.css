@@ -1,604 +1,538 @@
-/* ===================================
-   GenAI Book - Custom Styles
-   2026 Glassmorphism Edition
-   =================================== */
+/* ===================================================================
+   GenAI Book — APEX Design Language
+   APEX 디자인 가이드 정렬: flat surface · navy/Proof Blue · 명확한 위계
+   색 #0D0D0F / #1A6FEF / #4A8EFF / #C8A24A
+   폰트 Space Grotesk(디스플레이) · Pretendard(본문) · JetBrains Mono(코드)
+   =================================================================== */
 
-/* 폰트 로드 */
+/* ── 폰트 ── */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* 기본 폰트 설정 + CSS 변수 */
+/* ── 토큰 ── */
 :root {
   --md-text-font: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --md-code-font: "JetBrains Mono", "Fira Code", monospace;
+  --apex-display-font: "Space Grotesk", "Pretendard", sans-serif;
 
-  /* Glassmorphism 변수 */
-  --glass-blur: 20px;
-  --glass-saturation: 180%;
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --apex-navy: #0D0D0F;
+  --apex-blue: #1A6FEF;
+  --apex-blue-hi: #4A8EFF;
+  --apex-gold: #C8A24A;
 
-  /* 트랜지션 */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --apex-r-sm: 6px;
+  --apex-r-md: 8px;
+  --apex-r-lg: 12px;
+  --apex-r-xl: 16px;
+
+  --apex-ease: cubic-bezier(0.2, 0, 0, 1);
+  --apex-t: 160ms var(--apex-ease);
 }
 
-body {
-  font-family: var(--md-text-font);
-}
-
-/* ===================================
-   라이트 모드 컬러 (현대화된 Blue)
-   =================================== */
+/* ── 라이트 모드 ── */
 [data-md-color-scheme="default"] {
-  /* 메인 배경색 - 더 밝고 따뜻하게 */
-  --md-default-bg-color: #F8FAFC;
+  --md-default-bg-color: #F4F6FA;
   --md-default-bg-color--light: #FFFFFF;
   --md-default-bg-color--lighter: #FAFBFC;
   --md-default-bg-color--lightest: #FFFFFF;
 
-  /* 프라이머리 컬러 (APEX Navy) */
-  --md-primary-fg-color: #1B2A4A;
-  --md-primary-fg-color--light: #2D4A6F;
-  --md-primary-fg-color--dark: #0F1D2F;
+  --md-primary-fg-color: #0D0D0F;
+  --md-primary-fg-color--light: #1C2638;
+  --md-primary-fg-color--dark: #07070A;
   --md-primary-bg-color: #FFFFFF;
   --md-primary-bg-color--light: #F0F3F7;
 
-  /* 악센트 컬러 (APEX Gold) */
-  --md-accent-fg-color: #B8960C;
-  --md-accent-fg-color--transparent: rgba(200, 162, 74, 0.12);
-  --md-accent-bg-color: #C8A24A;
-  --md-accent-bg-color--light: #F5EFD7;
+  --md-accent-fg-color: #1A6FEF;
+  --md-accent-fg-color--transparent: rgba(26, 111, 239, 0.10);
+  --md-accent-bg-color: #1A6FEF;
+  --md-accent-bg-color--light: #E3EDFF;
 
-  /* 텍스트 컬러 - 더 부드럽게 */
-  --md-typeset-color: #1E293B;
-  --md-default-fg-color: #1E293B;
+  --md-typeset-color: #0E1929;
+  --md-default-fg-color: #0E1929;
   --md-default-fg-color--light: #475569;
   --md-default-fg-color--lighter: #64748B;
   --md-default-fg-color--lightest: #94A3B8;
 
-  /* 코드 배경 */
   --md-code-bg-color: #F1F5F9;
-  --md-code-fg-color: #1E293B;
+  --md-code-fg-color: #0E1929;
 
-  /* 푸터 (APEX Navy) */
-  --md-footer-bg-color: #0F1D2F;
-  --md-footer-bg-color--dark: #0A1420;
+  --md-footer-bg-color: #0D0D0F;
+  --md-footer-bg-color--dark: #07070A;
   --md-footer-fg-color: #FFFFFF;
   --md-footer-fg-color--light: #C8D6E5;
   --md-footer-fg-color--lighter: #8FAFD4;
 
-  /* Glassmorphism 라이트 */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-bg-solid: rgba(255, 255, 255, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.5);
+  /* APEX surface/border/elevation */
+  --apex-surface: #FFFFFF;
+  --apex-surface-2: #F1F5F9;
+  --apex-border: #E2E8F0;
+  --apex-border-strong: #CBD5E1;
+  --apex-text-muted: #64748B;
+  --apex-elev: 0 1px 2px rgba(15,23,42,0.04), 0 10px 28px rgba(15,23,42,0.06);
+  --apex-elev-sm: 0 1px 2px rgba(15,23,42,0.05);
+  --apex-header-bg: #0D0D0F;
 }
 
-/* ===================================
-   다크 모드 컬러
-   =================================== */
+/* ── 다크 모드 ── */
 [data-md-color-scheme="slate"] {
-  /* 메인 배경색 - 더 깊은 slate */
-  --md-default-bg-color: #0F172A;
-  --md-default-bg-color--light: #1E293B;
-  --md-default-bg-color--lighter: #334155;
-  --md-default-bg-color--lightest: #475569;
+  --md-default-bg-color: #07070A;
+  --md-default-bg-color--light: #0B1220;
+  --md-default-bg-color--lighter: #111A2E;
+  --md-default-bg-color--lightest: #1C2638;
 
-  /* 프라이머리 컬러 (APEX Navy — 다크모드) */
-  --md-primary-fg-color: #8FAFD4;
-  --md-primary-fg-color--light: #A8C4E0;
-  --md-primary-fg-color--dark: #6B9FD4;
-  --md-primary-bg-color: #0F172A;
-  --md-primary-bg-color--light: #1A2A42;
+  --md-primary-fg-color: #4A8EFF;
+  --md-primary-fg-color--light: #6BA3FF;
+  --md-primary-fg-color--dark: #1A6FEF;
+  --md-primary-bg-color: #0B1220;
+  --md-primary-bg-color--light: #111A2E;
 
-  /* 악센트 컬러 (APEX Gold — 다크모드) */
-  --md-accent-fg-color: #D4AF37;
-  --md-accent-fg-color--transparent: rgba(212, 175, 55, 0.15);
+  --md-accent-fg-color: #4A8EFF;
+  --md-accent-fg-color--transparent: rgba(74, 142, 255, 0.16);
+  --md-accent-bg-color: #1A6FEF;
+  --md-accent-bg-color--light: #16233C;
 
-  /* 텍스트 컬러 */
-  --md-typeset-color: #E2E8F0;
-  --md-default-fg-color: #E2E8F0;
-  --md-default-fg-color--light: #CBD5E1;
+  --md-typeset-color: #E6EDF6;
+  --md-default-fg-color: #E6EDF6;
+  --md-default-fg-color--light: #C2CEDD;
   --md-default-fg-color--lighter: #94A3B8;
   --md-default-fg-color--lightest: #64748B;
 
-  /* 코드 배경 */
-  --md-code-bg-color: #1E293B;
-  --md-code-fg-color: #E2E8F0;
+  --md-code-bg-color: #0B1220;
+  --md-code-fg-color: #E6EDF6;
 
-  /* Glassmorphism 다크 */
-  --glass-bg: rgba(30, 41, 59, 0.7);
-  --glass-bg-solid: rgba(30, 41, 59, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --md-footer-bg-color: #07070A;
+  --md-footer-bg-color--dark: #050507;
+
+  --apex-surface: #0F1A2E;
+  --apex-surface-2: #0B1220;
+  --apex-border: rgba(255,255,255,0.09);
+  --apex-border-strong: rgba(255,255,255,0.16);
+  --apex-text-muted: #94A3B8;
+  --apex-elev: 0 1px 2px rgba(0,0,0,0.4), 0 10px 28px rgba(0,0,0,0.4);
+  --apex-elev-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --apex-header-bg: #0D0D0F;
 }
 
-/* ===================================
-   헤더 & 네비게이션 (Glassmorphism)
-   =================================== */
+body { font-family: var(--md-text-font); }
+
+/* ── 한글 줄바꿈: 어절 단위 (2줄 이상일 때 중간 끊김/외톨이 방지) ── */
+.md-typeset,
+.md-typeset :where(p, h1, h2, h3, h4, h5, h6, li, dd, dt, blockquote, figcaption, caption, summary, td, th, .admonition-title) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;   /* 문장부호/괄호 주변 어색한 끊김 억제 (CJK) */
+}
+.apex-allow-break { word-break: normal; overflow-wrap: anywhere; }
+
+/* ===================================================================
+   HEADER · TABS (flat navy)
+   =================================================================== */
 .md-header {
-  background: var(--glass-bg-solid);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
-  border-bottom: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  background: var(--apex-header-bg);
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
-
-[data-md-color-scheme="default"] .md-header {
-  background: rgba(27, 42, 74, 0.95);
+.md-header__title {
+  font-family: var(--apex-display-font);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
-
-[data-md-color-scheme="slate"] .md-header {
-  background: rgba(15, 23, 42, 0.9);
-}
-
 .md-tabs {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
-
 .md-tabs__link {
+  font-family: var(--apex-display-font);
   font-weight: 500;
-  opacity: 0.85;
-  transition: var(--transition-smooth);
-  border-radius: 8px;
-  margin: 4px;
+  font-size: 0.78rem;
+  opacity: 0.78;
+  border-radius: var(--apex-r-md);
+  margin: 4px 2px;
+  padding: 0 10px;
+  transition: var(--apex-t);
 }
-
 .md-tabs__link--active,
 .md-tabs__link:hover {
   opacity: 1;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255,255,255,0.12);
 }
-
-/* ===================================
-   레이아웃 너비 확장
-   =================================== */
-.md-grid {
-  max-width: 1440px;
+.md-search__input {
+  border-radius: var(--apex-r-md);
+  background-color: rgba(255,255,255,0.12);
 }
+.md-search__input::placeholder { color: rgba(255,255,255,0.7); }
 
-.md-main__inner {
-  max-width: 100%;
-}
+/* ===================================================================
+   LAYOUT · SIDEBAR (flat)
+   =================================================================== */
+.md-grid { max-width: 1480px; }
+.md-main__inner { max-width: 100%; }
 
-/* ===================================
-   사이드바 (Glassmorphism)
-   =================================== */
 .md-sidebar {
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  width: 11rem;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  width: 12rem;
 }
+.md-sidebar__scrollwrap { padding: 0.4rem; }
 
-.md-sidebar__scrollwrap {
-  padding: 0.3rem;
+.md-nav {
+  font-size: 0.8rem;
 }
-
+.md-nav__title {
+  font-family: var(--apex-display-font);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--apex-text-muted);
+}
 .md-nav__link {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  transition: var(--transition-smooth);
+  border-radius: var(--apex-r-sm);
+  transition: var(--apex-t);
   margin: 1px 0;
 }
-
 .md-nav__link:hover {
   background: var(--md-accent-fg-color--transparent);
-  transform: translateX(2px);
+  color: var(--md-accent-fg-color);
 }
-
 .md-nav__link--active {
   font-weight: 600;
   color: var(--md-accent-fg-color);
   background: var(--md-accent-fg-color--transparent);
 }
+.md-nav__item--nested > .md-nav__link { font-size: 0.82rem; }
+.md-sidebar--secondary .md-nav__link { font-size: 0.72rem; }
 
-.md-nav__item--nested > .md-nav__link {
-  font-size: 0.8rem;
-}
-
-/* TOC (우측 목차) */
-.md-sidebar--secondary .md-nav__link {
-  font-size: 0.7rem;
-}
-
-/* ===================================
-   콘텐츠 영역 (Glassmorphism Card)
-   =================================== */
+/* ===================================================================
+   CONTENT (flat APEX card)
+   =================================================================== */
 .md-content {
-  background: var(--glass-bg-solid);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border-radius: 12px;
-  margin: 0.5rem;
-  padding: 1.5rem;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  background: var(--apex-surface);
+  border: 1px solid var(--apex-border);
+  border-radius: var(--apex-r-xl);
+  box-shadow: var(--apex-elev);
+  margin: 0.9rem;
+  padding: 2rem 2.25rem 2.5rem;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
 }
+.md-content__inner { max-width: 880px; margin: 0 auto; }
 
-.md-content__inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* ===================================
-   타이포그래피 최적화
-   =================================== */
+/* ===================================================================
+   TYPOGRAPHY · 위계 (h1 32 → h2 24 → h3 20 → h4 17 → body 16)
+   =================================================================== */
 .md-typeset {
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.75;
   letter-spacing: -0.01em;
-  word-spacing: -0.02em;
+  color: var(--md-typeset-color);
+  text-wrap: pretty;   /* 외톨이 단어·어색한 줄바꿈 완화 (지원 브라우저) */
 }
+.md-typeset p { margin: 0 0 1.1em; }
+.md-typeset li { margin-bottom: 0.35em; }
 
-.md-typeset p {
-  margin-bottom: 1em;
-}
-
-.md-typeset li {
-  margin-bottom: 0.3em;
-}
-
-/* 제목 스타일 (Syne — APEX 디스플레이 폰트) */
 .md-typeset h1 {
-  font-family: "Syne", var(--md-text-font);
-  font-size: 1.8rem;
+  font-family: var(--apex-display-font);
+  font-size: 2rem;
   font-weight: 700;
+  line-height: 1.22;
   letter-spacing: -0.02em;
-  color: var(--md-primary-fg-color);
+  color: var(--md-default-fg-color);
   border-bottom: 2px solid var(--md-accent-fg-color);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.2rem;
+  padding-bottom: 0.55rem;
+  margin: 0 0 1.6rem;
 }
-
 .md-typeset h2 {
-  font-family: "Syne", var(--md-text-font);
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--md-primary-fg-color);
-  margin-top: 1.8rem;
-  margin-bottom: 0.8rem;
+  font-family: var(--apex-display-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--md-default-fg-color);
+  margin: 2.6rem 0 0.9rem;
+  padding-top: 0.4rem;
 }
-
 .md-typeset h3 {
-  font-size: 1.15rem;
+  font-family: var(--apex-display-font);
+  font-size: 1.25rem;
   font-weight: 600;
+  line-height: 1.4;
   letter-spacing: -0.01em;
   color: var(--md-default-fg-color);
-  margin-top: 1.5rem;
-  margin-bottom: 0.6rem;
+  margin: 1.9rem 0 0.55rem;
+}
+.md-typeset h4 {
+  font-family: var(--apex-display-font);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--md-default-fg-color--light);
+  margin: 1.4rem 0 0.4rem;
+}
+.md-typeset h5, .md-typeset h6 {
+  font-family: var(--apex-display-font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--apex-text-muted);
+  letter-spacing: 0.02em;
+  margin: 1.2rem 0 0.3rem;
 }
 
-/* ===================================
-   Admonition (알림 박스) - Glassmorphism
-   =================================== */
+/* ── 짧은 강조 블록: 두 줄 길이 균형(text-wrap: balance) — 제목·콜아웃 ──
+   (본문 단락은 .md-typeset 의 text-wrap: pretty 유지) */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6,
+.md-typeset .admonition-title,
+.md-typeset summary,
+.md-typeset .tabbed-linear-title,
+.md-typeset .admonition > p,
+.md-typeset details > p,
+.md-typeset .key-concept > p,
+.md-typeset .case-study > p,
+.md-typeset blockquote > p {
+  text-wrap: balance;
+}
+
+/* 링크 */
+.md-typeset a {
+  color: var(--md-accent-fg-color);
+  text-decoration-color: color-mix(in srgb, var(--md-accent-fg-color) 35%, transparent);
+  text-underline-offset: 0.18em;
+  transition: var(--apex-t);
+}
+.md-typeset a:hover { color: var(--apex-blue-hi); }
+
+/* Eyebrow (메타 라벨) — APEX 패턴 */
+.md-typeset .eyebrow,
+.apex-eyebrow {
+  display: inline-block;
+  font-family: var(--apex-display-font);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--apex-blue-hi);
+}
+
+/* 강조 */
+.md-typeset strong { font-weight: 700; color: var(--md-default-fg-color); }
+.md-typeset mark {
+  background: color-mix(in srgb, var(--apex-gold) 28%, transparent);
+  border-radius: 3px;
+  padding: 0 0.15em;
+}
+.md-typeset blockquote {
+  border-left: 3px solid var(--apex-blue);
+  background: var(--apex-surface-2);
+  border-radius: 0 var(--apex-r-md) var(--apex-r-md) 0;
+  color: var(--md-default-fg-color--light);
+}
+
+/* ===================================================================
+   ADMONITION (flat APEX card: 솔리드 + 좌측 액센트 바)
+   =================================================================== */
 .md-typeset .admonition,
 .md-typeset details {
-  border-radius: 12px;
-  border: none;
-  border-left: 4px solid;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
+  border: 1px solid var(--apex-border);
+  /* Material의 타입별 border-color(시안 등)가 이기지 않게 3면은 중립 강제 */
+  border-top-color: var(--apex-border) !important;
+  border-right-color: var(--apex-border) !important;
+  border-bottom-color: var(--apex-border) !important;
+  border-left: 3px solid var(--apex-blue);
+  border-radius: var(--apex-r-lg);
+  background: var(--apex-surface);
+  box-shadow: var(--apex-elev-sm);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  font-size: 0.92rem;
 }
-
+/* 박스 내부 마지막 요소 하단 여백 제거 (어색한 빈 공간 방지) */
+.md-typeset .admonition > :last-child,
+.md-typeset details > :last-child,
+.key-concept > :last-child,
+.case-study > :last-child { margin-bottom: 0; }
 .md-typeset .admonition-title,
 .md-typeset summary {
-  border-radius: 8px 8px 0 0;
+  font-family: var(--apex-display-font);
   font-weight: 600;
+  letter-spacing: -0.01em;
+  background: color-mix(in srgb, var(--apex-blue) 8%, transparent);
 }
+/* 제목 바와 본문 사이 여백 + 카드 하단 여백 (본문 첫 요소가 p여도 간격 확보) */
+.md-typeset .admonition-title { margin-bottom: 0.9rem; }
+.md-typeset details > summary { margin-bottom: 0; }
+.md-typeset details[open] > summary { margin-bottom: 0.9rem; }
+.md-typeset .admonition { padding-bottom: 0.95rem; }
+.md-typeset details[open] { padding-bottom: 0.95rem; }
+.md-typeset .admonition-title::before,
+.md-typeset summary::before { background-color: var(--apex-blue); }
 
-/* 학습 목표 (abstract) — APEX Navy */
-.md-typeset .admonition.abstract,
-.md-typeset details.abstract {
-  border-left-color: #1B2A4A;
-}
-.md-typeset .abstract > .admonition-title,
-.md-typeset .abstract > summary {
-  background: linear-gradient(135deg, rgba(27, 42, 74, 0.15) 0%, rgba(27, 42, 74, 0.05) 100%);
-}
+/* 타입별 좌측 바 + 타이틀 틴트 (APEX 톤) */
+.md-typeset .admonition.abstract, .md-typeset details.abstract { border-left-color: var(--apex-navy); }
+.md-typeset .abstract > .admonition-title, .md-typeset .abstract > summary { background: color-mix(in srgb, var(--apex-navy) 9%, transparent); }
+.md-typeset .abstract > .admonition-title::before, .md-typeset .abstract > summary::before { background-color: var(--apex-navy); }
 
-/* 사례 (example) */
-.md-typeset .admonition.example,
-.md-typeset details.example {
-  border-left-color: #8B5CF6;
-}
-.md-typeset .example > .admonition-title,
-.md-typeset .example > summary {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.05) 100%);
-}
+.md-typeset .admonition.note, .md-typeset details.note { border-left-color: var(--apex-blue); }
+.md-typeset .admonition.info, .md-typeset details.info { border-left-color: var(--apex-blue-hi); }
+.md-typeset .info > .admonition-title, .md-typeset .info > summary { background: color-mix(in srgb, var(--apex-blue-hi) 10%, transparent); }
+.md-typeset .info > .admonition-title::before, .md-typeset .info > summary::before { background-color: var(--apex-blue-hi); }
 
-/* 주의사항 (warning) */
-.md-typeset .admonition.warning,
-.md-typeset details.warning {
-  border-left-color: #F59E0B;
-}
-.md-typeset .warning > .admonition-title,
-.md-typeset .warning > summary {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
-}
+.md-typeset .admonition.tip, .md-typeset details.tip { border-left-color: #10B981; }
+.md-typeset .tip > .admonition-title, .md-typeset .tip > summary { background: rgba(16,185,129,0.10); }
+.md-typeset .tip > .admonition-title::before, .md-typeset .tip > summary::before { background-color: #10B981; }
 
-/* 위험 (danger) */
-.md-typeset .admonition.danger,
-.md-typeset details.danger {
-  border-left-color: #EF4444;
-}
-.md-typeset .danger > .admonition-title,
-.md-typeset .danger > summary {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.05) 100%);
-}
+.md-typeset .admonition.example, .md-typeset details.example { border-left-color: #8B5CF6; }
+.md-typeset .example > .admonition-title, .md-typeset .example > summary { background: rgba(139,92,246,0.10); }
+.md-typeset .example > .admonition-title::before, .md-typeset .example > summary::before { background-color: #8B5CF6; }
 
-/* 팁 (tip) */
-.md-typeset .admonition.tip,
-.md-typeset details.tip {
-  border-left-color: #10B981;
-}
-.md-typeset .tip > .admonition-title,
-.md-typeset .tip > summary {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%);
-}
+.md-typeset .admonition.warning, .md-typeset details.warning { border-left-color: var(--apex-gold); }
+.md-typeset .warning > .admonition-title, .md-typeset .warning > summary { background: color-mix(in srgb, var(--apex-gold) 14%, transparent); }
+.md-typeset .warning > .admonition-title::before, .md-typeset .warning > summary::before { background-color: var(--apex-gold); }
 
-/* 정보 (info) */
-.md-typeset .admonition.info,
-.md-typeset details.info {
-  border-left-color: #06B6D4;
-}
-.md-typeset .info > .admonition-title,
-.md-typeset .info > summary {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0.05) 100%);
-}
+.md-typeset .admonition.danger, .md-typeset details.danger { border-left-color: #EF4444; }
+.md-typeset .danger > .admonition-title, .md-typeset .danger > summary { background: rgba(239,68,68,0.10); }
+.md-typeset .danger > .admonition-title::before, .md-typeset .danger > summary::before { background-color: #EF4444; }
 
-/* 질문 (question) */
-.md-typeset .admonition.question,
-.md-typeset details.question {
-  border-left-color: #EC4899;
-}
-.md-typeset .question > .admonition-title,
-.md-typeset .question > summary {
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15) 0%, rgba(236, 72, 153, 0.05) 100%);
-}
+.md-typeset .admonition.question, .md-typeset details.question { border-left-color: #EC4899; }
+.md-typeset .question > .admonition-title, .md-typeset .question > summary { background: rgba(236,72,153,0.10); }
+.md-typeset .question > .admonition-title::before, .md-typeset .question > summary::before { background-color: #EC4899; }
 
-/* 인용 (quote) */
-.md-typeset .admonition.quote,
-.md-typeset details.quote {
-  border-left-color: #6B7280;
-}
-.md-typeset .quote > .admonition-title,
-.md-typeset .quote > summary {
-  background: linear-gradient(135deg, rgba(107, 114, 128, 0.15) 0%, rgba(107, 114, 128, 0.05) 100%);
-}
+.md-typeset .admonition.quote, .md-typeset details.quote { border-left-color: #64748B; }
+.md-typeset .quote > .admonition-title, .md-typeset .quote > summary { background: rgba(100,116,139,0.10); }
 
-/* ===================================
-   코드 블록
-   =================================== */
-.md-typeset pre {
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
+/* ===================================================================
+   CODE (JetBrains Mono)
+   =================================================================== */
+.md-typeset code, .md-typeset pre { font-family: var(--md-code-font); }
 .md-typeset code {
   font-size: 0.85em;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  border-radius: var(--apex-r-sm);
+  background: var(--apex-surface-2);
 }
+.md-typeset pre > code { background: none; }
+.md-typeset pre {
+  border-radius: var(--apex-r-md);
+  border: 1px solid var(--apex-border);
+  box-shadow: none;
+}
+.highlight .filename { border-radius: var(--apex-r-md) var(--apex-r-md) 0 0; }
 
-/* ===================================
-   테이블
-   =================================== */
+/* ===================================================================
+   TABLE (APEX)
+   =================================================================== */
 .md-typeset table:not([class]) {
-  border-radius: 8px;
+  display: table;            /* Material 기본 inline-block(내용폭) 해제 */
+  width: 100%;               /* 영역 전체 채우기 → 좁게 뭉치거나 우측 빈공간 방지 */
+  border: 1px solid var(--apex-border);
+  border-radius: var(--apex-r-md);
   overflow: hidden;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--apex-elev-sm);
+  font-size: 0.9rem;
 }
-
 .md-typeset table:not([class]) th {
-  background-color: var(--md-primary-fg-color);
-  color: white;
+  background-color: var(--apex-navy);
+  color: #FFFFFF;
+  font-family: var(--apex-display-font);
   font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;       /* 짧은 헤더("파라미터 수")가 줄바꿈되지 않게 */
 }
+.md-typeset table:not([class]) td { border-top: 1px solid var(--apex-border); vertical-align: top; }
+.md-typeset table:not([class]) tr:nth-child(even) { background-color: var(--apex-surface-2); }
+/* Material 표 래퍼(inline-block, 내용폭)를 전체폭 블록으로 → 표가 영역을 채움 */
+.md-typeset .md-typeset__table { display: block; width: 100%; }
 
-.md-typeset table:not([class]) tr:nth-child(even) {
-  background-color: var(--md-default-bg-color);
-}
-
-/* ===================================
-   태그
-   =================================== */
-.md-tag {
+/* TAG */
+.md-typeset .md-tag {
   background-color: var(--md-accent-fg-color--transparent);
   color: var(--md-accent-fg-color);
-  border-radius: 16px;
-  padding: 0.2rem 0.8rem;
-  font-size: 0.75rem;
-  font-weight: 500;
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-family: var(--apex-display-font);
+  font-size: 0.72rem;
+  font-weight: 600;
 }
+.md-typeset .md-tag:hover { background-color: var(--apex-blue); color: #FFFFFF; }
 
-.md-tag:hover {
-  background-color: var(--md-accent-fg-color);
-  color: white;
-}
-
-/* ===================================
-   검색
-   =================================== */
-.md-search__input {
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.md-search__input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* ===================================
-   푸터
-   =================================== */
-.md-footer {
-  margin-top: 2rem;
-}
-
-/* ===================================
-   반응형 조정
-   =================================== */
-@media screen and (max-width: 76.25em) {
-  .md-content {
-    margin: 0.5rem;
-    padding: 0.5rem;
-  }
-}
-
-/* ===================================
-   인쇄용 스타일
-   =================================== */
-@media print {
-  .md-header,
-  .md-tabs,
-  .md-sidebar,
-  .md-footer {
-    display: none;
-  }
-  
-  .md-content {
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-  }
-}
-
-/* ===================================
-   체크박스 리스트 (Task List)
-   =================================== */
-.md-typeset .task-list-item {
-  list-style: none;
-  position: relative;
-  margin-left: -1.2em;
-}
-
-.md-typeset .task-list-control {
-  position: relative;
-  display: inline-block;
-  width: 1.25em;
-  height: 1.25em;
-  margin-right: 0.5em;
-  vertical-align: middle;
-}
-
-/* 체크박스 기본 스타일 (체크되지 않은 상태) */
-.md-typeset .task-list-control .task-list-indicator::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1.25em;
-  height: 1.25em;
-  border: 2px solid var(--md-default-fg-color--lighter);
-  border-radius: 4px;
-  background-color: var(--md-default-bg-color--light);
-  transition: all 0.2s ease;
-}
-
-/* 체크된 상태 */
+/* 체크리스트 */
 .md-typeset .task-list-control [checked] + .task-list-indicator::before {
-  background-color: #1B2A4A;
-  border-color: #1B2A4A;
+  background-color: var(--apex-blue);
+  border-color: var(--apex-blue);
 }
+.md-typeset .task-list-item:hover .task-list-indicator::before { border-color: var(--apex-blue); }
 
-/* 체크마크 아이콘 */
-.md-typeset .task-list-control [checked] + .task-list-indicator::after {
-  content: "";
-  position: absolute;
-  top: 0.2em;
-  left: 0.45em;
-  width: 0.35em;
-  height: 0.65em;
-  border: solid white;
-  border-width: 0 2.5px 2.5px 0;
-  transform: rotate(45deg);
-}
+/* 각주(참고자료) — 중복 구분선 제거 + 간격 정리 */
+.md-typeset .footnote > hr { display: none; }
+.md-typeset .footnote > ol { margin-left: 0; }
+.md-typeset .footnote { font-size: 0.86rem; color: var(--md-default-fg-color--light); }
 
-/* 다크 모드 체크박스 */
-[data-md-color-scheme="slate"] .md-typeset .task-list-control .task-list-indicator::before {
-  background-color: var(--md-default-bg-color--lighter);
-  border-color: var(--md-default-fg-color--lighter);
-}
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+.md-footer { margin-top: 2rem; }
+.md-footer-meta { background: var(--md-footer-bg-color--dark); }
 
-[data-md-color-scheme="slate"] .md-typeset .task-list-control [checked] + .task-list-indicator::before {
-  background-color: #1B2A4A;
-  border-color: #1B2A4A;
-}
-
-/* 체크리스트 아이템 호버 효과 */
-.md-typeset .task-list-item:hover .task-list-indicator::before {
-  border-color: #1B2A4A;
-}
-
-/* ===================================
-   커스텀 클래스
-   =================================== */
-/* 핵심 개념 하이라이트 */
+/* ===================================================================
+   커스텀 컴포넌트 (콘텐츠 내 클래스)
+   =================================================================== */
+/* 핵심 개념 */
 .key-concept {
-  background: linear-gradient(120deg, var(--md-accent-fg-color--transparent) 0%, var(--md-accent-fg-color--transparent) 100%);
+  background: var(--md-accent-fg-color--transparent);
+  border: 1px solid color-mix(in srgb, var(--apex-blue) 25%, transparent);
+  border-left: 3px solid var(--apex-blue);
+  border-radius: var(--apex-r-lg);
   padding: 1rem 1.5rem;
-  border-left: 4px solid var(--md-accent-fg-color);
-  border-radius: 0 8px 8px 0;
-  margin: 1rem 0;
+  margin: 1.25rem 0;
 }
-
+/* 표를 감싼 key-concept는 카드 장식 제거 (제목 + 표만 표시) */
+.md-typeset .key-concept:has(table) {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 1.5rem 0;
+}
 /* 사례 박스 */
 .case-study {
-  background-color: var(--md-default-bg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 8px;
+  background: var(--apex-surface-2);
+  border: 1px solid var(--apex-border);
+  border-radius: var(--apex-r-lg);
   padding: 1rem 1.5rem;
-  margin: 1rem 0;
+  margin: 1.25rem 0;
 }
-
 .case-study::before {
-  content: "📌 사례";
-  display: block;
+  content: "사례";
+  display: inline-block;
+  font-family: var(--apex-display-font);
+  font-size: 0.72rem;
   font-weight: 600;
-  color: var(--md-primary-fg-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--apex-blue-hi);
   margin-bottom: 0.5rem;
 }
+/* Before / After */
+.comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+.comparison-before, .comparison-after { padding: 1rem; border-radius: var(--apex-r-lg); border: 1px solid var(--apex-border); }
+.comparison-before { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.3); }
+.comparison-after { background: var(--md-accent-fg-color--transparent); border-color: color-mix(in srgb, var(--apex-blue) 30%, transparent); }
+@media screen and (max-width: 600px) { .comparison { grid-template-columns: 1fr; } }
 
-/* Before/After 비교 */
-.comparison {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-.comparison-before,
-.comparison-after {
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.comparison-before {
-  background-color: rgba(255, 112, 67, 0.1);
-  border: 1px solid #FF7043;
-}
-
-.comparison-after {
-  background-color: rgba(38, 166, 154, 0.1);
-  border: 1px solid #1976D2;
-}
-
-@media screen and (max-width: 600px) {
-  .comparison {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===================================
-   이전/다음 네비게이션 버튼 (Glassmorphism)
-   =================================== */
+/* ===================================================================
+   이전/다음 네비게이션 (APEX 버튼)
+   =================================================================== */
 .nav-buttons {
   display: flex;
   justify-content: space-between;
@@ -606,82 +540,94 @@ body {
   gap: 1rem;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--glass-border);
+  border-top: 1px solid var(--apex-border);
 }
-
 .nav-buttons .nav-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--apex-r-lg);
+  font-family: var(--apex-display-font);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  transition: var(--transition-bounce);
-  max-width: 45%;
-  line-height: 1.4;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  transition: transform var(--apex-t), background var(--apex-t), box-shadow var(--apex-t);
+  max-width: 46%;
+  line-height: 1.35;
 }
-
 .nav-buttons .nav-prev {
-  border: 1px solid var(--glass-border);
-  color: var(--md-primary-fg-color);
-  background: var(--glass-bg);
+  border: 1px solid var(--apex-border-strong);
+  color: var(--md-default-fg-color);
+  background: var(--apex-surface);
   text-align: left;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
-
 .nav-buttons .nav-prev:hover {
   background: var(--md-accent-fg-color--transparent);
-  transform: translateX(-6px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(27, 42, 74, 0.15);
-  border-color: var(--md-primary-fg-color);
+  border-color: var(--apex-blue);
+  color: var(--apex-blue);
+  transform: translateX(-3px);
 }
-
 .nav-buttons .nav-next {
-  background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-primary-fg-color--dark) 100%);
-  color: white;
+  background: var(--apex-blue);
+  color: #FFFFFF;
   border: none;
   text-align: right;
   margin-left: auto;
-  box-shadow: 0 4px 16px rgba(27, 42, 74, 0.3);
+  box-shadow: 0 4px 14px rgba(26,111,239,0.28);
 }
-
 .nav-buttons .nav-next:hover {
-  transform: translateX(6px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(27, 42, 74, 0.4);
+  background: var(--apex-blue-hi);
+  transform: translateX(3px);
+  box-shadow: 0 8px 22px rgba(26,111,239,0.38);
 }
-
 @media screen and (max-width: 600px) {
-  .nav-buttons {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .nav-buttons .nav-button {
-    width: 100%;
-    max-width: 100%;
-    justify-content: center;
-  }
-
-  .nav-buttons .nav-prev:hover,
-  .nav-buttons .nav-next:hover {
-    transform: scale(1.02);
-  }
+  .nav-buttons { flex-direction: column; gap: 0.75rem; }
+  .nav-buttons .nav-button { width: 100%; max-width: 100%; justify-content: center; }
+  .nav-buttons .nav-prev:hover, .nav-buttons .nav-next:hover { transform: none; }
 }
 
-/* ===================================
-   Reading Progress Bar
-   =================================== */
+/* 읽기 진행 바 */
 .reading-progress {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  top: 0; left: 0;
+  width: 0%; height: 3px;
+  background: linear-gradient(90deg, var(--apex-blue), var(--apex-blue-hi));
   z-index: 9999;
   transition: width 0.1s ease;
+}
+
+/* ===================================================================
+   CONTENT TABS — 펼침(linearized): 클릭 없이 전부 표시
+   =================================================================== */
+.md-typeset .tabbed-linearized > input { display: none; }
+.md-typeset .tabbed-linearized > .tabbed-labels { display: none; }
+.md-typeset .tabbed-linearized > .tabbed-control { display: none; }
+.md-typeset .tabbed-linearized > .tabbed-content { display: block; box-shadow: none; }
+.md-typeset .tabbed-linearized .tabbed-block {
+  display: block !important;
+  margin: 0 0 1.25rem;
+  padding: 0 0 0 0.9rem;
+  border-left: 2px solid var(--apex-border);
+}
+.md-typeset .tabbed-linearized .tabbed-block:last-child { margin-bottom: 0; }
+.md-typeset .tabbed-linear-title {
+  font-family: var(--apex-display-font);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--apex-blue);
+  margin: 0 0 0.5rem;
+}
+.md-typeset .tabbed-linear-title + * { margin-top: 0; }
+
+/* ===================================================================
+   반응형 · 인쇄
+   =================================================================== */
+@media screen and (max-width: 76.25em) {
+  .md-content { margin: 0.5rem; padding: 1.25rem 1.25rem 1.75rem; }
+}
+@media print {
+  .md-header, .md-tabs, .md-sidebar, .md-footer { display: none; }
+  .md-content { margin: 0; padding: 0; box-shadow: none; border: none; }
 }
