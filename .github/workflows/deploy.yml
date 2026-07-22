@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # git-revision-date-localized: 정확한 수정일 위해 전체 이력 필요
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -29,7 +31,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install mkdocs-material
+          pip install -r requirements.txt   # git-revision 플러그인 포함 (mkdocs-material만 설치하던 버그 수정)
 
       - name: Build MkDocs site
         run: mkdocs build
