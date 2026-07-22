@@ -1,7 +1,9 @@
 site_name: 생성형 AI 완전 정복
 site_description: 대학생과 성인을 위한 생성형 AI 활용 가이드
 site_author: GenAI Education Project
-site_url: http://127.0.0.1:8000
+site_url: https://zakedu.github.io/genai-book/
+repo_url: https://github.com/Zakedu/genai-book
+repo_name: Zakedu/genai-book
 
 # 테마 설정
 theme:
@@ -14,13 +16,17 @@ theme:
     - navigation.tabs           # 상단 Part별 탭
     - navigation.tabs.sticky    # 스크롤해도 탭 고정
     - navigation.sections       # 섹션 구분
-    - navigation.expand         # 사이드바 자동 확장
     - navigation.top            # 맨 위로 버튼
     - navigation.indexes        # 섹션 인덱스 페이지
+    - navigation.instant        # SPA식 즉시 페이지 전환
+    - navigation.instant.progress # 전환 진행 표시
+    - navigation.footer         # 내장 이전/다음 (수제 nav-buttons 대체)
     - search.suggest            # 검색 제안
     - search.highlight          # 검색 하이라이트
+    - search.share              # 검색 결과 공유 링크
     - content.code.copy         # 코드 복사 버튼
     - content.tabs.link         # 탭 연결
+    - content.tooltips          # 용어 hover 툴팁 (abbr 연동)
     - toc.follow                # 목차 따라가기
   
   # 컬러 팔레트 (라이트/다크 모드)
@@ -51,11 +57,15 @@ theme:
 # 플러그인
 plugins:
   - search:
-      lang: 
+      lang:
         - ko
         - en
-      separator: '[\s\-\.]+'
+      separator: '[\s\-\.,;:!?/()\[\]{}"''·]+'
   - tags
+  - git-revision-date-localized:
+      type: date
+      locale: ko
+      fallback_to_build_date: true
 
 # Markdown 확장
 markdown_extensions:
