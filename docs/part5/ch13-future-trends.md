@@ -498,6 +498,3 @@ AI 산업 역사상 가장 극적인 거버넌스 사건 중 하나입니다.
     AI와 함께하는 미래가 여러분에게 새로운 가능성을 열어주길 바랍니다.
 ---
 
-<div class="nav-buttons">
-<a href="../ch12-core-competencies/" class="nav-button nav-prev">&larr; 이전: Chapter 12: AI 시대의 핵심 역량</a>
-</div>

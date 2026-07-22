@@ -1,6 +1,5 @@
 # Claude
 
-!!! info "최종 수정일: 2026-03-20"
 
 Anthropic이 개발한 AI 어시스턴트입니다. Constitutional AI 원칙에 기반한 안전성과 유용성의 균형을 중시하며, **1M 토큰 컨텍스트 윈도우 (GA)**, Artifacts 실시간 생성, Projects, MCP, Computer Use 에이전트 등 강력한 기능을 제공합니다. Opus 4.6, Sonnet 4.6 모두 1M 토큰 GA(General Availability)를 달성하였으며, Claude 4.6 계열이 2026년 최신 모델입니다.
 

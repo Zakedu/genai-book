@@ -1,6 +1,5 @@
 # ChatGPT
 
-!!! info "최종 수정일: 2026-03-19"
 
 OpenAI가 개발한 대화형 AI 서비스입니다. 2022년 11월 출시 이후 생성형 AI 대중화를 이끌었으며, GPT-5.4 계열 최신 모델과 o3·o4-mini 추론 모델, Deep Research, Operator 등 에이전트 기능이 이제 표준입니다.
 

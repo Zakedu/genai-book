@@ -471,7 +471,3 @@ Claude의 특징적 기능으로, 코드, 문서, 다이어그램 등을 별도 
 [^3]: Google. (2026). *Gemini Documentation*. https://ai.google.dev/docs
 ---
 
-<div class="nav-buttons">
-<a href="../../part1/ch01-what-is-genai/" class="nav-button nav-prev">&larr; 이전: Chapter 1: 생성형 AI란</a>
-<a href="../ch03-prompt-structure/" class="nav-button nav-next">다음: Chapter 3: 프롬프트의 구조 &rarr;</a>
-</div>

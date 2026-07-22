@@ -1,6 +1,5 @@
 # Gemini
 
-!!! info "최종 수정일: 2026-03-19"
 
 Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스트 윈도우(2M 토큰), Google 생태계와의 깊은 통합, 멀티모달 입출력 처리 능력, Deep Research와 에이전트 기능이 특징입니다. Gemini 3.1 Pro Preview (2026년 3월)가 최신 모델이며, Gemini 2.5 Pro가 안정 버전으로 사용됩니다.
 

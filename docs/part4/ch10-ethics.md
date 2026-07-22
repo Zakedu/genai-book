@@ -579,7 +579,3 @@ AI 활용 성실성 선언 (Diligence Statement)
 - AI 윤리 가이드라인은 기관, 국가, 문화에 따라 다를 수 있다. 해당 맥락의 최신 기준을 확인하는 것이 중요하다.
 ---
 
-<div class="nav-buttons">
-<a href="../ch09-hallucination/" class="nav-button nav-prev">&larr; 이전: Chapter 9: 환각의 이해와 대응</a>
-<a href="../ch11-responsible-use/" class="nav-button nav-next">다음: Chapter 11: 책임 있는 AI 사용 &rarr;</a>
-</div>
