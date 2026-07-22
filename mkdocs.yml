@@ -258,6 +258,7 @@ nav:
 
 # 추가 설정
 extra:
+  chatbot: false   # 로컬 RAG 챗봇 위젯 (백엔드 필요 — 배포 사이트에선 false)
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/

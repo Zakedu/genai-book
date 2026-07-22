@@ -2,12 +2,16 @@
 
 {% block extrahead %}
   {{ super() }}
-  <!-- 챗봇 CSS -->
+  {% if config.extra.chatbot %}
+  <!-- 챗봇 CSS (로컬 백엔드 전용 — mkdocs.yml extra.chatbot: true 일 때만) -->
   <link rel="stylesheet" href="{{ 'assets/chatbot.css' | url }}">
+  {% endif %}
 {% endblock %}
 
 {% block scripts %}
   {{ super() }}
-  <!-- 챗봇 JS -->
+  {% if config.extra.chatbot %}
+  <!-- 챗봇 JS (로컬 백엔드 전용) -->
   <script src="{{ 'assets/chatbot.js' | url }}"></script>
+  {% endif %}
 {% endblock %}
