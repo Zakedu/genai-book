@@ -10,7 +10,7 @@
 
 1. OpenAI. (2026). *Prompt Engineering Guide*. https://platform.openai.com/docs/guides/prompt-engineering
 
-2. OpenAI. (2026). *GPT-5.4 Model Documentation*. https://openai.com/research/gpt-5
+2. OpenAI. (2026). *GPT-5.6 Model Documentation*. https://openai.com/research/gpt-5
 
 3. Anthropic. (2026). *Claude Documentation*. https://docs.anthropic.com/
 
@@ -18,7 +18,7 @@
 
 5. Google. (2026). *Gemini API Documentation*. https://ai.google.dev/docs
 
-6. Google DeepMind. (2026). *Gemini 3.1 Pro: Next-Generation Multimodal Model*. https://deepmind.google/technologies/gemini/
+6. Google DeepMind. (2026). *Gemini 3.5 Pro: Next-Generation Multimodal Model*. https://deepmind.google/technologies/gemini/
 
 ---
 

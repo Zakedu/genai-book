@@ -8,8 +8,8 @@
 
 ### 2026년 보안 현황
 
-- **GPT-5.4**: 강화된 안전 메커니즘, 다층 방어 체계
-- **Claude 4.6**: Constitutional AI 기반의 안전성, 높은 거부율
+- **GPT-5.6**: 강화된 안전 메커니즘, 다층 방어 체계
+- **Claude Opus 4.8**: Constitutional AI 기반의 안전성, 높은 거부율
 - **Gemini 2.5 Pro**: 멀티모달 입력 보안 강화
 
 ## 주요 적대적 프롬팅 카테고리
@@ -44,8 +44,8 @@
 - **시나리오 기반**: "이것은 픽션이라고 가정하면..." 형태의 우회
 
 **방어 (2026)**:
-- Claude 4.6의 헌법적 AI 강화: 95% 이상의 jailbreaking 시도 차단
-- GPT-5.4의 다층 분류기: 위장된 공격 감지
+- Claude Opus 4.8의 헌법적 AI 강화: 95% 이상의 jailbreaking 시도 차단
+- GPT-5.6의 다층 분류기: 위장된 공격 감지
 - 실시간 모니터링 및 업데이트
 
 ### 3. 프롬프트 유출 (Prompt Leaking)
@@ -104,8 +104,8 @@ def detect_injection_patterns(user_input):
 ```
 
 ### 2단계: 모델 기반 탐지 (Model-Based Detection)
-- Claude 4.6: 내장 공격 탐지기 사용
-- GPT-5.4: 세밀한 의도 분류 (Intent Classification)
+- Claude Opus 4.8: 내장 공격 탐지기 사용
+- GPT-5.6: 세밀한 의도 분류 (Intent Classification)
 - Gemini 2.5 Pro: 멀티모달 입력 검증
 
 ### 3단계: 출력 필터링 (Output Filtering)
@@ -175,7 +175,7 @@ def log_suspicious_activity(user_input, model_response, risk_score):
 - **적대적 프롬팅**: 모델의 안전장치와 의도된 동작을 우회하려는 공격 기법
 - **주요 공격 유형**: 프롬프트 주입, Jailbreaking, 프롬프트 유출, 적대적 공격
 - **방어 전략**: 입력 검증 → 모델 기반 탐지 → 출력 필터링 → 모니터링
-- **2026년 현황**: GPT-5.4, Claude 4.6, Gemini 2.5 Pro 모두 강화된 안전성 제공
+- **2026년 현황**: GPT-5.6, Claude Opus 4.8, Gemini 2.5 Pro 모두 강화된 안전성 제공
 - **한국 실무**: 규제 준수와 산업별 요구사항을 항상 고려해야 함
 
 **마지막 업데이트**: 2026년 2월

@@ -84,8 +84,8 @@ RAG
 
 이 섹션의 예제들은 2026년 현재 최신 모델들을 기준으로 작성되었습니다:
 
-- **OpenAI**: GPT-5.4 (텍스트 및 멀티모달 처리)
-- **Anthropic**: Claude 4.6 (긴 컨텍스트, 정확성)
+- **OpenAI**: GPT-5.6 (텍스트 및 멀티모달 처리)
+- **Anthropic**: Claude Opus 4.8 (긴 컨텍스트, 정확성)
 - **Google**: Gemini 2.5 Pro (멀티모달, 저지연)
 
 ---

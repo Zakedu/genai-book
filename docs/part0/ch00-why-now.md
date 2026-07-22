@@ -16,9 +16,9 @@
 | 지표 | 수치 | 출처 |
 |------|------|------|
 | ChatGPT 출시 2개월 만에 | 월간 1억 사용자 돌파 | OpenAI (2023) |
-| 전 세계 생성형 AI 경험률 | 79% | McKinsey (2024)[^1] |
+| 전 세계 생성형 AI 경험률 | 79% (조직 단위)[^note] | McKinsey State of AI (2025)[^1] |
 | 업무에 정기적 활용 비율 | 22% | McKinsey (2024)[^1] |
-| 대학생 학업 활용률 | 90% | EDUCAUSE (2025)[^2] |
+| 대학생 AI 사용률 | 92~95% (영국 HEPI)[^note] | HEPI (2025~2026)[^2] |
 
 <div class="key-concept" markdown>
 
@@ -185,8 +185,9 @@
 
 ## 참고 자료
 
-[^1]: McKinsey & Company. (2024). *The State of AI in 2024*.
-[^2]: EDUCAUSE. (2025). *Students and AI: 2025 Study Results*.
+[^note]: 라운드테이블 3-AI 교차검증(2026-07): 79%·22%는 McKinsey 2023 조사의 개인 사용률이었고, 2025판은 조직 단위(정기 사용 88%·생성형 79%)로 정의가 바뀜 — 시점·모집단 주의. 대학생 90%는 출처 오조합으로, EDUCAUSE 2025 실사용은 약 57%이며 90%대는 영국 HEPI 조사(2025년 92%→2026년 95%).
+[^1]: McKinsey & Company. (2025). *The State of AI in 2025*.
+[^2]: HEPI. (2026). *Student Generative AI Survey 2026*; EDUCAUSE. (2025). *Students and AI*.
 [^3]: World Economic Forum. (2025). *Future of Jobs Report 2025*.
 ---
 

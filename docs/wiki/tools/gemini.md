@@ -1,7 +1,7 @@
 # Gemini
 
 
-Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스트 윈도우(2M 토큰), Google 생태계와의 깊은 통합, 멀티모달 입출력 처리 능력, Deep Research와 에이전트 기능이 특징입니다. Gemini 3.1 Pro Preview (2026년 3월)가 최신 모델이며, Gemini 2.5 Pro가 안정 버전으로 사용됩니다.
+Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스트 윈도우(2M 토큰), Google 생태계와의 깊은 통합, 멀티모달 입출력 처리 능력, Deep Research와 에이전트 기능이 특징입니다. Gemini 3.5 Pro Preview (2026년 3월)가 최신 모델이며, Gemini 2.5 Pro가 안정 버전으로 사용됩니다.
 
 ---
 
@@ -11,7 +11,7 @@ Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스�
 |------|------|
 | 개발사 | Google DeepMind |
 | 출시일 | 2023년 12월 (Bard에서 리브랜딩) |
-| 최신 모델 | Gemini 3.1 Pro (Preview), Gemini 2.5 Pro, Gemini 3.1 Flash-Lite (Preview), Gemini 2.0 Flash |
+| 최신 모델 | Gemini 3.5 Pro, Gemini 2.5 Pro, Gemini 3.5 Flash-Lite (Preview), Gemini 2.0 Flash |
 | 웹사이트 | [gemini.google.com](https://gemini.google.com) |
 | API | [ai.google.dev](https://ai.google.dev) |
 | AI Studio | [aistudio.google.com](https://aistudio.google.com) |
@@ -26,12 +26,12 @@ Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스�
 | 플랜 | 가격 | 주요 기능 |
 |------|------|----------|
 | **Free** | 무료 | Gemini 2.0 Flash, 기본 멀티모달, Google 검색 연동 |
-| **Advanced** | $19.99/월 | 최신 모델, Deep Research, Gems, NotebookLM Plus, 2TB Drive |
-| **AI Pro** | $49.99/월 | Advanced보다 높은 사용량, 3.1 Pro Preview 접근 |
-| **AI Ultra** | $249.99/월 | 최고 성능 모델 무제한, 최대 컨텍스트, 모든 프리미엄 기능 |
+| **Google AI Plus** | $4.99/월 | 입문 티어, 기본 Gemini 앱·기능 |
+| **Google AI Pro** | $19.99/월 | 최신 모델, Deep Research, Gems, NotebookLM Plus, 2TB Drive |
+| **Google AI Ultra** | $99.99·$199.99/월 (5x·20x) | 최고 성능 모델, 최대 컨텍스트, 모든 프리미엄 기능 |
 
 !!! tip "Google One AI Premium / AI Pro / AI Ultra"
-    Gemini Advanced는 Google One AI Premium 플랜에 포함됩니다. 2TB Google Drive 저장공간, Google Workspace 앱에서의 Gemini 기능, NotebookLM Plus 이용권이 모두 포함된 통합 구독입니다. AI Pro($49.99/월)와 AI Ultra($249.99/월)는 더 높은 사용량과 최신 3.1 Pro Preview 모델 접근을 제공하는 상위 티어입니다.
+    Gemini Advanced는 Google One AI Premium 플랜에 포함됩니다. 2TB Google Drive 저장공간, Google Workspace 앱에서의 Gemini 기능, NotebookLM Plus 이용권이 모두 포함된 통합 구독입니다. Google AI Pro($19.99/월)와 Google AI Ultra($99.99·$199.99/월)는 더 높은 사용량과 최신 3.5 Pro·3.6 Flash 모델 접근을 제공하는 상위 티어입니다.
 
 ### 비즈니스
 
@@ -55,12 +55,12 @@ Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스�
 - 코딩, 수학, 과학 벤치마크 최상위 성능
 - 멀티모달 입출력 (텍스트, 이미지, 오디오, 비디오)
 - Gemini Advanced 및 Google AI Studio에서 사용 가능
-- Gemini 3.1 출시 전까지 최고 성능 모델
+- Gemini 3.5 출시 전까지 최고 성능 모델
 
 !!! tip "Thinking 모델"
     Gemini 2.5 Pro는 응답 전에 내부 추론 과정을 거칩니다. 복잡한 코딩 문제, 수학, 다단계 분석 작업에서 특히 뛰어난 성능을 보여줍니다. Deep Research도 내부적으로 Gemini 2.5 Pro 추론 기능을 활용합니다.
 
-### Gemini 3.1 Pro (Preview)
+### Gemini 3.5 Pro
 
 2026년 3월 초 Preview로 출시된 차세대 플래그십 모델입니다.
 
@@ -73,7 +73,7 @@ Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스�
 - AI Ultra 및 AI Pro 구독에서 접근 가능
 - Preview 단계로 성능이 계속 개선 중
 
-### Gemini 3.1 Flash-Lite (Preview)
+### Gemini 3.5 Flash-Lite (Preview)
 
 2026년 3월 출시된 경량 고효율 모델입니다.
 
@@ -286,7 +286,7 @@ Google 검색과 네이티브 연동하여 최신 정보를 제공합니다.
 |------|------|
 | 주소 | [aistudio.google.com](https://aistudio.google.com) |
 | 가격 | 무료 (API 사용량별 과금) |
-| 지원 모델 | Gemini 3.1 Pro (Preview), Gemini 3.1 Flash-Lite (Preview), Gemini 2.5 Pro, 2.0 Flash, 2.0 Flash-Lite, 1.5 Pro 등 |
+| 지원 모델 | Gemini 3.5 Pro, Gemini 3.5 Flash-Lite (Preview), Gemini 2.5 Pro, 2.0 Flash, 2.0 Flash-Lite, 1.5 Pro 등 |
 
 **주요 기능**:
 
@@ -301,8 +301,8 @@ Google 검색과 네이티브 연동하여 최신 정보를 제공합니다.
 
 | 모델 | 입력 (1M 토큰당) | 출력 (1M 토큰당) | 무료 티어 |
 |------|------------------|------------------|----------|
-| **Gemini 3.1 Pro** (Preview) | TBD | TBD | - |
-| **Gemini 3.1 Flash-Lite** (Preview) | $0.25 | $1.50 | - |
+| **Gemini 3.5 Pro** (Preview) | TBD | TBD | - |
+| **Gemini 3.5 Flash-Lite** (Preview) | $0.25 | $1.50 | - |
 | **Gemini 2.0 Flash** | $0.10 | $0.40 | 분당 15회 |
 | **Gemini 2.0 Flash-Lite** | $0.075 | $0.30 | 분당 30회 (3/31 종료 예정) |
 | **Gemini 1.5 Pro** (≤128K) | $1.25 | $5.00 | 분당 2회 |

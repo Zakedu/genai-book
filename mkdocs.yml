@@ -105,6 +105,9 @@ markdown_extensions:
       toc_depth: 3
 
 # 추가 CSS
+hooks:
+  - hooks/autolink.py
+
 extra_css:
   - stylesheets/extra.css
 
