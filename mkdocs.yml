@@ -178,6 +178,10 @@ nav:
       - wiki/cases/index.md
       - 법률 환각 사례: wiki/cases/legal-hallucination.md
       - 학술 윤리 사례: wiki/cases/academic-integrity.md
+    - 보안:
+      - wiki/security/index.md
+      - 프롬프트 인젝션: wiki/security/prompt-injection.md
+      - AI 에이전트 보안: wiki/security/agent-security.md
     - 프롬프트 엔지니어링:
       - wiki/prompt-engineering/index.md
       - 기초:
@@ -214,6 +218,7 @@ nav:
       - 에이전트:
         - wiki/prompt-engineering/agents/index.md
         - AI 에이전트 소개: wiki/prompt-engineering/agents/introduction.md
+        - MCP (Model Context Protocol): wiki/prompt-engineering/agents/mcp.md
         - 워크플로우 vs 에이전트: wiki/prompt-engineering/agents/workflows-vs-agents.md
         - 에이전트 구성요소: wiki/prompt-engineering/agents/components.md
         - 함수 호출: wiki/prompt-engineering/agents/function-calling.md
