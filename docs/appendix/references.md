@@ -18,7 +18,7 @@
 
 5. Google. (2026). *Gemini API Documentation*. https://ai.google.dev/docs
 
-6. Google DeepMind. (2026). *Gemini 3.5 Pro: Next-Generation Multimodal Model*. https://deepmind.google/technologies/gemini/
+6. Google DeepMind. (2026). *Gemini 3 Pro 계열: Next-Generation Multimodal Model*. https://deepmind.google/technologies/gemini/
 
 ---
 

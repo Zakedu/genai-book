@@ -239,5 +239,5 @@ def manage_context(conversation_history, max_tokens=100000):
 
 1. Anthropic. (2026). "Claude's 1M Token Context Window (GA)." https://docs.anthropic.com/
 2. OpenAI. (2026). "GPT-5.6 with 128K Context." https://platform.openai.com/docs/
-3. Google. (2026). "Gemini 3.5 Pro: Next-Generation Context." https://blog.google/technology/ai/google-gemini-next-generation-model/
+3. Google. (2026). "Gemini 3 Pro 계열: Next-Generation Context." https://blog.google/technology/ai/google-gemini-next-generation-model/
 

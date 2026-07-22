@@ -11,7 +11,7 @@
 | 항목 | ChatGPT | Claude | Gemini | Perplexity | Microsoft Copilot |
 |------|---------|--------|--------|------------|-------------------|
 | 개발사 | OpenAI | Anthropic | Google DeepMind | Perplexity AI | Microsoft |
-| 최신 모델 | GPT-5.6, o3 | Claude Sonnet 5 | Gemini 3.5 Pro | 자체 + GPT-5.6/Claude | Phi-3 기반 |
+| 최신 모델 | GPT-5.6, o3 | Claude Sonnet 5 | Gemini 3 Pro 계열 | 자체 + GPT-5.6/Claude | Phi-3 기반 |
 | 출시일 | 2022년 11월 | 2023년 3월 | 2023년 12월 | 2022년 12월 | 2023년 2월 |
 | 무료 버전 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | API 제공 | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -192,7 +192,7 @@
 | Gemini 1.0 | 2023.12 | Bard에서 리브랜딩 |
 | Gemini 1.5 | 2024.02 | 1M 토큰 컨텍스트 |
 | Gemini 2.0 | 2024.12 | 에이전트 기능 강화 |
-| Gemini 3.5 Pro | 2026.03 | Preview 출시, 3.1 Flash-Lite, Gemini 3 Pro 퇴역 |
+| Gemini 3 Pro 계열 | 2026.03 | Preview 출시, 3.1 Flash-Lite, Gemini 3 Pro 퇴역 |
 
 ---
 

@@ -18,7 +18,7 @@
 |--------|--------|----------------------|------|
 | **ChatGPT** | OpenAI | GPT-5.6 계열 (플래그십·경량 변형) | 2022.11 |
 | **Claude** | Anthropic | Claude Opus 4.8, Sonnet 5, Haiku 4.5 (1M 컨텍스트) | 2023.03 |
-| **Gemini** | Google | Gemini 3.5 Pro, Gemini 2.5 Pro, 2.0 Flash | 2023.12 |
+| **Gemini** | Google | Gemini 3 Pro 계열, Gemini 2.5 Pro, 2.0 Flash | 2023.12 |
 
 ### 텍스트 생성 AI 시장 현황
 

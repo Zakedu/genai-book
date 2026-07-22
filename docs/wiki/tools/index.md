@@ -10,7 +10,7 @@
 |------|--------|------|------|
 | [ChatGPT](chatgpt.md) | OpenAI | 범용성, GPT-5.6 생태계 | 최신 정보 한계 |
 | [Claude](claude.md) | Anthropic | 1M 토큰 컨텍스트, 안전성, 인라인 시각화 | 이미지 생성 제한적 |
-| [Gemini](gemini.md) | Google | 검색 연동, Gemini 3.5 Pro, 멀티모달 | 3.1 Pro는 Preview 단계 |
+| [Gemini](gemini.md) | Google | 검색 연동, Gemini 3 Pro 계열, 멀티모달 | 3.1 Pro는 Preview 단계 |
 
 ---
 
