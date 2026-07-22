@@ -646,3 +646,8 @@ AI 출력 요약:
 - OpenAI, Anthropic 등 주요 AI 기업들은 환각 문제를 인정하고 개선을 위해 노력 중이지만, 현재 기술로는 완전한 해결이 어렵다고 밝히고 있다.
 ---
 
+## 관련 위키 문서
+
+- [환각 개념](../wiki/concepts/hallucination.md)
+- [법률 환각 사례](../wiki/cases/legal-hallucination.md)
+- [사실성 평가](../wiki/prompt-engineering/evaluation/factuality.md)

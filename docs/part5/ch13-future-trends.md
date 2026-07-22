@@ -498,3 +498,9 @@ AI 산업 역사상 가장 극적인 거버넌스 사건 중 하나입니다.
     AI와 함께하는 미래가 여러분에게 새로운 가능성을 열어주길 바랍니다.
 ---
 
+## 관련 위키 문서
+
+- [MCP](../wiki/prompt-engineering/agents/mcp.md)
+- [LangGraph](../wiki/prompt-engineering/agents/langgraph.md)
+- [에이전틱 AI 기업 도입](../wiki/governance/enterprise-adoption.md)
+- [EU AI Act](../wiki/governance/eu-ai-act.md)

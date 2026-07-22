@@ -726,3 +726,6 @@
 - AI 창작 도구의 발전 속도가 빠르므로, 본 장의 도구 정보는 시간이 지나면 변할 수 있다. 최신 정보는 각 도구의 공식 문서를 참조하기 바란다.
 ---
 
+## 관련 위키 문서
+
+- [이미지 생성](../wiki/prompt-engineering/applications/image-generation.md)

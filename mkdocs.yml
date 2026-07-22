@@ -69,6 +69,7 @@ plugins:
 
 # Markdown 확장
 markdown_extensions:
+  - abbr
   - admonition                   # 알림 박스
   - pymdownx.details             # 접기/펼치기
   - pymdownx.superfences          # 코드 블록 고급 기능
@@ -79,7 +80,9 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite        # 인라인 코드 하이라이트
-  - pymdownx.snippets            # 스니펫
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md            # 스니펫
   - pymdownx.critic              # 마크업
   - pymdownx.caret               # 밑줄
   - pymdownx.keys                # 키보드 키

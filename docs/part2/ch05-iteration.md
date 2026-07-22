@@ -662,3 +662,6 @@ C안: 행동 유도 접근 (긴급성 강조)
 - 실제 성공률은 작업의 복잡도, 사용자의 프롬프트 작성 능력, AI 모델의 성능에 따라 달라질 수 있다.
 ---
 
+## 관련 위키 문서
+
+- [바이브 코딩](../wiki/prompt-engineering/applications/vibe-coding.md)

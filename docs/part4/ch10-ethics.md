@@ -579,3 +579,8 @@ AI 활용 성실성 선언 (Diligence Statement)
 - AI 윤리 가이드라인은 기관, 국가, 문화에 따라 다를 수 있다. 해당 맥락의 최신 기준을 확인하는 것이 중요하다.
 ---
 
+## 관련 위키 문서
+
+- [학술 윤리 사례](../wiki/cases/academic-integrity.md)
+- [편향](../wiki/concepts/bias.md)
+- [EU AI Act](../wiki/governance/eu-ai-act.md)
