@@ -67,7 +67,7 @@ Anthropic이 개발한 AI 어시스턴트입니다. Constitutional AI 원칙에 
 
 **특징**:
 
-- Claude 4.5 Opus 대비 1/3 비용
+- Claude 4.5 Opus 대비 저렴한 비용
 - Claude 4 Sonnet 대비 2배 빠른 속도
 - 간단한 작업, 대량 처리에 최적
 - 128K 토큰 컨텍스트

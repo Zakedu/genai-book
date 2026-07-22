@@ -36,7 +36,7 @@
 |----------|----------|------|
 | **BPE** (Byte Pair Encoding) | GPT 시리즈 | 빈도 기반 서브워드 분해 |
 | **WordPiece** | BERT, Gemini | 가능성 기반 분해 |
-| **SentencePiece** | Claude, LLaMA | 언어 독립적 처리 |
+| **SentencePiece** | LLaMA, Gemini 계열 | 언어 독립적 처리 |
 
 ---
 

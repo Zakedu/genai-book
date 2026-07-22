@@ -1,7 +1,7 @@
 # ChatGPT
 
 
-OpenAI가 개발한 대화형 AI 서비스입니다. 2022년 11월 출시 이후 생성형 AI 대중화를 이끌었으며, GPT-5.6 계열 최신 모델과 Deep Research, ChatGPT Work(구 Operator) 등 에이전트 기능이 이제 표준입니다. (구 추론 모델 o3·o4-mini는 GPT-5.6 계열로 통합되며 순차 퇴역 중)
+OpenAI가 개발한 대화형 AI 서비스입니다. 2022년 11월 출시 이후 생성형 AI 대중화를 이끌었으며, GPT-5.6 계열 최신 모델과 Deep Research, 브라우저·작업 자동화 에이전트 기능이 이제 표준입니다. (구 추론 모델 o3·o4-mini는 GPT-5.6 계열로 통합되며 순차 퇴역 중)
 
 ---
 
@@ -11,7 +11,7 @@ OpenAI가 개발한 대화형 AI 서비스입니다. 2022년 11월 출시 이후
 |------|------|
 | 개발사 | OpenAI |
 | 출시일 | 2022년 11월 30일 |
-| 최신 모델 | GPT-5.6 (Thinking/Pro), GPT-5.6 mini, GPT-5.6 nano |
+| 최신 모델 | GPT-5.6 계열 (플래그십 및 경량 변형) |
 | 웹사이트 | [chatgpt.com](https://chatgpt.com) |
 | API | [platform.openai.com](https://platform.openai.com) |
 | 모바일 앱 | iOS / Android / macOS / Windows |
@@ -24,7 +24,7 @@ OpenAI가 개발한 대화형 AI 서비스입니다. 2022년 11월 출시 이후
 |------|------|----------|
 | **Free** | 무료 | GPT-5.6 nano (제한), 기본 웹 검색, 제한적 사용량 |
 | **Go** | $8/월 | 중간 수준 사용량 (2026년 1월 출시) |
-| **Plus** | $20/월 | GPT-5.6 mini, DALL-E(ChatGPT 내 GPT), 고급 음성, Deep Research(월 10회) |
+| **Plus** | $20/월 | GPT-5.6 계열, DALL-E(ChatGPT 내 GPT), 고급 음성, Deep Research(제한) |
 | **Pro** | $200/월 | 무제한 사용, o4 pro mode, Deep Research 무제한, Operator, Sora, GPT-5.6 Pro 우선 접근 |
 | **Team** | $25-30/월/인 | Plus 전체 기능 + 팀 워크스페이스, 관리 콘솔, 데이터 학습 제외 |
 | **Enterprise** | 문의 | 무제한 사용, SSO/SCIM, 전담 지원, 감사 로그, Workspace Analytics, 데이터 학습 제외 |
@@ -43,7 +43,7 @@ OpenAI가 개발한 대화형 AI 서비스입니다. 2022년 11월 출시 이후
 **특징**:
 
 - 텍스트, 이미지, 오디오, 비디오 네이티브 멀티모달 입출력
-- 128K 컨텍스트 윈도우
+- 약 100만 토큰 컨텍스트 윈도우
 - 창의적 글쓰기와 자연스러운 대화에 강점
 - 환각 감소 및 향상된 추론 능력
 - Advanced Voice Mode로 실시간 음성 대화 (감정 표현, 노래, 다국어 동시통역)
@@ -88,7 +88,7 @@ GPT-5.6 계열의 경량 변형 모델입니다.
 **특징**:
 
 - 빠른 응답 속도, 경량 설계
-- 128K 컨텍스트 윈도우
+- 약 100만 토큰 컨텍스트 윈도우
 - Free 플랜의 기본 모델
 - 일상적인 대부분의 작업에 충분
 

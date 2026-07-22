@@ -28,10 +28,10 @@ Google DeepMind이 개발한 멀티모달 AI입니다. 업계 최대 컨텍스�
 | **Free** | 무료 | Gemini 2.0 Flash, 기본 멀티모달, Google 검색 연동 |
 | **Google AI Plus** | $4.99/월 | 입문 티어, 기본 Gemini 앱·기능 |
 | **Google AI Pro** | $19.99/월 | 최신 모델, Deep Research, Gems, NotebookLM Plus, 2TB Drive |
-| **Google AI Ultra** | $99.99·$199.99/월 (5x·20x) | 최고 성능 모델, 최대 컨텍스트, 모든 프리미엄 기능 |
+| **Google AI Ultra** | $99.99·$199.99/월 (5x·20x) | 최고 티어 성능·사용량, 최대 컨텍스트, 프리미엄 기능 |
 
 !!! tip "Google One AI Premium / AI Pro / AI Ultra"
-    Gemini Advanced는 Google One AI Premium 플랜에 포함됩니다. 2TB Google Drive 저장공간, Google Workspace 앱에서의 Gemini 기능, NotebookLM Plus 이용권이 모두 포함된 통합 구독입니다. Google AI Pro($19.99/월)와 Google AI Ultra($99.99·$199.99/월)는 더 높은 사용량과 최신 3.5 Pro·3.6 Flash 모델 접근을 제공하는 상위 티어입니다.
+    Gemini Advanced는 Google One AI Premium 플랜에 포함됩니다. 2TB+ Google Drive 저장공간(티어별 상이), Google Workspace 앱에서의 Gemini 기능, NotebookLM Plus 이용권이 모두 포함된 통합 구독입니다. Google AI Pro($19.99/월)와 Google AI Ultra($99.99·$199.99/월)는 더 높은 사용량과 최신 3.5 Pro·3.6 Flash 모델 접근을 제공하는 상위 티어입니다.
 
 ### 비즈니스
 
