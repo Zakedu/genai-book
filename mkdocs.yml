@@ -182,6 +182,10 @@ nav:
       - wiki/security/index.md
       - 프롬프트 인젝션: wiki/security/prompt-injection.md
       - AI 에이전트 보안: wiki/security/agent-security.md
+    - 거버넌스:
+      - wiki/governance/index.md
+      - 에이전틱 AI 기업 도입: wiki/governance/enterprise-adoption.md
+      - EU AI Act와 딥페이크 규제: wiki/governance/eu-ai-act.md
     - 프롬프트 엔지니어링:
       - wiki/prompt-engineering/index.md
       - 기초:
@@ -215,6 +219,8 @@ nav:
         - RAG 파이프라인: wiki/prompt-engineering/rag/rag-for-llms.md
         - RAG 신뢰성: wiki/prompt-engineering/rag/rag-faithfulness.md
         - RAG 환각 방지: wiki/prompt-engineering/rag/rag-hallucinations.md
+        - GraphRAG: wiki/prompt-engineering/rag/graphrag.md
+        - 온톨로지와 지식 그래프: wiki/prompt-engineering/rag/ontology-knowledge-graph.md
       - 에이전트:
         - wiki/prompt-engineering/agents/index.md
         - AI 에이전트 소개: wiki/prompt-engineering/agents/introduction.md
@@ -227,6 +233,7 @@ nav:
       - 응용:
         - wiki/prompt-engineering/applications/index.md
         - 코드 생성: wiki/prompt-engineering/applications/coding.md
+        - 바이브 코딩: wiki/prompt-engineering/applications/vibe-coding.md
         - 텍스트 요약: wiki/prompt-engineering/applications/text-summarization.md
         - 분류: wiki/prompt-engineering/applications/classification.md
         - 질의응답: wiki/prompt-engineering/applications/question-answering.md
