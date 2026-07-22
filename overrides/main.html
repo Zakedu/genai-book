@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block announce %}
+  <strong>버전 2.0</strong> · 3-AI 교차검증 반영판 — 각 문서 제목의 검증 배지를 확인하세요
+{% endblock %}
+
 {% block extrahead %}
   {{ super() }}
   {% if config.extra.chatbot %}

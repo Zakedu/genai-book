@@ -225,6 +225,8 @@ nav:
         - wiki/prompt-engineering/agents/index.md
         - AI 에이전트 소개: wiki/prompt-engineering/agents/introduction.md
         - MCP (Model Context Protocol): wiki/prompt-engineering/agents/mcp.md
+        - LangChain: wiki/prompt-engineering/agents/langchain.md
+        - LangGraph: wiki/prompt-engineering/agents/langgraph.md
         - 워크플로우 vs 에이전트: wiki/prompt-engineering/agents/workflows-vs-agents.md
         - 에이전트 구성요소: wiki/prompt-engineering/agents/components.md
         - 함수 호출: wiki/prompt-engineering/agents/function-calling.md
@@ -271,7 +273,10 @@ nav:
 
 # 추가 설정
 extra:
-  chatbot: false   # 로컬 RAG 챗봇 위젯 (백엔드 필요 — 배포 사이트에선 false)
+  chatbot: false
+  version:
+    default: "2.0"
+    provider: null   # mike 미사용 — 정적 표기용   # 로컬 RAG 챗봇 위젯 (백엔드 필요 — 배포 사이트에선 false)
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Zakedu/genai-book
