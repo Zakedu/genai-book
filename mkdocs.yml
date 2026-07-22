@@ -109,6 +109,7 @@ extra_css:
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/progress.js
+  - javascripts/verification-badge.js
   - javascripts/clause-wrap.js
 
 # 네비게이션 구조
@@ -261,7 +262,7 @@ extra:
   chatbot: false   # 로컬 RAG 챗봇 위젯 (백엔드 필요 — 배포 사이트에선 false)
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/
+      link: https://github.com/Zakedu/genai-book
   generator: false
   
 # 저작권

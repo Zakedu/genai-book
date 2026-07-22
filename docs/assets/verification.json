@@ -1,0 +1,113 @@
+{
+ "generated_at": "2026-07-22T15:20:00+09:00",
+ "pages": {
+  "appendix/tools-comparison/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 15,
+   "keep": 9,
+   "change": 1,
+   "error": 5,
+   "session_url": "https://placeedu.co.kr/roundtable/session/c7ea5f58-55a7-4af6-b99f-50ef24b8b32c"
+  },
+  "part2/ch02-tools-ecosystem/": {
+   "status": "changes",
+   "verified_at": "2026-07-22",
+   "claims_total": 13,
+   "keep": 5,
+   "change": 8,
+   "error": 0,
+   "session_url": "https://placeedu.co.kr/roundtable/session/77d80c4a-97ca-4b06-a836-c545d36c01b1"
+  },
+  "part1/ch01-what-is-genai/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 9,
+   "keep": 2,
+   "change": 2,
+   "error": 5,
+   "session_url": "https://placeedu.co.kr/roundtable/session/7b2f5812-d426-4537-b872-23c120e2062c"
+  },
+  "wiki/tools/chatgpt/": {
+   "status": "changes",
+   "verified_at": "2026-07-22",
+   "claims_total": 6,
+   "keep": 5,
+   "change": 1,
+   "error": 0,
+   "session_url": "https://placeedu.co.kr/roundtable/session/28c5f7a4-99c7-4d42-b109-3ec927c42453"
+  },
+  "wiki/tools/claude/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 21,
+   "keep": 8,
+   "change": 10,
+   "error": 3,
+   "session_url": "https://placeedu.co.kr/roundtable/session/8bd6042d-5ef3-4ccb-be41-34fec37a7003"
+  },
+  "wiki/tools/gemini/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 12,
+   "keep": 3,
+   "change": 6,
+   "error": 3,
+   "session_url": "https://placeedu.co.kr/roundtable/session/c05b71f8-1e14-43c7-b465-6b09d6b19e58"
+  },
+  "part5/ch13-future-trends/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 13,
+   "keep": 3,
+   "change": 9,
+   "error": 1,
+   "session_url": "https://placeedu.co.kr/roundtable/session/9de44560-7ff2-4372-a1b4-371b90dfd361"
+  },
+  "wiki/concepts/context-window/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 4,
+   "keep": 0,
+   "change": 3,
+   "error": 1,
+   "session_url": "https://placeedu.co.kr/roundtable/session/f333a432-2824-4f85-bd92-919c0fdbe099"
+  },
+  "wiki/concepts/token/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 7,
+   "keep": 2,
+   "change": 1,
+   "error": 4,
+   "session_url": "https://placeedu.co.kr/roundtable/session/dbe7d064-1e39-40e8-9305-06f1c6e79589"
+  },
+  "wiki/prompt-engineering/foundations/models-overview/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 17,
+   "keep": 6,
+   "change": 8,
+   "error": 3,
+   "session_url": "https://placeedu.co.kr/roundtable/session/4bcaa074-0744-457f-b716-acfdc55b6a14"
+  },
+  "wiki/prompt-engineering/reasoning/reasoning-llms-guide/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 11,
+   "keep": 3,
+   "change": 6,
+   "error": 2,
+   "session_url": "https://placeedu.co.kr/roundtable/session/994b2a38-895f-4b4e-bcbc-92039ad2c56e"
+  },
+  "wiki/prompt-engineering/reasoning/reasoning-with-llms/": {
+   "status": "errors",
+   "verified_at": "2026-07-22",
+   "claims_total": 9,
+   "keep": 2,
+   "change": 1,
+   "error": 6,
+   "session_url": "https://placeedu.co.kr/roundtable/session/7cac106a-d14f-43ae-90a5-01641548cbd9"
+  }
+ }
+}
