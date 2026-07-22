@@ -205,7 +205,7 @@ LLM에게 문서 + 질문 전달
 
     ```
     100개 Q&A 생성 비용:
-    - Claude 4.6 Sonnet: $3/$15 (per 1M tokens)
+    - Claude Sonnet 5: $3/$15 (per 1M tokens)
     - GPT-4: $0.50-$1.00
 
     = 매우 저렴! (주로 출력 비용)

@@ -122,7 +122,7 @@
 
 ## 코드 예제
 
-### Claude 4.6을 이용한 물리적 추론
+### Claude Opus 4.8을 이용한 물리적 추론
 
 ```python
 from anthropic import Anthropic
@@ -194,7 +194,7 @@ response = client.messages.create(
 
 ### 테스트 항목
 
-| 항목 | Claude 4.6 | o3 | GPT-5.4 |
+| 항목 | Claude Opus 4.8 | o3 | GPT-5.6 |
 |------|-----------|-----|-------|
 | 일상적 물건 쌓기 | 85% | 92% | 88% |
 | 공간 배치 최적화 | 78% | 89% | 81% |

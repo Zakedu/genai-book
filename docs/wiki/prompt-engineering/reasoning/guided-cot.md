@@ -218,7 +218,7 @@ Step 4: 최종 추천
 
 ## 코드 예제
 
-### Claude 4.6을 이용한 인도형 CoT
+### Claude Opus 4.8을 이용한 인도형 CoT
 
 ```python
 from anthropic import Anthropic

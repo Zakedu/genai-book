@@ -30,7 +30,7 @@
 | **인공지능 (AI)** | 인간의 지능을 모방하는 모든 기술 | 체스 프로그램, 음성 인식, 자율주행 |
 | **머신러닝 (ML)** | 명시적 프로그래밍 없이 데이터에서 학습 | 스팸 필터, 추천 시스템 |
 | **딥러닝** | 다층 신경망을 사용한 머신러닝 | 이미지 인식, 음성 합성 |
-| **생성형 AI** | 새로운 콘텐츠를 생성하는 AI | ChatGPT, DALL-E, Midjourney |
+| **생성형 AI** | 새로운 콘텐츠를 생성하는 AI | ChatGPT, ChatGPT 이미지 생성(구 DALL-E), Midjourney |
 
 !!! tip "핵심 구분"
     전통적인 AI는 **분류·예측**에 집중했다면, 생성형 AI는 **새로운 콘텐츠 창조**에 초점을 맞춥니다.
@@ -42,7 +42,7 @@
 | **목적** | 분류, 예측, 탐지 | 콘텐츠 생성 |
 | **입력** | 데이터 → 라벨/숫자 | 프롬프트 → 콘텐츠 |
 | **출력** | "이것은 고양이다" (분류) | "고양이에 관한 시를 써드립니다" (생성) |
-| **예시** | 스팸 필터, 신용 점수 | ChatGPT, DALL-E |
+| **예시** | 스팸 필터, 신용 점수 | ChatGPT, ChatGPT 이미지 생성(구 DALL-E) |
 
 ---
 
@@ -54,9 +54,9 @@
 
 | 모델 | 개발사 | 파라미터 수 | 비고 |
 |------|--------|-----------|------|
-| GPT-5.4 | OpenAI | 비공개[^1] | 2026.03 출시, Thinking/Pro/mini/nano 변형 |
-| Claude 4.6 | Anthropic | 비공개[^2] | 2026.02 출시, 1M 토큰 GA, 코딩·에이전트 최강 |
-| Gemini 3.1 Pro | Google | 비공개[^3] | 2026.03 Preview, 차세대 멀티모달 |
+| GPT-5.6 | OpenAI | 비공개[^1] | 2026.03 출시, Thinking/Pro/mini/nano 변형 |
+| Claude Opus 4.8 | Anthropic | 비공개[^2] | 2026.02 출시, 1M 토큰 GA, 코딩·에이전트 최강 |
+| Gemini 3 Pro 계열 | Google | 비공개[^3] | 2026.03 Preview, 차세대 멀티모달 |
 | Llama 4 | Meta | 비공개 | 2025.04 출시, Scout/Maverick 변형 |
 | DeepSeek-V3.2 | DeepSeek | 비공개 | 오픈소스, 추론 특화 |
 
@@ -227,11 +227,11 @@ LLM은 **인터넷의 방대한 텍스트**를 학습합니다.
 | 유형 | 입력 | 출력 | 대표 도구 |
 |------|------|------|----------|
 | **텍스트 생성** | 텍스트 | 텍스트 | ChatGPT, Claude, Gemini |
-| **이미지 생성** | 텍스트 | 이미지 | DALL-E, Midjourney, Stable Diffusion |
+| **이미지 생성** | 텍스트 | 이미지 | ChatGPT 이미지 생성(구 DALL-E), Midjourney, Stable Diffusion |
 | **음성 생성** | 텍스트 | 음성 | ElevenLabs, VALL-E |
 | **영상 생성** | 텍스트 | 영상 | Sora, Runway |
 | **음악 생성** | 텍스트 | 음악 | Suno, Udio |
-| **멀티모달** | 텍스트+이미지 | 텍스트+이미지 | GPT-5.4, Claude 4.6, Gemini 3.1 Pro |
+| **멀티모달** | 텍스트+이미지 | 텍스트+이미지 | GPT-5.6, Claude Opus 4.8, Gemini 3 Pro 계열 |
 
 ### 멀티모달 AI의 등장
 
@@ -285,13 +285,9 @@ LLM은 **인터넷의 방대한 텍스트**를 학습합니다.
 
 ## 참고 자료
 
-[^1]: OpenAI. (2026). *GPT-5.4 Model Documentation*. https://platform.openai.com/docs/models
-[^2]: Anthropic. (2026). *Claude 4.6 Model Overview*. https://docs.anthropic.com/en/docs/about-claude/models
-[^3]: Google. (2026). *Gemini 3.1 Pro Documentation*. https://ai.google.dev/docs
+[^1]: OpenAI. (2026). *GPT-5.6 Model Documentation*. https://platform.openai.com/docs/models
+[^2]: Anthropic. (2026). *Claude Opus 4.8 Model Overview*. https://docs.anthropic.com/en/docs/about-claude/models
+[^3]: Google. (2026). *Gemini 3 Pro 계열 Documentation*. https://ai.google.dev/docs
 [^4]: Thomson Reuters. (2023). *Mata v. Avianca: Lawyers sanctioned for using ChatGPT*.
 ---
 
-<div class="nav-buttons">
-<a href="../../part0/ch00-why-now/" class="nav-button nav-prev">&larr; 이전: 0.2 왜 지금 배워야 하는가</a>
-<a href="../../part2/ch02-tools-ecosystem/" class="nav-button nav-next">다음: Chapter 2: 주요 도구와 생태계 &rarr;</a>
-</div>

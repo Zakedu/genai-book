@@ -646,7 +646,8 @@ AI 출력 요약:
 - OpenAI, Anthropic 등 주요 AI 기업들은 환각 문제를 인정하고 개선을 위해 노력 중이지만, 현재 기술로는 완전한 해결이 어렵다고 밝히고 있다.
 ---
 
-<div class="nav-buttons">
-<a href="../../part3/ch08-creative/" class="nav-button nav-prev">&larr; 이전: Chapter 8: 창작과 콘텐츠</a>
-<a href="../ch10-ethics/" class="nav-button nav-next">다음: Chapter 10: 윤리적 사용과 책임 &rarr;</a>
-</div>
+## 관련 위키 문서
+
+- [환각 개념](../wiki/concepts/hallucination.md)
+- [법률 환각 사례](../wiki/cases/legal-hallucination.md)
+- [사실성 평가](../wiki/prompt-engineering/evaluation/factuality.md)

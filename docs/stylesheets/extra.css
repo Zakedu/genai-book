@@ -631,3 +631,20 @@ body { font-family: var(--md-text-font); }
   .md-header, .md-tabs, .md-sidebar, .md-footer { display: none; }
   .md-content { margin: 0; padding: 0; box-shadow: none; border: none; }
 }
+
+/* ── Roundtable 3-AI 교차검증 배지 ─────────────────────── */
+.rt-badge { margin: 0.2rem 0 1rem; }
+.rt-badge a {
+  display: inline-block; font-size: 0.72rem; font-weight: 700;
+  padding: 0.25rem 0.75rem; border-radius: 999px; text-decoration: none;
+  border: 1px solid transparent; transition: filter 0.15s;
+}
+.rt-badge a:hover { filter: brightness(0.95); }
+.rt-verified a { background: #e5f8ec; color: #0c7a43; border-color: #bfe9d0; }
+.rt-changes a  { background: #fdf3e0; color: #925f06; border-color: #f3ddb0; }
+.rt-errors a   { background: #fdeaea; color: #b3271e; border-color: #f5c6c3; }
+.rt-pending a  { background: #f0f0f0; color: #666;    border-color: #ddd; }
+[data-md-color-scheme="slate"] .rt-verified a { background: #10231a; color: #4fd08a; border-color: #1d4030; }
+[data-md-color-scheme="slate"] .rt-changes a  { background: #2a2010; color: #e2b357; border-color: #4a3a1a; }
+[data-md-color-scheme="slate"] .rt-errors a   { background: #2a1413; color: #ff8f86; border-color: #4a2220; }
+[data-md-color-scheme="slate"] .rt-pending a  { background: #222;    color: #999;    border-color: #333; }

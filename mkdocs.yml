@@ -1,7 +1,9 @@
 site_name: 생성형 AI 완전 정복
 site_description: 대학생과 성인을 위한 생성형 AI 활용 가이드
 site_author: GenAI Education Project
-site_url: http://127.0.0.1:8000
+site_url: https://zakedu.github.io/genai-book/
+repo_url: https://github.com/Zakedu/genai-book
+repo_name: Zakedu/genai-book
 
 # 테마 설정
 theme:
@@ -14,13 +16,17 @@ theme:
     - navigation.tabs           # 상단 Part별 탭
     - navigation.tabs.sticky    # 스크롤해도 탭 고정
     - navigation.sections       # 섹션 구분
-    - navigation.expand         # 사이드바 자동 확장
     - navigation.top            # 맨 위로 버튼
     - navigation.indexes        # 섹션 인덱스 페이지
+    - navigation.instant        # SPA식 즉시 페이지 전환
+    - navigation.instant.progress # 전환 진행 표시
+    - navigation.footer         # 내장 이전/다음 (수제 nav-buttons 대체)
     - search.suggest            # 검색 제안
     - search.highlight          # 검색 하이라이트
+    - search.share              # 검색 결과 공유 링크
     - content.code.copy         # 코드 복사 버튼
     - content.tabs.link         # 탭 연결
+    - content.tooltips          # 용어 hover 툴팁 (abbr 연동)
     - toc.follow                # 목차 따라가기
   
   # 컬러 팔레트 (라이트/다크 모드)
@@ -51,14 +57,19 @@ theme:
 # 플러그인
 plugins:
   - search:
-      lang: 
+      lang:
         - ko
         - en
-      separator: '[\s\-\.]+'
+      separator: '[\s\-\.,;:!?/()\[\]{}"''·]+'
   - tags
+  - git-revision-date-localized:
+      type: date
+      locale: ko
+      fallback_to_build_date: true
 
 # Markdown 확장
 markdown_extensions:
+  - abbr
   - admonition                   # 알림 박스
   - pymdownx.details             # 접기/펼치기
   - pymdownx.superfences          # 코드 블록 고급 기능
@@ -69,7 +80,9 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite        # 인라인 코드 하이라이트
-  - pymdownx.snippets            # 스니펫
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md            # 스니펫
   - pymdownx.critic              # 마크업
   - pymdownx.caret               # 밑줄
   - pymdownx.keys                # 키보드 키
@@ -92,14 +105,17 @@ markdown_extensions:
       toc_depth: 3
 
 # 추가 CSS
+hooks:
+  - hooks/autolink.py
+
 extra_css:
   - stylesheets/extra.css
 
 # 추가 JavaScript
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
-  - javascripts/nav-fix.js
   - javascripts/progress.js
+  - javascripts/verification-badge.js
   - javascripts/clause-wrap.js
 
 # 네비게이션 구조
@@ -153,6 +169,10 @@ nav:
       - wiki/concepts/index.md
       - 프롬프트: wiki/concepts/prompt.md
       - 환각: wiki/concepts/hallucination.md
+      - 토큰: wiki/concepts/token.md
+      - 컨텍스트 윈도우: wiki/concepts/context-window.md
+      - 편향: wiki/concepts/bias.md
+      - 역할 부여: wiki/concepts/role-playing.md
       - Few-shot Learning: wiki/concepts/few-shot-learning.md
       - Chain of Thought: wiki/concepts/chain-of-thought.md
     - 도구:
@@ -164,6 +184,14 @@ nav:
       - wiki/cases/index.md
       - 법률 환각 사례: wiki/cases/legal-hallucination.md
       - 학술 윤리 사례: wiki/cases/academic-integrity.md
+    - 보안:
+      - wiki/security/index.md
+      - 프롬프트 인젝션: wiki/security/prompt-injection.md
+      - AI 에이전트 보안: wiki/security/agent-security.md
+    - 거버넌스:
+      - wiki/governance/index.md
+      - 에이전틱 AI 기업 도입: wiki/governance/enterprise-adoption.md
+      - EU AI Act와 딥페이크 규제: wiki/governance/eu-ai-act.md
     - 프롬프트 엔지니어링:
       - wiki/prompt-engineering/index.md
       - 기초:
@@ -197,9 +225,14 @@ nav:
         - RAG 파이프라인: wiki/prompt-engineering/rag/rag-for-llms.md
         - RAG 신뢰성: wiki/prompt-engineering/rag/rag-faithfulness.md
         - RAG 환각 방지: wiki/prompt-engineering/rag/rag-hallucinations.md
+        - GraphRAG: wiki/prompt-engineering/rag/graphrag.md
+        - 온톨로지와 지식 그래프: wiki/prompt-engineering/rag/ontology-knowledge-graph.md
       - 에이전트:
         - wiki/prompt-engineering/agents/index.md
         - AI 에이전트 소개: wiki/prompt-engineering/agents/introduction.md
+        - MCP (Model Context Protocol): wiki/prompt-engineering/agents/mcp.md
+        - LangChain: wiki/prompt-engineering/agents/langchain.md
+        - LangGraph: wiki/prompt-engineering/agents/langgraph.md
         - 워크플로우 vs 에이전트: wiki/prompt-engineering/agents/workflows-vs-agents.md
         - 에이전트 구성요소: wiki/prompt-engineering/agents/components.md
         - 함수 호출: wiki/prompt-engineering/agents/function-calling.md
@@ -208,6 +241,7 @@ nav:
       - 응용:
         - wiki/prompt-engineering/applications/index.md
         - 코드 생성: wiki/prompt-engineering/applications/coding.md
+        - 바이브 코딩: wiki/prompt-engineering/applications/vibe-coding.md
         - 텍스트 요약: wiki/prompt-engineering/applications/text-summarization.md
         - 분류: wiki/prompt-engineering/applications/classification.md
         - 질의응답: wiki/prompt-engineering/applications/question-answering.md
@@ -245,9 +279,13 @@ nav:
 
 # 추가 설정
 extra:
+  chatbot: false
+  version:
+    default: "2.0"
+    provider: null   # mike 미사용 — 정적 표기용   # 로컬 RAG 챗봇 위젯 (백엔드 필요 — 배포 사이트에선 false)
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/
+      link: https://github.com/Zakedu/genai-book
   generator: false
   
 # 저작권

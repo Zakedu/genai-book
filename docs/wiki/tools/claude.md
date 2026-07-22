@@ -1,8 +1,7 @@
 # Claude
 
-!!! info "최종 수정일: 2026-03-20"
 
-Anthropic이 개발한 AI 어시스턴트입니다. Constitutional AI 원칙에 기반한 안전성과 유용성의 균형을 중시하며, **1M 토큰 컨텍스트 윈도우 (GA)**, Artifacts 실시간 생성, Projects, MCP, Computer Use 에이전트 등 강력한 기능을 제공합니다. Opus 4.6, Sonnet 4.6 모두 1M 토큰 GA(General Availability)를 달성하였으며, Claude 4.6 계열이 2026년 최신 모델입니다.
+Anthropic이 개발한 AI 어시스턴트입니다. Constitutional AI 원칙에 기반한 안전성과 유용성의 균형을 중시하며, **1M 토큰 컨텍스트 윈도우 (GA)**, Artifacts 실시간 생성, Projects, MCP, Computer Use 에이전트 등 강력한 기능을 제공합니다. Opus 4.8, Sonnet 5 모두 1M 토큰 GA(General Availability)를 달성하였으며, Claude Opus 4.8 계열이 2026년 최신 모델입니다.
 
 ---
 
@@ -12,7 +11,7 @@ Anthropic이 개발한 AI 어시스턴트입니다. Constitutional AI 원칙에 
 |------|------|
 | 개발사 | Anthropic |
 | 출시일 | 2023년 3월 |
-| 최신 모델 | Claude Opus 4.6, Claude Sonnet 4.6, Claude Haiku 4.5 |
+| 최신 모델 | Claude Opus 4.8, Claude Sonnet 5, Claude Haiku 4.5 |
 | 웹사이트 | [claude.ai](https://claude.ai) |
 | API | [console.anthropic.com](https://console.anthropic.com) |
 | 데스크톱 앱 | Claude Desktop (MCP 지원) |
@@ -31,13 +30,13 @@ Anthropic이 개발한 AI 어시스턴트입니다. Constitutional AI 원칙에 
 | **Enterprise** | 문의 | 무제한 사용, SSO/SCIM, 전담 지원, 감사 로그, 데이터 학습 제외 |
 
 !!! tip "Max 플랜 (활발히 사용 중)"
-    월 $100의 Max 플랜은 Pro 대비 20배 사용량과 모든 최신 기능(Claude 4.6 포함)에 대한 우선 접근을 제공합니다. 대량으로 Claude를 활용하는 전문가를 위한 플랜입니다. MCP 데스크톱 앱도 지원합니다.
+    월 $100의 Max 플랜은 Pro 대비 20배 사용량과 모든 최신 기능(Claude Opus 4.8 포함)에 대한 우선 접근을 제공합니다. 대량으로 Claude를 활용하는 전문가를 위한 플랜입니다. MCP 데스크톱 앱도 지원합니다.
 
 ---
 
 ## 모델 라인업
 
-### Claude 4.6 Sonnet (최신, 권장)
+### Claude Sonnet 5 (최신, 권장)
 
 2026년 2월 출시된 최고 성능 모델입니다. 코딩, 컴퓨터 사용, 장문 분석에 최적입니다.
 
@@ -50,7 +49,7 @@ Anthropic이 개발한 AI 어시스턴트입니다. Constitutional AI 원칙에 
 - Vision(이미지·PDF 인식) 지원
 - 빠른 응답 속도 유지
 
-### Claude Opus 4.6
+### Claude Opus 4.8
 
 최고 성능의 프리미엄 모델입니다.
 
@@ -68,7 +67,7 @@ Anthropic이 개발한 AI 어시스턴트입니다. Constitutional AI 원칙에 
 
 **특징**:
 
-- Claude 4.5 Opus 대비 1/3 비용
+- Claude 4.5 Opus 대비 저렴한 비용
 - Claude 4 Sonnet 대비 2배 빠른 속도
 - 간단한 작업, 대량 처리에 최적
 - 128K 토큰 컨텍스트
@@ -299,7 +298,7 @@ AI가 컴퓨터 화면을 직접 보고 마우스·키보드를 조작하는 에
 
 **특징**:
 
-- Opus 4.6을 기본 모델로 사용
+- Opus 4.8을 기본 모델로 사용
 - 음성 모드(`/voice`)로 음성 지시 가능
 - 반복 실행(`/loop`)으로 자동화된 코드 수정 반복
 - MCP 서버 연동으로 외부 도구 통합
@@ -374,8 +373,8 @@ Anthropic의 AI 안전성 철학인 Constitutional AI에 기반한 응답을 생
 | 작업 유형 | 추천 모델 | 이유 |
 |----------|----------|------|
 | 일상 대화·간단한 질문 | Claude Haiku 4.5 | 빠르고 효율적 |
-| 글쓰기·분석·코딩 | Claude Sonnet 4.6 | 속도와 품질의 최적 균형 |
-| 복잡한 추론·연구 | Claude Opus 4.6 | 최고 수준의 사고력 |
+| 글쓰기·분석·코딩 | Claude Sonnet 5 | 속도와 품질의 최적 균형 |
+| 복잡한 추론·연구 | Claude Opus 4.8 | 최고 수준의 사고력 |
 | 대량 처리·자동화 | Claude Haiku 4.5 | 빠른 처리, 낮은 비용 |
 
 ### Claude의 강점 활용

@@ -11,7 +11,7 @@
 | 항목 | ChatGPT | Claude | Gemini | Perplexity | Microsoft Copilot |
 |------|---------|--------|--------|------------|-------------------|
 | 개발사 | OpenAI | Anthropic | Google DeepMind | Perplexity AI | Microsoft |
-| 최신 모델 | GPT-5.4, o3 | Claude 4.6 Sonnet | Gemini 3.1 Pro (Preview) | 자체 + GPT-5.4/Claude | Phi-3 기반 |
+| 최신 모델 | GPT-5.6, o3 | Claude Sonnet 5 | Gemini 3 Pro 계열 | 자체 + GPT-5.6/Claude | Phi-3 기반 |
 | 출시일 | 2022년 11월 | 2023년 3월 | 2023년 12월 | 2022년 12월 | 2023년 2월 |
 | 무료 버전 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | API 제공 | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -19,11 +19,11 @@
 
 ---
 
-## 💰 가격 정책 (2026년 3월 기준)
+## 💰 가격 정책 (2026년 7월 기준)
 
 | 플랜 | ChatGPT | Claude | Gemini |
 |------|---------|--------|--------|
-| **무료** | GPT-5.4 nano 제한적 | Claude 4.5 제한적 | Gemini 2.0 Flash |
+| **무료** | GPT-5.6 nano 제한적 | Claude 4.5 제한적 | Gemini 2.0 Flash |
 | **개인 유료** | Plus $20/월 | Pro $20/월 | Advanced $19.99/월 |
 | **팀/비즈니스** | Team $25-30/월/인 | Team $25/월/인 | Business $24/월/인 |
 | **프리미엄** | Pro $200/월 | Max $100/월 | - |
@@ -32,8 +32,8 @@
 
 | 모델 | 입력 | 출력 | 배치 처리 |
 |------|------|------|----------|
-| GPT-5.4 | 변동 | 변동 | -50% |
-| Claude 4.6 Sonnet | $3.00 | $15.00 | -50% |
+| GPT-5.6 | 변동 | 변동 | -50% |
+| Claude Sonnet 5 | $3.00 | $15.00 | -50% |
 | Claude 4.5 Opus | $5.00 | $25.00 | -50% |
 | Gemini 2.5 Pro | $1.25 | $10.00 | -50% |
 | Gemini 2.0 Flash | $0.10 | $0.40 | -50% |
@@ -64,9 +64,9 @@
 
 | 모델 | 컨텍스트 윈도우 | 대략적인 분량 |
 |------|-----------------|---------------|
-| GPT-5.4 | 128K 토큰 | 약 300페이지 |
-| Claude 4.6 Sonnet | 1M 토큰 | 약 2,500페이지 |
-| Claude 4.6 Opus | 1M 토큰 | 약 2,500페이지 |
+| GPT-5.6 | 약 100만 토큰 | 약 1,500페이지 |
+| Claude Sonnet 5 | 1M 토큰 | 약 2,500페이지 |
+| Claude Opus 4.8 | 1M 토큰 | 약 2,500페이지 |
 | Gemini 2.5 Pro | 1M 토큰 | 약 2,500페이지 |
 | Gemini 1.5 Pro | 2M 토큰 | 약 5,000페이지 |
 
@@ -172,7 +172,7 @@
 | GPT-4 Turbo | 2023.11 | 128K 컨텍스트, 가격 인하 |
 | GPT-4o | 2024.05 | 속도 향상, 음성 대화 |
 | o1 | 2024.09 | 추론 특화 모델 |
-| GPT-5.4 | 2026.03 | GPT-5.4 Thinking/Pro, mini/nano 추가, GPT-5.1 이전 퇴역 |
+| GPT-5.6 | 2026.03 | GPT-5.6 Thinking/Pro, mini/nano 추가, GPT-5.1 이전 퇴역 |
 
 ### Claude
 
@@ -182,7 +182,7 @@
 | Claude 2 | 2023.07 | 100K 컨텍스트 |
 | Claude 3 | 2024.03 | Opus/Sonnet/Haiku 라인업 |
 | Claude 3.5 Sonnet | 2024.06 | 성능 대폭 향상 |
-| Claude 4.6 (1M GA) | 2026.03 | Opus/Sonnet 1M 토큰 GA, Cowork, 인라인 시각화 |
+| Claude Opus 4.8 (1M GA) | 2026.03 | Opus/Sonnet 1M 토큰 GA, Cowork, 인라인 시각화 |
 
 ### Gemini
 
@@ -192,7 +192,7 @@
 | Gemini 1.0 | 2023.12 | Bard에서 리브랜딩 |
 | Gemini 1.5 | 2024.02 | 1M 토큰 컨텍스트 |
 | Gemini 2.0 | 2024.12 | 에이전트 기능 강화 |
-| Gemini 3.1 Pro | 2026.03 | Preview 출시, 3.1 Flash-Lite, Gemini 3 Pro 퇴역 |
+| Gemini 3 Pro 계열 | 2026.03 | Preview 출시, 3.1 Flash-Lite, Gemini 3 Pro 퇴역 |
 
 ---
 
@@ -207,7 +207,7 @@
 | **강점** | 실시간 정보 검색, 출처 명시, 팩트 중심 |
 | **약점** | 창작/코딩에는 다른 도구 대비 약함 |
 | **무료 버전** | 일일 검색 제한, 기본 모델 사용 |
-| **Pro 버전** | $20/월, GPT-5.4/Claude 4.6 선택 가능 |
+| **Pro 버전** | $20/월, GPT-5.6/Claude Opus 4.8 선택 가능 |
 | **추천 용도** | 리서치, 최신 정보 검색, 팩트체킹 |
 
 ```

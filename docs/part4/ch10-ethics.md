@@ -86,7 +86,7 @@
 - 2025년 5~11월: 양측 증거 개시(Discovery) 절차
 - 2026년 1월 5일: 판사, 2,000만 건 ChatGPT 대화 로그 공개 명령
   → OpenAI가 선별 제출하려던 것을 법원이 전체 데이터셋 제출로 변경
-- 예정: 2026년 4월 2일 약식판결(Summary Judgment)
+- 2026년 4월 4일 약식판결 관련 결정(OpenAI 기각 신청 일부 기각, 소송 진행 중)
 ```
 
 !!! warning "시사점"
@@ -579,7 +579,8 @@ AI 활용 성실성 선언 (Diligence Statement)
 - AI 윤리 가이드라인은 기관, 국가, 문화에 따라 다를 수 있다. 해당 맥락의 최신 기준을 확인하는 것이 중요하다.
 ---
 
-<div class="nav-buttons">
-<a href="../ch09-hallucination/" class="nav-button nav-prev">&larr; 이전: Chapter 9: 환각의 이해와 대응</a>
-<a href="../ch11-responsible-use/" class="nav-button nav-next">다음: Chapter 11: 책임 있는 AI 사용 &rarr;</a>
-</div>
+## 관련 위키 문서
+
+- [학술 윤리 사례](../wiki/cases/academic-integrity.md)
+- [편향](../wiki/concepts/bias.md)
+- [EU AI Act](../wiki/governance/eu-ai-act.md)

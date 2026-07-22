@@ -97,7 +97,7 @@ Step 3: 단계별로 논리적으로 검토하시오
 
 ## 코드 예제
 
-### Claude 4.6을 이용한 간접 추론
+### Claude Opus 4.8을 이용한 간접 추론
 
 ```python
 from anthropic import Anthropic

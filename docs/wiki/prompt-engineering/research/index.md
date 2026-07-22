@@ -77,4 +77,4 @@ LLM을 활용한 학습 데이터 생성 기법과 품질 관리 방법론입니
 
 ---
 
-**Last Updated**: 2026년 2월 | **Model Updates**: GPT-5.4, Claude 4.6, Gemini 2.5 Pro
+**Last Updated**: 2026년 2월 | **Model Updates**: GPT-5.6, Claude Opus 4.8, Gemini 2.5 Pro

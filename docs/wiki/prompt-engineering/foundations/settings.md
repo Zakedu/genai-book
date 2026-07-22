@@ -335,7 +335,7 @@ Presence Penalty = 2.0 (높음)
 
     5. **API 비용 고려**: Max Tokens를 불필요하게 높게 설정하지 마세요.
 
-    6. **모델별 차이**: Claude 4.6, GPT-5.4, Gemini 2.5 Pro 등 모델마다 설정이 조금씩 다를 수 있습니다.
+    6. **모델별 차이**: Claude Opus 4.8, GPT-5.6, Gemini 2.5 Pro 등 모델마다 설정이 조금씩 다를 수 있습니다.
 
 ## 📝 핵심 정리
 

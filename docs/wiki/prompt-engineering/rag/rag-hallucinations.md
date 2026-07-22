@@ -304,7 +304,7 @@ Step 3: 수정
         {{"신뢰도": 0.0-1.0, "오류": ["..."]}}
         """
 
-        # Claude 4.6으로 검증
+        # Claude Opus 4.8으로 검증
         response = client.messages.create(
             model="claude-opus-4-6",
             max_tokens=500,
@@ -321,8 +321,8 @@ Step 3: 수정
 여러 모델의 답변을 결합합니다.
 
 ```
-GPT-5.4 답변: "A인 가능성 70%"
-Claude 4.6: "A인 가능성 75%"
+GPT-5.6 답변: "A인 가능성 70%"
+Claude Opus 4.8: "A인 가능성 75%"
 Gemini 2.5: "A인 가능성 65%"
 
 투표 결과:

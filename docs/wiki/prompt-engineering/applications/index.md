@@ -35,7 +35,7 @@
 ## 고급 기법
 
 - [프롬프트 함수](pf.md) - 재사용 가능한 프롬프트 패턴 정의 및 파라미터화
-- [파인튜닝 (GPT-5.4 시대)](finetuning-gpt4o.md) - 도메인 특화 모델 구축, 파인튜닝 vs 프롬프트 엔지니어링
+- [파인튜닝 (GPT-5.6 시대)](finetuning-gpt4o.md) - 도메인 특화 모델 구축, 파인튜닝 vs 프롬프트 엔지니어링
 - [컨텍스트 캐싱](context-caching.md) - Gemini 2.5 Pro, Claude의 컨텍스트 캐싱으로 비용 최적화
 - [RAG용 합성 데이터](synthetic-rag.md) - 합성 Q&A 페어 생성, 평가 데이터셋 구축
 

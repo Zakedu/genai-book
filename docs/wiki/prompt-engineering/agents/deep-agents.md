@@ -12,7 +12,7 @@
 - **적응적 조정**: 중간 결과에 따라 계획 수정
 - **포괄적 통합**: 부속 에이전트의 결과 통합 및 종합
 
-Claude 4.6의 Claude Code, LangChain, CrewAI 같은 도구들이 심화 에이전트 아키텍처를 대중화했습니다.
+Claude Opus 4.8의 Claude Code, LangChain, CrewAI 같은 도구들이 심화 에이전트 아키텍처를 대중화했습니다.
 
 ## 얕은 에이전트 vs 심화 에이전트
 
@@ -475,7 +475,7 @@ memory_system = {
 **Claude Code (Anthropic)**
 ```
 특징:
-- Claude 4.6과 통합
+- Claude Opus 4.8과 통합
 - 오케스트레이터-부속 에이전트 패턴 지원
 - 1M 컨텍스트 윈도우 (GA)
 - 강력한 코딩 능력

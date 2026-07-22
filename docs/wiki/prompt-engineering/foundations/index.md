@@ -79,8 +79,8 @@
 2026년 2월 기준 주요 생성형 AI 모델들의 특징과 차이점입니다.
 
 **주요 내용:**
-- OpenAI GPT-5.4
-- Anthropic Claude 4.6 (Opus, Sonnet, Haiku)
+- OpenAI GPT-5.6
+- Anthropic Claude Opus 4.8 (Opus, Sonnet, Haiku)
 - Google Gemini 2.5 Pro
 - Meta Llama 4
 - 기타 주요 모델들

@@ -29,7 +29,7 @@ Groq의 성능은 두 가지 핵심 지표로 측정됩니다:
 
 Groq LPU:        ~3,000+ tokens/s
 GPT-4 API:       ~50-100 tokens/s
-Claude 4.6 API:  ~80-150 tokens/s
+Claude Opus 4.8 API:  ~80-150 tokens/s
 오픈소스 모델:   ~20-50 tokens/s
 ```
 
@@ -56,7 +56,7 @@ Claude API:      ~500-800ms
 비용(₩/1M 토큰)
     ^
     |     클라우드 API
-    |     (Claude 4.6)
+    |     (Claude Opus 4.8)
     |          *
     |
     |     Groq LPU
@@ -79,7 +79,7 @@ Claude API:      ~500-800ms
     - ✅ 고처리량 배치 작업
     - ✅ 비용 최적화와 속도의 균형
 
-    **Claude 4.6, GPT-5.4 API 선택:**
+    **Claude Opus 4.8, GPT-5.6 API 선택:**
     - ✅ 최고 수준의 모델 성능 필요
     - ✅ 복잡한 추론 작업
     - ✅ 다국어 처리 우수성 필요
@@ -147,7 +147,7 @@ tn: 토큰 n 계산
 라이브 방송 자막 생성
 - 지연시간: 500ms 이하 필수
 - 품질: 한국어 자연스러움
-- Groq + Claude 4.6 조합이 최적
+- Groq + Claude Opus 4.8 조합이 최적
 ```
 
 !!! example "한국어 예제: 실시간 고객 지원 챗봇"
@@ -307,7 +307,7 @@ Groq LPU (TTFT: 100ms)
 
 ### 실무 활용
 - 실시간 채팅/스트리밍: Groq LPU 최적
-- 복잡한 추론: Claude 4.6, GPT-5.4 추천
+- 복잡한 추론: Claude Opus 4.8, GPT-5.6 추천
 - 데이터 민감: 로컬 오픈소스 모델
 
 ### 한국 비즈니스 적용

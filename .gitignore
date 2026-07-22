@@ -31,3 +31,4 @@ chatbot/chroma_db/
 # Environment
 .env
 .env.local
+.venv-build/
