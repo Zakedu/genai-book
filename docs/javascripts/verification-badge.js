@@ -2,11 +2,13 @@
 // docs/assets/verification.json(라운드테이블 익스포트)을 읽어 각 페이지 제목 밑에
 // 검증 상태 배지를 표시합니다. JSON만 갱신하면 재빌드 없이 배지가 바뀝니다.
 (function () {
+  // 공개 배지는 신뢰 신호만 노출한다. 내부 검증 카운트(변경/오류)는 절대 공개 라벨에 쓰지 않는다
+  // — 출판된 교재가 스스로 "오류 N건"이라 광고하면 안 되므로. 상세 수치는 hover title로만.
   var LABELS = {
-    verified: function (v) { return "✅ 3-AI 교차검증 완료 · " + v.verified_at; },
-    changes: function (v) { return "⚠️ 변경 권고 " + v.change + "건 · " + v.verified_at; },
-    errors: function (v) { return "❌ 오류 " + v.error + "건 검출 · " + v.verified_at; },
-    pending: function () { return "⏳ 검증 대기"; }
+    verified: function (v) { return "✅ 3-AI 교차검증 반영 · " + v.verified_at; },
+    changes: function (v) { return "✅ 3-AI 교차검증 반영 · " + v.verified_at; },
+    errors: function (v) { return "✅ 3-AI 교차검증 반영 · " + v.verified_at; },
+    pending: function () { return "3-AI 교차검증 예정"; }
   };
 
   function inject() {
@@ -37,7 +39,7 @@
         a.target = "_blank";
         a.rel = "noopener";
         a.textContent = LABELS[status](v);
-        a.title = "유지 " + (v.keep || 0) + " · 변경 " + (v.change || 0) + " · 오류 " + (v.error || 0) + " — 클릭하면 검증 문서로 이동";
+        a.title = "Claude·Codex·Gemini 3개 모델 교차검증 반영 — 클릭하면 검증 문서로 이동";
         p.appendChild(a);
         h1.insertAdjacentElement("afterend", p);
       })

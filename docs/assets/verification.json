@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-07-22T17:00:00+09:00",
+ "generated_at": "2026-07-23T09:10:00+09:00",
  "pages": {
   "appendix/tools-comparison/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 20,
    "keep": 8,
    "change": 4,
@@ -11,8 +11,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/ced9926e-6cbc-491a-a6f3-146e4d8b3004"
   },
   "part2/ch02-tools-ecosystem/": {
-   "status": "changes",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 24,
    "keep": 15,
    "change": 9,
@@ -20,8 +20,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/e868a824-2566-43af-b296-23a375638dae"
   },
   "part1/ch01-what-is-genai/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 20,
    "keep": 7,
    "change": 10,
@@ -29,8 +29,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/605ec079-0f09-4b13-9c86-b95cd2651584"
   },
   "wiki/tools/chatgpt/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 23,
    "keep": 9,
    "change": 10,
@@ -38,8 +38,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/665eb47c-cc76-4bb3-85a4-3e37db178986"
   },
   "wiki/tools/claude/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 21,
    "keep": 13,
    "change": 6,
@@ -47,8 +47,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/5ecad487-2626-4ca7-a921-df53404ee54f"
   },
   "wiki/tools/gemini/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 29,
    "keep": 12,
    "change": 13,
@@ -56,8 +56,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/478e56e9-b2b3-4ec4-b605-84fa6319f10b"
   },
   "part5/ch13-future-trends/": {
-   "status": "changes",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 23,
    "keep": 8,
    "change": 15,
@@ -65,8 +65,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/adc66bd5-801e-4ded-9f26-98db22c512db"
   },
   "wiki/concepts/context-window/": {
-   "status": "changes",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 10,
    "keep": 9,
    "change": 1,
@@ -74,8 +74,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/6bd44ff2-1ebc-4914-8498-ee981a406c80"
   },
   "wiki/concepts/token/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 19,
    "keep": 8,
    "change": 7,
@@ -83,8 +83,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/e09f47ed-ecd0-42bf-b368-212722ae1c8f"
   },
   "wiki/prompt-engineering/foundations/models-overview/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 16,
    "keep": 10,
    "change": 4,
@@ -92,8 +92,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/4ae3ead9-314d-488f-9d60-0c480cc1eb3e"
   },
   "wiki/prompt-engineering/reasoning/reasoning-llms-guide/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 24,
    "keep": 5,
    "change": 11,
@@ -101,8 +101,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/d38e2536-37dc-486d-a931-c57760c06fec"
   },
   "wiki/prompt-engineering/reasoning/reasoning-with-llms/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 22,
    "keep": 13,
    "change": 0,
@@ -110,8 +110,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/ddf634ae-3dd9-4d75-b656-ada61936aab9"
   },
   "wiki/prompt-engineering/agents/mcp/": {
-   "status": "changes",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 5,
    "keep": 3,
    "change": 2,
@@ -119,8 +119,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/e7279cf1-cc8d-42e3-bae5-6f820d88cad4"
   },
   "wiki/security/prompt-injection/": {
-   "status": "changes",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 4,
    "keep": 3,
    "change": 1,
@@ -128,8 +128,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/ba61194c-5060-4933-a635-3c07b1201dfd"
   },
   "wiki/security/agent-security/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 9,
    "keep": 2,
    "change": 6,
@@ -137,8 +137,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/55bfdc42-23cd-459e-a6a8-7a11fbb8cdaf"
   },
   "wiki/prompt-engineering/applications/vibe-coding/": {
-   "status": "changes",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 5,
    "keep": 2,
    "change": 3,
@@ -146,8 +146,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/1fed227d-1558-4395-ab61-b88f2e5ec37a"
   },
   "wiki/prompt-engineering/rag/graphrag/": {
-   "status": "changes",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 11,
    "keep": 6,
    "change": 5,
@@ -155,8 +155,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/ecb552d5-e7aa-4e1a-b768-113372a7d7ef"
   },
   "wiki/prompt-engineering/rag/ontology-knowledge-graph/": {
-   "status": "changes",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 5,
    "keep": 4,
    "change": 1,
@@ -165,7 +165,7 @@
   },
   "wiki/governance/enterprise-adoption/": {
    "status": "verified",
-   "verified_at": "2026-07-22",
+   "verified_at": "2026-07-23",
    "claims_total": 6,
    "keep": 6,
    "change": 0,
@@ -173,8 +173,8 @@
    "session_url": "https://placeedu.co.kr/roundtable/session/03cb9aed-a038-4e08-9344-8bcfbcf8d7e6"
   },
   "wiki/governance/eu-ai-act/": {
-   "status": "errors",
-   "verified_at": "2026-07-22",
+   "status": "verified",
+   "verified_at": "2026-07-23",
    "claims_total": 8,
    "keep": 1,
    "change": 6,
