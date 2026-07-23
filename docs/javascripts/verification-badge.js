@@ -34,12 +34,10 @@
         var status = LABELS[v.status] ? v.status : "pending";
         var p = document.createElement("p");
         p.className = "rt-badge rt-" + status;
-        var a = document.createElement("a");
-        a.href = v.session_url || "#";
-        a.target = "_blank";
-        a.rel = "noopener";
+        // 링크 없는 순수 배지 — 세션 퀵링크는 의미 없어 제거(클릭 불가 span)
+        var a = document.createElement("span");
         a.textContent = LABELS[status](v);
-        a.title = "Claude·Codex·Gemini 3개 모델 교차검증 반영 — 클릭하면 검증 문서로 이동";
+        a.title = "Claude·Codex·Gemini 3개 모델 교차검증 반영";
         p.appendChild(a);
         h1.insertAdjacentElement("afterend", p);
       })
