@@ -110,12 +110,14 @@ hooks:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/curriculum.css
 
 # 추가 JavaScript
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/progress.js
   - javascripts/verification-badge.js
+  - javascripts/curriculum.js
   - javascripts/clause-wrap.js
 
 # 네비게이션 구조
@@ -163,6 +165,10 @@ nav:
     - D. 참고문헌: appendix/references.md
     - E. 자가 진단: appendix/self-assessment.md
   
+  - 학습 로드맵:
+    - curriculum/index.md
+    - 개념 지도: curriculum/ontology.md
+
   - 위키:
     - wiki/index.md
     - 개념:

@@ -1,0 +1,4115 @@
+{
+ "meta": {
+  "concepts": 120,
+  "levels": 10,
+  "prereq_relations": 153,
+  "total_relations": 226,
+  "source": "genai-book 온톨로지 + 라운드테이블 보강·검증",
+  "tracks": [
+   "입문",
+   "실무사용자",
+   "구현자",
+   "관리자",
+   "창작자"
+  ],
+  "verified": "claude 추출·분류 + codex 적대적 반박 반영"
+ },
+ "levels": {
+  "0": [
+   "API",
+   "Attention",
+   "EU AI Act와 딥페이크 규제",
+   "Jailbreaking: LLM 안전장치 우회",
+   "LLM 회상과 정보 검색",
+   "LangChain",
+   "Prompt Chaining",
+   "Transfer Learning",
+   "강화학습",
+   "과적합",
+   "노이즈",
+   "디코더",
+   "베이스라인",
+   "벡터",
+   "생성형 AI",
+   "엔코더",
+   "역할 부여",
+   "온톨로지와 지식 그래프",
+   "인라인 시각화",
+   "추론",
+   "코워크",
+   "토큰",
+   "파라미터",
+   "편향성",
+   "프롬프트",
+   "할루시네이션/환각",
+   "환각"
+  ],
+  "1": [
+   "Chain of Thought",
+   "Diffusion Model",
+   "Foundation Model",
+   "GraphRAG",
+   "LLM의 편향 인식 및 완화",
+   "LangGraph",
+   "간접 추론",
+   "데이터 증강",
+   "멀티모달",
+   "물리적 추론",
+   "법률 환각 사례: Mata v. Avianca",
+   "셀프 어텐션",
+   "수학 추론과 문제 풀이",
+   "인도형 연쇄 추론",
+   "임베딩",
+   "적대적 공격 종합 분석",
+   "정렬",
+   "컨텍스트 윈도우",
+   "토크나이저",
+   "프롬프트 인젝션",
+   "프롬프트의 요소",
+   "하이퍼파라미터",
+   "학술 윤리 사례"
+  ],
+  "2": [
+   "AGI",
+   "Batch",
+   "Constitutional AI",
+   "LLM 토크나이제이션",
+   "RLHF",
+   "ReAct Framework",
+   "Self-Consistency Prompting",
+   "Temperature",
+   "Top-k / Top-p",
+   "그라운딩",
+   "무한 컨텍스트 변환기",
+   "벡터 데이터베이스",
+   "적대적 프롬팅 개요",
+   "컨텍스트 캐싱으로 비용 최적화",
+   "트랜스포머",
+   "프롬프트 주입 공격 및 방어",
+   "합성 데이터 생성",
+   "환각 탐지 및 식별"
+  ],
+  "3": [
+   "AI 에이전트 입문",
+   "LLM 설정",
+   "RAG 개요",
+   "대규모 언어 모델",
+   "사실성 검증 및 향상",
+   "에폭",
+   "프롬프트 유출 방지"
+  ],
+  "4": [
+   "AI 워크플로우 vs AI 에이전트",
+   "Groq와 LPU 추론 엔진",
+   "LLM을 위한 RAG 파이프라인 구현",
+   "RAG 시스템을 위한 합성 데이터 생성",
+   "실전 예제",
+   "에이전트 구성 요소",
+   "주요 LLM 모델 개요",
+   "진실성과 신뢰도",
+   "파인튜닝"
+  ],
+  "5": [
+   "Claude",
+   "GPT",
+   "Gemini",
+   "LLM 추론 연구 현황 및 동향",
+   "RAG 시스템의 환각 방지",
+   "심화 에이전트",
+   "프롬프트 기초",
+   "프롬프트 설계 팁",
+   "함수 호출"
+  ],
+  "6": [
+   "ChatGPT",
+   "MCP",
+   "RAG 신뢰성과 인용 관리",
+   "추론 LLM 가이드",
+   "컨텍스트 엔지니어링",
+   "프롬프트 엔지니어링",
+   "프롬프트 최적화"
+  ],
+  "7": [
+   "AI 에이전트 보안",
+   "LLM 추론 평가 및 벤치마크",
+   "LLM을 이용한 질문 답변",
+   "LLM을 이용한 창의적 응용",
+   "LLM을 이용한 텍스트 분류",
+   "LLM을 이용한 텍스트 요약",
+   "LLM의 신뢰성",
+   "Zero-Shot Prompting",
+   "시스템 프롬프트",
+   "에이전트",
+   "이미지 생성 프롬프팅",
+   "코드 생성을 위한 LLM",
+   "프롬프트 함수"
+  ],
+  "8": [
+   "Few-shot Learning",
+   "데이터 및 콘텐츠 생성",
+   "메타 프롬프트",
+   "바이브 코딩",
+   "직장에서의 생성형 AI 실제 사례 연구"
+  ],
+  "9": [
+   "에이전틱 AI 기업 도입",
+   "정보 추출"
+  ]
+ },
+ "prerequisites": {
+  "RAG 개요": [
+   "LLM 회상과 정보 검색",
+   "벡터 데이터베이스",
+   "임베딩"
+  ],
+  "그라운딩": [
+   "정렬"
+  ],
+  "대규모 언어 모델": [
+   "Foundation Model",
+   "디코더",
+   "생성형 AI",
+   "엔코더",
+   "트랜스포머",
+   "파라미터"
+  ],
+  "데이터 증강": [
+   "과적합",
+   "노이즈"
+  ],
+  "멀티모달": [
+   "생성형 AI"
+  ],
+  "메타 프롬프트": [
+   "시스템 프롬프트"
+  ],
+  "벡터 데이터베이스": [
+   "벡터",
+   "임베딩"
+  ],
+  "셀프 어텐션": [
+   "Attention"
+  ],
+  "시스템 프롬프트": [
+   "프롬프트 엔지니어링"
+  ],
+  "에이전트": [
+   "MCP",
+   "대규모 언어 모델",
+   "에이전트 구성 요소",
+   "함수 호출"
+  ],
+  "에폭": [
+   "Batch",
+   "하이퍼파라미터"
+  ],
+  "임베딩": [
+   "벡터"
+  ],
+  "정렬": [
+   "강화학습"
+  ],
+  "Zero-Shot Prompting": [
+   "프롬프트 엔지니어링"
+  ],
+  "컨텍스트 윈도우": [
+   "토큰"
+  ],
+  "토크나이저": [
+   "토큰"
+  ],
+  "트랜스포머": [
+   "Attention",
+   "디코더",
+   "셀프 어텐션",
+   "엔코더"
+  ],
+  "파인튜닝": [
+   "Foundation Model",
+   "Transfer Learning",
+   "에폭"
+  ],
+  "프롬프트 엔지니어링": [
+   "프롬프트",
+   "프롬프트 기초"
+  ],
+  "Few-shot Learning": [
+   "Zero-Shot Prompting",
+   "프롬프트 엔지니어링"
+  ],
+  "하이퍼파라미터": [
+   "파라미터"
+  ],
+  "AGI": [
+   "Foundation Model"
+  ],
+  "Batch": [
+   "하이퍼파라미터"
+  ],
+  "Chain of Thought": [
+   "추론"
+  ],
+  "Constitutional AI": [
+   "정렬"
+  ],
+  "Diffusion Model": [
+   "노이즈",
+   "생성형 AI"
+  ],
+  "Foundation Model": [
+   "Transfer Learning"
+  ],
+  "GPT": [
+   "주요 LLM 모델 개요"
+  ],
+  "RLHF": [
+   "강화학습",
+   "정렬"
+  ],
+  "Temperature": [
+   "하이퍼파라미터"
+  ],
+  "Top-k / Top-p": [
+   "하이퍼파라미터"
+  ],
+  "ChatGPT": [
+   "GPT",
+   "주요 LLM 모델 개요"
+  ],
+  "Gemini": [
+   "주요 LLM 모델 개요"
+  ],
+  "Claude": [
+   "주요 LLM 모델 개요"
+  ],
+  "AI 에이전트 보안": [
+   "MCP",
+   "심화 에이전트"
+  ],
+  "프롬프트 인젝션": [
+   "프롬프트"
+  ],
+  "Groq와 LPU 추론 엔진": [
+   "대규모 언어 모델",
+   "트랜스포머"
+  ],
+  "LLM의 신뢰성": [
+   "RAG 신뢰성과 인용 관리",
+   "할루시네이션/환각"
+  ],
+  "무한 컨텍스트 변환기": [
+   "컨텍스트 윈도우"
+  ],
+  "LLM 토크나이제이션": [
+   "토크나이저"
+  ],
+  "합성 데이터 생성": [
+   "데이터 증강"
+  ],
+  "함수 호출": [
+   "API",
+   "에이전트 구성 요소"
+  ],
+  "MCP": [
+   "API",
+   "함수 호출"
+  ],
+  "에이전트 구성 요소": [
+   "AI 에이전트 입문"
+  ],
+  "AI 에이전트 입문": [
+   "ReAct Framework"
+  ],
+  "심화 에이전트": [
+   "AI 에이전트 입문",
+   "AI 워크플로우 vs AI 에이전트",
+   "LangGraph"
+  ],
+  "AI 워크플로우 vs AI 에이전트": [
+   "AI 에이전트 입문"
+  ],
+  "LangGraph": [
+   "LangChain"
+  ],
+  "컨텍스트 엔지니어링": [
+   "심화 에이전트",
+   "컨텍스트 윈도우"
+  ],
+  "RAG 신뢰성과 인용 관리": [
+   "RAG 시스템의 환각 방지"
+  ],
+  "RAG 시스템의 환각 방지": [
+   "LLM을 위한 RAG 파이프라인 구현",
+   "그라운딩"
+  ],
+  "LLM을 위한 RAG 파이프라인 구현": [
+   "LLM 회상과 정보 검색",
+   "RAG 개요"
+  ],
+  "GraphRAG": [
+   "온톨로지와 지식 그래프"
+  ],
+  "LLM 추론 연구 현황 및 동향": [
+   "Groq와 LPU 추론 엔진",
+   "추론"
+  ],
+  "인도형 연쇄 추론": [
+   "추론"
+  ],
+  "간접 추론": [
+   "추론"
+  ],
+  "LLM 추론 평가 및 벤치마크": [
+   "베이스라인",
+   "추론 LLM 가이드"
+  ],
+  "추론 LLM 가이드": [
+   "LLM 추론 연구 현황 및 동향",
+   "인도형 연쇄 추론"
+  ],
+  "물리적 추론": [
+   "추론"
+  ],
+  "실전 예제": [
+   "LLM 설정"
+  ],
+  "프롬프트 기초": [
+   "대규모 언어 모델",
+   "실전 예제",
+   "프롬프트",
+   "프롬프트의 요소"
+  ],
+  "LLM 설정": [
+   "Temperature",
+   "Top-k / Top-p"
+  ],
+  "프롬프트 최적화": [
+   "프롬프트 설계 팁"
+  ],
+  "프롬프트 설계 팁": [
+   "실전 예제",
+   "프롬프트"
+  ],
+  "프롬프트의 요소": [
+   "역할 부여",
+   "프롬프트"
+  ],
+  "주요 LLM 모델 개요": [
+   "대규모 언어 모델"
+  ],
+  "바이브 코딩": [
+   "인라인 시각화",
+   "코드 생성을 위한 LLM"
+  ],
+  "LLM을 이용한 창의적 응용": [
+   "프롬프트 엔지니어링"
+  ],
+  "데이터 및 콘텐츠 생성": [
+   "LLM을 이용한 텍스트 요약",
+   "생성형 AI",
+   "프롬프트 엔지니어링"
+  ],
+  "정보 추출": [
+   "Few-shot Learning",
+   "프롬프트 엔지니어링"
+  ],
+  "LLM을 이용한 질문 답변": [
+   "LLM 회상과 정보 검색",
+   "RAG 개요",
+   "프롬프트 엔지니어링"
+  ],
+  "수학 추론과 문제 풀이": [
+   "추론"
+  ],
+  "직장에서의 생성형 AI 실제 사례 연구": [
+   "LLM을 이용한 창의적 응용",
+   "코워크"
+  ],
+  "LLM을 이용한 텍스트 분류": [
+   "대규모 언어 모델",
+   "프롬프트 엔지니어링"
+  ],
+  "코드 생성을 위한 LLM": [
+   "대규모 언어 모델",
+   "인라인 시각화",
+   "프롬프트 엔지니어링"
+  ],
+  "이미지 생성 프롬프팅": [
+   "Diffusion Model",
+   "멀티모달",
+   "프롬프트 엔지니어링"
+  ],
+  "RAG 시스템을 위한 합성 데이터 생성": [
+   "RAG 개요",
+   "합성 데이터 생성"
+  ],
+  "프롬프트 함수": [
+   "프롬프트 엔지니어링",
+   "함수 호출"
+  ],
+  "LLM을 이용한 텍스트 요약": [
+   "프롬프트 엔지니어링"
+  ],
+  "컨텍스트 캐싱으로 비용 최적화": [
+   "컨텍스트 윈도우"
+  ],
+  "적대적 프롬팅 개요": [
+   "적대적 공격 종합 분석"
+  ],
+  "사실성 검증 및 향상": [
+   "환각 탐지 및 식별"
+  ],
+  "LLM의 편향 인식 및 완화": [
+   "편향성"
+  ],
+  "환각 탐지 및 식별": [
+   "법률 환각 사례: Mata v. Avianca",
+   "할루시네이션/환각"
+  ],
+  "적대적 공격 종합 분석": [
+   "Jailbreaking: LLM 안전장치 우회"
+  ],
+  "진실성과 신뢰도": [
+   "사실성 검증 및 향상"
+  ],
+  "프롬프트 유출 방지": [
+   "프롬프트 주입 공격 및 방어"
+  ],
+  "프롬프트 주입 공격 및 방어": [
+   "프롬프트 인젝션"
+  ],
+  "Self-Consistency Prompting": [
+   "Chain of Thought"
+  ],
+  "ReAct Framework": [
+   "Chain of Thought",
+   "Prompt Chaining"
+  ],
+  "법률 환각 사례: Mata v. Avianca": [
+   "할루시네이션/환각"
+  ],
+  "학술 윤리 사례": [
+   "할루시네이션/환각"
+  ],
+  "에이전틱 AI 기업 도입": [
+   "심화 에이전트",
+   "에이전트",
+   "직장에서의 생성형 AI 실제 사례 연구"
+  ]
+ },
+ "relations": {
+  "강화학습": [
+   {
+    "t": "RLHF",
+    "type": "prerequisite"
+   },
+   {
+    "t": "RLHF",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "정렬",
+    "type": "prerequisite"
+   }
+  ],
+  "RAG 개요": [
+   {
+    "t": "GraphRAG",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "LLM을 위한 RAG 파이프라인 구현",
+    "type": "prerequisite"
+   },
+   {
+    "t": "임베딩",
+    "type": "uses"
+   },
+   {
+    "t": "벡터 데이터베이스",
+    "type": "uses"
+   },
+   {
+    "t": "할루시네이션/환각",
+    "type": "mitigates"
+   },
+   {
+    "t": "벡터 데이터베이스",
+    "type": "prerequisite"
+   },
+   {
+    "t": "RAG 시스템을 위한 합성 데이터 생성",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LLM 회상과 정보 검색",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "LLM 회상과 정보 검색",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "LLM을 이용한 질문 답변",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "과적합": [
+   {
+    "t": "데이터 증강",
+    "type": "mitigates",
+    "in": true
+   },
+   {
+    "t": "데이터 증강",
+    "type": "prerequisite"
+   }
+  ],
+  "그라운딩": [
+   {
+    "t": "할루시네이션/환각",
+    "type": "mitigates"
+   },
+   {
+    "t": "정렬",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "RAG 시스템의 환각 방지",
+    "type": "prerequisite"
+   }
+  ],
+  "노이즈": [
+   {
+    "t": "Diffusion Model",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "데이터 증강",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "대규모 언어 모델": [
+   {
+    "t": "트랜스포머",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "파라미터",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "Foundation Model",
+    "type": "is_a"
+   },
+   {
+    "t": "GPT",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "Claude",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "Gemini",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "LLM을 이용한 텍스트 분류",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "코드 생성을 위한 LLM",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "생성형 AI",
+    "type": "is_a"
+   },
+   {
+    "t": "엔코더",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "디코더",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "파라미터",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Foundation Model",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "생성형 AI",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "주요 LLM 모델 개요",
+    "type": "prerequisite"
+   },
+   {
+    "t": "프롬프트 기초",
+    "type": "prerequisite"
+   },
+   {
+    "t": "에이전트",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Groq와 LPU 추론 엔진",
+    "type": "prerequisite"
+   }
+  ],
+  "데이터 증강": [
+   {
+    "t": "과적합",
+    "type": "mitigates"
+   },
+   {
+    "t": "과적합",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "합성 데이터 생성",
+    "type": "prerequisite"
+   },
+   {
+    "t": "노이즈",
+    "type": "uses"
+   }
+  ],
+  "디코더": [
+   {
+    "t": "트랜스포머",
+    "type": "part_of"
+   },
+   {
+    "t": "트랜스포머",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "prerequisite"
+   }
+  ],
+  "멀티모달": [
+   {
+    "t": "생성형 AI",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Gemini",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "이미지 생성 프롬프팅",
+    "type": "prerequisite"
+   }
+  ],
+  "메타 프롬프트": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "is_a"
+   },
+   {
+    "t": "시스템 프롬프트",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "벡터": [
+   {
+    "t": "벡터 데이터베이스",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "임베딩",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "임베딩",
+    "type": "prerequisite"
+   }
+  ],
+  "벡터 데이터베이스": [
+   {
+    "t": "RAG 개요",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "벡터",
+    "type": "uses"
+   },
+   {
+    "t": "임베딩",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "RAG 개요",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "베이스라인": [
+   {
+    "t": "LLM 추론 평가 및 벤치마크",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "생성형 AI": [
+   {
+    "t": "데이터 및 콘텐츠 생성",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Diffusion Model",
+    "type": "prerequisite"
+   },
+   {
+    "t": "멀티모달",
+    "type": "prerequisite"
+   }
+  ],
+  "셀프 어텐션": [
+   {
+    "t": "트랜스포머",
+    "type": "part_of"
+   },
+   {
+    "t": "Attention",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "트랜스포머",
+    "type": "prerequisite"
+   }
+  ],
+  "시스템 프롬프트": [
+   {
+    "t": "프롬프트의 요소",
+    "type": "part_of"
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "메타 프롬프트",
+    "type": "prerequisite"
+   },
+   {
+    "t": "프롬프트 유출 방지",
+    "type": "evaluates",
+    "in": true
+   }
+  ],
+  "에이전트": [
+   {
+    "t": "에이전트 구성 요소",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "함수 호출",
+    "type": "uses"
+   },
+   {
+    "t": "MCP",
+    "type": "uses"
+   },
+   {
+    "t": "에이전틱 AI 기업 도입",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "인라인 시각화": [
+   {
+    "t": "코드 생성을 위한 LLM",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "바이브 코딩",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "에폭": [
+   {
+    "t": "파인튜닝",
+    "type": "part_of"
+   },
+   {
+    "t": "하이퍼파라미터",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Batch",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "엔코더": [
+   {
+    "t": "트랜스포머",
+    "type": "part_of"
+   },
+   {
+    "t": "트랜스포머",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "prerequisite"
+   }
+  ],
+  "임베딩": [
+   {
+    "t": "RAG 개요",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "벡터",
+    "type": "uses"
+   },
+   {
+    "t": "벡터",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "벡터 데이터베이스",
+    "type": "prerequisite"
+   }
+  ],
+  "정렬": [
+   {
+    "t": "RLHF",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "Constitutional AI",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "RLHF",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Constitutional AI",
+    "type": "prerequisite"
+   },
+   {
+    "t": "그라운딩",
+    "type": "prerequisite"
+   },
+   {
+    "t": "강화학습",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "Zero-Shot Prompting": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "is_a"
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Few-shot Learning",
+    "type": "prerequisite"
+   }
+  ],
+  "추론": [
+   {
+    "t": "Chain of Thought",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "수학 추론과 문제 풀이",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "물리적 추론",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "간접 추론",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "LLM 추론 평가 및 벤치마크",
+    "type": "evaluates",
+    "in": true
+   },
+   {
+    "t": "Chain of Thought",
+    "type": "prerequisite"
+   },
+   {
+    "t": "수학 추론과 문제 풀이",
+    "type": "prerequisite"
+   },
+   {
+    "t": "물리적 추론",
+    "type": "prerequisite"
+   },
+   {
+    "t": "간접 추론",
+    "type": "prerequisite"
+   },
+   {
+    "t": "인도형 연쇄 추론",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LLM 추론 연구 현황 및 동향",
+    "type": "prerequisite"
+   }
+  ],
+  "코워크": [
+   {
+    "t": "직장에서의 생성형 AI 실제 사례 연구",
+    "type": "part_of"
+   }
+  ],
+  "컨텍스트 윈도우": [
+   {
+    "t": "토큰",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "컨텍스트 엔지니어링",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "컨텍스트 캐싱으로 비용 최적화",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "토큰",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "무한 컨텍스트 변환기",
+    "type": "prerequisite"
+   },
+   {
+    "t": "컨텍스트 캐싱으로 비용 최적화",
+    "type": "prerequisite"
+   },
+   {
+    "t": "무한 컨텍스트 변환기",
+    "type": "mitigates",
+    "in": true
+   }
+  ],
+  "토큰": [
+   {
+    "t": "컨텍스트 윈도우",
+    "type": "part_of"
+   },
+   {
+    "t": "토크나이저",
+    "type": "prerequisite"
+   },
+   {
+    "t": "컨텍스트 윈도우",
+    "type": "prerequisite"
+   }
+  ],
+  "토크나이저": [
+   {
+    "t": "LLM 토크나이제이션",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "토큰",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "LLM 토크나이제이션",
+    "type": "prerequisite"
+   }
+  ],
+  "트랜스포머": [
+   {
+    "t": "셀프 어텐션",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "Attention",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "엔코더",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "디코더",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "part_of"
+   },
+   {
+    "t": "셀프 어텐션",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "엔코더",
+    "type": "prerequisite"
+   },
+   {
+    "t": "디코더",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Groq와 LPU 추론 엔진",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "무한 컨텍스트 변환기",
+    "type": "is_a",
+    "in": true
+   }
+  ],
+  "파라미터": [
+   {
+    "t": "대규모 언어 모델",
+    "type": "part_of"
+   },
+   {
+    "t": "하이퍼파라미터",
+    "type": "prerequisite"
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "prerequisite"
+   }
+  ],
+  "파인튜닝": [
+   {
+    "t": "에폭",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "Transfer Learning",
+    "type": "is_a"
+   },
+   {
+    "t": "Foundation Model",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Transfer Learning",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "프롬프트": [
+   {
+    "t": "프롬프트 기초",
+    "type": "prerequisite"
+   },
+   {
+    "t": "프롬프트의 요소",
+    "type": "prerequisite"
+   },
+   {
+    "t": "프롬프트 설계 팁",
+    "type": "prerequisite"
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite"
+   },
+   {
+    "t": "프롬프트 인젝션",
+    "type": "prerequisite"
+   }
+  ],
+  "프롬프트 엔지니어링": [
+   {
+    "t": "Chain of Thought",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "Zero-Shot Prompting",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "Few-shot Learning",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "ReAct Framework",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "Prompt Chaining",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "프롬프트 기초",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "메타 프롬프트",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "프롬프트",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Zero-Shot Prompting",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Few-shot Learning",
+    "type": "prerequisite"
+   },
+   {
+    "t": "시스템 프롬프트",
+    "type": "prerequisite"
+   },
+   {
+    "t": "역할 부여",
+    "type": "prerequisite"
+   },
+   {
+    "t": "프롬프트 함수",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LLM을 이용한 텍스트 분류",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LLM을 이용한 텍스트 요약",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LLM을 이용한 질문 답변",
+    "type": "prerequisite"
+   },
+   {
+    "t": "정보 추출",
+    "type": "prerequisite"
+   },
+   {
+    "t": "데이터 및 콘텐츠 생성",
+    "type": "prerequisite"
+   },
+   {
+    "t": "코드 생성을 위한 LLM",
+    "type": "prerequisite"
+   },
+   {
+    "t": "이미지 생성 프롬프팅",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LLM을 이용한 창의적 응용",
+    "type": "prerequisite"
+   },
+   {
+    "t": "정보 추출",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "프롬프트 함수",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "LLM을 이용한 텍스트 요약",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "Few-shot Learning": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "is_a"
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Zero-Shot Prompting",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "정보 추출",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "하이퍼파라미터": [
+   {
+    "t": "Temperature",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "Top-k / Top-p",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "파라미터",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Temperature",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Top-k / Top-p",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Batch",
+    "type": "prerequisite"
+   },
+   {
+    "t": "에폭",
+    "type": "prerequisite"
+   }
+  ],
+  "할루시네이션/환각": [
+   {
+    "t": "RAG 개요",
+    "type": "mitigates",
+    "in": true
+   },
+   {
+    "t": "RAG 신뢰성과 인용 관리",
+    "type": "mitigates",
+    "in": true
+   },
+   {
+    "t": "그라운딩",
+    "type": "mitigates",
+    "in": true
+   },
+   {
+    "t": "환각 탐지 및 식별",
+    "type": "prerequisite"
+   },
+   {
+    "t": "법률 환각 사례: Mata v. Avianca",
+    "type": "prerequisite"
+   },
+   {
+    "t": "학술 윤리 사례",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LLM의 신뢰성",
+    "type": "prerequisite"
+   }
+  ],
+  "AGI": [
+   {
+    "t": "Foundation Model",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "API": [
+   {
+    "t": "함수 호출",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "MCP",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "Attention": [
+   {
+    "t": "트랜스포머",
+    "type": "part_of"
+   },
+   {
+    "t": "셀프 어텐션",
+    "type": "prerequisite"
+   }
+  ],
+  "Batch": [
+   {
+    "t": "하이퍼파라미터",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "에폭",
+    "type": "part_of"
+   }
+  ],
+  "Chain of Thought": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "is_a"
+   },
+   {
+    "t": "Self-Consistency Prompting",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "추론",
+    "type": "is_a"
+   },
+   {
+    "t": "추론",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Self-Consistency Prompting",
+    "type": "prerequisite"
+   },
+   {
+    "t": "인도형 연쇄 추론",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "ReAct Framework",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "Constitutional AI": [
+   {
+    "t": "정렬",
+    "type": "is_a"
+   },
+   {
+    "t": "정렬",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "Diffusion Model": [
+   {
+    "t": "생성형 AI",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "이미지 생성 프롬프팅",
+    "type": "prerequisite"
+   },
+   {
+    "t": "노이즈",
+    "type": "uses"
+   },
+   {
+    "t": "EU AI Act와 딥페이크 규제",
+    "type": "causes"
+   }
+  ],
+  "Foundation Model": [
+   {
+    "t": "파인튜닝",
+    "type": "prerequisite"
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Transfer Learning",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "AGI",
+    "type": "prerequisite"
+   }
+  ],
+  "GPT": [
+   {
+    "t": "대규모 언어 모델",
+    "type": "is_a"
+   },
+   {
+    "t": "ChatGPT",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "주요 LLM 모델 개요",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "ChatGPT",
+    "type": "prerequisite"
+   }
+  ],
+  "RLHF": [
+   {
+    "t": "정렬",
+    "type": "is_a"
+   },
+   {
+    "t": "강화학습",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "정렬",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "강화학습",
+    "type": "is_a"
+   }
+  ],
+  "Temperature": [
+   {
+    "t": "하이퍼파라미터",
+    "type": "is_a"
+   },
+   {
+    "t": "LLM 설정",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "하이퍼파라미터",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "Top-k / Top-p": [
+   {
+    "t": "하이퍼파라미터",
+    "type": "is_a"
+   },
+   {
+    "t": "LLM 설정",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "하이퍼파라미터",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "Transfer Learning": [
+   {
+    "t": "파인튜닝",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "Foundation Model",
+    "type": "prerequisite"
+   },
+   {
+    "t": "파인튜닝",
+    "type": "prerequisite"
+   }
+  ],
+  "ChatGPT": [
+   {
+    "t": "GPT",
+    "type": "uses"
+   },
+   {
+    "t": "주요 LLM 모델 개요",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "GPT",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "Gemini": [
+   {
+    "t": "대규모 언어 모델",
+    "type": "is_a"
+   },
+   {
+    "t": "주요 LLM 모델 개요",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "멀티모달",
+    "type": "is_a"
+   }
+  ],
+  "Claude": [
+   {
+    "t": "대규모 언어 모델",
+    "type": "is_a"
+   },
+   {
+    "t": "주요 LLM 모델 개요",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "AI 에이전트 보안": [
+   {
+    "t": "프롬프트 인젝션",
+    "type": "mitigates"
+   },
+   {
+    "t": "MCP",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "심화 에이전트",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "프롬프트 인젝션": [
+   {
+    "t": "AI 에이전트 보안",
+    "type": "mitigates",
+    "in": true
+   },
+   {
+    "t": "프롬프트 주입 공격 및 방어",
+    "type": "mitigates",
+    "in": true
+   },
+   {
+    "t": "적대적 프롬팅 개요",
+    "type": "is_a"
+   },
+   {
+    "t": "프롬프트",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "프롬프트 주입 공격 및 방어",
+    "type": "prerequisite"
+   }
+  ],
+  "Groq와 LPU 추론 엔진": [
+   {
+    "t": "대규모 언어 모델",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "트랜스포머",
+    "type": "uses"
+   },
+   {
+    "t": "LLM 추론 연구 현황 및 동향",
+    "type": "part_of"
+   }
+  ],
+  "LLM의 신뢰성": [
+   {
+    "t": "할루시네이션/환각",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "환각",
+    "type": "causes",
+    "in": true
+   },
+   {
+    "t": "RAG 신뢰성과 인용 관리",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "LLM 회상과 정보 검색": [
+   {
+    "t": "RAG 개요",
+    "type": "prerequisite"
+   },
+   {
+    "t": "RAG 개요",
+    "type": "part_of"
+   },
+   {
+    "t": "LLM을 위한 RAG 파이프라인 구현",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "LLM을 이용한 질문 답변",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "무한 컨텍스트 변환기": [
+   {
+    "t": "컨텍스트 윈도우",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "트랜스포머",
+    "type": "is_a"
+   },
+   {
+    "t": "컨텍스트 윈도우",
+    "type": "mitigates"
+   }
+  ],
+  "LLM 토크나이제이션": [
+   {
+    "t": "토크나이저",
+    "type": "uses"
+   },
+   {
+    "t": "토크나이저",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "합성 데이터 생성": [
+   {
+    "t": "RAG 시스템을 위한 합성 데이터 생성",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "데이터 증강",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "함수 호출": [
+   {
+    "t": "에이전트 구성 요소",
+    "type": "part_of"
+   },
+   {
+    "t": "에이전트",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "에이전트 구성 요소",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "MCP",
+    "type": "prerequisite"
+   },
+   {
+    "t": "API",
+    "type": "uses"
+   },
+   {
+    "t": "프롬프트 함수",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "MCP": [
+   {
+    "t": "에이전트",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "함수 호출",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "AI 에이전트 보안",
+    "type": "prerequisite"
+   },
+   {
+    "t": "API",
+    "type": "uses"
+   }
+  ],
+  "에이전트 구성 요소": [
+   {
+    "t": "함수 호출",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "에이전트",
+    "type": "part_of"
+   },
+   {
+    "t": "AI 에이전트 입문",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "함수 호출",
+    "type": "prerequisite"
+   }
+  ],
+  "LangChain": [
+   {
+    "t": "심화 에이전트",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "LangGraph",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LangGraph",
+    "type": "uses",
+    "in": true
+   }
+  ],
+  "AI 에이전트 입문": [
+   {
+    "t": "심화 에이전트",
+    "type": "prerequisite"
+   },
+   {
+    "t": "에이전트 구성 요소",
+    "type": "prerequisite"
+   },
+   {
+    "t": "AI 워크플로우 vs AI 에이전트",
+    "type": "prerequisite"
+   },
+   {
+    "t": "ReAct Framework",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "심화 에이전트": [
+   {
+    "t": "AI 에이전트 입문",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "AI 워크플로우 vs AI 에이전트",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "LangChain",
+    "type": "prerequisite"
+   },
+   {
+    "t": "컨텍스트 엔지니어링",
+    "type": "prerequisite"
+   },
+   {
+    "t": "AI 에이전트 보안",
+    "type": "prerequisite"
+   },
+   {
+    "t": "에이전틱 AI 기업 도입",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LangGraph",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "AI 워크플로우 vs AI 에이전트": [
+   {
+    "t": "AI 에이전트 입문",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "심화 에이전트",
+    "type": "prerequisite"
+   }
+  ],
+  "LangGraph": [
+   {
+    "t": "LangChain",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "LangChain",
+    "type": "uses"
+   },
+   {
+    "t": "심화 에이전트",
+    "type": "part_of"
+   }
+  ],
+  "컨텍스트 엔지니어링": [
+   {
+    "t": "컨텍스트 윈도우",
+    "type": "uses"
+   },
+   {
+    "t": "심화 에이전트",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "온톨로지와 지식 그래프": [
+   {
+    "t": "GraphRAG",
+    "type": "prerequisite"
+   }
+  ],
+  "RAG 신뢰성과 인용 관리": [
+   {
+    "t": "할루시네이션/환각",
+    "type": "mitigates"
+   },
+   {
+    "t": "RAG 시스템의 환각 방지",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "LLM의 신뢰성",
+    "type": "part_of"
+   }
+  ],
+  "RAG 시스템의 환각 방지": [
+   {
+    "t": "환각",
+    "type": "mitigates"
+   },
+   {
+    "t": "LLM을 위한 RAG 파이프라인 구현",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "RAG 신뢰성과 인용 관리",
+    "type": "prerequisite"
+   },
+   {
+    "t": "그라운딩",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "LLM을 위한 RAG 파이프라인 구현": [
+   {
+    "t": "RAG 개요",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "RAG 시스템의 환각 방지",
+    "type": "prerequisite"
+   },
+   {
+    "t": "LLM 회상과 정보 검색",
+    "type": "uses"
+   }
+  ],
+  "GraphRAG": [
+   {
+    "t": "RAG 개요",
+    "type": "is_a"
+   },
+   {
+    "t": "온톨로지와 지식 그래프",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "LLM 추론 연구 현황 및 동향": [
+   {
+    "t": "추론",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "추론 LLM 가이드",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Groq와 LPU 추론 엔진",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "인도형 연쇄 추론": [
+   {
+    "t": "추론",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Chain of Thought",
+    "type": "is_a"
+   },
+   {
+    "t": "추론 LLM 가이드",
+    "type": "part_of"
+   }
+  ],
+  "간접 추론": [
+   {
+    "t": "추론",
+    "type": "is_a"
+   },
+   {
+    "t": "추론",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "LLM 추론 평가 및 벤치마크": [
+   {
+    "t": "추론",
+    "type": "evaluates"
+   },
+   {
+    "t": "추론 LLM 가이드",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "베이스라인",
+    "type": "uses"
+   }
+  ],
+  "추론 LLM 가이드": [
+   {
+    "t": "LLM 추론 연구 현황 및 동향",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "LLM 추론 평가 및 벤치마크",
+    "type": "prerequisite"
+   },
+   {
+    "t": "인도형 연쇄 추론",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "물리적 추론": [
+   {
+    "t": "추론",
+    "type": "is_a"
+   },
+   {
+    "t": "추론",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "실전 예제": [
+   {
+    "t": "LLM 설정",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "프롬프트 기초",
+    "type": "part_of"
+   },
+   {
+    "t": "프롬프트 설계 팁",
+    "type": "part_of"
+   }
+  ],
+  "프롬프트 기초": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite"
+   },
+   {
+    "t": "프롬프트의 요소",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "대규모 언어 모델",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "프롬프트",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "실전 예제",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "LLM 설정": [
+   {
+    "t": "Temperature",
+    "type": "uses"
+   },
+   {
+    "t": "Top-k / Top-p",
+    "type": "uses"
+   },
+   {
+    "t": "실전 예제",
+    "type": "prerequisite"
+   }
+  ],
+  "프롬프트 최적화": [
+   {
+    "t": "프롬프트 설계 팁",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "프롬프트 설계 팁",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "프롬프트 설계 팁": [
+   {
+    "t": "프롬프트 최적화",
+    "type": "part_of"
+   },
+   {
+    "t": "프롬프트",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "프롬프트 최적화",
+    "type": "prerequisite"
+   },
+   {
+    "t": "실전 예제",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "프롬프트의 요소": [
+   {
+    "t": "프롬프트 기초",
+    "type": "part_of"
+   },
+   {
+    "t": "시스템 프롬프트",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "역할 부여",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "프롬프트",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "주요 LLM 모델 개요": [
+   {
+    "t": "대규모 언어 모델",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "GPT",
+    "type": "prerequisite"
+   },
+   {
+    "t": "ChatGPT",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Gemini",
+    "type": "prerequisite"
+   },
+   {
+    "t": "Claude",
+    "type": "prerequisite"
+   }
+  ],
+  "바이브 코딩": [
+   {
+    "t": "코드 생성을 위한 LLM",
+    "type": "uses"
+   },
+   {
+    "t": "코드 생성을 위한 LLM",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "인라인 시각화",
+    "type": "uses"
+   }
+  ],
+  "LLM을 이용한 창의적 응용": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "직장에서의 생성형 AI 실제 사례 연구",
+    "type": "prerequisite"
+   }
+  ],
+  "데이터 및 콘텐츠 생성": [
+   {
+    "t": "생성형 AI",
+    "type": "uses"
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "LLM을 이용한 텍스트 요약",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "정보 추출": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Few-shot Learning",
+    "type": "uses"
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "uses"
+   }
+  ],
+  "LLM을 이용한 질문 답변": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "RAG 개요",
+    "type": "uses"
+   },
+   {
+    "t": "LLM 회상과 정보 검색",
+    "type": "uses"
+   }
+  ],
+  "수학 추론과 문제 풀이": [
+   {
+    "t": "추론",
+    "type": "uses"
+   },
+   {
+    "t": "추론",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "직장에서의 생성형 AI 실제 사례 연구": [
+   {
+    "t": "LLM을 이용한 창의적 응용",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "코워크",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "에이전틱 AI 기업 도입",
+    "type": "part_of"
+   }
+  ],
+  "LLM을 이용한 텍스트 분류": [
+   {
+    "t": "대규모 언어 모델",
+    "type": "uses"
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "코드 생성을 위한 LLM": [
+   {
+    "t": "대규모 언어 모델",
+    "type": "uses"
+   },
+   {
+    "t": "바이브 코딩",
+    "type": "uses",
+    "in": true
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "바이브 코딩",
+    "type": "prerequisite"
+   },
+   {
+    "t": "인라인 시각화",
+    "type": "uses"
+   }
+  ],
+  "이미지 생성 프롬프팅": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Diffusion Model",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "멀티모달",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "RAG 시스템을 위한 합성 데이터 생성": [
+   {
+    "t": "합성 데이터 생성",
+    "type": "uses"
+   },
+   {
+    "t": "RAG 개요",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "프롬프트 함수": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "is_a"
+   },
+   {
+    "t": "함수 호출",
+    "type": "uses"
+   }
+  ],
+  "LLM을 이용한 텍스트 요약": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "uses"
+   },
+   {
+    "t": "데이터 및 콘텐츠 생성",
+    "type": "part_of"
+   }
+  ],
+  "컨텍스트 캐싱으로 비용 최적화": [
+   {
+    "t": "컨텍스트 윈도우",
+    "type": "uses"
+   },
+   {
+    "t": "컨텍스트 윈도우",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "적대적 프롬팅 개요": [
+   {
+    "t": "Jailbreaking: LLM 안전장치 우회",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "프롬프트 인젝션",
+    "type": "is_a",
+    "in": true
+   },
+   {
+    "t": "Jailbreaking: LLM 안전장치 우회",
+    "type": "prerequisite"
+   },
+   {
+    "t": "적대적 공격 종합 분석",
+    "type": "prerequisite"
+   },
+   {
+    "t": "적대적 공격 종합 분석",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "사실성 검증 및 향상": [
+   {
+    "t": "환각",
+    "type": "mitigates"
+   },
+   {
+    "t": "환각 탐지 및 식별",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "진실성과 신뢰도",
+    "type": "prerequisite"
+   },
+   {
+    "t": "진실성과 신뢰도",
+    "type": "part_of"
+   }
+  ],
+  "LLM의 편향 인식 및 완화": [
+   {
+    "t": "편향성",
+    "type": "mitigates"
+   },
+   {
+    "t": "편향성",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "환각 탐지 및 식별": [
+   {
+    "t": "환각",
+    "type": "evaluates"
+   },
+   {
+    "t": "할루시네이션/환각",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "사실성 검증 및 향상",
+    "type": "prerequisite"
+   },
+   {
+    "t": "법률 환각 사례: Mata v. Avianca",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "적대적 공격 종합 분석": [
+   {
+    "t": "적대적 프롬팅 개요",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "적대적 프롬팅 개요",
+    "type": "part_of"
+   },
+   {
+    "t": "Jailbreaking: LLM 안전장치 우회",
+    "type": "part_of",
+    "in": true
+   }
+  ],
+  "Jailbreaking: LLM 안전장치 우회": [
+   {
+    "t": "적대적 프롬팅 개요",
+    "type": "is_a"
+   },
+   {
+    "t": "적대적 프롬팅 개요",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "적대적 공격 종합 분석",
+    "type": "part_of"
+   }
+  ],
+  "진실성과 신뢰도": [
+   {
+    "t": "사실성 검증 및 향상",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "사실성 검증 및 향상",
+    "type": "part_of",
+    "in": true
+   },
+   {
+    "t": "환각",
+    "type": "causes",
+    "in": true
+   },
+   {
+    "t": "학술 윤리 사례",
+    "type": "evaluates",
+    "in": true
+   }
+  ],
+  "프롬프트 유출 방지": [
+   {
+    "t": "프롬프트 주입 공격 및 방어",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "프롬프트 주입 공격 및 방어",
+    "type": "mitigates"
+   },
+   {
+    "t": "시스템 프롬프트",
+    "type": "evaluates"
+   }
+  ],
+  "프롬프트 주입 공격 및 방어": [
+   {
+    "t": "프롬프트 인젝션",
+    "type": "mitigates"
+   },
+   {
+    "t": "프롬프트 인젝션",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "프롬프트 유출 방지",
+    "type": "prerequisite"
+   },
+   {
+    "t": "프롬프트 유출 방지",
+    "type": "mitigates",
+    "in": true
+   }
+  ],
+  "Self-Consistency Prompting": [
+   {
+    "t": "Chain of Thought",
+    "type": "is_a"
+   },
+   {
+    "t": "Chain of Thought",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "Prompt Chaining": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "is_a"
+   },
+   {
+    "t": "ReAct Framework",
+    "type": "prerequisite"
+   }
+  ],
+  "ReAct Framework": [
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "is_a"
+   },
+   {
+    "t": "Prompt Chaining",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "Chain of Thought",
+    "type": "uses"
+   },
+   {
+    "t": "AI 에이전트 입문",
+    "type": "part_of"
+   }
+  ],
+  "법률 환각 사례: Mata v. Avianca": [
+   {
+    "t": "할루시네이션/환각",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "환각",
+    "type": "causes",
+    "in": true
+   },
+   {
+    "t": "환각 탐지 및 식별",
+    "type": "part_of"
+   }
+  ],
+  "학술 윤리 사례": [
+   {
+    "t": "할루시네이션/환각",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "환각",
+    "type": "causes",
+    "in": true
+   },
+   {
+    "t": "진실성과 신뢰도",
+    "type": "evaluates"
+   }
+  ],
+  "환각": [
+   {
+    "t": "RAG 시스템의 환각 방지",
+    "type": "mitigates",
+    "in": true
+   },
+   {
+    "t": "환각 탐지 및 식별",
+    "type": "evaluates",
+    "in": true
+   },
+   {
+    "t": "사실성 검증 및 향상",
+    "type": "mitigates",
+    "in": true
+   },
+   {
+    "t": "LLM의 신뢰성",
+    "type": "causes"
+   },
+   {
+    "t": "진실성과 신뢰도",
+    "type": "causes"
+   },
+   {
+    "t": "법률 환각 사례: Mata v. Avianca",
+    "type": "causes"
+   },
+   {
+    "t": "학술 윤리 사례",
+    "type": "causes"
+   }
+  ],
+  "역할 부여": [
+   {
+    "t": "프롬프트의 요소",
+    "type": "part_of"
+   },
+   {
+    "t": "프롬프트 엔지니어링",
+    "type": "prerequisite",
+    "in": true
+   }
+  ],
+  "편향성": [
+   {
+    "t": "LLM의 편향 인식 및 완화",
+    "type": "mitigates",
+    "in": true
+   },
+   {
+    "t": "LLM의 편향 인식 및 완화",
+    "type": "prerequisite"
+   },
+   {
+    "t": "EU AI Act와 딥페이크 규제",
+    "type": "mitigates",
+    "in": true
+   }
+  ],
+  "EU AI Act와 딥페이크 규제": [
+   {
+    "t": "Diffusion Model",
+    "type": "causes",
+    "in": true
+   },
+   {
+    "t": "편향성",
+    "type": "mitigates"
+   }
+  ],
+  "에이전틱 AI 기업 도입": [
+   {
+    "t": "에이전트",
+    "type": "uses"
+   },
+   {
+    "t": "심화 에이전트",
+    "type": "prerequisite",
+    "in": true
+   },
+   {
+    "t": "직장에서의 생성형 AI 실제 사례 연구",
+    "type": "part_of",
+    "in": true
+   }
+  ]
+ },
+ "concept_meta": {
+  "강화학습": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "RAG 개요": {
+   "category": "RAG",
+   "doc": "wiki/prompt-engineering/rag/overview",
+   "level": 3,
+   "degree": 10,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "과적합": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "그라운딩": {
+   "category": "개념",
+   "doc": null,
+   "level": 2,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "노이즈": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "대규모 언어 모델": {
+   "category": "개념",
+   "doc": null,
+   "level": 3,
+   "degree": 18,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "데이터 증강": {
+   "category": "개념",
+   "doc": null,
+   "level": 1,
+   "degree": 4,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "디코더": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "멀티모달": {
+   "category": "개념",
+   "doc": null,
+   "level": 1,
+   "degree": 3,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "메타 프롬프트": {
+   "category": "개념",
+   "doc": null,
+   "level": 8,
+   "degree": 2,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "벡터": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "벡터 데이터베이스": {
+   "category": "개념",
+   "doc": null,
+   "level": 2,
+   "degree": 4,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "베이스라인": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 1,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "생성형 AI": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 5,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "셀프 어텐션": {
+   "category": "개념",
+   "doc": null,
+   "level": 1,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "시스템 프롬프트": {
+   "category": "개념",
+   "doc": null,
+   "level": 7,
+   "degree": 4,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "에이전트": {
+   "category": "개념",
+   "doc": null,
+   "level": 7,
+   "degree": 5,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "입문"
+   ]
+  },
+  "인라인 시각화": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 2,
+   "tracks": [
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "에폭": {
+   "category": "개념",
+   "doc": null,
+   "level": 3,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "엔코더": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "임베딩": {
+   "category": "개념",
+   "doc": null,
+   "level": 1,
+   "degree": 4,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "정렬": {
+   "category": "개념",
+   "doc": null,
+   "level": 1,
+   "degree": 6,
+   "tracks": [
+    "관리자",
+    "구현자"
+   ]
+  },
+  "Zero-Shot Prompting": {
+   "category": "기법",
+   "doc": "wiki/prompt-engineering/techniques/zero-shot",
+   "level": 7,
+   "degree": 3,
+   "tracks": [
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "추론": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 11,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "입문"
+   ]
+  },
+  "코워크": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 1,
+   "tracks": [
+    "실무사용자"
+   ]
+  },
+  "컨텍스트 윈도우": {
+   "category": "개념",
+   "doc": "wiki/concepts/context-window",
+   "level": 1,
+   "degree": 7,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "토큰": {
+   "category": "개념",
+   "doc": "wiki/concepts/token",
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "토크나이저": {
+   "category": "개념",
+   "doc": null,
+   "level": 1,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "트랜스포머": {
+   "category": "개념",
+   "doc": null,
+   "level": 2,
+   "degree": 10,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "파라미터": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "파인튜닝": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/finetuning-gpt4o",
+   "level": 4,
+   "degree": 4,
+   "tracks": [
+    "관리자",
+    "구현자"
+   ]
+  },
+  "프롬프트": {
+   "category": "개념",
+   "doc": "wiki/concepts/prompt",
+   "level": 0,
+   "degree": 5,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "프롬프트 엔지니어링": {
+   "category": "개념",
+   "doc": null,
+   "level": 6,
+   "degree": 24,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "Few-shot Learning": {
+   "category": "개념",
+   "doc": "wiki/concepts/few-shot-learning",
+   "level": 8,
+   "degree": 4,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "하이퍼파라미터": {
+   "category": "개념",
+   "doc": null,
+   "level": 1,
+   "degree": 7,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "할루시네이션/환각": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 7,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "AGI": {
+   "category": "개념",
+   "doc": null,
+   "level": 2,
+   "degree": 1,
+   "tracks": [
+    "관리자",
+    "입문"
+   ]
+  },
+  "API": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "Attention": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "Batch": {
+   "category": "개념",
+   "doc": null,
+   "level": 2,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "Chain of Thought": {
+   "category": "개념",
+   "doc": "wiki/concepts/chain-of-thought",
+   "level": 1,
+   "degree": 7,
+   "tracks": [
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "Constitutional AI": {
+   "category": "개념",
+   "doc": null,
+   "level": 2,
+   "degree": 2,
+   "tracks": [
+    "관리자",
+    "구현자"
+   ]
+  },
+  "Diffusion Model": {
+   "category": "개념",
+   "doc": null,
+   "level": 1,
+   "degree": 4,
+   "tracks": [
+    "구현자",
+    "창작자"
+   ]
+  },
+  "Foundation Model": {
+   "category": "개념",
+   "doc": null,
+   "level": 1,
+   "degree": 5,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "입문"
+   ]
+  },
+  "GPT": {
+   "category": "개념",
+   "doc": null,
+   "level": 5,
+   "degree": 4,
+   "tracks": [
+    "실무사용자",
+    "입문"
+   ]
+  },
+  "RLHF": {
+   "category": "개념",
+   "doc": null,
+   "level": 2,
+   "degree": 4,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "Temperature": {
+   "category": "개념",
+   "doc": null,
+   "level": 2,
+   "degree": 3,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "Top-k / Top-p": {
+   "category": "개념",
+   "doc": null,
+   "level": 2,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "Transfer Learning": {
+   "category": "개념",
+   "doc": null,
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "ChatGPT": {
+   "category": "도구",
+   "doc": "wiki/tools/chatgpt",
+   "level": 6,
+   "degree": 3,
+   "tracks": [
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "Gemini": {
+   "category": "도구",
+   "doc": "wiki/tools/gemini",
+   "level": 5,
+   "degree": 3,
+   "tracks": [
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "Claude": {
+   "category": "도구",
+   "doc": "wiki/tools/claude",
+   "level": 5,
+   "degree": 2,
+   "tracks": [
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "AI 에이전트 보안": {
+   "category": "보안",
+   "doc": "wiki/security/agent-security",
+   "level": 7,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "프롬프트 인젝션": {
+   "category": "보안",
+   "doc": "wiki/security/prompt-injection",
+   "level": 1,
+   "degree": 5,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "Groq와 LPU 추론 엔진": {
+   "category": "기타",
+   "doc": "wiki/prompt-engineering/research/groq",
+   "level": 4,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "LLM의 신뢰성": {
+   "category": "기타",
+   "doc": "wiki/prompt-engineering/research/trustworthiness-in-llms",
+   "level": 7,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "LLM 회상과 정보 검색": {
+   "category": "기타",
+   "doc": "wiki/prompt-engineering/research/llm-recall",
+   "level": 0,
+   "degree": 4,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "무한 컨텍스트 변환기": {
+   "category": "기타",
+   "doc": "wiki/prompt-engineering/research/infini-attention",
+   "level": 2,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "LLM 토크나이제이션": {
+   "category": "기타",
+   "doc": "wiki/prompt-engineering/research/llm-tokenization",
+   "level": 2,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "합성 데이터 생성": {
+   "category": "기타",
+   "doc": "wiki/prompt-engineering/research/synthetic-data",
+   "level": 2,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "함수 호출": {
+   "category": "에이전트",
+   "doc": "wiki/prompt-engineering/agents/function-calling",
+   "level": 5,
+   "degree": 6,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "MCP": {
+   "category": "에이전트",
+   "doc": "wiki/prompt-engineering/agents/mcp",
+   "level": 6,
+   "degree": 4,
+   "tracks": [
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "에이전트 구성 요소": {
+   "category": "에이전트",
+   "doc": "wiki/prompt-engineering/agents/components",
+   "level": 4,
+   "degree": 4,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "LangChain": {
+   "category": "에이전트",
+   "doc": "wiki/prompt-engineering/agents/langchain",
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "AI 에이전트 입문": {
+   "category": "에이전트",
+   "doc": "wiki/prompt-engineering/agents/introduction",
+   "level": 3,
+   "degree": 4,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "입문"
+   ]
+  },
+  "심화 에이전트": {
+   "category": "에이전트",
+   "doc": "wiki/prompt-engineering/agents/deep-agents",
+   "level": 5,
+   "degree": 7,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "AI 워크플로우 vs AI 에이전트": {
+   "category": "에이전트",
+   "doc": "wiki/prompt-engineering/agents/workflows-vs-agents",
+   "level": 4,
+   "degree": 2,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "LangGraph": {
+   "category": "에이전트",
+   "doc": "wiki/prompt-engineering/agents/langgraph",
+   "level": 1,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "컨텍스트 엔지니어링": {
+   "category": "에이전트",
+   "doc": "wiki/prompt-engineering/agents/context-engineering",
+   "level": 6,
+   "degree": 2,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "온톨로지와 지식 그래프": {
+   "category": "RAG",
+   "doc": "wiki/prompt-engineering/rag/ontology-knowledge-graph",
+   "level": 0,
+   "degree": 1,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "RAG 신뢰성과 인용 관리": {
+   "category": "RAG",
+   "doc": "wiki/prompt-engineering/rag/rag-faithfulness",
+   "level": 6,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "RAG 시스템의 환각 방지": {
+   "category": "RAG",
+   "doc": "wiki/prompt-engineering/rag/rag-hallucinations",
+   "level": 5,
+   "degree": 4,
+   "tracks": [
+    "관리자",
+    "구현자"
+   ]
+  },
+  "LLM을 위한 RAG 파이프라인 구현": {
+   "category": "RAG",
+   "doc": "wiki/prompt-engineering/rag/rag-for-llms",
+   "level": 4,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "GraphRAG": {
+   "category": "RAG",
+   "doc": "wiki/prompt-engineering/rag/graphrag",
+   "level": 1,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "LLM 추론 연구 현황 및 동향": {
+   "category": "추론",
+   "doc": "wiki/prompt-engineering/reasoning/llm-reasoning",
+   "level": 5,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "인도형 연쇄 추론": {
+   "category": "추론",
+   "doc": "wiki/prompt-engineering/reasoning/guided-cot",
+   "level": 1,
+   "degree": 3,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "간접 추론": {
+   "category": "추론",
+   "doc": "wiki/prompt-engineering/reasoning/indirect-reasoning",
+   "level": 1,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "LLM 추론 평가 및 벤치마크": {
+   "category": "추론",
+   "doc": "wiki/prompt-engineering/reasoning/reasoning-with-llms",
+   "level": 7,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자"
+   ]
+  },
+  "추론 LLM 가이드": {
+   "category": "추론",
+   "doc": "wiki/prompt-engineering/reasoning/reasoning-llms-guide",
+   "level": 6,
+   "degree": 3,
+   "tracks": [
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "물리적 추론": {
+   "category": "추론",
+   "doc": "wiki/prompt-engineering/reasoning/physical-reasoning",
+   "level": 1,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "실전 예제": {
+   "category": "프롬프팅기초",
+   "doc": "wiki/prompt-engineering/foundations/examples",
+   "level": 4,
+   "degree": 3,
+   "tracks": [
+    "실무사용자",
+    "입문"
+   ]
+  },
+  "프롬프트 기초": {
+   "category": "프롬프팅기초",
+   "doc": "wiki/prompt-engineering/foundations/basics",
+   "level": 5,
+   "degree": 5,
+   "tracks": [
+    "실무사용자",
+    "입문"
+   ]
+  },
+  "LLM 설정": {
+   "category": "프롬프팅기초",
+   "doc": "wiki/prompt-engineering/foundations/settings",
+   "level": 3,
+   "degree": 3,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "프롬프트 최적화": {
+   "category": "프롬프팅기초",
+   "doc": "wiki/prompt-engineering/foundations/optimizing-prompts",
+   "level": 6,
+   "degree": 2,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "프롬프트 설계 팁": {
+   "category": "프롬프팅기초",
+   "doc": "wiki/prompt-engineering/foundations/general-tips",
+   "level": 5,
+   "degree": 4,
+   "tracks": [
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "프롬프트의 요소": {
+   "category": "프롬프팅기초",
+   "doc": "wiki/prompt-engineering/foundations/elements",
+   "level": 1,
+   "degree": 4,
+   "tracks": [
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "주요 LLM 모델 개요": {
+   "category": "프롬프팅기초",
+   "doc": "wiki/prompt-engineering/foundations/models-overview",
+   "level": 4,
+   "degree": 5,
+   "tracks": [
+    "관리자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "바이브 코딩": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/vibe-coding",
+   "level": 8,
+   "degree": 3,
+   "tracks": [
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "LLM을 이용한 창의적 응용": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/creativity",
+   "level": 7,
+   "degree": 2,
+   "tracks": [
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "데이터 및 콘텐츠 생성": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/generating",
+   "level": 8,
+   "degree": 3,
+   "tracks": [
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "정보 추출": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/information-extraction",
+   "level": 9,
+   "degree": 3,
+   "tracks": [
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "LLM을 이용한 질문 답변": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/question-answering",
+   "level": 7,
+   "degree": 3,
+   "tracks": [
+    "실무사용자"
+   ]
+  },
+  "수학 추론과 문제 풀이": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/mathematics",
+   "level": 1,
+   "degree": 2,
+   "tracks": [
+    "실무사용자"
+   ]
+  },
+  "직장에서의 생성형 AI 실제 사례 연구": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/workplace-casestudy",
+   "level": 8,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "실무사용자"
+   ]
+  },
+  "LLM을 이용한 텍스트 분류": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/classification",
+   "level": 7,
+   "degree": 2,
+   "tracks": [
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "코드 생성을 위한 LLM": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/coding",
+   "level": 7,
+   "degree": 5,
+   "tracks": [
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "이미지 생성 프롬프팅": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/image-generation",
+   "level": 7,
+   "degree": 3,
+   "tracks": [
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "RAG 시스템을 위한 합성 데이터 생성": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/synthetic-rag",
+   "level": 4,
+   "degree": 2,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "프롬프트 함수": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/pf",
+   "level": 7,
+   "degree": 3,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "LLM을 이용한 텍스트 요약": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/text-summarization",
+   "level": 7,
+   "degree": 3,
+   "tracks": [
+    "실무사용자"
+   ]
+  },
+  "컨텍스트 캐싱으로 비용 최적화": {
+   "category": "응용",
+   "doc": "wiki/prompt-engineering/applications/context-caching",
+   "level": 2,
+   "degree": 2,
+   "tracks": [
+    "관리자",
+    "구현자"
+   ]
+  },
+  "적대적 프롬팅 개요": {
+   "category": "평가",
+   "doc": "wiki/prompt-engineering/evaluation/adversarial-prompting",
+   "level": 2,
+   "degree": 5,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "사실성 검증 및 향상": {
+   "category": "평가",
+   "doc": "wiki/prompt-engineering/evaluation/factuality",
+   "level": 3,
+   "degree": 4,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "LLM의 편향 인식 및 완화": {
+   "category": "평가",
+   "doc": "wiki/prompt-engineering/evaluation/biases",
+   "level": 1,
+   "degree": 2,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "환각 탐지 및 식별": {
+   "category": "평가",
+   "doc": "wiki/prompt-engineering/evaluation/truthfulness-identify-hallucination",
+   "level": 2,
+   "degree": 4,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "적대적 공격 종합 분석": {
+   "category": "평가",
+   "doc": "wiki/prompt-engineering/evaluation/adversarial",
+   "level": 1,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자"
+   ]
+  },
+  "Jailbreaking: LLM 안전장치 우회": {
+   "category": "평가",
+   "doc": "wiki/prompt-engineering/evaluation/adversarial-prompting-jailbreaking-llms",
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자"
+   ]
+  },
+  "진실성과 신뢰도": {
+   "category": "평가",
+   "doc": "wiki/prompt-engineering/evaluation/truthfulness",
+   "level": 4,
+   "degree": 4,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "프롬프트 유출 방지": {
+   "category": "평가",
+   "doc": "wiki/prompt-engineering/evaluation/adversarial-prompting-prompt-leaking",
+   "level": 3,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "프롬프트 주입 공격 및 방어": {
+   "category": "평가",
+   "doc": "wiki/prompt-engineering/evaluation/adversarial-prompting-prompt-injection",
+   "level": 2,
+   "degree": 4,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자"
+   ]
+  },
+  "Self-Consistency Prompting": {
+   "category": "기법",
+   "doc": "wiki/prompt-engineering/techniques/self-consistency",
+   "level": 2,
+   "degree": 2,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "Prompt Chaining": {
+   "category": "기법",
+   "doc": "wiki/prompt-engineering/techniques/prompt-chaining",
+   "level": 0,
+   "degree": 2,
+   "tracks": [
+    "구현자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "ReAct Framework": {
+   "category": "기법",
+   "doc": "wiki/prompt-engineering/techniques/react",
+   "level": 2,
+   "degree": 4,
+   "tracks": [
+    "구현자"
+   ]
+  },
+  "법률 환각 사례: Mata v. Avianca": {
+   "category": "기타",
+   "doc": "wiki/cases/legal-hallucination",
+   "level": 1,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "실무사용자",
+    "입문"
+   ]
+  },
+  "학술 윤리 사례": {
+   "category": "기타",
+   "doc": "wiki/cases/academic-integrity",
+   "level": 1,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "환각": {
+   "category": "개념",
+   "doc": "wiki/concepts/hallucination",
+   "level": 0,
+   "degree": 7,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "역할 부여": {
+   "category": "개념",
+   "doc": "wiki/concepts/role-playing",
+   "level": 0,
+   "degree": 2,
+   "tracks": [
+    "실무사용자",
+    "창작자"
+   ]
+  },
+  "편향성": {
+   "category": "개념",
+   "doc": "wiki/concepts/bias",
+   "level": 0,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "실무사용자",
+    "입문",
+    "창작자"
+   ]
+  },
+  "EU AI Act와 딥페이크 규제": {
+   "category": "거버넌스",
+   "doc": "wiki/governance/eu-ai-act",
+   "level": 0,
+   "degree": 2,
+   "tracks": [
+    "관리자",
+    "구현자",
+    "창작자"
+   ]
+  },
+  "에이전틱 AI 기업 도입": {
+   "category": "거버넌스",
+   "doc": "wiki/governance/enterprise-adoption",
+   "level": 9,
+   "degree": 3,
+   "tracks": [
+    "관리자",
+    "구현자"
+   ]
+  }
+ },
+ "prereq_strength": {
+  "RAG 개요|LLM을 위한 RAG 파이프라인 구현": "hard",
+  "Foundation Model|파인튜닝": "deepens",
+  "AI 에이전트 입문|심화 에이전트": "hard",
+  "프롬프트 기초|프롬프트 엔지니어링": "hard",
+  "토큰|토크나이저": "hard",
+  "토크나이저|LLM 토크나이제이션": "hard",
+  "토큰|컨텍스트 윈도우": "hard",
+  "컨텍스트 윈도우|무한 컨텍스트 변환기": "hard",
+  "컨텍스트 윈도우|컨텍스트 캐싱으로 비용 최적화": "deepens",
+  "벡터|임베딩": "hard",
+  "임베딩|벡터 데이터베이스": "hard",
+  "RAG 개요|벡터 데이터베이스": "deepens",
+  "Attention|셀프 어텐션": "hard",
+  "셀프 어텐션|트랜스포머": "hard",
+  "트랜스포머|엔코더": "hard",
+  "트랜스포머|디코더": "hard",
+  "엔코더|대규모 언어 모델": "deepens",
+  "디코더|대규모 언어 모델": "deepens",
+  "파라미터|하이퍼파라미터": "hard",
+  "파라미터|대규모 언어 모델": "hard",
+  "하이퍼파라미터|Temperature": "deepens",
+  "하이퍼파라미터|Top-k / Top-p": "deepens",
+  "하이퍼파라미터|Batch": "deepens",
+  "하이퍼파라미터|에폭": "deepens",
+  "Foundation Model|대규모 언어 모델": "deepens",
+  "Transfer Learning|Foundation Model": "deepens",
+  "Transfer Learning|파인튜닝": "hard",
+  "과적합|데이터 증강": "deepens",
+  "데이터 증강|합성 데이터 생성": "deepens",
+  "생성형 AI|대규모 언어 모델": "deepens",
+  "생성형 AI|Diffusion Model": "deepens",
+  "생성형 AI|멀티모달": "deepens",
+  "대규모 언어 모델|주요 LLM 모델 개요": "hard",
+  "주요 LLM 모델 개요|GPT": "deepens",
+  "주요 LLM 모델 개요|ChatGPT": "deepens",
+  "주요 LLM 모델 개요|Gemini": "deepens",
+  "주요 LLM 모델 개요|Claude": "deepens",
+  "GPT|ChatGPT": "deepens",
+  "강화학습|RLHF": "hard",
+  "정렬|RLHF": "hard",
+  "정렬|Constitutional AI": "hard",
+  "정렬|그라운딩": "deepens",
+  "편향성|LLM의 편향 인식 및 완화": "hard",
+  "대규모 언어 모델|프롬프트 기초": "hard",
+  "프롬프트|프롬프트 기초": "hard",
+  "프롬프트|프롬프트의 요소": "hard",
+  "LLM 설정|실전 예제": "deepens",
+  "프롬프트|프롬프트 설계 팁": "hard",
+  "프롬프트 설계 팁|프롬프트 최적화": "deepens",
+  "프롬프트|프롬프트 엔지니어링": "hard",
+  "프롬프트 엔지니어링|Zero-Shot Prompting": "deepens",
+  "프롬프트 엔지니어링|Few-shot Learning": "deepens",
+  "Zero-Shot Prompting|Few-shot Learning": "deepens",
+  "프롬프트 엔지니어링|시스템 프롬프트": "deepens",
+  "시스템 프롬프트|메타 프롬프트": "deepens",
+  "프롬프트 엔지니어링|역할 부여": "deepens",
+  "프롬프트 엔지니어링|프롬프트 함수": "deepens",
+  "추론|Chain of Thought": "hard",
+  "Chain of Thought|Self-Consistency Prompting": "hard",
+  "추론|수학 추론과 문제 풀이": "hard",
+  "추론|물리적 추론": "hard",
+  "추론|간접 추론": "hard",
+  "추론|인도형 연쇄 추론": "hard",
+  "추론|LLM 추론 연구 현황 및 동향": "hard",
+  "LLM 추론 연구 현황 및 동향|추론 LLM 가이드": "deepens",
+  "추론 LLM 가이드|LLM 추론 평가 및 벤치마크": "deepens",
+  "온톨로지와 지식 그래프|GraphRAG": "hard",
+  "LLM을 위한 RAG 파이프라인 구현|RAG 시스템의 환각 방지": "deepens",
+  "RAG 시스템의 환각 방지|RAG 신뢰성과 인용 관리": "deepens",
+  "RAG 개요|RAG 시스템을 위한 합성 데이터 생성": "hard",
+  "LLM 회상과 정보 검색|RAG 개요": "hard",
+  "그라운딩|RAG 시스템의 환각 방지": "deepens",
+  "대규모 언어 모델|에이전트": "deepens",
+  "AI 에이전트 입문|에이전트 구성 요소": "hard",
+  "에이전트 구성 요소|함수 호출": "deepens",
+  "함수 호출|MCP": "deepens",
+  "AI 에이전트 입문|AI 워크플로우 vs AI 에이전트": "hard",
+  "AI 워크플로우 vs AI 에이전트|심화 에이전트": "deepens",
+  "심화 에이전트|LangChain": "deepens",
+  "LangChain|LangGraph": "deepens",
+  "심화 에이전트|컨텍스트 엔지니어링": "deepens",
+  "MCP|AI 에이전트 보안": "deepens",
+  "심화 에이전트|AI 에이전트 보안": "deepens",
+  "심화 에이전트|에이전틱 AI 기업 도입": "deepens",
+  "프롬프트|프롬프트 인젝션": "hard",
+  "프롬프트 인젝션|프롬프트 주입 공격 및 방어": "hard",
+  "프롬프트 주입 공격 및 방어|프롬프트 유출 방지": "deepens",
+  "적대적 프롬팅 개요|Jailbreaking: LLM 안전장치 우회": "hard",
+  "적대적 프롬팅 개요|적대적 공격 종합 분석": "hard",
+  "할루시네이션/환각|환각 탐지 및 식별": "hard",
+  "환각 탐지 및 식별|사실성 검증 및 향상": "deepens",
+  "사실성 검증 및 향상|진실성과 신뢰도": "deepens",
+  "할루시네이션/환각|법률 환각 사례: Mata v. Avianca": "hard",
+  "할루시네이션/환각|학술 윤리 사례": "hard",
+  "할루시네이션/환각|LLM의 신뢰성": "deepens",
+  "프롬프트 엔지니어링|LLM을 이용한 텍스트 분류": "deepens",
+  "프롬프트 엔지니어링|LLM을 이용한 텍스트 요약": "deepens",
+  "프롬프트 엔지니어링|LLM을 이용한 질문 답변": "deepens",
+  "프롬프트 엔지니어링|정보 추출": "deepens",
+  "프롬프트 엔지니어링|데이터 및 콘텐츠 생성": "deepens",
+  "프롬프트 엔지니어링|코드 생성을 위한 LLM": "deepens",
+  "코드 생성을 위한 LLM|바이브 코딩": "hard",
+  "프롬프트 엔지니어링|이미지 생성 프롬프팅": "deepens",
+  "Diffusion Model|이미지 생성 프롬프팅": "deepens",
+  "프롬프트 엔지니어링|LLM을 이용한 창의적 응용": "deepens",
+  "LLM을 이용한 창의적 응용|직장에서의 생성형 AI 실제 사례 연구": "deepens",
+  "대규모 언어 모델|Groq와 LPU 추론 엔진": "deepens",
+  "강화학습|정렬": "deepens",
+  "멀티모달|이미지 생성 프롬프팅": "deepens",
+  "Foundation Model|AGI": "deepens",
+  "Prompt Chaining|ReAct Framework": "deepens"
+ }
+}
